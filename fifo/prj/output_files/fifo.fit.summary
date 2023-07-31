@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Jul 27 11:13:31 2023
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : fifo
+Top-level Entity Name : mydcfifo
+Family : Cyclone IV E
+Device : EP4CE10F17C8
+Timing Models : Final
+Total logic elements : 159 / 10,320 ( 2 % )
+    Total combinational functions : 106 / 10,320 ( 1 % )
+    Dedicated logic registers : 124 / 10,320 ( 1 % )
+Total registers : 124
+Total pins : 47 / 180 ( 26 % )
+Total virtual pins : 0
+Total memory bits : 4,096 / 423,936 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

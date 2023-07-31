@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dH:/FPGA/cyclone source/fifo/prj/simulation/modelsim
+vmydcfifo
+Z1 !s110 1690429050
+!i10b 1
+!s100 g`8oDkaAg2L7KP1bZ?TB`3
+IdKCdY:O:Cg@S7TodPeH;F3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1690429032
+8H:/FPGA/cyclone source/fifo/prj/ip/mydcfifo.v
+FH:/FPGA/cyclone source/fifo/prj/ip/mydcfifo.v
+L0 39
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1690429050.000000
+!s107 H:/FPGA/cyclone source/fifo/prj/ip/mydcfifo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/fifo/prj/ip|H:/FPGA/cyclone source/fifo/prj/ip/mydcfifo.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/fifo/prj/ip}
+Z6 tCvgOpt 0
+vmydcfifo_tb
+R1
+!i10b 1
+!s100 QU1bXimBiQ0Thg@O?CV^^3
+IXO5bR[5iHo=mCQ_E>fg001
+R2
+R0
+w1690428509
+8H:/FPGA/cyclone source/fifo/prj/../testbench/mydcfifo_tb.v
+FH:/FPGA/cyclone source/fifo/prj/../testbench/mydcfifo_tb.v
+L0 5
+R3
+r1
+!s85 0
+31
+R4
+!s107 H:/FPGA/cyclone source/fifo/prj/../testbench/mydcfifo_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/fifo/prj/../testbench|H:/FPGA/cyclone source/fifo/prj/../testbench/mydcfifo_tb.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/fifo/prj/../testbench}
+R6

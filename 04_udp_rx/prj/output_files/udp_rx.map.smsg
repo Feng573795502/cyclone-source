@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at eth_udp_rx_gmii.v(290): always construct contains both blocking and non-blocking assignments File: H:/FPGA/cyclone source/04_udp_rx/rtl/eth_udp_rx_gmii.v Line: 290

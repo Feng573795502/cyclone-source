@@ -1,0 +1,76 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dH:/FPGA/cyclone source/02_pll/prj/simulation/modelsim
+vpll
+Z1 !s110 1690430286
+!i10b 1
+!s100 ;JCZaVoiRHmjR<5I41NJ]3
+ImeMK=be`>A:CfO]?iib223
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1690429629
+8H:/FPGA/cyclone source/02_pll/prj/ip/pll.v
+FH:/FPGA/cyclone source/02_pll/prj/ip/pll.v
+L0 39
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1690430286.000000
+!s107 H:/FPGA/cyclone source/02_pll/prj/ip/pll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/02_pll/prj/ip|H:/FPGA/cyclone source/02_pll/prj/ip/pll.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/02_pll/prj/ip}
+Z6 tCvgOpt 0
+vpll_altpll
+R1
+!i10b 1
+!s100 aaBQWjaACd:@VidWI:A522
+IiD`:5l9JTB^LUzYA6>4@U0
+R2
+R0
+w1690430254
+8H:/FPGA/cyclone source/02_pll/prj/db/pll_altpll.v
+FH:/FPGA/cyclone source/02_pll/prj/db/pll_altpll.v
+L0 30
+R3
+r1
+!s85 0
+31
+R4
+!s107 H:/FPGA/cyclone source/02_pll/prj/db/pll_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/02_pll/prj/db|H:/FPGA/cyclone source/02_pll/prj/db/pll_altpll.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/02_pll/prj/db}
+R6
+vpll_tb
+R1
+!i10b 1
+!s100 T39n]PbS782U3:ijY7RS[2
+I:hl0f3Hn4o9`7^L4[nYb:0
+R2
+R0
+w1690430247
+8H:/FPGA/cyclone source/02_pll/prj/../testbench/pll_tb.v
+FH:/FPGA/cyclone source/02_pll/prj/../testbench/pll_tb.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 H:/FPGA/cyclone source/02_pll/prj/../testbench/pll_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/02_pll/prj/../testbench|H:/FPGA/cyclone source/02_pll/prj/../testbench/pll_tb.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/02_pll/prj/../testbench}
+R6

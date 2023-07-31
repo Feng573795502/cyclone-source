@@ -1,0 +1,19 @@
+`timescale 1ps/1ns
+`define wrclk_period 20
+`define rdclk_period 10
+
+module mydcfifo_tb();
+
+initial wrclk = 1;
+always #(`wrclk_period/2)wrclk = ~wrclk;
+
+initial rdclk = 1;
+always #(`rdclk_period/2)rdclk = ~rdclk;
+
+integer i;
+
+initial begin
+
+end
+
+endmodule

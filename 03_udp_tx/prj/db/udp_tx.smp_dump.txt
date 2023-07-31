@@ -1,0 +1,11 @@
+
+State Machine - |eht_udp_tx_gmii_test|eth_udp_tx_gmii:eth_udp_tx_gmii|curr_state
+Name curr_state.TX_CRC curr_state.TX_FILL_DATA curr_state.TX_DATA curr_state.TX_UDP_HEADER curr_state.TX_IP_HEADER curr_state.TX_ETH_HEADER curr_state.TX_PREAMBLE curr_state.IDLE 
+curr_state.IDLE 0 0 0 0 0 0 0 0 
+curr_state.TX_PREAMBLE 0 0 0 0 0 0 1 1 
+curr_state.TX_ETH_HEADER 0 0 0 0 0 1 0 1 
+curr_state.TX_IP_HEADER 0 0 0 0 1 0 0 1 
+curr_state.TX_UDP_HEADER 0 0 0 1 0 0 0 1 
+curr_state.TX_DATA 0 0 1 0 0 0 0 1 
+curr_state.TX_FILL_DATA 0 1 0 0 0 0 0 1 
+curr_state.TX_CRC 1 0 0 0 0 0 0 1 
