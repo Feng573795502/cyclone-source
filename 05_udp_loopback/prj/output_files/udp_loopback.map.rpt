@@ -1,0 +1,495 @@
+Analysis & Synthesis report for udp_loopback
+Tue Aug 01 14:53:34 2023
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |eth_udp_tx_gmii|curr_state
+  9. Logic Cells Representing Combinational Loops
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |eth_udp_tx_gmii
+ 15. Port Connectivity Checks: "ip_checksum:ip_checksum"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Aug 01 14:53:34 2023           ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                      ; udp_loopback                                    ;
+; Top-level Entity Name              ; eth_udp_tx_gmii                                 ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 809                                             ;
+;     Total combinational functions  ; 566                                             ;
+;     Dedicated logic registers      ; 388                                             ;
+; Total registers                    ; 388                                             ;
+; Total pins                         ; 231                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE10F17C8       ;                    ;
+; Top-level entity name                                            ; eth_udp_tx_gmii    ; udp_loopback       ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                   ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+; ../rtl/check/ip_checksum.v       ; yes             ; User Verilog HDL File  ; H:/FPGA/cyclone source/05_udp_loopback/rtl/check/ip_checksum.v ;         ;
+; ../rtl/check/crc32_d8.v          ; yes             ; User Verilog HDL File  ; H:/FPGA/cyclone source/05_udp_loopback/rtl/check/crc32_d8.v    ;         ;
+; ../rtl/eth_udp_tx_gmii.v         ; yes             ; User Verilog HDL File  ; H:/FPGA/cyclone source/05_udp_loopback/rtl/eth_udp_tx_gmii.v   ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 809            ;
+;                                             ;                ;
+; Total combinational functions               ; 566            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 276            ;
+;     -- 3 input functions                    ; 115            ;
+;     -- <=2 input functions                  ; 175            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 365            ;
+;     -- arithmetic mode                      ; 201            ;
+;                                             ;                ;
+; Total registers                             ; 388            ;
+;     -- Dedicated logic registers            ; 388            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 231            ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; clk_125m~input ;
+; Maximum fan-out                             ; 389            ;
+; Total fan-out                               ; 3508           ;
+; Average fan-out                             ; 2.48           ;
++---------------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                 ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Entity Name     ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+-----------------+--------------+
+; |eth_udp_tx_gmii             ; 566 (371)           ; 388 (337)                 ; 0           ; 0            ; 0       ; 0         ; 231  ; 0            ; |eth_udp_tx_gmii                         ; eth_udp_tx_gmii ; work         ;
+;    |crc32_d8:crc32_d8|       ; 63 (63)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eth_udp_tx_gmii|crc32_d8:crc32_d8       ; crc32_d8        ; work         ;
+;    |ip_checksum:ip_checksum| ; 132 (132)           ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eth_udp_tx_gmii|ip_checksum:ip_checksum ; ip_checksum     ; work         ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |eth_udp_tx_gmii|curr_state                                                                                                                                                                            ;
++--------------------------+-------------------+-------------------------+--------------------+--------------------------+-------------------------+--------------------------+------------------------+-----------------+
+; Name                     ; curr_state.TX_CRC ; curr_state.TX_FILL_DATA ; curr_state.TX_DATA ; curr_state.TX_UDP_HEADER ; curr_state.TX_IP_HEADER ; curr_state.TX_ETH_HEADER ; curr_state.TX_PREAMBLE ; curr_state.IDLE ;
++--------------------------+-------------------+-------------------------+--------------------+--------------------------+-------------------------+--------------------------+------------------------+-----------------+
+; curr_state.IDLE          ; 0                 ; 0                       ; 0                  ; 0                        ; 0                       ; 0                        ; 0                      ; 0               ;
+; curr_state.TX_PREAMBLE   ; 0                 ; 0                       ; 0                  ; 0                        ; 0                       ; 0                        ; 1                      ; 1               ;
+; curr_state.TX_ETH_HEADER ; 0                 ; 0                       ; 0                  ; 0                        ; 0                       ; 1                        ; 0                      ; 1               ;
+; curr_state.TX_IP_HEADER  ; 0                 ; 0                       ; 0                  ; 0                        ; 1                       ; 0                        ; 0                      ; 1               ;
+; curr_state.TX_UDP_HEADER ; 0                 ; 0                       ; 0                  ; 1                        ; 0                       ; 0                        ; 0                      ; 1               ;
+; curr_state.TX_DATA       ; 0                 ; 0                       ; 1                  ; 0                        ; 0                       ; 0                        ; 0                      ; 1               ;
+; curr_state.TX_FILL_DATA  ; 0                 ; 1                       ; 0                  ; 0                        ; 0                       ; 0                        ; 0                      ; 1               ;
+; curr_state.TX_CRC        ; 1                 ; 0                       ; 0                  ; 0                        ; 0                       ; 0                        ; 0                      ; 1               ;
++--------------------------+-------------------+-------------------------+--------------------+--------------------------+-------------------------+--------------------------+------------------------+-----------------+
+
+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; ip_checksum:ip_checksum|sumb[0]~0                      ;    ;
+; ip_checksum:ip_checksum|sumb[8]~8                      ;    ;
+; ip_checksum:ip_checksum|sumb[7]~7                      ;    ;
+; ip_checksum:ip_checksum|sumb[6]~6                      ;    ;
+; ip_checksum:ip_checksum|sumb[5]~5                      ;    ;
+; ip_checksum:ip_checksum|sumb[4]~4                      ;    ;
+; ip_checksum:ip_checksum|sumb[3]~3                      ;    ;
+; ip_checksum:ip_checksum|sumb[2]~2                      ;    ;
+; ip_checksum:ip_checksum|sumb[1]~1                      ;    ;
+; ip_checksum:ip_checksum|sumb[9]~9                      ;    ;
+; ip_checksum:ip_checksum|sumb[10]~10                    ;    ;
+; ip_checksum:ip_checksum|sumb[11]~11                    ;    ;
+; ip_checksum:ip_checksum|sumb[12]~12                    ;    ;
+; ip_checksum:ip_checksum|sumb[13]~13                    ;    ;
+; ip_checksum:ip_checksum|sumb[14]~14                    ;    ;
+; ip_checksum:ip_checksum|sumb[15]~15                    ;    ;
+; Number of logic cells representing combinational loops ; 16 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; ip_checksum:ip_checksum|suma[19..31]   ; Stuck at GND due to stuck port data_in ;
+; ip_total_len_reg[0]                    ; Merged with data_len_reg[0]            ;
+; udp_len_reg[0]                         ; Merged with data_len_reg[0]            ;
+; ip_total_len_reg[1]                    ; Merged with data_len_reg[1]            ;
+; udp_len_reg[1]                         ; Merged with data_len_reg[1]            ;
+; udp_len_reg[2]                         ; Merged with data_len_reg[2]            ;
+; Total Number of Removed Registers = 18 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 388   ;
+; Number of registers using Synchronous Clear  ; 26    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 388   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 294   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; crc32_d8:crc32_d8|crc_result_o[15]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[23]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[31]      ; 8       ;
+; crc32_d8:crc32_d8|crc_result_o[7]       ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[22]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[14]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[30]      ; 9       ;
+; crc32_d8:crc32_d8|crc_result_o[6]       ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[13]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[21]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[29]      ; 11      ;
+; crc32_d8:crc32_d8|crc_result_o[5]       ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[20]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[12]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[28]      ; 6       ;
+; crc32_d8:crc32_d8|crc_result_o[4]       ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[11]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[19]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[27]      ; 4       ;
+; crc32_d8:crc32_d8|crc_result_o[3]       ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[18]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[10]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[26]      ; 7       ;
+; crc32_d8:crc32_d8|crc_result_o[2]       ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[9]       ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[17]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[25]      ; 5       ;
+; crc32_d8:crc32_d8|crc_result_o[1]       ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[16]      ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[8]       ; 2       ;
+; crc32_d8:crc32_d8|crc_result_o[24]      ; 5       ;
+; crc32_d8:crc32_d8|crc_result_o[0]       ; 2       ;
+; Total number of inverted registers = 32 ;         ;
++-----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |eth_udp_tx_gmii|gmii_txd_renewcrc[5]               ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 48 LEs               ; 40 LEs                 ; Yes        ; |eth_udp_tx_gmii|tx_data[3]                         ;
+; 67:1               ; 3 bits    ; 132 LEs       ; 78 LEs               ; 54 LEs                 ; Yes        ; |eth_udp_tx_gmii|tx_data[2]                         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |eth_udp_tx_gmii|crc32_d8:crc32_d8|crc_result_o[31] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |eth_udp_tx_gmii ;
++----------------+------------------+---------------------------------------------+
+; Parameter Name ; Value            ; Type                                        ;
++----------------+------------------+---------------------------------------------+
+; ETH_TYPE       ; 0000100000000000 ; Unsigned Binary                             ;
+; IP_VER         ; 0100             ; Unsigned Binary                             ;
+; IP_HDR_LEN     ; 0101             ; Unsigned Binary                             ;
+; IP_TOS         ; 00000000         ; Unsigned Binary                             ;
+; IP_ID          ; 0000000000000000 ; Unsigned Binary                             ;
+; IP_RSV         ; 0                ; Unsigned Binary                             ;
+; IP_DF          ; 0                ; Unsigned Binary                             ;
+; IP_MF          ; 0                ; Unsigned Binary                             ;
+; IP_FRAG_OFFSET ; 0000000000000    ; Unsigned Binary                             ;
+; IP_TTL         ; 01000000         ; Unsigned Binary                             ;
+; IP_PROTOCOL    ; 00010001         ; Unsigned Binary                             ;
++----------------+------------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "ip_checksum:ip_checksum" ;
++-------------------+-------+----------+--------------+
+; Port              ; Type  ; Severity ; Details      ;
++-------------------+-------+----------+--------------+
+; ip_ver[1..0]      ; Input ; Info     ; Stuck at GND ;
+; ip_ver[3]         ; Input ; Info     ; Stuck at GND ;
+; ip_ver[2]         ; Input ; Info     ; Stuck at VCC ;
+; ip_hdr_len[3]     ; Input ; Info     ; Stuck at GND ;
+; ip_hdr_len[2]     ; Input ; Info     ; Stuck at VCC ;
+; ip_hdr_len[1]     ; Input ; Info     ; Stuck at GND ;
+; ip_hdr_len[0]     ; Input ; Info     ; Stuck at VCC ;
+; ip_tos            ; Input ; Info     ; Stuck at GND ;
+; ip_id             ; Input ; Info     ; Stuck at GND ;
+; ip_rsv            ; Input ; Info     ; Stuck at GND ;
+; ip_df             ; Input ; Info     ; Stuck at GND ;
+; ip_mf             ; Input ; Info     ; Stuck at GND ;
+; ip_frag_offset    ; Input ; Info     ; Stuck at GND ;
+; ip_ttl[5..0]      ; Input ; Info     ; Stuck at GND ;
+; ip_ttl[7]         ; Input ; Info     ; Stuck at GND ;
+; ip_ttl[6]         ; Input ; Info     ; Stuck at VCC ;
+; ip_protocol[7..5] ; Input ; Info     ; Stuck at GND ;
+; ip_protocol[3..1] ; Input ; Info     ; Stuck at GND ;
+; ip_protocol[4]    ; Input ; Info     ; Stuck at VCC ;
+; ip_protocol[0]    ; Input ; Info     ; Stuck at VCC ;
++-------------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 231                         ;
+; cycloneiii_ff         ; 388                         ;
+;     CLR               ; 68                          ;
+;     CLR SCLR          ; 26                          ;
+;     ENA CLR           ; 294                         ;
+; cycloneiii_lcell_comb ; 566                         ;
+;     arith             ; 201                         ;
+;         2 data inputs ; 132                         ;
+;         3 data inputs ; 69                          ;
+;     normal            ; 365                         ;
+;         0 data inputs ; 4                           ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 29                          ;
+;         3 data inputs ; 46                          ;
+;         4 data inputs ; 276                         ;
+;                       ;                             ;
+; Max LUT depth         ; 12.00                       ;
+; Average LUT depth     ; 5.28                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+    Info: Processing started: Tue Aug 01 14:53:25 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off udp_loopback -c udp_loopback
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 3 design units, including 3 entities, in source file /fpga/cyclone source/05_udp_loopback/rtl/rgmii_to_gmii/rgmii_to_gmii.v
+    Info (12023): Found entity 1: ddi_x4 File: H:/FPGA/cyclone source/05_udp_loopback/rtl/rgmii_to_gmii/rgmii_to_gmii.v Line: 3
+    Info (12023): Found entity 2: ddi_x1 File: H:/FPGA/cyclone source/05_udp_loopback/rtl/rgmii_to_gmii/rgmii_to_gmii.v Line: 38
+    Info (12023): Found entity 3: rgmii_to_gmii File: H:/FPGA/cyclone source/05_udp_loopback/rtl/rgmii_to_gmii/rgmii_to_gmii.v Line: 74
+Info (12021): Found 3 design units, including 3 entities, in source file /fpga/cyclone source/05_udp_loopback/rtl/gmii_to_rgmii/gmii_to_rgmii.v
+    Info (12023): Found entity 1: ddio_out_x4 File: H:/FPGA/cyclone source/05_udp_loopback/rtl/gmii_to_rgmii/gmii_to_rgmii.v Line: 23
+    Info (12023): Found entity 2: ddio_out_x1 File: H:/FPGA/cyclone source/05_udp_loopback/rtl/gmii_to_rgmii/gmii_to_rgmii.v Line: 60
+    Info (12023): Found entity 3: gmii_to_rgmii File: H:/FPGA/cyclone source/05_udp_loopback/rtl/gmii_to_rgmii/gmii_to_rgmii.v Line: 97
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/05_udp_loopback/rtl/check/ip_checksum.v
+    Info (12023): Found entity 1: ip_checksum File: H:/FPGA/cyclone source/05_udp_loopback/rtl/check/ip_checksum.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/05_udp_loopback/rtl/check/crc32_d8.v
+    Info (12023): Found entity 1: crc32_d8 File: H:/FPGA/cyclone source/05_udp_loopback/rtl/check/crc32_d8.v Line: 19
+Warning (10335): Unrecognized synthesis attribute "IOB" at ../rtl/eth_udp_tx_gmii.v(42) File: H:/FPGA/cyclone source/05_udp_loopback/rtl/eth_udp_tx_gmii.v Line: 42
+Warning (10335): Unrecognized synthesis attribute "IOB" at ../rtl/eth_udp_tx_gmii.v(43) File: H:/FPGA/cyclone source/05_udp_loopback/rtl/eth_udp_tx_gmii.v Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/05_udp_loopback/rtl/eth_udp_tx_gmii.v
+    Info (12023): Found entity 1: eth_udp_tx_gmii File: H:/FPGA/cyclone source/05_udp_loopback/rtl/eth_udp_tx_gmii.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/05_udp_loopback/rtl/eth_udp_rx_gmii.v
+    Info (12023): Found entity 1: eth_udp_rx_gmii File: H:/FPGA/cyclone source/05_udp_loopback/rtl/eth_udp_rx_gmii.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ip/pll.v
+    Info (12023): Found entity 1: pll File: H:/FPGA/cyclone source/05_udp_loopback/prj/ip/pll.v Line: 39
+Info (12127): Elaborating entity "eth_udp_tx_gmii" for the top level hierarchy
+Warning (10272): Verilog HDL Case Statement warning at eth_udp_tx_gmii.v(233): case item expression covers a value already covered by a previous case item File: H:/FPGA/cyclone source/05_udp_loopback/rtl/eth_udp_tx_gmii.v Line: 233
+Warning (10230): Verilog HDL assignment warning at eth_udp_tx_gmii.v(319): truncated value with size 5 to match size of target (2) File: H:/FPGA/cyclone source/05_udp_loopback/rtl/eth_udp_tx_gmii.v Line: 319
+Warning (10230): Verilog HDL assignment warning at eth_udp_tx_gmii.v(323): truncated value with size 5 to match size of target (2) File: H:/FPGA/cyclone source/05_udp_loopback/rtl/eth_udp_tx_gmii.v Line: 323
+Info (12128): Elaborating entity "ip_checksum" for hierarchy "ip_checksum:ip_checksum" File: H:/FPGA/cyclone source/05_udp_loopback/rtl/eth_udp_tx_gmii.v Line: 147
+Info (12128): Elaborating entity "crc32_d8" for hierarchy "crc32_d8:crc32_d8" File: H:/FPGA/cyclone source/05_udp_loopback/rtl/eth_udp_tx_gmii.v Line: 480
+Info (13000): Registers with preset signals will power-up high File: H:/FPGA/cyclone source/05_udp_loopback/rtl/check/crc32_d8.v Line: 97
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file H:/FPGA/cyclone source/05_udp_loopback/prj/output_files/udp_loopback.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1068 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 219 input pins
+    Info (21059): Implemented 12 output pins
+    Info (21061): Implemented 837 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4849 megabytes
+    Info: Processing ended: Tue Aug 01 14:53:34 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in H:/FPGA/cyclone source/05_udp_loopback/prj/output_files/udp_loopback.map.smsg.
+
+

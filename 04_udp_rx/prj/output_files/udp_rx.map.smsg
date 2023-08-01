@@ -1,1 +1,3 @@
-Warning (10268): Verilog HDL information at eth_udp_rx_gmii.v(290): always construct contains both blocking and non-blocking assignments File: H:/FPGA/cyclone source/04_udp_rx/rtl/eth_udp_rx_gmii.v Line: 290
+Warning (10268): Verilog HDL information at eth_udp_tx_gmii.v(202): always construct contains both blocking and non-blocking assignments File: H:/FPGA/cyclone source/04_udp_rx/testbench/eth_udp_tx_gmii.v Line: 202
+Info (10281): Verilog HDL Declaration information at eth_udp_tx_gmii.v(66): object "TX_DATA" differs only in case from object "tx_data" in the same scope File: H:/FPGA/cyclone source/04_udp_rx/testbench/eth_udp_tx_gmii.v Line: 66
+Warning (10268): Verilog HDL information at eth_udp_rx_gmii.v(292): always construct contains both blocking and non-blocking assignments File: H:/FPGA/cyclone source/04_udp_rx/rtl/eth_udp_rx_gmii.v Line: 292
