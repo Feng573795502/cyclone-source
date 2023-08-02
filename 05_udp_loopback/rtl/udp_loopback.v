@@ -1,4 +1,4 @@
-module rgmii_udp_loopback_test(
+module udp_loopback(
 	//系统时钟
 	input clk,
 	input rst_n,
@@ -13,43 +13,43 @@ module rgmii_udp_loopback_test(
 	output [3:0]eth_txd,
 	output eth_txen,
 	
+	output reg led,
+	
 	//mdio 目前未实现 后续安排
 	output eth_rst_n
-	};
+	);
 	
-	parameter LOCAL_MAC  = 48'h00_0a_35_01_fe_c0;
+	parameter LOCAL_MAC  = 48'h00_07_ed_ac_62_00;
 	parameter LOCAL_IP   = 32'hc0_a8_00_02;
 	parameter LOCAL_PORT = 16'd5000;
 	
-	//eth rx
-	wire clk_125m;
 	wire [47:0] exter_mac;
 	wire [31:0] exter_ip;
 	wire [15:0] exter_port;
 	wire [15:0] rx_data_len;
-	wire        data_overflow;
-	wire [7:0]  rx_payload_dat;
-	wire        rx_payload_valid;
 	wire        rx_pkt_done;
-	wire        rx_pkt_err;
-	
-	reg  [3:0]  pkt_right_cnt;
-	reg  [3:0]  pkt_err_cnt;
 	
 	wire gmii_rxc;
 	wire [7:0]gmii_rxd;
 	wire gmii_rxdv;
 	
-	wire       gmii_gtxc;
+	wire       gmii_tx_clk;
 	wire [7:0] gmii_txd;
 	wire       gmii_txen;
 	
-	
+	wire fifo_aclr;
+	wire [7:0]fifo_wdat;
+	wire rdreq;
+	wire wrreq;
+	wire [7:0]fifo_rdat;
 	//上电先清空FIFO
 	reg [32:0]dly_cnt;
 	
 	assign fifo_aclr = (dly_cnt >= 24'd100) ? 1'b0:1'b1;
-	assign gmii_gtxc = gmii_rxc;
+	//时钟
+	assign gmii_tx_clk = gmii_rxc;
+	assign eth_rst_n = 1'b1;
+
 	
 	always@(posedge clk or negedge rst_n)begin
 		if(!rst_n)
@@ -60,92 +60,110 @@ module rgmii_udp_loopback_test(
 			dly_cnt <= dly_cnt + 1'd1;
 	end
 	
-	//读写请求 转发到TXD
-//	eth_dcfifo eth_dcfifo(
-//	.aclr(fifo_aclr),
-//	.data(),
-//	.rdclk,
-//	.rdreq,
-//	.wrclk,
-//	.wrreq,
-//	.q,
-//	.rdusedw,
-//	.wrusedw);
+	always @(posedge gmii_rxc or negedge rst_n)
+	if(!rst_n)
+		led <= 1'b0;
+	else if(rx_pkt_done == 1'b1)
+		led <= ~led;
+	else 
+		led <= led;
 	
-	rx_pll rx_pll(
+	//读写请求 转发到TXD
+	eth_dcfifo eth_dcfifo(
+	.aclr(fifo_aclr),
+	.data(fifo_wdat),
+	.rdclk(gmii_rxc),
+	.rdreq(rdreq),
+	.wrclk(gmii_rxc),
+	.wrreq(wrreq),
+	.q(fifo_rdat),
+	.rdusedw(),
+	.wrusedw()
+	);
+	
+	//用接收时钟作为主时钟
+	pll_rx pll_rx(
 		.inclk0(eth_rxc),
 		.c0(gmii_rxc)
 	);
 	
-//	rgmii_to_gmii u_rgmii_to_gmii(
-//		.rgmii_rxc(gmii_rxc),
-//		.rgmii_rxd(eth_rxd),
-//		.rgmii_rxdv(eth_rxdv),
-//		.gmii_rxc()	,
-//		.gmii_rxd(gmii_rxd),
-//		.gmii_rxdv(gmii_rxdv)
-//	);
-//	
-//	eth_udp_rx_gmii eth_udp_rx_gmii(
-//		.rst_n(rst_n),
-//		
-//		.local_mac(LOCAL_MAC),
-//		.local_ip(LOCAL_IP),
-//		.local_port(LOCAL_PORT),
-//		
-//		.clk_125m_o(clk_125m_o),
-//		.exter_mac(exter_mac),
-//		.exter_ip(exter_ip),
-//		.exter_port(exter_port),
-//		
-//		.rx_data_len(rx_data_len),
-//		
-//		.data_overflow_i(0),
-//
-//		.payload_valid_o(rx_),
-//		.payload_data_o(fifo_wrdata),
-//		
-//		.one_pkt_done(one_pkt_done),
-//		.pkt_err(),
-//		.debug_crc_check(),
-//		
-//		.gmii_rx_clk(gmii_rxc),
-//		.gmii_rxd(gmii_rxd),
-//		.gmii_rxdv(gmii_rxdv)
-//	);
-//	
+	//rgmii转gmii
+	rgmii_to_gmii u_rgmii_to_gmii(
+		.rgmii_rxc(gmii_rxc),
+		.rgmii_rxd(eth_rxd),
+		.rgmii_rxdv(eth_rxdv),
+		.gmii_rxc(),
+		.gmii_rxd(gmii_rxd),
+		.gmii_rxdv(gmii_rxdv)
+	);
 	
+	//接收gmii控制器
+	eth_udp_rx_gmii eth_udp_rx_gmii(
+		.rst_n(rst_n),
+		
+		.local_mac(LOCAL_MAC),
+		.local_ip(LOCAL_IP),
+		.local_port(LOCAL_PORT),
+		
+		.clk_125m_o(),
+		.exter_mac(exter_mac),
+		.exter_ip(exter_ip),
+		.exter_port(exter_port),
+		
+		.rx_data_len(rx_data_len),
+		
+		.data_overflow_i(0),
+
+		//写入使能
+		.payload_valid_o(wrreq),
+		.payload_data_o(fifo_wdat),
+		
+		.one_pkt_done(rx_pkt_done),
+		.pkt_err(),
+		.debug_crc_check(),
+		
+		.gmii_rx_clk(gmii_rxc),
+		.gmii_rxd(gmii_rxd),
+		.gmii_rxdv(gmii_rxdv)
+	);
+	
+
+	gmii_to_rgmii u_gmii_to_rgmii(
+		.gmii_tx_clk(gmii_tx_clk),
+		.gmii_tx_data(gmii_txd),
+		.gmii_tx_en(gmii_txen),
+		.rgmii_tx_clk(eth_gtxc),
+		.rgmii_tx_data(eth_txd),
+		.rgmii_tx_en(eth_txen)
+	);
+	
+	
+	//eth发送
 	eth_udp_tx_gmii eth_udp_tx_gmii(
 			//由接收时钟输入 转换
-        .clk_125m(gmii_gtxc),
+        .clk_125m(gmii_tx_clk),
         .rst_n(rst_n),
         
 		  //完成自动使能发送 接收完成使能发送
-        .tx_en_pulse(one_pkt_done),
+        .tx_en_pulse(rx_pkt_done),
         .tx_done(),
         
-        .dst_mac(48'hFF_FF_FF_FF_FF_FF),
-        .src_mac(LOCAL_IP),
-        .dst_ip(32'hc0_a8_00_03),
-        .src_ip,
-        .dst_port(16'd6102),
-        .src_port(LOCAL_IP),
+        .dst_mac(exter_mac),
+        .src_mac(LOCAL_MAC),
+        .dst_ip(exter_ip),
+        .src_ip(LOCAL_IP),
+        .dst_port(exter_port),
+        .src_port(LOCAL_PORT),
         
         .data_len(rx_data_len),
         
-        .payload_req_o(),
-        .payload_dat_i,
+		  //从FIFO中读取数据
+        .payload_req_o(rdreq),
+        .payload_dat_i(fifo_rdat),
         
-        .gmii_tx_clk(gmii_tx_clk),
-        .gmii_txen(gmii_txen),
-        .gmii_txd(gmii_txd)
+        .gmii_tx_clk   (gmii_tx_clk),
+        .gmii_txen     (gmii_txen),
+        .gmii_txd      (gmii_txd)
     );
 	
-	gmii_to_rgmii u_gmii_to_rgmii(
-		.gmii_gtxc(gmii_tx_clk),
-		.gmii_txd(gmii_txd),
-		.gmii_txen(gmii_txen),
-		.rgmii_gtxc(eth_gtxc),
-		.rgmii_txd(eth_txd),
-		.rgmii_txen(eth_txen)
-);
+endmodule

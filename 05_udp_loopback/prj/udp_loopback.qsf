@@ -50,18 +50,51 @@ set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_E1 -to clk
+set_location_assignment PIN_B14 -to eth_gtxc
+set_location_assignment PIN_D14 -to eth_rst_n
+set_location_assignment PIN_M15 -to eth_rxc
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_gtxc
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_rst_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_rxc
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_rxd[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_rxd[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_rxd[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_rxd[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_rxd
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to rst_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_txd[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_txd[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_txd[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_rxdv
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_txd[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_txd
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_txen
+set_location_assignment PIN_B13 -to eth_rxd[3]
+set_location_assignment PIN_A14 -to eth_rxd[2]
+set_location_assignment PIN_A13 -to eth_rxd[1]
+set_location_assignment PIN_E10 -to eth_rxd[0]
+set_location_assignment PIN_A15 -to eth_rxdv
+set_location_assignment PIN_B11 -to eth_txd[3]
+set_location_assignment PIN_A12 -to eth_txd[2]
+set_location_assignment PIN_B12 -to eth_txd[1]
+set_location_assignment PIN_C11 -to eth_txd[0]
+set_location_assignment PIN_C14 -to eth_txen
+set_location_assignment PIN_E16 -to rst_n
 set_global_assignment -name VERILOG_FILE ../rtl/rgmii_to_gmii/rgmii_to_gmii.v
 set_global_assignment -name VERILOG_FILE ../rtl/gmii_to_rgmii/gmii_to_rgmii.v
 set_global_assignment -name VERILOG_FILE ../rtl/check/ip_checksum.v
 set_global_assignment -name VERILOG_FILE ../rtl/check/crc32_d8.v
 set_global_assignment -name VERILOG_FILE ../rtl/eth_udp_tx_gmii.v
 set_global_assignment -name VERILOG_FILE ../rtl/eth_udp_rx_gmii.v
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name QIP_FILE ip/pll.qip
 set_global_assignment -name VERILOG_FILE ../rtl/udp_loopback.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name QIP_FILE ip/eth_dcfifo.qip
+set_global_assignment -name QIP_FILE ip/pll_rx.qip
+set_location_assignment PIN_A3 -to led
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

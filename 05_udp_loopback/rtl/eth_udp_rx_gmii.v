@@ -49,8 +49,8 @@
 		RX_ETH_HEADER = 9'b000000100,
 		RX_IP_HEADER  = 9'b000001000,
 		RX_UDP_HEADER = 9'b000010000,
-		RX_DRP_DATA   = 9'b000100000,
-		RX_DATA       = 9'b001000000,
+		RX_DATA       = 9'b000100000,
+		RX_DRP_DATA   = 9'b001000000,
 		RX_CRC        = 9'b010000000,
 		PKT_CHECK     = 9'b100000000;
 	
@@ -336,8 +336,8 @@
 	 always@(posedge clk_125m or negedge rst_n)begin
 		if(!rst_n)
 			ip_header_check_ok <= 1'b0;
-		else if({IP_VER,IP_HDR_LEN,IP_PROTOCOL,cal_check_sum,reg_local_ip} == 
-				  {rx_ip_ver,rx_ip_hdr_len,rx_ip_protocol,rx_ip_check_sum,rx_dst_ip})
+		else if({IP_VER,IP_HDR_LEN,cal_check_sum,reg_local_ip} == 
+				  {rx_ip_ver,rx_ip_hdr_len,rx_ip_check_sum,rx_dst_ip})
 			ip_header_check_ok <= 1'b1;
 		else
 			ip_header_check_ok <= 1'b0;  
