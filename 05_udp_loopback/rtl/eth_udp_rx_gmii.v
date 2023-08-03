@@ -105,7 +105,7 @@
 	//接收到的端口号
 	reg  [15:0] rx_src_port;
 	reg  [15:0] rx_dst_port;
-	reg  [15:0] rx_udp_len;
+//	reg  [15:0] rx_udp_len;
 	reg         udp_header_check_ok;
 	
 	//crc校验
@@ -358,7 +358,7 @@
 		if(!rst_n)begin
 			rx_src_port <= 16'h0;
 			rx_dst_port <= 16'h0;
-			rx_udp_len  <= 16'h0;
+//			rx_udp_len  <= 16'h0;
 		end
 		else if(curr_state == RX_UDP_HEADER)begin
 			case(cnt_udp_header)
@@ -366,8 +366,8 @@
 				4'd1: rx_src_port[7:0]    <= rx_data_dly2;
 				4'd2: rx_dst_port[15:8]   <= rx_data_dly2;
 				4'd3: rx_dst_port[7:0]    <= rx_data_dly2;
-				4'd4: rx_udp_len[15:8]    <= rx_data_dly2;
-				4'd5: rx_udp_len[7:0]     <= rx_data_dly2;      
+//				4'd4: rx_udp_len[15:8]    <= rx_data_dly2;
+//				4'd5: rx_udp_len[7:0]     <= rx_data_dly2;      
 				default: ;
 			endcase
 		end

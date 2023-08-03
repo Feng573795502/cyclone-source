@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "pll")
-  (DATE "07/27/2023 11:57:43")
+  (DATE "08/03/2023 09:08:04")
   (VENDOR "Altera")
   (PROGRAM "Quartus Prime")
   (VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition")
@@ -51,7 +51,27 @@
     (INSTANCE c1\~output)
     (DELAY
       (ABSOLUTE
-        (PORT i (613:613:613) (658:658:658))
+        (PORT i (600:600:600) (643:643:643))
+        (IOPATH i o (1545:1545:1545) (1550:1550:1550))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE c2\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (604:604:604) (650:650:650))
+        (IOPATH i o (1602:1602:1602) (1605:1605:1605))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE c3\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (610:610:610) (656:656:656))
         (IOPATH i o (1592:1592:1592) (1595:1595:1595))
       )
     )
@@ -61,8 +81,8 @@
     (INSTANCE locked\~output)
     (DELAY
       (ABSOLUTE
-        (PORT i (248:248:248) (276:276:276))
-        (IOPATH i o (1619:1619:1619) (1644:1644:1644))
+        (PORT i (220:220:220) (240:240:240))
+        (IOPATH i o (1612:1612:1612) (1615:1615:1615))
       )
     )
   )
@@ -143,13 +163,31 @@
     )
   )
   (CELL
+    (CELLTYPE "cycloneive_clkctrl")
+    (INSTANCE altpll_component\|auto_generated\|wire_pll1_clk\[2\]\~clkctrl)
+    (DELAY
+      (ABSOLUTE
+        (PORT inclk[0] (1121:1121:1121) (1120:1120:1120))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_clkctrl")
+    (INSTANCE altpll_component\|auto_generated\|wire_pll1_clk\[3\]\~clkctrl)
+    (DELAY
+      (ABSOLUTE
+        (PORT inclk[0] (1121:1121:1121) (1120:1120:1120))
+      )
+    )
+  )
+  (CELL
     (CELLTYPE "dffeas")
     (INSTANCE altpll_component\|auto_generated\|pll_lock_sync)
     (DELAY
       (ABSOLUTE
-        (PORT clk (972:972:972) (865:865:865))
+        (PORT clk (604:604:604) (546:546:546))
         (PORT d (37:37:37) (50:50:50))
-        (PORT clrn (749:749:749) (767:767:767))
+        (PORT clrn (753:753:753) (771:771:771))
         (IOPATH (posedge clk) q (105:105:105) (105:105:105))
         (IOPATH (negedge clrn) q (110:110:110) (110:110:110))
       )
@@ -163,9 +201,9 @@
     (INSTANCE altpll_component\|auto_generated\|locked)
     (DELAY
       (ABSOLUTE
-        (PORT dataa (675:675:675) (567:567:567))
-        (PORT datad (119:119:119) (156:156:156))
-        (IOPATH dataa combout (166:166:166) (163:163:163))
+        (PORT datac (290:290:290) (237:237:237))
+        (PORT datad (117:117:117) (153:153:153))
+        (IOPATH datac combout (119:119:119) (124:124:124))
         (IOPATH datad combout (68:68:68) (63:63:63))
       )
     )

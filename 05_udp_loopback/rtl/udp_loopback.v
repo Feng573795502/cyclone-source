@@ -16,7 +16,9 @@ module udp_loopback(
 	output reg led,
 	
 	//mdio 目前未实现 后续安排
-	output eth_rst_n
+	output eth_rst_n,
+	output mdc,
+	inout  mdio
 	);
 	
 	parameter LOCAL_MAC  = 48'h00_07_ed_ac_62_00;
@@ -44,11 +46,11 @@ module udp_loopback(
 	wire [7:0]fifo_rdat;
 	//上电先清空FIFO
 	reg [32:0]dly_cnt;
+	wire init_done;
 	
 	assign fifo_aclr = (dly_cnt >= 24'd100) ? 1'b0:1'b1;
 	//时钟
 	assign gmii_tx_clk = gmii_rxc;
-	assign eth_rst_n = 1'b1;
 
 	
 	always@(posedge clk or negedge rst_n)begin
@@ -165,5 +167,14 @@ module udp_loopback(
         .gmii_txen     (gmii_txen),
         .gmii_txd      (gmii_txd)
     );
+	 
+	 phy_config phy_config(
+		.clk      (clk),        //模块时钟50MHz
+		.rst_n    (rst_n),      //模块复位，低电平有效
+		.phy_rst_n(eth_rst_n),  //phy芯片复位，低电平有效
+		.mdc      (mdc),        //时钟接口
+		.mdio     (mdio),       //数据接口
+		.init_done (init_done)    //初始化完成标志，高电平有效
+	);
 	
 endmodule

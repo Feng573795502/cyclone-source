@@ -1,0 +1,147 @@
+module mdio_bit_shift(
+	input rst_n,
+	//引脚
+	input mdc,
+	inout mdio,
+	//是否读取和数据
+	input  if_read,
+	input  [4:0]phy_addr,
+	input  [4:0]reg_addr,
+	input  [15:0]mdio_data,
+	output reg [15:0]rddata,
+	//状态
+	input start,
+	output reg done
+);
+	
+	reg mdio_oe;
+	reg mdio_od;
+	reg [5:0]cnt;
+	
+	reg [8:0]state;
+	
+	localparam IDLE    = 9'b000000001,
+				  PRE     = 9'b000000010,
+				  ST      = 9'b000000100,
+				  OP      = 9'b000001000,
+				  PHYAD   = 9'b000010000,
+				  REGAD   = 9'b000100000,
+				  TA      = 9'b001000000,
+				  DATA    = 9'b010000000,
+				  END     = 9'b100000000;
+	
+	assign mdio = mdio_oe ? mdio_od : 1'bz;
+	
+	always @ (negedge mdc or negedge rst_n) begin
+		if(!rst_n) begin 
+			mdio_oe <= 1'b1;
+			mdio_od <= 1'b1;
+			done    <= 1'b0;
+			state   <= IDLE;
+		end
+		else 
+			case(state)
+				IDLE:begin
+						mdio_od <= 1'b1;
+						mdio_oe <= 1'b0;
+						done <= 1'b0;
+						rddata <= 'd0;
+						if(start)begin
+							cnt <= 'd0;
+							mdio_oe <= 1'b1;
+							state <= PRE;
+						end
+				end
+				
+				PRE:begin
+					mdio_od <= 1'b1;
+					cnt <= cnt + 1'b1;
+					if(cnt > 'd30)begin 
+						cnt <= 'd0;
+						state <= ST;
+					end
+				end
+				
+				ST:begin
+					cnt <= cnt + 1'b1;
+					if (cnt >= 'd1) begin
+						cnt <= 'd0;
+						state <= OP;
+					end
+					case (cnt)
+						0 : mdio_od <= 1'b0;
+						1 : mdio_od <= 1'b1;
+					endcase
+				end
+				
+				OP:begin //OP:01 write 10:read
+					cnt <= cnt + 1'b1;
+					if (cnt >= 'd1) begin
+						cnt <= 'd0;
+						state <= PHYAD;
+					end
+					case (cnt)
+						0 : mdio_od <= if_read;
+						1 : mdio_od <= !if_read;
+					endcase
+				end
+				
+				PHYAD:begin //OP:01 write 10:read
+					cnt <= cnt + 1'b1;
+					if (cnt >= 'd4) begin
+						cnt <= 'd0;
+						state <= REGAD;
+					end
+					mdio_od <= phy_addr[4-cnt[2:0]]; //高位在前
+				end
+				
+				REGAD:begin
+					cnt <= cnt + 1'b1;
+					if(cnt >= 'd4)begin
+						cnt <= 0;
+						state <= TA;
+					end
+					mdio_od <= reg_addr[4 - cnt[2:0]];
+				end
+				
+				TA:begin
+					cnt <= cnt + 1'b1;
+					if (cnt >= 'd1) begin
+						cnt <= 'd0;
+						state <= DATA;
+					end
+					case(cnt)
+						0:begin
+							mdio_od <= !if_read;
+							mdio_oe <= !if_read;
+						end
+						1: mdio_od <= 1'b0;
+					endcase
+				end
+				
+				DATA:begin
+					cnt <= cnt + 1'b1;
+					if (cnt >= 'd15) begin
+						cnt <= 'd0;
+						state <= END;
+					end
+					if(if_read)
+						rddata <= {rddata[14:0], mdio};
+					else 
+						mdio_od <= mdio_data[15 - cnt[3:0]];
+				end
+				
+				//延时一个时钟周期把数据发送出去 其实不要也可以
+				END: begin 
+					state <= IDLE;
+					mdio_od <= 1'b1;
+					mdio_oe <= 1'b0;
+					done <= 1'b1;
+				end
+				
+				
+			endcase
+	end
+
+
+endmodule

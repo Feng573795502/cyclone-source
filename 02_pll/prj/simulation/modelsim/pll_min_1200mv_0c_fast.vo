@@ -16,7 +16,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition"
 
-// DATE "07/27/2023 11:57:43"
+// DATE "08/03/2023 09:08:04"
 
 // 
 // Device: Altera EP4CE10F17C8 Package FBGA256
@@ -33,17 +33,23 @@ module pll (
 	inclk0,
 	c0,
 	c1,
+	c2,
+	c3,
 	locked);
 input 	areset;
 input 	inclk0;
 output 	c0;
 output 	c1;
+output 	c2;
+output 	c3;
 output 	locked;
 
 // Design Ports Information
 // c0	=>  Location: PIN_R4,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// c1	=>  Location: PIN_C3,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// locked	=>  Location: PIN_N2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// c1	=>  Location: PIN_F13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// c2	=>  Location: PIN_T6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// c3	=>  Location: PIN_P14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// locked	=>  Location: PIN_T2,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // areset	=>  Location: PIN_M2,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // inclk0	=>  Location: PIN_E1,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
@@ -79,6 +85,8 @@ wire \inclk0~input_o ;
 wire \altpll_component|auto_generated|wire_pll1_fbout ;
 wire \altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_e_c0_outclk ;
 wire \altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl_outclk ;
+wire \altpll_component|auto_generated|wire_pll1_clk[2]~clkctrl_outclk ;
+wire \altpll_component|auto_generated|wire_pll1_clk[3]~clkctrl_outclk ;
 wire \altpll_component|auto_generated|wire_pll1_locked ;
 wire \altpll_component|auto_generated|pll_lock_sync~feeder_combout ;
 wire \altpll_component|auto_generated|pll_lock_sync~q ;
@@ -106,7 +114,7 @@ defparam \c0~output .bus_hold = "false";
 defparam \c0~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X1_Y24_N2
+// Location: IOOBUF_X34_Y17_N2
 cycloneive_io_obuf \c1~output (
 	.i(\altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl_outclk ),
 	.oe(vcc),
@@ -119,7 +127,33 @@ defparam \c1~output .bus_hold = "false";
 defparam \c1~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X0_Y7_N16
+// Location: IOOBUF_X11_Y0_N16
+cycloneive_io_obuf \c2~output (
+	.i(\altpll_component|auto_generated|wire_pll1_clk[2]~clkctrl_outclk ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(c2),
+	.obar());
+// synopsys translate_off
+defparam \c2~output .bus_hold = "false";
+defparam \c2~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X32_Y0_N23
+cycloneive_io_obuf \c3~output (
+	.i(\altpll_component|auto_generated|wire_pll1_clk[3]~clkctrl_outclk ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(c3),
+	.obar());
+// synopsys translate_off
+defparam \c3~output .bus_hold = "false";
+defparam \c3~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X3_Y0_N2
 cycloneive_io_obuf \locked~output (
 	.i(\altpll_component|auto_generated|locked~combout ),
 	.oe(vcc),
@@ -142,7 +176,7 @@ defparam \areset~input .bus_hold = "false";
 defparam \areset~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: CLKCTRL_G3
+// Location: CLKCTRL_G1
 cycloneive_clkctrl \areset~inputclkctrl (
 	.ena(vcc),
 	.inclk({vcc,vcc,vcc,\areset~input_o }),
@@ -193,26 +227,26 @@ cycloneive_pll \altpll_component|auto_generated|pll1 (
 defparam \altpll_component|auto_generated|pll1 .auto_settings = "false";
 defparam \altpll_component|auto_generated|pll1 .bandwidth_type = "medium";
 defparam \altpll_component|auto_generated|pll1 .c0_high = 12;
-defparam \altpll_component|auto_generated|pll1 .c0_initial = 1;
+defparam \altpll_component|auto_generated|pll1 .c0_initial = 3;
 defparam \altpll_component|auto_generated|pll1 .c0_low = 12;
 defparam \altpll_component|auto_generated|pll1 .c0_mode = "even";
 defparam \altpll_component|auto_generated|pll1 .c0_ph = 0;
 defparam \altpll_component|auto_generated|pll1 .c1_high = 4;
-defparam \altpll_component|auto_generated|pll1 .c1_initial = 1;
+defparam \altpll_component|auto_generated|pll1 .c1_initial = 3;
 defparam \altpll_component|auto_generated|pll1 .c1_low = 4;
 defparam \altpll_component|auto_generated|pll1 .c1_mode = "even";
 defparam \altpll_component|auto_generated|pll1 .c1_ph = 0;
 defparam \altpll_component|auto_generated|pll1 .c1_use_casc_in = "off";
-defparam \altpll_component|auto_generated|pll1 .c2_high = 0;
-defparam \altpll_component|auto_generated|pll1 .c2_initial = 0;
-defparam \altpll_component|auto_generated|pll1 .c2_low = 0;
-defparam \altpll_component|auto_generated|pll1 .c2_mode = "bypass";
+defparam \altpll_component|auto_generated|pll1 .c2_high = 6;
+defparam \altpll_component|auto_generated|pll1 .c2_initial = 3;
+defparam \altpll_component|auto_generated|pll1 .c2_low = 6;
+defparam \altpll_component|auto_generated|pll1 .c2_mode = "even";
 defparam \altpll_component|auto_generated|pll1 .c2_ph = 0;
 defparam \altpll_component|auto_generated|pll1 .c2_use_casc_in = "off";
-defparam \altpll_component|auto_generated|pll1 .c3_high = 0;
-defparam \altpll_component|auto_generated|pll1 .c3_initial = 0;
-defparam \altpll_component|auto_generated|pll1 .c3_low = 0;
-defparam \altpll_component|auto_generated|pll1 .c3_mode = "bypass";
+defparam \altpll_component|auto_generated|pll1 .c3_high = 6;
+defparam \altpll_component|auto_generated|pll1 .c3_initial = 1;
+defparam \altpll_component|auto_generated|pll1 .c3_low = 6;
+defparam \altpll_component|auto_generated|pll1 .c3_mode = "even";
 defparam \altpll_component|auto_generated|pll1 .c3_ph = 0;
 defparam \altpll_component|auto_generated|pll1 .c3_use_casc_in = "off";
 defparam \altpll_component|auto_generated|pll1 .c4_high = 0;
@@ -232,16 +266,16 @@ defparam \altpll_component|auto_generated|pll1 .clk1_divide_by = 2;
 defparam \altpll_component|auto_generated|pll1 .clk1_duty_cycle = 50;
 defparam \altpll_component|auto_generated|pll1 .clk1_multiply_by = 3;
 defparam \altpll_component|auto_generated|pll1 .clk1_phase_shift = "0";
-defparam \altpll_component|auto_generated|pll1 .clk2_counter = "unused";
-defparam \altpll_component|auto_generated|pll1 .clk2_divide_by = 0;
+defparam \altpll_component|auto_generated|pll1 .clk2_counter = "c2";
+defparam \altpll_component|auto_generated|pll1 .clk2_divide_by = 1;
 defparam \altpll_component|auto_generated|pll1 .clk2_duty_cycle = 50;
-defparam \altpll_component|auto_generated|pll1 .clk2_multiply_by = 0;
+defparam \altpll_component|auto_generated|pll1 .clk2_multiply_by = 1;
 defparam \altpll_component|auto_generated|pll1 .clk2_phase_shift = "0";
-defparam \altpll_component|auto_generated|pll1 .clk3_counter = "unused";
-defparam \altpll_component|auto_generated|pll1 .clk3_divide_by = 0;
+defparam \altpll_component|auto_generated|pll1 .clk3_counter = "c3";
+defparam \altpll_component|auto_generated|pll1 .clk3_divide_by = 1;
 defparam \altpll_component|auto_generated|pll1 .clk3_duty_cycle = 50;
-defparam \altpll_component|auto_generated|pll1 .clk3_multiply_by = 0;
-defparam \altpll_component|auto_generated|pll1 .clk3_phase_shift = "0";
+defparam \altpll_component|auto_generated|pll1 .clk3_multiply_by = 1;
+defparam \altpll_component|auto_generated|pll1 .clk3_phase_shift = "-3333";
 defparam \altpll_component|auto_generated|pll1 .clk4_counter = "unused";
 defparam \altpll_component|auto_generated|pll1 .clk4_divide_by = 0;
 defparam \altpll_component|auto_generated|pll1 .clk4_duty_cycle = 50;
@@ -253,7 +287,7 @@ defparam \altpll_component|auto_generated|pll1 .inclk1_input_frequency = 0;
 defparam \altpll_component|auto_generated|pll1 .loop_filter_c_bits = 0;
 defparam \altpll_component|auto_generated|pll1 .loop_filter_r_bits = 27;
 defparam \altpll_component|auto_generated|pll1 .m = 12;
-defparam \altpll_component|auto_generated|pll1 .m_initial = 1;
+defparam \altpll_component|auto_generated|pll1 .m_initial = 3;
 defparam \altpll_component|auto_generated|pll1 .m_ph = 0;
 defparam \altpll_component|auto_generated|pll1 .n = 1;
 defparam \altpll_component|auto_generated|pll1 .operation_mode = "normal";
@@ -298,7 +332,33 @@ defparam \altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl .clock_type =
 defparam \altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl .ena_register_mode = "none";
 // synopsys translate_on
 
-// Location: LCCOMB_X2_Y7_N24
+// Location: CLKCTRL_G2
+cycloneive_clkctrl \altpll_component|auto_generated|wire_pll1_clk[2]~clkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\altpll_component|auto_generated|wire_pll1_clk [2]}),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\altpll_component|auto_generated|wire_pll1_clk[2]~clkctrl_outclk ));
+// synopsys translate_off
+defparam \altpll_component|auto_generated|wire_pll1_clk[2]~clkctrl .clock_type = "global clock";
+defparam \altpll_component|auto_generated|wire_pll1_clk[2]~clkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: CLKCTRL_G3
+cycloneive_clkctrl \altpll_component|auto_generated|wire_pll1_clk[3]~clkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\altpll_component|auto_generated|wire_pll1_clk [3]}),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\altpll_component|auto_generated|wire_pll1_clk[3]~clkctrl_outclk ));
+// synopsys translate_off
+defparam \altpll_component|auto_generated|wire_pll1_clk[3]~clkctrl .clock_type = "global clock";
+defparam \altpll_component|auto_generated|wire_pll1_clk[3]~clkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y1_N24
 cycloneive_lcell_comb \altpll_component|auto_generated|pll_lock_sync~feeder (
 // Equation(s):
 // \altpll_component|auto_generated|pll_lock_sync~feeder_combout  = VCC
@@ -315,7 +375,7 @@ defparam \altpll_component|auto_generated|pll_lock_sync~feeder .lut_mask = 16'hF
 defparam \altpll_component|auto_generated|pll_lock_sync~feeder .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: FF_X2_Y7_N25
+// Location: FF_X3_Y1_N25
 dffeas \altpll_component|auto_generated|pll_lock_sync (
 	.clk(\altpll_component|auto_generated|wire_pll1_locked ),
 	.d(\altpll_component|auto_generated|pll_lock_sync~feeder_combout ),
@@ -334,20 +394,20 @@ defparam \altpll_component|auto_generated|pll_lock_sync .is_wysiwyg = "true";
 defparam \altpll_component|auto_generated|pll_lock_sync .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X2_Y7_N2
+// Location: LCCOMB_X3_Y1_N26
 cycloneive_lcell_comb \altpll_component|auto_generated|locked (
 // Equation(s):
 // \altpll_component|auto_generated|locked~combout  = (\altpll_component|auto_generated|wire_pll1_locked  & \altpll_component|auto_generated|pll_lock_sync~q )
 
-	.dataa(\altpll_component|auto_generated|wire_pll1_locked ),
+	.dataa(gnd),
 	.datab(gnd),
-	.datac(gnd),
+	.datac(\altpll_component|auto_generated|wire_pll1_locked ),
 	.datad(\altpll_component|auto_generated|pll_lock_sync~q ),
 	.cin(gnd),
 	.combout(\altpll_component|auto_generated|locked~combout ),
 	.cout());
 // synopsys translate_off
-defparam \altpll_component|auto_generated|locked .lut_mask = 16'hAA00;
+defparam \altpll_component|auto_generated|locked .lut_mask = 16'hF000;
 defparam \altpll_component|auto_generated|locked .sum_lutc_input = "datac";
 // synopsys translate_on
 

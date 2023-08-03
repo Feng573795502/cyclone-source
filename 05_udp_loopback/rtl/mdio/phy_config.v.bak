@@ -1,0 +1,12 @@
+module phy_config(
+	input clk,
+	input rst_n,
+	
+	
+	output phy_rst_n,
+	output mdc,
+	inout  mdio,
+	output init_done
+	);
+	
+	

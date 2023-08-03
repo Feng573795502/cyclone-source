@@ -39,8 +39,8 @@ module eth_udp_tx_gmii(
         input  [7:0]payload_dat_i,
         
         output gmii_tx_clk,
-        (*IOB = "TRUE"*) output reg      gmii_txen,
-        (*IOB = "TRUE"*) output reg [7:0]gmii_txd
+        output reg      gmii_txen,
+        output reg [7:0]gmii_txd
     );
     
     //定制参数主要是eth的
@@ -230,12 +230,6 @@ module eth_udp_tx_gmii(
             else 
                 next_state <= TX_UDP_HEADER;
                 
-        TX_UDP_HEADER:
-            if(cnt_data == 4'd7)
-                next_state <= TX_DATA;
-            else 
-                next_state <= TX_UDP_HEADER;  
-                
         TX_DATA:
             if(data_len_reg <5'd18 && cnt_data == data_len_reg - 1'b1)
                 next_state <= TX_FILL_DATA;
@@ -316,11 +310,11 @@ module eth_udp_tx_gmii(
     //cnt_crc
     always@(posedge clk_125m or negedge rst_n)
     if(!rst_n)
-        cnt_crc <= 5'd0;
+        cnt_crc <= 2'd0;
     else if(curr_state == TX_CRC)
         cnt_crc <= cnt_crc + 1'b1;
     else
-        cnt_crc <= 5'd0;
+        cnt_crc <= 2'd0;
         
     //数据处理
     always@(posedge clk_125m or negedge rst_n)begin

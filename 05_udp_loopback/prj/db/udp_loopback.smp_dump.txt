@@ -1,4 +1,21 @@
 
+State Machine - |udp_loopback|phy_config:phy_config|state
+Name state.01 
+state.00 0 
+state.01 1 
+
+State Machine - |udp_loopback|phy_config:phy_config|mdio_bit_shift:mdio_bit_shift|state
+Name state.END state.DATA state.TA state.REGAD state.PHYAD state.OP state.ST state.PRE state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 
+state.PRE 0 0 0 0 0 0 0 1 1 
+state.ST 0 0 0 0 0 0 1 0 1 
+state.OP 0 0 0 0 0 1 0 0 1 
+state.PHYAD 0 0 0 0 1 0 0 0 1 
+state.REGAD 0 0 0 1 0 0 0 0 1 
+state.TA 0 0 1 0 0 0 0 0 1 
+state.DATA 0 1 0 0 0 0 0 0 1 
+state.END 1 0 0 0 0 0 0 0 1 
+
 State Machine - |udp_loopback|eth_udp_tx_gmii:eth_udp_tx_gmii|curr_state
 Name curr_state.TX_CRC curr_state.TX_FILL_DATA curr_state.TX_DATA curr_state.TX_UDP_HEADER curr_state.TX_IP_HEADER curr_state.TX_ETH_HEADER curr_state.TX_PREAMBLE curr_state.IDLE 
 curr_state.IDLE 0 0 0 0 0 0 0 0 

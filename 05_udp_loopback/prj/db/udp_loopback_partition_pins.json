@@ -32,6 +32,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "eth_rst_n",
+					"strict" : false
+				},
+				{
+					"name" : "mdc",
+					"strict" : false
+				},
+				{
+					"name" : "mdio",
+					"strict" : false
+				},
+				{
 					"name" : "rst_n",
 					"strict" : false
 				},

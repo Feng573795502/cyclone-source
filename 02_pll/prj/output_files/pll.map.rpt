@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pll
-Thu Jul 27 11:57:35 2023
+Thu Aug 03 09:07:56 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -45,7 +45,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jul 27 11:57:35 2023           ;
+; Analysis & Synthesis Status        ; Successful - Thu Aug 03 09:07:56 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; pll                                             ;
 ; Top-level Entity Name              ; pll                                             ;
@@ -54,7 +54,7 @@ refer to the applicable agreement for further details.
 ;     Total combinational functions  ; 1                                               ;
 ;     Dedicated logic registers      ; 1                                               ;
 ; Total registers                    ; 1                                               ;
-; Total pins                         ; 5                                               ;
+; Total pins                         ; 7                                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -200,7 +200,7 @@ refer to the applicable agreement for further details.
 ;     -- Dedicated logic registers            ; 1                                                                  ;
 ;     -- I/O registers                        ; 0                                                                  ;
 ;                                             ;                                                                    ;
-; I/O pins                                    ; 5                                                                  ;
+; I/O pins                                    ; 7                                                                  ;
 ;                                             ;                                                                    ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                  ;
 ;                                             ;                                                                    ;
@@ -208,9 +208,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                  ;
 ;                                             ;                                                                    ;
 ; Maximum fan-out node                        ; altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 5                                                                  ;
-; Total fan-out                               ; 15                                                                 ;
-; Average fan-out                             ; 1.15                                                               ;
+; Maximum fan-out                             ; 7                                                                  ;
+; Total fan-out                               ; 19                                                                 ;
+; Average fan-out                             ; 1.12                                                               ;
 +---------------------------------------------+--------------------------------------------------------------------+
 
 
@@ -219,7 +219,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                    ; Entity Name ; Library Name ;
 +-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+-------------+--------------+
-; |pll                              ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 5    ; 0            ; |pll                                                   ; pll         ; work         ;
+; |pll                              ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 7    ; 0            ; |pll                                                   ; pll         ; work         ;
 ;    |altpll:altpll_component|      ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pll|altpll:altpll_component                           ; altpll      ; work         ;
 ;       |pll_altpll:auto_generated| ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pll|altpll:altpll_component|pll_altpll:auto_generated ; pll_altpll  ; work         ;
 +-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+-------------+--------------+
@@ -289,8 +289,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLK6_MULTIPLY_BY              ; 0                     ; Untyped        ;
 ; CLK5_MULTIPLY_BY              ; 1                     ; Untyped        ;
 ; CLK4_MULTIPLY_BY              ; 1                     ; Untyped        ;
-; CLK3_MULTIPLY_BY              ; 1                     ; Untyped        ;
-; CLK2_MULTIPLY_BY              ; 1                     ; Untyped        ;
+; CLK3_MULTIPLY_BY              ; 1                     ; Signed Integer ;
+; CLK2_MULTIPLY_BY              ; 1                     ; Signed Integer ;
 ; CLK1_MULTIPLY_BY              ; 3                     ; Signed Integer ;
 ; CLK0_MULTIPLY_BY              ; 1                     ; Signed Integer ;
 ; CLK9_DIVIDE_BY                ; 0                     ; Untyped        ;
@@ -299,8 +299,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLK6_DIVIDE_BY                ; 0                     ; Untyped        ;
 ; CLK5_DIVIDE_BY                ; 1                     ; Untyped        ;
 ; CLK4_DIVIDE_BY                ; 1                     ; Untyped        ;
-; CLK3_DIVIDE_BY                ; 1                     ; Untyped        ;
-; CLK2_DIVIDE_BY                ; 1                     ; Untyped        ;
+; CLK3_DIVIDE_BY                ; 1                     ; Signed Integer ;
+; CLK2_DIVIDE_BY                ; 1                     ; Signed Integer ;
 ; CLK1_DIVIDE_BY                ; 2                     ; Signed Integer ;
 ; CLK0_DIVIDE_BY                ; 2                     ; Signed Integer ;
 ; CLK9_PHASE_SHIFT              ; 0                     ; Untyped        ;
@@ -309,7 +309,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLK6_PHASE_SHIFT              ; 0                     ; Untyped        ;
 ; CLK5_PHASE_SHIFT              ; 0                     ; Untyped        ;
 ; CLK4_PHASE_SHIFT              ; 0                     ; Untyped        ;
-; CLK3_PHASE_SHIFT              ; 0                     ; Untyped        ;
+; CLK3_PHASE_SHIFT              ; -3333                 ; Untyped        ;
 ; CLK2_PHASE_SHIFT              ; 0                     ; Untyped        ;
 ; CLK1_PHASE_SHIFT              ; 0                     ; Untyped        ;
 ; CLK0_PHASE_SHIFT              ; 0                     ; Untyped        ;
@@ -325,8 +325,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLK6_DUTY_CYCLE               ; 50                    ; Untyped        ;
 ; CLK5_DUTY_CYCLE               ; 50                    ; Untyped        ;
 ; CLK4_DUTY_CYCLE               ; 50                    ; Untyped        ;
-; CLK3_DUTY_CYCLE               ; 50                    ; Untyped        ;
-; CLK2_DUTY_CYCLE               ; 50                    ; Untyped        ;
+; CLK3_DUTY_CYCLE               ; 50                    ; Signed Integer ;
+; CLK2_DUTY_CYCLE               ; 50                    ; Signed Integer ;
 ; CLK1_DUTY_CYCLE               ; 50                    ; Signed Integer ;
 ; CLK0_DUTY_CYCLE               ; 50                    ; Signed Integer ;
 ; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped        ;
@@ -558,8 +558,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; PORT_CLKBAD1                  ; PORT_UNUSED           ; Untyped        ;
 ; PORT_CLK0                     ; PORT_USED             ; Untyped        ;
 ; PORT_CLK1                     ; PORT_USED             ; Untyped        ;
-; PORT_CLK2                     ; PORT_UNUSED           ; Untyped        ;
-; PORT_CLK3                     ; PORT_UNUSED           ; Untyped        ;
+; PORT_CLK2                     ; PORT_USED             ; Untyped        ;
+; PORT_CLK3                     ; PORT_USED             ; Untyped        ;
 ; PORT_CLK4                     ; PORT_UNUSED           ; Untyped        ;
 ; PORT_CLK5                     ; PORT_UNUSED           ; Untyped        ;
 ; PORT_CLK6                     ; PORT_UNUSED           ; Untyped        ;
@@ -646,7 +646,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 5                           ;
+; boundary_port         ; 7                           ;
 ; cycloneiii_ff         ; 1                           ;
 ;     CLR               ; 1                           ;
 ; cycloneiii_lcell_comb ; 1                           ;
@@ -655,7 +655,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.38                        ;
+; Average LUT depth     ; 0.30                        ;
 +-----------------------+-----------------------------+
 
 
@@ -674,7 +674,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Thu Jul 27 11:57:27 2023
+    Info: Processing started: Thu Aug 03 09:07:49 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pll -c pll
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -683,9 +683,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file ip/pll.
 Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/02_pll/testbench/pll_tb.v
     Info (12023): Found entity 1: pll_tb File: H:/FPGA/cyclone source/02_pll/testbench/pll_tb.v Line: 4
 Info (12127): Elaborating entity "pll" for the top level hierarchy
-Info (12128): Elaborating entity "altpll" for hierarchy "altpll:altpll_component" File: H:/FPGA/cyclone source/02_pll/prj/ip/pll.v Line: 107
-Info (12130): Elaborated megafunction instantiation "altpll:altpll_component" File: H:/FPGA/cyclone source/02_pll/prj/ip/pll.v Line: 107
-Info (12133): Instantiated megafunction "altpll:altpll_component" with the following parameter: File: H:/FPGA/cyclone source/02_pll/prj/ip/pll.v Line: 107
+Info (12128): Elaborating entity "altpll" for hierarchy "altpll:altpll_component" File: H:/FPGA/cyclone source/02_pll/prj/ip/pll.v Line: 115
+Info (12130): Elaborated megafunction instantiation "altpll:altpll_component" File: H:/FPGA/cyclone source/02_pll/prj/ip/pll.v Line: 115
+Info (12133): Instantiated megafunction "altpll:altpll_component" with the following parameter: File: H:/FPGA/cyclone source/02_pll/prj/ip/pll.v Line: 115
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "2"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -695,6 +695,14 @@ Info (12133): Instantiated megafunction "altpll:altpll_component" with the follo
     Info (12134): Parameter "clk1_duty_cycle" = "50"
     Info (12134): Parameter "clk1_multiply_by" = "3"
     Info (12134): Parameter "clk1_phase_shift" = "0"
+    Info (12134): Parameter "clk2_divide_by" = "1"
+    Info (12134): Parameter "clk2_duty_cycle" = "50"
+    Info (12134): Parameter "clk2_multiply_by" = "1"
+    Info (12134): Parameter "clk2_phase_shift" = "0"
+    Info (12134): Parameter "clk3_divide_by" = "1"
+    Info (12134): Parameter "clk3_duty_cycle" = "50"
+    Info (12134): Parameter "clk3_multiply_by" = "1"
+    Info (12134): Parameter "clk3_phase_shift" = "-3333"
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "20000"
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
@@ -729,8 +737,8 @@ Info (12133): Instantiated megafunction "altpll:altpll_component" with the follo
     Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk0" = "PORT_USED"
     Info (12134): Parameter "port_clk1" = "PORT_USED"
-    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
-    Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk2" = "PORT_USED"
+    Info (12134): Parameter "port_clk3" = "PORT_USED"
     Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
     Info (12134): Parameter "port_clkena0" = "PORT_UNUSED"
@@ -751,15 +759,15 @@ Info (12128): Elaborating entity "pll_altpll" for hierarchy "altpll:altpll_compo
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 8 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 10 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 3 output pins
+    Info (21059): Implemented 5 output pins
     Info (21061): Implemented 2 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4783 megabytes
-    Info: Processing ended: Thu Jul 27 11:57:35 2023
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Peak virtual memory: 4780 megabytes
+    Info: Processing ended: Thu Aug 03 09:07:56 2023
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:16
 
 

@@ -8,6 +8,8 @@ reg clk;
 
 wire c0;
 wire c1;
+wire c2;
+wire c3;
 wire locked;
 
 
@@ -17,6 +19,8 @@ pll pll(
 	.inclk0(clk),
 	.c0(c0),
 	.c1(c1),
+	.c2(c2),
+	.c3(c3),
 	.locked(locked));
 
 	initial clk = 1;
