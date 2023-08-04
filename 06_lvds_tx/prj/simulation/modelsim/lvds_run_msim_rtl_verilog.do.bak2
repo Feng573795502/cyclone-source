@@ -1,0 +1,10 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/06_lvds_tx/prj/ip {H:/FPGA/cyclone source/06_lvds_tx/prj/ip/lvds_tx.v}
+vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/06_lvds_tx/prj/db {H:/FPGA/cyclone source/06_lvds_tx/prj/db/lvds_tx_lvds_tx.v}
+

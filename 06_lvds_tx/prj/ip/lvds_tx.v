@@ -42,7 +42,7 @@ module lvds_tx (
 	tx_out,
 	tx_outclock);
 
-	input	[1:0]  tx_in;
+	input	[7:0]  tx_in;
 	input	  tx_inclock;
 	output	[0:0]  tx_out;
 	output	  tx_outclock;
@@ -69,8 +69,8 @@ module lvds_tx (
 		ALTLVDS_TX_component.center_align_msb = "UNUSED",
 		ALTLVDS_TX_component.common_rx_tx_pll = "OFF",
 		ALTLVDS_TX_component.coreclock_divide_by = 2,
-		ALTLVDS_TX_component.data_rate = "800.0 Mbps",
-		ALTLVDS_TX_component.deserialization_factor = 2,
+		ALTLVDS_TX_component.data_rate = "80.0 Mbps",
+		ALTLVDS_TX_component.deserialization_factor = 8,
 		ALTLVDS_TX_component.differential_drive = 0,
 		ALTLVDS_TX_component.enable_clock_pin_mode = "UNUSED",
 		ALTLVDS_TX_component.implement_in_les = "ON",
@@ -89,7 +89,7 @@ module lvds_tx (
 		ALTLVDS_TX_component.outclock_multiply_by = 1,
 		ALTLVDS_TX_component.outclock_phase_shift = 0,
 		ALTLVDS_TX_component.outclock_resource = "AUTO",
-		ALTLVDS_TX_component.output_data_rate = 800,
+		ALTLVDS_TX_component.output_data_rate = 80,
 		ALTLVDS_TX_component.pll_compensation_mode = "AUTO",
 		ALTLVDS_TX_component.pll_self_reset_on_loss_lock = "OFF",
 		ALTLVDS_TX_component.preemphasis_setting = 0,
@@ -110,8 +110,8 @@ endmodule
 // Retrieval info: PRIVATE: CNX_CLOCK_CHOICES STRING "tx_inclock"
 // Retrieval info: PRIVATE: CNX_CLOCK_MODE NUMERIC "0"
 // Retrieval info: PRIVATE: CNX_COMMON_PLL NUMERIC "0"
-// Retrieval info: PRIVATE: CNX_DATA_RATE STRING "800.0"
-// Retrieval info: PRIVATE: CNX_DESER_FACTOR NUMERIC "2"
+// Retrieval info: PRIVATE: CNX_DATA_RATE STRING "80.0"
+// Retrieval info: PRIVATE: CNX_DESER_FACTOR NUMERIC "8"
 // Retrieval info: PRIVATE: CNX_EXT_PLL STRING "OFF"
 // Retrieval info: PRIVATE: CNX_LE_SERDES STRING "ON"
 // Retrieval info: PRIVATE: CNX_NUM_CHANNEL NUMERIC "1"
@@ -125,7 +125,7 @@ endmodule
 // Retrieval info: PRIVATE: CNX_TX_OUTCLOCK STRING "ON"
 // Retrieval info: PRIVATE: CNX_USE_CLOCK_RESC STRING "Auto selection"
 // Retrieval info: PRIVATE: CNX_USE_PLL_ENABLE NUMERIC "0"
-// Retrieval info: PRIVATE: CNX_USE_TX_OUT_PHASE NUMERIC "0"
+// Retrieval info: PRIVATE: CNX_USE_TX_OUT_PHASE NUMERIC "1"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: PRIVATE: pCNX_OUTCLK_ALIGN STRING "UNUSED"
 // Retrieval info: PRIVATE: pINCLOCK_PHASE_SHIFT STRING "0.00"
@@ -134,8 +134,8 @@ endmodule
 // Retrieval info: CONSTANT: COMMON_RX_TX_PLL STRING "OFF"
 // Retrieval info: CONSTANT: CORECLOCK_DIVIDE_BY NUMERIC "2"
 // Retrieval info: CONSTANT: clk_src_is_pll STRING "off"
-// Retrieval info: CONSTANT: DATA_RATE STRING "800.0 Mbps"
-// Retrieval info: CONSTANT: DESERIALIZATION_FACTOR NUMERIC "2"
+// Retrieval info: CONSTANT: DATA_RATE STRING "80.0 Mbps"
+// Retrieval info: CONSTANT: DESERIALIZATION_FACTOR NUMERIC "8"
 // Retrieval info: CONSTANT: DIFFERENTIAL_DRIVE NUMERIC "0"
 // Retrieval info: CONSTANT: ENABLE_CLOCK_PIN_MODE STRING "UNUSED"
 // Retrieval info: CONSTANT: IMPLEMENT_IN_LES STRING "ON"
@@ -154,7 +154,7 @@ endmodule
 // Retrieval info: CONSTANT: OUTCLOCK_MULTIPLY_BY NUMERIC "1"
 // Retrieval info: CONSTANT: OUTCLOCK_PHASE_SHIFT NUMERIC "0"
 // Retrieval info: CONSTANT: OUTCLOCK_RESOURCE STRING "AUTO"
-// Retrieval info: CONSTANT: OUTPUT_DATA_RATE NUMERIC "800"
+// Retrieval info: CONSTANT: OUTPUT_DATA_RATE NUMERIC "80"
 // Retrieval info: CONSTANT: PLL_COMPENSATION_MODE STRING "AUTO"
 // Retrieval info: CONSTANT: PLL_SELF_RESET_ON_LOSS_LOCK STRING "OFF"
 // Retrieval info: CONSTANT: PREEMPHASIS_SETTING NUMERIC "0"
@@ -163,8 +163,8 @@ endmodule
 // Retrieval info: CONSTANT: USE_EXTERNAL_PLL STRING "OFF"
 // Retrieval info: CONSTANT: USE_NO_PHASE_SHIFT STRING "ON"
 // Retrieval info: CONSTANT: VOD_SETTING NUMERIC "0"
-// Retrieval info: USED_PORT: tx_in 0 0 2 0 INPUT NODEFVAL "tx_in[1..0]"
-// Retrieval info: CONNECT: @tx_in 0 0 2 0 tx_in 0 0 2 0
+// Retrieval info: USED_PORT: tx_in 0 0 8 0 INPUT NODEFVAL "tx_in[7..0]"
+// Retrieval info: CONNECT: @tx_in 0 0 8 0 tx_in 0 0 8 0
 // Retrieval info: USED_PORT: tx_inclock 0 0 0 0 INPUT NODEFVAL "tx_inclock"
 // Retrieval info: CONNECT: @tx_inclock 0 0 0 0 tx_inclock 0 0 0 0
 // Retrieval info: USED_PORT: tx_out 0 0 1 0 OUTPUT NODEFVAL "tx_out[0..0]"

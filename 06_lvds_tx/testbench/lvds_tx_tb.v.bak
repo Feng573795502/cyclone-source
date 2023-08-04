@@ -1,0 +1,23 @@
+`timescale 1ns / 1ns
+`define    CLK_PERILOD 20
+module lvds_tx_tb();
+
+
+	tx_in,
+	tx_inclock,
+	tx_out);
+
+	input	[7:0]  tx_in;
+	input	  tx_inclock;
+	output	[0:0]  tx_out;
+	
+	
+	initial clk = 1;
+	always #(`CLK_PERILOD / 2) clk = ~clk;
+	
+	
+	initial begin
+	
+	#2000;
+	
+	end
