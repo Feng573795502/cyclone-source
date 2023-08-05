@@ -6,9 +6,7 @@ module lvds_tx_tb();
 	reg [7:0]tx_in;
 	wire [0:0]tx_out;
 	wire [0:0]tx_outclock;
-	wire [0:0]rx_outclock;
 	
-	wire [7:0]rx_data;
 	
 	lvds_tx lvds_tx(
 		.tx_in(tx_in),
@@ -17,12 +15,12 @@ module lvds_tx_tb();
 		.tx_outclock(tx_outclock)
 		);
 
-	lvds_rx lvds_rx(
+	lvds_rx lvds_rx(	
 		.rx_in(tx_out),
-		.rx_inclock(tx_outclock),
-		.rx_out(rx_data),
-		.rx_outclock(rx_outclock)
-		);
+		.rx_inclock(),
+		.rx_out(),
+		.rx_outclock()
+	);
 
 	initial clk = 1;
 	always #(`CLK_PERILOD / 2) clk = ~clk;

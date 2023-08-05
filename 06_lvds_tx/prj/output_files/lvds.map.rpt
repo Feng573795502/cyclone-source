@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lvds
-Fri Aug 04 18:54:12 2023
+Sat Aug 05 18:40:13 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -10,7 +10,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +42,20 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Aug 04 18:54:12 2023               ;
+; Analysis & Synthesis Status        ; Successful - Sat Aug 05 18:40:13 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; lvds                                            ;
 ; Top-level Entity Name              ; lvds_test                                       ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 18                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -155,13 +161,102 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                    ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                      ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
+; ../rtl/lvds_test.v               ; yes             ; User Verilog HDL File  ; H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 18    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 18    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |lvds_test                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |lvds_test          ; lvds_test   ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 18                          ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Fri Aug 04 18:54:04 2023
+    Info: Processing started: Sat Aug 05 18:40:06 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lvds -c lvds
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -173,14 +268,41 @@ Info (12021): Found 1 design units, including 1 entities, in source file /fpga/c
     Info (12023): Found entity 1: lvds_test File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ip/lvds_rx.v
     Info (12023): Found entity 1: lvds_rx File: H:/FPGA/cyclone source/06_lvds_tx/prj/ip/lvds_rx.v Line: 39
-Error (10206): Verilog HDL Module Declaration error at lvds_test.v(10): top module port "rx_outclock" is not found in the port list File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 10
-Error (10206): Verilog HDL Module Declaration error at lvds_test.v(30): top module port "rx_in" is not found in the port list File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 30
-Error (10206): Verilog HDL Module Declaration error at lvds_test.v(31): top module port "rx_inclock" is not found in the port list File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 31
-Error (10206): Verilog HDL Module Declaration error at lvds_test.v(32): top module port "rx_out" is not found in the port list File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 32
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 1 warning
-    Error: Peak virtual memory: 4706 megabytes
-    Error: Processing ended: Fri Aug 04 18:54:12 2023
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:19
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/06_lvds_tx/testbench/lvds_rx_tb.v
+    Info (12023): Found entity 1: lvds_rx_tb File: H:/FPGA/cyclone source/06_lvds_tx/testbench/lvds_rx_tb.v Line: 3
+Info (12127): Elaborating entity "lvds_test" for the top level hierarchy
+Warning (10858): Verilog HDL warning at lvds_test.v(11): object tx_outclock used but never assigned File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 11
+Warning (10036): Verilog HDL or VHDL warning at lvds_test.v(13): object "rx_inclock" assigned a value but never read File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 13
+Warning (10034): Output port "rx_data" at lvds_test.v(4) has no driver File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 4
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "rx_data[0]" is stuck at GND File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 4
+    Warning (13410): Pin "rx_data[1]" is stuck at GND File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 4
+    Warning (13410): Pin "rx_data[2]" is stuck at GND File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 4
+    Warning (13410): Pin "rx_data[3]" is stuck at GND File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 4
+    Warning (13410): Pin "rx_data[4]" is stuck at GND File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 4
+    Warning (13410): Pin "rx_data[5]" is stuck at GND File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 4
+    Warning (13410): Pin "rx_data[6]" is stuck at GND File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 4
+    Warning (13410): Pin "rx_data[7]" is stuck at GND File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 4
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 2
+    Warning (15610): No output dependent on input pin "tx_in[0]" File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 3
+    Warning (15610): No output dependent on input pin "tx_in[1]" File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 3
+    Warning (15610): No output dependent on input pin "tx_in[2]" File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 3
+    Warning (15610): No output dependent on input pin "tx_in[3]" File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 3
+    Warning (15610): No output dependent on input pin "tx_in[4]" File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 3
+    Warning (15610): No output dependent on input pin "tx_in[5]" File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 3
+    Warning (15610): No output dependent on input pin "tx_in[6]" File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 3
+    Warning (15610): No output dependent on input pin "tx_in[7]" File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 3
+    Warning (15610): No output dependent on input pin "rx_in" File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 7
+Info (21057): Implemented 18 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 8 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 4734 megabytes
+    Info: Processing ended: Sat Aug 05 18:40:13 2023
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:17
 
 

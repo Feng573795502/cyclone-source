@@ -94,7 +94,7 @@ module lvds_tx (
 		ALTLVDS_TX_component.pll_self_reset_on_loss_lock = "OFF",
 		ALTLVDS_TX_component.preemphasis_setting = 0,
 		ALTLVDS_TX_component.refclk_frequency = "UNUSED",
-		ALTLVDS_TX_component.registered_input = "TX_CLKIN",
+		ALTLVDS_TX_component.registered_input = "TX_CORECLK",
 		ALTLVDS_TX_component.use_external_pll = "OFF",
 		ALTLVDS_TX_component.use_no_phase_shift = "ON",
 		ALTLVDS_TX_component.vod_setting = 0,
@@ -107,7 +107,7 @@ endmodule
 // CNX file retrieval info
 // ============================================================
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
-// Retrieval info: PRIVATE: CNX_CLOCK_CHOICES STRING "tx_inclock"
+// Retrieval info: PRIVATE: CNX_CLOCK_CHOICES STRING "tx_coreclock"
 // Retrieval info: PRIVATE: CNX_CLOCK_MODE NUMERIC "0"
 // Retrieval info: PRIVATE: CNX_COMMON_PLL NUMERIC "0"
 // Retrieval info: PRIVATE: CNX_DATA_RATE STRING "80.0"
@@ -159,7 +159,7 @@ endmodule
 // Retrieval info: CONSTANT: PLL_SELF_RESET_ON_LOSS_LOCK STRING "OFF"
 // Retrieval info: CONSTANT: PREEMPHASIS_SETTING NUMERIC "0"
 // Retrieval info: CONSTANT: REFCLK_FREQUENCY STRING "UNUSED"
-// Retrieval info: CONSTANT: REGISTERED_INPUT STRING "TX_CLKIN"
+// Retrieval info: CONSTANT: REGISTERED_INPUT STRING "TX_CORECLK"
 // Retrieval info: CONSTANT: USE_EXTERNAL_PLL STRING "OFF"
 // Retrieval info: CONSTANT: USE_NO_PHASE_SHIFT STRING "ON"
 // Retrieval info: CONSTANT: VOD_SETTING NUMERIC "0"

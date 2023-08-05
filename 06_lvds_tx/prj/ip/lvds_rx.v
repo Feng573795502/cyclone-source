@@ -44,12 +44,12 @@ module lvds_rx (
 
 	input	[0:0]  rx_in;
 	input	  rx_inclock;
-	output	[7:0]  rx_out;
+	output	[1:0]  rx_out;
 	output	  rx_outclock;
 
-	wire [7:0] sub_wire0;
+	wire [1:0] sub_wire0;
 	wire  sub_wire1;
-	wire [7:0] rx_out = sub_wire0[7:0];
+	wire [1:0] rx_out = sub_wire0[1:0];
 	wire  rx_outclock = sub_wire1;
 
 	altlvds_rx	ALTLVDS_RX_component (
@@ -93,7 +93,7 @@ module lvds_rx (
 		ALTLVDS_RX_component.common_rx_tx_pll = "OFF",
 		ALTLVDS_RX_component.data_align_rollover = 4,
 		ALTLVDS_RX_component.data_rate = "80.0 Mbps",
-		ALTLVDS_RX_component.deserialization_factor = 8,
+		ALTLVDS_RX_component.deserialization_factor = 2,
 		ALTLVDS_RX_component.dpa_initial_phase_value = 0,
 		ALTLVDS_RX_component.dpll_lock_count = 0,
 		ALTLVDS_RX_component.dpll_lock_window = 0,
@@ -147,7 +147,7 @@ endmodule
 // Retrieval info: PRIVATE: Clock_Choices STRING "tx_coreclock"
 // Retrieval info: PRIVATE: Clock_Mode NUMERIC "0"
 // Retrieval info: PRIVATE: Data_rate STRING "80.0"
-// Retrieval info: PRIVATE: Deser_Factor NUMERIC "8"
+// Retrieval info: PRIVATE: Deser_Factor NUMERIC "2"
 // Retrieval info: PRIVATE: Dpll_Lock_Count NUMERIC "0"
 // Retrieval info: PRIVATE: Dpll_Lock_Window NUMERIC "0"
 // Retrieval info: PRIVATE: Enable_DPA_Mode STRING "OFF"
@@ -178,7 +178,7 @@ endmodule
 // Retrieval info: CONSTANT: clk_src_is_pll STRING "off"
 // Retrieval info: CONSTANT: DATA_ALIGN_ROLLOVER NUMERIC "4"
 // Retrieval info: CONSTANT: DATA_RATE STRING "80.0 Mbps"
-// Retrieval info: CONSTANT: DESERIALIZATION_FACTOR NUMERIC "8"
+// Retrieval info: CONSTANT: DESERIALIZATION_FACTOR NUMERIC "2"
 // Retrieval info: CONSTANT: DPA_INITIAL_PHASE_VALUE NUMERIC "0"
 // Retrieval info: CONSTANT: DPLL_LOCK_COUNT NUMERIC "0"
 // Retrieval info: CONSTANT: DPLL_LOCK_WINDOW NUMERIC "0"
@@ -223,8 +223,8 @@ endmodule
 // Retrieval info: CONNECT: @rx_in 0 0 1 0 rx_in 0 0 1 0
 // Retrieval info: USED_PORT: rx_inclock 0 0 0 0 INPUT NODEFVAL "rx_inclock"
 // Retrieval info: CONNECT: @rx_inclock 0 0 0 0 rx_inclock 0 0 0 0
-// Retrieval info: USED_PORT: rx_out 0 0 8 0 OUTPUT NODEFVAL "rx_out[7..0]"
-// Retrieval info: CONNECT: rx_out 0 0 8 0 @rx_out 0 0 8 0
+// Retrieval info: USED_PORT: rx_out 0 0 2 0 OUTPUT NODEFVAL "rx_out[1..0]"
+// Retrieval info: CONNECT: rx_out 0 0 2 0 @rx_out 0 0 2 0
 // Retrieval info: USED_PORT: rx_outclock 0 0 0 0 OUTPUT NODEFVAL "rx_outclock"
 // Retrieval info: CONNECT: rx_outclock 0 0 0 0 @rx_outclock 0 0 0 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL lvds_rx.v TRUE FALSE
