@@ -15,11 +15,13 @@
 
 FUNCTION lvds_rx 
 (
+	rx_data_align,
 	rx_in[0..0],
 	rx_inclock
 )
 
 RETURNS (
-	rx_out[1..0],
+	rx_locked,
+	rx_out[7..0],
 	rx_outclock
 );

@@ -20,6 +20,8 @@ FUNCTION lvds_tx
 )
 
 RETURNS (
+	tx_coreclock,
+	tx_locked,
 	tx_out[0..0],
 	tx_outclock
 );

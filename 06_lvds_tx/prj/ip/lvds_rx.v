@@ -37,26 +37,34 @@
 `timescale 1 ps / 1 ps
 // synopsys translate_on
 module lvds_rx (
+	rx_data_align,
 	rx_in,
 	rx_inclock,
+	rx_locked,
 	rx_out,
 	rx_outclock);
 
+	input	  rx_data_align;
 	input	[0:0]  rx_in;
 	input	  rx_inclock;
-	output	[1:0]  rx_out;
+	output	  rx_locked;
+	output	[7:0]  rx_out;
 	output	  rx_outclock;
 
-	wire [1:0] sub_wire0;
-	wire  sub_wire1;
-	wire [1:0] rx_out = sub_wire0[1:0];
-	wire  rx_outclock = sub_wire1;
+	wire  sub_wire0;
+	wire [7:0] sub_wire1;
+	wire  sub_wire2;
+	wire  rx_locked = sub_wire0;
+	wire [7:0] rx_out = sub_wire1[7:0];
+	wire  rx_outclock = sub_wire2;
 
 	altlvds_rx	ALTLVDS_RX_component (
+				.rx_data_align (rx_data_align),
 				.rx_in (rx_in),
 				.rx_inclock (rx_inclock),
-				.rx_out (sub_wire0),
-				.rx_outclock (sub_wire1),
+				.rx_locked (sub_wire0),
+				.rx_out (sub_wire1),
+				.rx_outclock (sub_wire2),
 				.dpa_pll_cal_busy (),
 				.dpa_pll_recal (1'b0),
 				.pll_areset (1'b0),
@@ -69,7 +77,6 @@ module lvds_rx (
 				.rx_cda_reset (1'b0),
 				.rx_channel_data_align (1'b0),
 				.rx_coreclk (1'b1),
-				.rx_data_align (1'b0),
 				.rx_data_align_reset (1'b0),
 				.rx_data_reset (1'b0),
 				.rx_deskew (1'b0),
@@ -82,7 +89,6 @@ module lvds_rx (
 				.rx_dpll_reset (1'b0),
 				.rx_enable (1'b1),
 				.rx_fifo_reset (1'b0),
-				.rx_locked (),
 				.rx_pll_enable (1'b1),
 				.rx_readclock (1'b0),
 				.rx_reset (1'b0),
@@ -93,7 +99,7 @@ module lvds_rx (
 		ALTLVDS_RX_component.common_rx_tx_pll = "OFF",
 		ALTLVDS_RX_component.data_align_rollover = 4,
 		ALTLVDS_RX_component.data_rate = "80.0 Mbps",
-		ALTLVDS_RX_component.deserialization_factor = 2,
+		ALTLVDS_RX_component.deserialization_factor = 8,
 		ALTLVDS_RX_component.dpa_initial_phase_value = 0,
 		ALTLVDS_RX_component.dpll_lock_count = 0,
 		ALTLVDS_RX_component.dpll_lock_window = 0,
@@ -120,7 +126,7 @@ module lvds_rx (
 		ALTLVDS_RX_component.pll_operation_mode = "UNUSED",
 		ALTLVDS_RX_component.pll_self_reset_on_loss_lock = "OFF",
 		ALTLVDS_RX_component.port_rx_channel_data_align = "PORT_UNUSED",
-		ALTLVDS_RX_component.port_rx_data_align = "PORT_UNUSED",
+		ALTLVDS_RX_component.port_rx_data_align = "PORT_USED",
 		ALTLVDS_RX_component.refclk_frequency = "UNUSED",
 		ALTLVDS_RX_component.registered_data_align_input = "UNUSED",
 		ALTLVDS_RX_component.registered_output = "ON",
@@ -147,7 +153,7 @@ endmodule
 // Retrieval info: PRIVATE: Clock_Choices STRING "tx_coreclock"
 // Retrieval info: PRIVATE: Clock_Mode NUMERIC "0"
 // Retrieval info: PRIVATE: Data_rate STRING "80.0"
-// Retrieval info: PRIVATE: Deser_Factor NUMERIC "2"
+// Retrieval info: PRIVATE: Deser_Factor NUMERIC "8"
 // Retrieval info: PRIVATE: Dpll_Lock_Count NUMERIC "0"
 // Retrieval info: PRIVATE: Dpll_Lock_Window NUMERIC "0"
 // Retrieval info: PRIVATE: Enable_DPA_Mode STRING "OFF"
@@ -168,7 +174,7 @@ endmodule
 // Retrieval info: PRIVATE: Use_Clock_Resc STRING "AUTO"
 // Retrieval info: PRIVATE: Use_Common_Rx_Tx_Plls NUMERIC "0"
 // Retrieval info: PRIVATE: Use_Data_Align NUMERIC "0"
-// Retrieval info: PRIVATE: Use_Lock NUMERIC "0"
+// Retrieval info: PRIVATE: Use_Lock NUMERIC "1"
 // Retrieval info: PRIVATE: Use_Pll_Areset NUMERIC "0"
 // Retrieval info: PRIVATE: Use_Rawperror NUMERIC "0"
 // Retrieval info: PRIVATE: Use_Tx_Out_Phase NUMERIC "0"
@@ -178,7 +184,7 @@ endmodule
 // Retrieval info: CONSTANT: clk_src_is_pll STRING "off"
 // Retrieval info: CONSTANT: DATA_ALIGN_ROLLOVER NUMERIC "4"
 // Retrieval info: CONSTANT: DATA_RATE STRING "80.0 Mbps"
-// Retrieval info: CONSTANT: DESERIALIZATION_FACTOR NUMERIC "2"
+// Retrieval info: CONSTANT: DESERIALIZATION_FACTOR NUMERIC "8"
 // Retrieval info: CONSTANT: DPA_INITIAL_PHASE_VALUE NUMERIC "0"
 // Retrieval info: CONSTANT: DPLL_LOCK_COUNT NUMERIC "0"
 // Retrieval info: CONSTANT: DPLL_LOCK_WINDOW NUMERIC "0"
@@ -205,7 +211,7 @@ endmodule
 // Retrieval info: CONSTANT: PLL_OPERATION_MODE STRING "UNUSED"
 // Retrieval info: CONSTANT: PLL_SELF_RESET_ON_LOSS_LOCK STRING "OFF"
 // Retrieval info: CONSTANT: PORT_RX_CHANNEL_DATA_ALIGN STRING "PORT_UNUSED"
-// Retrieval info: CONSTANT: PORT_RX_DATA_ALIGN STRING "PORT_UNUSED"
+// Retrieval info: CONSTANT: PORT_RX_DATA_ALIGN STRING "PORT_USED"
 // Retrieval info: CONSTANT: REFCLK_FREQUENCY STRING "UNUSED"
 // Retrieval info: CONSTANT: REGISTERED_DATA_ALIGN_INPUT STRING "UNUSED"
 // Retrieval info: CONSTANT: REGISTERED_OUTPUT STRING "ON"
@@ -219,12 +225,16 @@ endmodule
 // Retrieval info: CONSTANT: USE_EXTERNAL_PLL STRING "OFF"
 // Retrieval info: CONSTANT: USE_NO_PHASE_SHIFT STRING "ON"
 // Retrieval info: CONSTANT: X_ON_BITSLIP STRING "ON"
+// Retrieval info: USED_PORT: rx_data_align 0 0 0 0 INPUT NODEFVAL "rx_data_align"
+// Retrieval info: CONNECT: @rx_data_align 0 0 0 0 rx_data_align 0 0 0 0
 // Retrieval info: USED_PORT: rx_in 0 0 1 0 INPUT NODEFVAL "rx_in[0..0]"
 // Retrieval info: CONNECT: @rx_in 0 0 1 0 rx_in 0 0 1 0
 // Retrieval info: USED_PORT: rx_inclock 0 0 0 0 INPUT NODEFVAL "rx_inclock"
 // Retrieval info: CONNECT: @rx_inclock 0 0 0 0 rx_inclock 0 0 0 0
-// Retrieval info: USED_PORT: rx_out 0 0 2 0 OUTPUT NODEFVAL "rx_out[1..0]"
-// Retrieval info: CONNECT: rx_out 0 0 2 0 @rx_out 0 0 2 0
+// Retrieval info: USED_PORT: rx_locked 0 0 0 0 OUTPUT NODEFVAL "rx_locked"
+// Retrieval info: CONNECT: rx_locked 0 0 0 0 @rx_locked 0 0 0 0
+// Retrieval info: USED_PORT: rx_out 0 0 8 0 OUTPUT NODEFVAL "rx_out[7..0]"
+// Retrieval info: CONNECT: rx_out 0 0 8 0 @rx_out 0 0 8 0
 // Retrieval info: USED_PORT: rx_outclock 0 0 0 0 OUTPUT NODEFVAL "rx_outclock"
 // Retrieval info: CONNECT: rx_outclock 0 0 0 0 @rx_outclock 0 0 0 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL lvds_rx.v TRUE FALSE

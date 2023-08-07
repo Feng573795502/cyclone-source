@@ -1,5 +1,5 @@
 Flow report for lvds
-Sat Aug 05 18:40:13 2023
+Mon Aug 07 18:28:07 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -40,22 +40,22 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sat Aug 05 18:40:13 2023           ;
+; Flow Status                        ; Successful - Mon Aug 07 18:28:07 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; lvds                                            ;
 ; Top-level Entity Name              ; lvds_test                                       ;
 ; Family                             ; Cyclone IV E                                    ;
 ; Device                             ; EP4CE10F17C8                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 0                                               ;
-;     Total combinational functions  ; 0                                               ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
-; Total pins                         ; 18                                              ;
+; Total logic elements               ; 86 / 10,320 ( < 1 % )                           ;
+;     Total combinational functions  ; 37 / 10,320 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 84 / 10,320 ( < 1 % )                           ;
+; Total registers                    ; 88                                              ;
+; Total pins                         ; 27 / 180 ( 15 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
+; Total memory bits                  ; 0 / 423,936 ( 0 % )                             ;
+; Embedded Multiplier 9-bit elements ; 0 / 46 ( 0 % )                                  ;
+; Total PLLs                         ; 2 / 2 ( 100 % )                                 ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/05/2023 18:40:06 ;
+; Start date & time ; 08/07/2023 18:27:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lvds                ;
 +-------------------+---------------------+
@@ -75,19 +75,19 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 198112243479721.169123200613868        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 198112243479721.169140406902940        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; lvds_tx_tb     ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; lvds_rx_tb     ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; lvds_tx_tb                             ; --            ; --          ; eda_simulation ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; lvds_test_tb   ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; lvds_test_tb                           ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation ;
 ; EDA_TEST_BENCH_FILE                  ; ../testbench/lvds_tx_tb.v              ; --            ; --          ; lvds_tx_tb     ;
-; EDA_TEST_BENCH_FILE                  ; ../testbench/lvds_rx_tb.v              ; --            ; --          ; lvds_rx_tb     ;
+; EDA_TEST_BENCH_FILE                  ; ../testbench/lvds_test_tb.v            ; --            ; --          ; lvds_test_tb   ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; lvds_tx_tb                             ; --            ; --          ; lvds_tx_tb     ;
-; EDA_TEST_BENCH_MODULE_NAME           ; lvds_rx_tb                             ; --            ; --          ; lvds_rx_tb     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; lvds_test_tb                           ; --            ; --          ; lvds_test_tb   ;
+; EDA_TEST_BENCH_NAME                  ; lvds_test_tb                           ; --            ; --          ; eda_simulation ;
 ; EDA_TEST_BENCH_NAME                  ; lvds_tx_tb                             ; --            ; --          ; eda_simulation ;
-; EDA_TEST_BENCH_NAME                  ; lvds_rx_tb                             ; --            ; --          ; eda_simulation ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --             ;
@@ -103,6 +103,8 @@ refer to the applicable agreement for further details.
 ; MISC_FILE                            ; ip/lvds_rx.inc                         ; --            ; --          ; --             ;
 ; MISC_FILE                            ; ip/lvds_rx.cmp                         ; --            ; --          ; --             ;
 ; MISC_FILE                            ; ip/lvds_rx.ppf                         ; --            ; --          ; --             ;
+; MISC_FILE                            ; ip/rx_pll_bb.v                         ; --            ; --          ; --             ;
+; MISC_FILE                            ; ip/rx_pll.ppf                          ; --            ; --          ; --             ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                   ; --            ; --          ; --             ;
 ; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; lvds_test   ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; lvds_test   ; Top            ;
@@ -119,8 +121,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4719 MB             ; 00:00:16                           ;
-; Total                ; 00:00:07     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4845 MB             ; 00:00:18                           ;
+; Fitter               ; 00:00:03     ; 1.1                     ; 6496 MB             ; 00:00:05                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4672 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.1                     ; 4892 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4640 MB             ; 00:00:01                           ;
+; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:26                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -130,6 +136,10 @@ refer to the applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; Snail            ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; Snail            ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; Snail            ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; Snail            ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Snail            ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -137,6 +147,10 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off lvds -c lvds
+quartus_fit --read_settings_files=off --write_settings_files=off lvds -c lvds
+quartus_asm --read_settings_files=off --write_settings_files=off lvds -c lvds
+quartus_sta lvds -c lvds
+quartus_eda --read_settings_files=off --write_settings_files=off lvds -c lvds
 
 
 

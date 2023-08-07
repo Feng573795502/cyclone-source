@@ -34,11 +34,15 @@
 module lvds_tx (
 	tx_in,
 	tx_inclock,
+	tx_coreclock,
+	tx_locked,
 	tx_out,
 	tx_outclock);
 
 	input	[7:0]  tx_in;
 	input	  tx_inclock;
+	output	  tx_coreclock;
+	output	  tx_locked;
 	output	[0:0]  tx_out;
 	output	  tx_outclock;
 
@@ -56,13 +60,13 @@ endmodule
 // Retrieval info: PRIVATE: CNX_EXT_PLL STRING "OFF"
 // Retrieval info: PRIVATE: CNX_LE_SERDES STRING "ON"
 // Retrieval info: PRIVATE: CNX_NUM_CHANNEL NUMERIC "1"
-// Retrieval info: PRIVATE: CNX_OUTCLOCK_DIVIDE_BY NUMERIC "1"
+// Retrieval info: PRIVATE: CNX_OUTCLOCK_DIVIDE_BY NUMERIC "4"
 // Retrieval info: PRIVATE: CNX_PLL_ARESET NUMERIC "0"
 // Retrieval info: PRIVATE: CNX_PLL_FREQ STRING "10.00"
 // Retrieval info: PRIVATE: CNX_PLL_PERIOD STRING "100.000"
 // Retrieval info: PRIVATE: CNX_REG_INOUT NUMERIC "1"
-// Retrieval info: PRIVATE: CNX_TX_CORECLOCK STRING "OFF"
-// Retrieval info: PRIVATE: CNX_TX_LOCKED STRING "OFF"
+// Retrieval info: PRIVATE: CNX_TX_CORECLOCK STRING "ON"
+// Retrieval info: PRIVATE: CNX_TX_LOCKED STRING "ON"
 // Retrieval info: PRIVATE: CNX_TX_OUTCLOCK STRING "ON"
 // Retrieval info: PRIVATE: CNX_USE_CLOCK_RESC STRING "Auto selection"
 // Retrieval info: PRIVATE: CNX_USE_PLL_ENABLE NUMERIC "0"
@@ -90,7 +94,7 @@ endmodule
 // Retrieval info: CONSTANT: MULTI_CLOCK STRING "OFF"
 // Retrieval info: CONSTANT: NUMBER_OF_CHANNELS NUMERIC "1"
 // Retrieval info: CONSTANT: OUTCLOCK_ALIGNMENT STRING "EDGE_ALIGNED"
-// Retrieval info: CONSTANT: OUTCLOCK_DIVIDE_BY NUMERIC "1"
+// Retrieval info: CONSTANT: OUTCLOCK_DIVIDE_BY NUMERIC "4"
 // Retrieval info: CONSTANT: OUTCLOCK_DUTY_CYCLE NUMERIC "50"
 // Retrieval info: CONSTANT: OUTCLOCK_MULTIPLY_BY NUMERIC "1"
 // Retrieval info: CONSTANT: OUTCLOCK_PHASE_SHIFT NUMERIC "0"
@@ -104,10 +108,14 @@ endmodule
 // Retrieval info: CONSTANT: USE_EXTERNAL_PLL STRING "OFF"
 // Retrieval info: CONSTANT: USE_NO_PHASE_SHIFT STRING "ON"
 // Retrieval info: CONSTANT: VOD_SETTING NUMERIC "0"
+// Retrieval info: USED_PORT: tx_coreclock 0 0 0 0 OUTPUT NODEFVAL "tx_coreclock"
+// Retrieval info: CONNECT: tx_coreclock 0 0 0 0 @tx_coreclock 0 0 0 0
 // Retrieval info: USED_PORT: tx_in 0 0 8 0 INPUT NODEFVAL "tx_in[7..0]"
 // Retrieval info: CONNECT: @tx_in 0 0 8 0 tx_in 0 0 8 0
 // Retrieval info: USED_PORT: tx_inclock 0 0 0 0 INPUT NODEFVAL "tx_inclock"
 // Retrieval info: CONNECT: @tx_inclock 0 0 0 0 tx_inclock 0 0 0 0
+// Retrieval info: USED_PORT: tx_locked 0 0 0 0 OUTPUT NODEFVAL "tx_locked"
+// Retrieval info: CONNECT: tx_locked 0 0 0 0 @tx_locked 0 0 0 0
 // Retrieval info: USED_PORT: tx_out 0 0 1 0 OUTPUT NODEFVAL "tx_out[0..0]"
 // Retrieval info: CONNECT: tx_out 0 0 1 0 @tx_out 0 0 1 0
 // Retrieval info: USED_PORT: tx_outclock 0 0 0 0 OUTPUT NODEFVAL "tx_outclock"

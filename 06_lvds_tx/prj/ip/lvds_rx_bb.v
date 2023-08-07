@@ -32,14 +32,18 @@
 //refer to the applicable agreement for further details.
 
 module lvds_rx (
+	rx_data_align,
 	rx_in,
 	rx_inclock,
+	rx_locked,
 	rx_out,
 	rx_outclock);
 
+	input	  rx_data_align;
 	input	[0:0]  rx_in;
 	input	  rx_inclock;
-	output	[1:0]  rx_out;
+	output	  rx_locked;
+	output	[7:0]  rx_out;
 	output	  rx_outclock;
 
 endmodule
@@ -52,7 +56,7 @@ endmodule
 // Retrieval info: PRIVATE: Clock_Choices STRING "tx_coreclock"
 // Retrieval info: PRIVATE: Clock_Mode NUMERIC "0"
 // Retrieval info: PRIVATE: Data_rate STRING "80.0"
-// Retrieval info: PRIVATE: Deser_Factor NUMERIC "2"
+// Retrieval info: PRIVATE: Deser_Factor NUMERIC "8"
 // Retrieval info: PRIVATE: Dpll_Lock_Count NUMERIC "0"
 // Retrieval info: PRIVATE: Dpll_Lock_Window NUMERIC "0"
 // Retrieval info: PRIVATE: Enable_DPA_Mode STRING "OFF"
@@ -73,7 +77,7 @@ endmodule
 // Retrieval info: PRIVATE: Use_Clock_Resc STRING "AUTO"
 // Retrieval info: PRIVATE: Use_Common_Rx_Tx_Plls NUMERIC "0"
 // Retrieval info: PRIVATE: Use_Data_Align NUMERIC "0"
-// Retrieval info: PRIVATE: Use_Lock NUMERIC "0"
+// Retrieval info: PRIVATE: Use_Lock NUMERIC "1"
 // Retrieval info: PRIVATE: Use_Pll_Areset NUMERIC "0"
 // Retrieval info: PRIVATE: Use_Rawperror NUMERIC "0"
 // Retrieval info: PRIVATE: Use_Tx_Out_Phase NUMERIC "0"
@@ -83,7 +87,7 @@ endmodule
 // Retrieval info: CONSTANT: clk_src_is_pll STRING "off"
 // Retrieval info: CONSTANT: DATA_ALIGN_ROLLOVER NUMERIC "4"
 // Retrieval info: CONSTANT: DATA_RATE STRING "80.0 Mbps"
-// Retrieval info: CONSTANT: DESERIALIZATION_FACTOR NUMERIC "2"
+// Retrieval info: CONSTANT: DESERIALIZATION_FACTOR NUMERIC "8"
 // Retrieval info: CONSTANT: DPA_INITIAL_PHASE_VALUE NUMERIC "0"
 // Retrieval info: CONSTANT: DPLL_LOCK_COUNT NUMERIC "0"
 // Retrieval info: CONSTANT: DPLL_LOCK_WINDOW NUMERIC "0"
@@ -110,7 +114,7 @@ endmodule
 // Retrieval info: CONSTANT: PLL_OPERATION_MODE STRING "UNUSED"
 // Retrieval info: CONSTANT: PLL_SELF_RESET_ON_LOSS_LOCK STRING "OFF"
 // Retrieval info: CONSTANT: PORT_RX_CHANNEL_DATA_ALIGN STRING "PORT_UNUSED"
-// Retrieval info: CONSTANT: PORT_RX_DATA_ALIGN STRING "PORT_UNUSED"
+// Retrieval info: CONSTANT: PORT_RX_DATA_ALIGN STRING "PORT_USED"
 // Retrieval info: CONSTANT: REFCLK_FREQUENCY STRING "UNUSED"
 // Retrieval info: CONSTANT: REGISTERED_DATA_ALIGN_INPUT STRING "UNUSED"
 // Retrieval info: CONSTANT: REGISTERED_OUTPUT STRING "ON"
@@ -124,12 +128,16 @@ endmodule
 // Retrieval info: CONSTANT: USE_EXTERNAL_PLL STRING "OFF"
 // Retrieval info: CONSTANT: USE_NO_PHASE_SHIFT STRING "ON"
 // Retrieval info: CONSTANT: X_ON_BITSLIP STRING "ON"
+// Retrieval info: USED_PORT: rx_data_align 0 0 0 0 INPUT NODEFVAL "rx_data_align"
+// Retrieval info: CONNECT: @rx_data_align 0 0 0 0 rx_data_align 0 0 0 0
 // Retrieval info: USED_PORT: rx_in 0 0 1 0 INPUT NODEFVAL "rx_in[0..0]"
 // Retrieval info: CONNECT: @rx_in 0 0 1 0 rx_in 0 0 1 0
 // Retrieval info: USED_PORT: rx_inclock 0 0 0 0 INPUT NODEFVAL "rx_inclock"
 // Retrieval info: CONNECT: @rx_inclock 0 0 0 0 rx_inclock 0 0 0 0
-// Retrieval info: USED_PORT: rx_out 0 0 2 0 OUTPUT NODEFVAL "rx_out[1..0]"
-// Retrieval info: CONNECT: rx_out 0 0 2 0 @rx_out 0 0 2 0
+// Retrieval info: USED_PORT: rx_locked 0 0 0 0 OUTPUT NODEFVAL "rx_locked"
+// Retrieval info: CONNECT: rx_locked 0 0 0 0 @rx_locked 0 0 0 0
+// Retrieval info: USED_PORT: rx_out 0 0 8 0 OUTPUT NODEFVAL "rx_out[7..0]"
+// Retrieval info: CONNECT: rx_out 0 0 8 0 @rx_out 0 0 8 0
 // Retrieval info: USED_PORT: rx_outclock 0 0 0 0 OUTPUT NODEFVAL "rx_outclock"
 // Retrieval info: CONNECT: rx_outclock 0 0 0 0 @rx_outclock 0 0 0 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL lvds_rx.v TRUE FALSE

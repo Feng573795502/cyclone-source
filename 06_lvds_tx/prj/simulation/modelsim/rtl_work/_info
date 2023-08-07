@@ -8,157 +8,333 @@ z2
 !i10f 100
 cModel Technology
 Z0 dH:/FPGA/cyclone source/06_lvds_tx/prj/simulation/modelsim
-vlvds_tx
-Z1 !s110 1691231968
+vlvds_rx
+Z1 !s110 1691405647
 !i10b 1
-!s100 0WA8Aif>TU^`SN>1i^I7:3
-IjUIG>5KBK^11@zenDSGB=2
+!s100 ?a>4]dC`NQY2CR1ZGBZ6I0
+I7mA[`<CKm2Gn]aC6bR:1T2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1691229119
-8H:/FPGA/cyclone source/06_lvds_tx/prj/ip/lvds_tx.v
-FH:/FPGA/cyclone source/06_lvds_tx/prj/ip/lvds_tx.v
-L0 39
-Z3 OV;L;10.5b;63
+w1691398562
+8H:/FPGA/cyclone source/06_lvds_tx/prj/ip/lvds_rx.v
+FH:/FPGA/cyclone source/06_lvds_tx/prj/ip/lvds_rx.v
+Z3 L0 39
+Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1691231968.000000
+Z5 !s108 1691405647.000000
+!s107 H:/FPGA/cyclone source/06_lvds_tx/prj/ip/lvds_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/06_lvds_tx/prj/ip|H:/FPGA/cyclone source/06_lvds_tx/prj/ip/lvds_rx.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/06_lvds_tx/prj/ip}
+Z8 tCvgOpt 0
+vlvds_rx_cntr
+Z9 !s110 1691405648
+!i10b 1
+!s100 `6PN:797ak4WJKzD93JBF2
+I7?hYNn5FlOdnD^O`z6Qli3
+R2
+R0
+Z10 w1691403904
+Z11 8H:/FPGA/cyclone source/06_lvds_tx/prj/db/lvds_rx_lvds_rx.v
+Z12 FH:/FPGA/cyclone source/06_lvds_tx/prj/db/lvds_rx_lvds_rx.v
+L0 143
+R4
+r1
+!s85 0
+31
+Z13 !s108 1691405648.000000
+Z14 !s107 H:/FPGA/cyclone source/06_lvds_tx/prj/db/lvds_rx_lvds_rx.v|
+Z15 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/06_lvds_tx/prj/db|H:/FPGA/cyclone source/06_lvds_tx/prj/db/lvds_rx_lvds_rx.v|
+!i113 1
+R6
+Z16 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/06_lvds_tx/prj/db}
+R8
+vlvds_rx_dffpipe
+R9
+!i10b 1
+!s100 EXZEQZ73G?E7V0aWC:6GV2
+IfVSiJe3iaoCa_X1?_FKST1
+R2
+R0
+R10
+R11
+R12
+L0 97
+R4
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R6
+R16
+R8
+vlvds_rx_lvds_ddio_in
+R9
+!i10b 1
+!s100 Ugi<L<e9QH2<i?[=oJ5Tz3
+I>cdLlbFeWc3F?cK`2kSmY3
+R2
+R0
+R10
+R11
+R12
+Z17 L0 34
+R4
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R6
+R16
+R8
+vlvds_rx_lvds_rx
+R9
+!i10b 1
+!s100 WIzT^oM`dgc<715I3NPJU3
+Ighg0hiD?K<c0C;U^1gkVl0
+R2
+R0
+R10
+R11
+R12
+L0 318
+R4
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R6
+R16
+R8
+vlvds_rx_mux
+R9
+!i10b 1
+!s100 PD^Eobj;D;Wk4:[G0OGiS1
+I_]1d3BZoC0dW1[oHS6^QK1
+R2
+R0
+R10
+R11
+R12
+L0 277
+R4
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R6
+R16
+R8
+vlvds_test
+R1
+!i10b 1
+!s100 FOGSo@V2V[W2c4NG<8nb23
+I^TFPbFR3HPn_cdBA>2fUL3
+R2
+R0
+w1691403895
+8H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v
+FH:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/06_lvds_tx/rtl|H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/06_lvds_tx/rtl}
+R8
+vlvds_test_tb
+R9
+!i10b 1
+!s100 C97I<=j1>gmXJ_[>D>Bkm3
+IAjP6VZ92GXc0I`A_m5Ni12
+R2
+R0
+w1691405642
+8H:/FPGA/cyclone source/06_lvds_tx/prj/../testbench/lvds_test_tb.v
+FH:/FPGA/cyclone source/06_lvds_tx/prj/../testbench/lvds_test_tb.v
+L0 4
+R4
+r1
+!s85 0
+31
+R13
+!s107 H:/FPGA/cyclone source/06_lvds_tx/prj/../testbench/lvds_test_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/06_lvds_tx/prj/../testbench|H:/FPGA/cyclone source/06_lvds_tx/prj/../testbench/lvds_test_tb.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/06_lvds_tx/prj/../testbench}
+R8
+vlvds_tx
+R1
+!i10b 1
+!s100 PVLSGJWbFT=EKGJ<BEmOQ2
+ITUbh89hNi`fMK76jozc@C0
+R2
+R0
+w1691398498
+8H:/FPGA/cyclone source/06_lvds_tx/prj/ip/lvds_tx.v
+FH:/FPGA/cyclone source/06_lvds_tx/prj/ip/lvds_tx.v
+R3
+R4
+r1
+!s85 0
+31
+R5
 !s107 H:/FPGA/cyclone source/06_lvds_tx/prj/ip/lvds_tx.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/06_lvds_tx/prj/ip|H:/FPGA/cyclone source/06_lvds_tx/prj/ip/lvds_tx.v|
 !i113 1
-Z5 o-vlog01compat -work work
-!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/06_lvds_tx/prj/ip}
-Z6 tCvgOpt 0
-vlvds_tx_cmpr
+R6
+R7
+R8
+vlvds_tx_lvds_tx1
 R1
 !i10b 1
-!s100 <fY487]GnE2cLi^3L^gl[0
-I9kja`S;2]z2[`z]HQ7oQU1
+!s100 ?kKhaYYoc6OIWZnal]efm0
+IF=6T_<RUfEUBVngb45Cb52
 R2
 R0
-Z7 w1691229304
-Z8 8H:/FPGA/cyclone source/06_lvds_tx/prj/db/lvds_tx_lvds_tx.v
-Z9 FH:/FPGA/cyclone source/06_lvds_tx/prj/db/lvds_tx_lvds_tx.v
+R10
+Z18 8H:/FPGA/cyclone source/06_lvds_tx/prj/db/lvds_tx_lvds_tx1.v
+Z19 FH:/FPGA/cyclone source/06_lvds_tx/prj/db/lvds_tx_lvds_tx1.v
+L0 334
+R4
+r1
+!s85 0
+31
+R5
+Z20 !s107 H:/FPGA/cyclone source/06_lvds_tx/prj/db/lvds_tx_lvds_tx1.v|
+Z21 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/06_lvds_tx/prj/db|H:/FPGA/cyclone source/06_lvds_tx/prj/db/lvds_tx_lvds_tx1.v|
+!i113 1
+R6
+R16
+R8
+vlvds_tx_lvds_tx1_lvds_tx_cmpr
+R1
+!i10b 1
+!s100 QjKLM1aFTMal7LR1B?UB?1
+INC^n[@adM[k;AiM0EI46^1
+R2
+R0
+R10
+R18
+R19
 L0 92
-R3
+R4
 r1
 !s85 0
 31
-R4
-Z10 !s107 H:/FPGA/cyclone source/06_lvds_tx/prj/db/lvds_tx_lvds_tx.v|
-Z11 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/06_lvds_tx/prj/db|H:/FPGA/cyclone source/06_lvds_tx/prj/db/lvds_tx_lvds_tx.v|
-!i113 1
 R5
-Z12 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/06_lvds_tx/prj/db}
+R20
+R21
+!i113 1
 R6
-vlvds_tx_cntr
+R16
+R8
+vlvds_tx_lvds_tx1_lvds_tx_cntr
 R1
 !i10b 1
-!s100 PBWd]NRnSd^UE3^k4ifAm2
-I`F>1cm0YK[foEWU0oEY302
+!s100 ;N<A?Y;7OAb?IJ@8CzmG53
+IE9@Qhn805lcA5Ch7hzhMV0
 R2
 R0
-R7
-R8
-R9
-L0 130
-R3
+R10
+R18
+R19
+L0 134
+R4
 r1
 !s85 0
 31
-R4
-R10
-R11
-!i113 1
 R5
-R12
+R20
+R21
+!i113 1
 R6
-vlvds_tx_ddio_out
+R16
+R8
+vlvds_tx_lvds_tx1_lvds_tx_ddio_out
 R1
 !i10b 1
-!s100 e::loj4;EUeBE5CRjBC[@1
-IPha9elm7P5fM?DY[Do:h30
+!s100 ]@kW]?AEBHEN4Bm3o50_U1
+ILgCDn?^2TD`Klni8QP[DP3
 R2
 R0
-R7
-R8
-R9
-L0 34
-R3
+R10
+R18
+R19
+R17
+R4
 r1
 !s85 0
 31
-R4
-R10
-R11
-!i113 1
 R5
-R12
+R20
+R21
+!i113 1
 R6
-vlvds_tx_lvds_tx
+R16
+R8
+vlvds_tx_lvds_tx1_lvds_tx_shift_reg
 R1
 !i10b 1
-!s100 B5eidSOB1iLki81KQi6kM2
-IWTJZle3WPVffkkeB5TI912
+!s100 XmZT1TjdaaiP[XXnI8?F<2
+I7C^0V^n7K6aill>OXK8dN3
 R2
 R0
-R7
-R8
-R9
-L0 284
-R3
+R10
+R18
+R19
+L0 245
+R4
 r1
 !s85 0
 31
-R4
-R10
-R11
-!i113 1
 R5
-R12
+R20
+R21
+!i113 1
 R6
-vlvds_tx_shift_reg
+R16
+R8
+vlvds_tx_lvds_tx1_lvds_tx_shift_reg1
 R1
 !i10b 1
-!s100 ?[C_IR@U2KFXFT<D?B07W1
-Ijm2Ynl4hBK?mFNOezOYiH0
+!s100 dOBacY8nmE80NHIofM@g`2
+IlYc_Mmf90^NY`cH>U0C:f0
 R2
 R0
-R7
-R8
-R9
-L0 241
-R3
-r1
-!s85 0
-31
-R4
 R10
-R11
-!i113 1
-R5
-R12
-R6
-vlvds_tx_tb
-!s110 1691231969
-!i10b 1
-!s100 LiBjPYZ@5h0zIX=AH4eh@2
-ID`DiUYbdff2R<XYMXf`?@1
-R2
-R0
-w1691231812
-8H:/FPGA/cyclone source/06_lvds_tx/prj/../testbench/lvds_tx_tb.v
-FH:/FPGA/cyclone source/06_lvds_tx/prj/../testbench/lvds_tx_tb.v
-L0 3
-R3
+R18
+R19
+L0 291
+R4
 r1
 !s85 0
 31
-R4
-!s107 H:/FPGA/cyclone source/06_lvds_tx/prj/../testbench/lvds_tx_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/06_lvds_tx/prj/../testbench|H:/FPGA/cyclone source/06_lvds_tx/prj/../testbench/lvds_tx_tb.v|
-!i113 1
 R5
-!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/06_lvds_tx/prj/../testbench}
+R20
+R21
+!i113 1
 R6
+R16
+R8
