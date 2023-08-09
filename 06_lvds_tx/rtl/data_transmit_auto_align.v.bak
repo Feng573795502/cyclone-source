@@ -1,0 +1,98 @@
+module data_transmit_auto_align(
+	input  sys_clk,          //系统时钟 50M
+	output tx_outclock,      //发送输出时钟
+	output data_txp,         //发送差分线
+	output rst_n             //复位
+	);
+	
+	//时钟
+	wire clk;
+	wire locked;
+	
+	//数据操作
+	reg [20:0]cnt;
+	reg reset_i;
+	reg [9:0]count;
+	
+	
+	//实际数据
+	reg  [7:0]unendata;
+	reg  comma;
+	wire tx_coreclock;
+	reg  dvalid;
+	
+	wire valid;
+	wire [9:0]data_tx;
+	
+	parameter data_len = 10'd125,
+	          BASE_CNT_VALUE = 10'd200,
+				 comma_8b       = 8'hbc;
+	
+	//延时
+	assign rst_n   = reset_i;
+	
+	
+	//时钟
+	clk_pll clk_ins(
+		.inclk0(sys_clk),
+		.co(clk),
+		.locked(locked)
+	);
+	
+	//初始化等待
+	always@(posedge sys_clk or negedge locked)begin
+		if(!locked)begin
+			reset_i <= 1'b0;
+			cnt     <= 0;
+		end
+		else begin
+			if(cnt == 300)begin
+				reset_i <= 1'b1;
+				cnt     <= cnt;
+			end
+			else begin
+				reset_i <= 1'b0;
+				cnt     <= cnt + 1'b1;
+			end
+		end
+	end
+	
+	//计数器用于发送数据
+	always@(posedge clk or negedge rst_n)begin
+		if(!rst_n)
+			count <= 0;
+		else if(count < 10'd700)
+			count <= count + 1'b1;
+		else 
+			count <= 0;
+	end
+	
+	//数据标志位
+	always@(posedge clk or negedge rst_n)begin
+		if(~rst_n)
+			davlid <= 1'b0;
+		else if((count >= BASE_CNT_VALUE + 10'd1) && (count < (BASE_CNT_VALUE + 10'd125)))
+			davlid <= 1'b1;
+		else 
+			davlid <= 1'b0;
+	end
+	
+	
+	encode encoder(
+		.clk(clk),
+		.rst_n(locked),
+		.kin(comma),
+		.datain(unendata),
+		.dataout(datatx),
+		.valid(valid)
+	);
+
+	//数据发送
+	lvds_tx ser_ins(
+		.tx_in(datatx),
+		.tx_inclock(clk),
+		.tx_out(data_txp),
+		.tx_outclock(tx_outclock),
+		.tx_coreclock(tx_coreclock),
+		.tx_locked(tx_locked)
+	);

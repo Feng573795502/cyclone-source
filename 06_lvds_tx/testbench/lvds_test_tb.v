@@ -6,7 +6,7 @@ module lvds_test_tb();
 reg clk;
 reg [7:0]tx_in;
 wire tx_outclock;
-
+wire tx_done;
 wire lvds_data;
 wire tx_coreclock;
 wire tx_locked;
@@ -25,8 +25,9 @@ lvds_test lvds_test(
 	.tx_outclock(tx_outclock),
 	.tx_coreclock(tx_coreclock),
 	.tx_locked(tx_locked),
+	.tx_done(tx_done),
 	
-	.rx_data_align(1),
+	.rx_data_align(rx_data_align),
 	.rx_in(lvds_data),
 	.rx_inclock(rx_inclock),
 	.rx_locked(rx_locked),
@@ -38,11 +39,24 @@ lvds_test lvds_test(
 	always #(`CLK_PERIOD/2) clk = ~clk;
 	
 	initial begin
-	
+	rx_data_align = 0;
+	#2000;
+	rx_data_align = 1;
 	tx_in = 8'hf1;
-	#`CLK_PERIOD;
+	#200;
 	tx_in = 8'h22;
-	
+	#200;
+	tx_in = 8'hf1;
+	#200;
+	tx_in = 8'h22;
+	#200;
+	tx_in = 8'hf1;
+	#200;
+	tx_in = 8'h22;
+	#200;
+	tx_in = 8'hf1;
+	#200;
+	tx_in = 8'h22;
 	#2000;
 	
 	$stop;

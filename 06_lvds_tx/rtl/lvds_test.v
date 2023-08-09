@@ -1,35 +1,30 @@
 module lvds_test(
-	input  clk,  //10Mhz
-	input  [7:0]tx_in,
-	output [0:0]tx_out,
-	output tx_outclock,
-	output tx_coreclock,
-	output tx_locked,
-	
-	input rx_data_align,
-	input rx_in,
-	input rx_inclock,
-	output rx_locked,
-	output [7:0]rx_data,
-	output rx_outclock
+	input    sys_clk,      //系统时钟
+	output   data_txp,    //数据发送差分端口
+	input    data_rxp,    //数据接收差分端口
+	output   clk_out,     //
+	output   clk_out_en,
+	input    clk_in,
+	output   clk_in_en
 	);
-
-lvds_tx lvds_tx(
-		.tx_in(tx_in),
-		.tx_inclock(clk),
-		.tx_out(tx_out),
-		.tx_outclock(tx_outclock),
-		.tx_coreclock(tx_coreclock),
-		.tx_locked(tx_locked)
-		);
+	
+	//输出和输入时钟使能
+	assign clk_out_en = 1'b1;
+	assign clk_in_en  = 1'b0;
+	
+	//输出时钟和复位
+	wire tx_outclk;
+	wire rst_n;
+	
+	wire data_cnt_done;
+	
+	//发送数据
+	data_transmit_auto_align trans_inst(
+		.sys_clk(sys_clk),
+		.tx_outclk(tx_outclk),
+		.data_txp(data_txp),
+		.rst_n(rst_n)
+	);
+	
+	
 		
-	lvds_rx lvds_rx(
-		.rx_data_align(rx_data_align),
-		.rx_in(rx_in),
-		.rx_inclock(rx_inclock),
-		.rx_locked(rx_locked),
-		.rx_out(rx_data),
-		.rx_outclock(rx_outclock)
-		);
-
-endmodule

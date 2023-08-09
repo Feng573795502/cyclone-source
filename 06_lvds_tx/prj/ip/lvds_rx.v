@@ -98,7 +98,7 @@ module lvds_rx (
 		ALTLVDS_RX_component.cds_mode = "UNUSED",
 		ALTLVDS_RX_component.common_rx_tx_pll = "OFF",
 		ALTLVDS_RX_component.data_align_rollover = 4,
-		ALTLVDS_RX_component.data_rate = "80.0 Mbps",
+		ALTLVDS_RX_component.data_rate = "640.0 Mbps",
 		ALTLVDS_RX_component.deserialization_factor = 8,
 		ALTLVDS_RX_component.dpa_initial_phase_value = 0,
 		ALTLVDS_RX_component.dpll_lock_count = 0,
@@ -114,9 +114,9 @@ module lvds_rx (
 		ALTLVDS_RX_component.implement_in_les = "ON",
 		ALTLVDS_RX_component.inclock_boost = 0,
 		ALTLVDS_RX_component.inclock_data_alignment = "EDGE_ALIGNED",
-		ALTLVDS_RX_component.inclock_period = 100000,
+		ALTLVDS_RX_component.inclock_period = 12500,
 		ALTLVDS_RX_component.inclock_phase_shift = 0,
-		ALTLVDS_RX_component.input_data_rate = 80,
+		ALTLVDS_RX_component.input_data_rate = 640,
 		ALTLVDS_RX_component.intended_device_family = "Cyclone IV E",
 		ALTLVDS_RX_component.lose_lock_on_one_change = "UNUSED",
 		ALTLVDS_RX_component.lpm_hint = "CBX_MODULE_PREFIX=lvds_rx",
@@ -152,7 +152,7 @@ endmodule
 // Retrieval info: PRIVATE: Bitslip NUMERIC "0"
 // Retrieval info: PRIVATE: Clock_Choices STRING "tx_coreclock"
 // Retrieval info: PRIVATE: Clock_Mode NUMERIC "0"
-// Retrieval info: PRIVATE: Data_rate STRING "80.0"
+// Retrieval info: PRIVATE: Data_rate STRING "640.0"
 // Retrieval info: PRIVATE: Deser_Factor NUMERIC "8"
 // Retrieval info: PRIVATE: Dpll_Lock_Count NUMERIC "0"
 // Retrieval info: PRIVATE: Dpll_Lock_Window NUMERIC "0"
@@ -166,8 +166,8 @@ endmodule
 // Retrieval info: PRIVATE: pCNX_OUTCLK_ALIGN NUMERIC "0"
 // Retrieval info: PRIVATE: pINCLOCK_PHASE_SHIFT STRING "0.00"
 // Retrieval info: PRIVATE: PLL_Enable NUMERIC "0"
-// Retrieval info: PRIVATE: PLL_Freq STRING "10.00"
-// Retrieval info: PRIVATE: PLL_Period STRING "100.000"
+// Retrieval info: PRIVATE: PLL_Freq STRING "80.00"
+// Retrieval info: PRIVATE: PLL_Period STRING "12.500"
 // Retrieval info: PRIVATE: pOUTCLOCK_PHASE_SHIFT NUMERIC "0"
 // Retrieval info: PRIVATE: Reg_InOut NUMERIC "1"
 // Retrieval info: PRIVATE: Use_Cda_Reset NUMERIC "0"
@@ -183,7 +183,7 @@ endmodule
 // Retrieval info: CONSTANT: COMMON_RX_TX_PLL STRING "OFF"
 // Retrieval info: CONSTANT: clk_src_is_pll STRING "off"
 // Retrieval info: CONSTANT: DATA_ALIGN_ROLLOVER NUMERIC "4"
-// Retrieval info: CONSTANT: DATA_RATE STRING "80.0 Mbps"
+// Retrieval info: CONSTANT: DATA_RATE STRING "640.0 Mbps"
 // Retrieval info: CONSTANT: DESERIALIZATION_FACTOR NUMERIC "8"
 // Retrieval info: CONSTANT: DPA_INITIAL_PHASE_VALUE NUMERIC "0"
 // Retrieval info: CONSTANT: DPLL_LOCK_COUNT NUMERIC "0"
@@ -199,9 +199,9 @@ endmodule
 // Retrieval info: CONSTANT: IMPLEMENT_IN_LES STRING "ON"
 // Retrieval info: CONSTANT: INCLOCK_BOOST NUMERIC "0"
 // Retrieval info: CONSTANT: INCLOCK_DATA_ALIGNMENT STRING "EDGE_ALIGNED"
-// Retrieval info: CONSTANT: INCLOCK_PERIOD NUMERIC "100000"
+// Retrieval info: CONSTANT: INCLOCK_PERIOD NUMERIC "12500"
 // Retrieval info: CONSTANT: INCLOCK_PHASE_SHIFT NUMERIC "0"
-// Retrieval info: CONSTANT: INPUT_DATA_RATE NUMERIC "80"
+// Retrieval info: CONSTANT: INPUT_DATA_RATE NUMERIC "640"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: CONSTANT: LOSE_LOCK_ON_ONE_CHANGE STRING "UNUSED"
 // Retrieval info: CONSTANT: LPM_HINT STRING "UNUSED"

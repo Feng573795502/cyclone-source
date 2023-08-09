@@ -1,0 +1,27 @@
+module lvds_recv(
+	input data_rxp,
+	input rx_inclock,
+	
+	output [7:0]dedata,
+	
+	
+	output rx_locked,
+	input  rx_data_align,
+	input  align_done,
+	output rx_outclock,
+	output [7:0]rx_out
+	);
+	
+	wire kout;
+	wire code_err;
+	
+	
+	//lvds接收
+	lvds_rx lvds_rx(
+		.rx_data_align(rx_data_align),
+		.rx_in(rx_in),
+		.rx_inclock(rx_inclock),
+		.rx_locked(rx_locked),
+		.rx_out(rx_data),
+		.rx_outclock(rx_outclock)
+	);
