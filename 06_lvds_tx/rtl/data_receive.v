@@ -36,3 +36,5 @@ module lvds_recv(
 		.kout(kout),
 		.code_err(code_err)
 	); 
+	
+	endmodule

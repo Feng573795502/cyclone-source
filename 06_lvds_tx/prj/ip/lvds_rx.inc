@@ -22,6 +22,6 @@ FUNCTION lvds_rx
 
 RETURNS (
 	rx_locked,
-	rx_out[7..0],
+	rx_out[9..0],
 	rx_outclock
 );

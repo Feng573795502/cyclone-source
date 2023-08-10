@@ -1,0 +1,9 @@
+module lvds_tx_ex_pll(
+	output lvds_txp,
+	output lvds_slow_clk,
+	output lvds_fast_clk,
+	
+	input [7:0]data_in
+	
+);
+

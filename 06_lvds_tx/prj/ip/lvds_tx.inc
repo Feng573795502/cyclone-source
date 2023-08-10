@@ -15,7 +15,7 @@
 
 FUNCTION lvds_tx 
 (
-	tx_in[7..0],
+	tx_in[9..0],
 	tx_inclock
 )
 

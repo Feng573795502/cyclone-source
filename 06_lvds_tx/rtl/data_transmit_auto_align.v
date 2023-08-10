@@ -33,9 +33,9 @@ module data_transmit_auto_align(
 	
 	
 	//时钟
-	clk_pll clk_ins(
+	rx_pll rx_pll(
 		.inclk0(sys_clk),
-		.co(clk),
+		.c0(clk),
 		.locked(locked)
 	);
 	
@@ -70,11 +70,11 @@ module data_transmit_auto_align(
 	//数据标志位
 	always@(posedge clk or negedge rst_n)begin
 		if(~rst_n)
-			davlid <= 1'b0;
+			dvalid <= 1'b0;
 		else if((count >= BASE_CNT_VALUE + 10'd1) && (count < (BASE_CNT_VALUE + 10'd125)))
-			davlid <= 1'b1;
+			dvalid <= 1'b1;
 		else 
-			davlid <= 1'b0;
+			dvalid <= 1'b0;
 	end
 	
 	//数据发送
@@ -122,3 +122,5 @@ module data_transmit_auto_align(
 		.tx_coreclock(tx_coreclock),
 		.tx_locked(tx_locked)
 	);
+	
+endmodule

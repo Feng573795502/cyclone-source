@@ -39,7 +39,7 @@ module lvds_tx (
 	tx_out,
 	tx_outclock);
 
-	input	[7:0]  tx_in;
+	input	[9:0]  tx_in;
 	input	  tx_inclock;
 	output	  tx_coreclock;
 	output	  tx_locked;
@@ -52,18 +52,18 @@ endmodule
 // CNX file retrieval info
 // ============================================================
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
-// Retrieval info: PRIVATE: CNX_CLOCK_CHOICES STRING "tx_inclock"
+// Retrieval info: PRIVATE: CNX_CLOCK_CHOICES STRING "tx_coreclock"
 // Retrieval info: PRIVATE: CNX_CLOCK_MODE NUMERIC "0"
 // Retrieval info: PRIVATE: CNX_COMMON_PLL NUMERIC "0"
-// Retrieval info: PRIVATE: CNX_DATA_RATE STRING "640.0"
-// Retrieval info: PRIVATE: CNX_DESER_FACTOR NUMERIC "8"
+// Retrieval info: PRIVATE: CNX_DATA_RATE STRING "600.0"
+// Retrieval info: PRIVATE: CNX_DESER_FACTOR NUMERIC "10"
 // Retrieval info: PRIVATE: CNX_EXT_PLL STRING "OFF"
 // Retrieval info: PRIVATE: CNX_LE_SERDES STRING "ON"
 // Retrieval info: PRIVATE: CNX_NUM_CHANNEL NUMERIC "1"
 // Retrieval info: PRIVATE: CNX_OUTCLOCK_DIVIDE_BY NUMERIC "1"
 // Retrieval info: PRIVATE: CNX_PLL_ARESET NUMERIC "0"
-// Retrieval info: PRIVATE: CNX_PLL_FREQ STRING "80.00"
-// Retrieval info: PRIVATE: CNX_PLL_PERIOD STRING "12.500"
+// Retrieval info: PRIVATE: CNX_PLL_FREQ STRING "60.00"
+// Retrieval info: PRIVATE: CNX_PLL_PERIOD STRING "16.667"
 // Retrieval info: PRIVATE: CNX_REG_INOUT NUMERIC "1"
 // Retrieval info: PRIVATE: CNX_TX_CORECLOCK STRING "ON"
 // Retrieval info: PRIVATE: CNX_TX_LOCKED STRING "ON"
@@ -79,14 +79,14 @@ endmodule
 // Retrieval info: CONSTANT: COMMON_RX_TX_PLL STRING "OFF"
 // Retrieval info: CONSTANT: CORECLOCK_DIVIDE_BY NUMERIC "2"
 // Retrieval info: CONSTANT: clk_src_is_pll STRING "off"
-// Retrieval info: CONSTANT: DATA_RATE STRING "640.0 Mbps"
-// Retrieval info: CONSTANT: DESERIALIZATION_FACTOR NUMERIC "8"
+// Retrieval info: CONSTANT: DATA_RATE STRING "600.0 Mbps"
+// Retrieval info: CONSTANT: DESERIALIZATION_FACTOR NUMERIC "10"
 // Retrieval info: CONSTANT: DIFFERENTIAL_DRIVE NUMERIC "0"
 // Retrieval info: CONSTANT: ENABLE_CLOCK_PIN_MODE STRING "UNUSED"
 // Retrieval info: CONSTANT: IMPLEMENT_IN_LES STRING "ON"
 // Retrieval info: CONSTANT: INCLOCK_BOOST NUMERIC "0"
 // Retrieval info: CONSTANT: INCLOCK_DATA_ALIGNMENT STRING "EDGE_ALIGNED"
-// Retrieval info: CONSTANT: INCLOCK_PERIOD NUMERIC "12500"
+// Retrieval info: CONSTANT: INCLOCK_PERIOD NUMERIC "16667"
 // Retrieval info: CONSTANT: INCLOCK_PHASE_SHIFT NUMERIC "0"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: CONSTANT: LPM_HINT STRING "UNUSED"
@@ -99,19 +99,19 @@ endmodule
 // Retrieval info: CONSTANT: OUTCLOCK_MULTIPLY_BY NUMERIC "1"
 // Retrieval info: CONSTANT: OUTCLOCK_PHASE_SHIFT NUMERIC "0"
 // Retrieval info: CONSTANT: OUTCLOCK_RESOURCE STRING "AUTO"
-// Retrieval info: CONSTANT: OUTPUT_DATA_RATE NUMERIC "640"
+// Retrieval info: CONSTANT: OUTPUT_DATA_RATE NUMERIC "600"
 // Retrieval info: CONSTANT: PLL_COMPENSATION_MODE STRING "AUTO"
 // Retrieval info: CONSTANT: PLL_SELF_RESET_ON_LOSS_LOCK STRING "OFF"
 // Retrieval info: CONSTANT: PREEMPHASIS_SETTING NUMERIC "0"
 // Retrieval info: CONSTANT: REFCLK_FREQUENCY STRING "UNUSED"
-// Retrieval info: CONSTANT: REGISTERED_INPUT STRING "TX_CLKIN"
+// Retrieval info: CONSTANT: REGISTERED_INPUT STRING "TX_CORECLK"
 // Retrieval info: CONSTANT: USE_EXTERNAL_PLL STRING "OFF"
 // Retrieval info: CONSTANT: USE_NO_PHASE_SHIFT STRING "ON"
 // Retrieval info: CONSTANT: VOD_SETTING NUMERIC "0"
 // Retrieval info: USED_PORT: tx_coreclock 0 0 0 0 OUTPUT NODEFVAL "tx_coreclock"
 // Retrieval info: CONNECT: tx_coreclock 0 0 0 0 @tx_coreclock 0 0 0 0
-// Retrieval info: USED_PORT: tx_in 0 0 8 0 INPUT NODEFVAL "tx_in[7..0]"
-// Retrieval info: CONNECT: @tx_in 0 0 8 0 tx_in 0 0 8 0
+// Retrieval info: USED_PORT: tx_in 0 0 10 0 INPUT NODEFVAL "tx_in[9..0]"
+// Retrieval info: CONNECT: @tx_in 0 0 10 0 tx_in 0 0 10 0
 // Retrieval info: USED_PORT: tx_inclock 0 0 0 0 INPUT NODEFVAL "tx_inclock"
 // Retrieval info: CONNECT: @tx_inclock 0 0 0 0 tx_inclock 0 0 0 0
 // Retrieval info: USED_PORT: tx_locked 0 0 0 0 OUTPUT NODEFVAL "tx_locked"

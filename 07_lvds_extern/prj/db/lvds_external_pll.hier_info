@@ -1,0 +1,383 @@
+|lvds_external_pll
+clk => clk.IN1
+lvds_txp << lvds_tx:lvds_tx.tx_out
+lvds_rxp => lvds_rxp.IN1
+lvds_slow_clk << lvds_slow_clk.DB_MAX_OUTPUT_PORT_TYPE
+lvds_fast_clk << lvds_fast_clk.DB_MAX_OUTPUT_PORT_TYPE
+clk_locked << clk_locked.DB_MAX_OUTPUT_PORT_TYPE
+data_in[0] => data_in[0].IN1
+data_in[1] => data_in[1].IN1
+data_in[2] => data_in[2].IN1
+data_in[3] => data_in[3].IN1
+data_in[4] => data_in[4].IN1
+data_in[5] => data_in[5].IN1
+data_in[6] => data_in[6].IN1
+data_in[7] => data_in[7].IN1
+rx_out[0] << lvds_rx:lvds_rx.rx_out
+rx_out[1] << lvds_rx:lvds_rx.rx_out
+rx_out[2] << lvds_rx:lvds_rx.rx_out
+rx_out[3] << lvds_rx:lvds_rx.rx_out
+rx_out[4] << lvds_rx:lvds_rx.rx_out
+rx_out[5] << lvds_rx:lvds_rx.rx_out
+rx_out[6] << lvds_rx:lvds_rx.rx_out
+rx_out[7] << lvds_rx:lvds_rx.rx_out
+
+
+|lvds_external_pll|lvds_pll:lvds_pll
+inclk0 => sub_wire1[0].IN1
+c0 <= altpll:altpll_component.clk
+c1 <= altpll:altpll_component.clk
+locked <= altpll:altpll_component.locked
+
+
+|lvds_external_pll|lvds_pll:lvds_pll|altpll:altpll_component
+inclk[0] => lvds_pll_altpll:auto_generated.inclk[0]
+inclk[1] => lvds_pll_altpll:auto_generated.inclk[1]
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => ~NO_FANOUT~
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
+clk[1] <= clk[1].DB_MAX_OUTPUT_PORT_TYPE
+clk[2] <= clk[2].DB_MAX_OUTPUT_PORT_TYPE
+clk[3] <= clk[3].DB_MAX_OUTPUT_PORT_TYPE
+clk[4] <= clk[4].DB_MAX_OUTPUT_PORT_TYPE
+extclk[0] <= <GND>
+extclk[1] <= <GND>
+extclk[2] <= <GND>
+extclk[3] <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+enable1 <= <GND>
+enable0 <= <GND>
+activeclock <= <GND>
+clkloss <= <GND>
+locked <= lvds_pll_altpll:auto_generated.locked
+scandataout <= <GND>
+scandone <= <GND>
+sclkout0 <= <GND>
+sclkout1 <= <GND>
+phasedone <= <GND>
+vcooverrange <= <GND>
+vcounderrange <= <GND>
+fbout <= <GND>
+fref <= <GND>
+icdrclk <= <GND>
+
+
+|lvds_external_pll|lvds_pll:lvds_pll|altpll:altpll_component|lvds_pll_altpll:auto_generated
+clk[0] <= pll1.CLK
+clk[1] <= pll1.CLK1
+clk[2] <= pll1.CLK2
+clk[3] <= pll1.CLK3
+clk[4] <= pll1.CLK4
+inclk[0] => pll1.CLK
+inclk[1] => pll1.CLK1
+locked <= pll1.LOCKED
+
+
+|lvds_external_pll|lvds_tx:lvds_tx
+tx_in[0] => tx_in[0].IN1
+tx_in[1] => tx_in[1].IN1
+tx_in[2] => tx_in[2].IN1
+tx_in[3] => tx_in[3].IN1
+tx_in[4] => tx_in[4].IN1
+tx_in[5] => tx_in[5].IN1
+tx_in[6] => tx_in[6].IN1
+tx_in[7] => tx_in[7].IN1
+tx_inclock => tx_inclock.IN1
+tx_syncclock => tx_syncclock.IN1
+tx_out[0] <= altlvds_tx:ALTLVDS_TX_component.tx_out
+
+
+|lvds_external_pll|lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component
+tx_in[0] => lvds_tx_lvds_tx:auto_generated.tx_in[0]
+tx_in[1] => lvds_tx_lvds_tx:auto_generated.tx_in[1]
+tx_in[2] => lvds_tx_lvds_tx:auto_generated.tx_in[2]
+tx_in[3] => lvds_tx_lvds_tx:auto_generated.tx_in[3]
+tx_in[4] => lvds_tx_lvds_tx:auto_generated.tx_in[4]
+tx_in[5] => lvds_tx_lvds_tx:auto_generated.tx_in[5]
+tx_in[6] => lvds_tx_lvds_tx:auto_generated.tx_in[6]
+tx_in[7] => lvds_tx_lvds_tx:auto_generated.tx_in[7]
+tx_inclock => lvds_tx_lvds_tx:auto_generated.tx_inclock
+tx_syncclock => lvds_tx_lvds_tx:auto_generated.tx_syncclock
+tx_enable => ~NO_FANOUT~
+sync_inclock => ~NO_FANOUT~
+tx_pll_enable => ~NO_FANOUT~
+pll_areset => ~NO_FANOUT~
+tx_data_reset => ~NO_FANOUT~
+tx_out[0] <= lvds_tx_lvds_tx:auto_generated.tx_out[0]
+tx_outclock <= <GND>
+tx_coreclock <= <GND>
+tx_locked <= <GND>
+
+
+|lvds_external_pll|lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component|lvds_tx_lvds_tx:auto_generated
+tx_in[0] => tx_in_wire[0].IN1
+tx_in[1] => tx_in_wire[1].IN1
+tx_in[2] => tx_in_wire[2].IN1
+tx_in[3] => tx_in_wire[3].IN1
+tx_in[4] => tx_in_wire[4].IN1
+tx_in[5] => tx_in_wire[5].IN1
+tx_in[6] => tx_in_wire[6].IN1
+tx_in[7] => tx_in_wire[7].IN1
+tx_inclock => fast_clock.IN4
+tx_out[0] <= lvds_tx_ddio_out:ddio_out.dataout
+tx_syncclock => sync_dffe1a.CLK
+
+
+|lvds_external_pll|lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component|lvds_tx_lvds_tx:auto_generated|lvds_tx_ddio_out:ddio_out
+datain_h[0] => ddio_outa_0.DATAINHI
+datain_l[0] => ddio_outa_0.DATAINLO
+dataout[0] <= ddio_outa_0.DATAOUT
+outclock => ddio_outa_0.CLKHI
+outclock => ddio_outa_0.CLKLO
+outclock => ddio_outa_0.MUXSEL
+
+
+|lvds_external_pll|lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component|lvds_tx_lvds_tx:auto_generated|lvds_tx_cmpr:cmpr10
+aeb <= aneb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => aneb_result_wire.IN0
+dataa[1] => aneb_result_wire.IN0
+datab[0] => aneb_result_wire.IN1
+datab[1] => aneb_result_wire.IN1
+
+
+|lvds_external_pll|lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component|lvds_tx_lvds_tx:auto_generated|lvds_tx_cmpr:cmpr9
+aeb <= aneb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => aneb_result_wire.IN0
+dataa[1] => aneb_result_wire.IN0
+datab[0] => aneb_result_wire.IN1
+datab[1] => aneb_result_wire.IN1
+
+
+|lvds_external_pll|lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component|lvds_tx_lvds_tx:auto_generated|lvds_tx_cntr:cntr2
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+updown => counter_comb_bita_0.DATAB
+
+
+|lvds_external_pll|lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component|lvds_tx_lvds_tx:auto_generated|lvds_tx_shift_reg:shift_reg12
+clock => shift_reg[0].CLK
+clock => shift_reg[1].CLK
+clock => shift_reg[2].CLK
+clock => shift_reg[3].CLK
+data[0] => shift_reg.DATAB
+data[1] => shift_reg.DATAB
+data[2] => shift_reg.DATAB
+data[3] => shift_reg.DATAB
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+shiftin => shift_reg.DATAA
+shiftout <= shift_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_external_pll|lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component|lvds_tx_lvds_tx:auto_generated|lvds_tx_shift_reg:shift_reg13
+clock => shift_reg[0].CLK
+clock => shift_reg[1].CLK
+clock => shift_reg[2].CLK
+clock => shift_reg[3].CLK
+data[0] => shift_reg.DATAB
+data[1] => shift_reg.DATAB
+data[2] => shift_reg.DATAB
+data[3] => shift_reg.DATAB
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+shiftin => shift_reg.DATAA
+shiftout <= shift_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_external_pll|lvds_rx:lvds_rx
+rx_data_align => rx_data_align.IN1
+rx_in[0] => rx_in[0].IN1
+rx_inclock => rx_inclock.IN1
+rx_out[0] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[1] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[2] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[3] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[4] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[5] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[6] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[7] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+
+
+|lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component
+rx_in[0] => lvds_rx_lvds_rx:auto_generated.rx_in[0]
+rx_inclock => lvds_rx_lvds_rx:auto_generated.rx_inclock
+rx_syncclock => ~NO_FANOUT~
+rx_dpaclock => ~NO_FANOUT~
+rx_readclock => ~NO_FANOUT~
+rx_enable => ~NO_FANOUT~
+rx_deskew => ~NO_FANOUT~
+rx_pll_enable => ~NO_FANOUT~
+rx_data_align => lvds_rx_lvds_rx:auto_generated.rx_data_align
+rx_data_align_reset => ~NO_FANOUT~
+rx_reset[0] => ~NO_FANOUT~
+rx_dpll_reset[0] => ~NO_FANOUT~
+rx_dpll_hold[0] => ~NO_FANOUT~
+rx_dpll_enable[0] => ~NO_FANOUT~
+rx_fifo_reset[0] => ~NO_FANOUT~
+rx_channel_data_align[0] => ~NO_FANOUT~
+rx_cda_reset[0] => ~NO_FANOUT~
+rx_coreclk[0] => ~NO_FANOUT~
+pll_areset => ~NO_FANOUT~
+rx_data_reset => ~NO_FANOUT~
+pll_phasedone => ~NO_FANOUT~
+rx_dpa_lock_reset[0] => ~NO_FANOUT~
+dpa_pll_recal => ~NO_FANOUT~
+rx_out[0] <= lvds_rx_lvds_rx:auto_generated.rx_out[0]
+rx_out[1] <= lvds_rx_lvds_rx:auto_generated.rx_out[1]
+rx_out[2] <= lvds_rx_lvds_rx:auto_generated.rx_out[2]
+rx_out[3] <= lvds_rx_lvds_rx:auto_generated.rx_out[3]
+rx_out[4] <= lvds_rx_lvds_rx:auto_generated.rx_out[4]
+rx_out[5] <= lvds_rx_lvds_rx:auto_generated.rx_out[5]
+rx_out[6] <= lvds_rx_lvds_rx:auto_generated.rx_out[6]
+rx_out[7] <= lvds_rx_lvds_rx:auto_generated.rx_out[7]
+rx_outclock <= <GND>
+rx_locked <= <GND>
+rx_dpa_locked[0] <= <GND>
+rx_cda_max[0] <= <GND>
+rx_divfwdclk[0] <= <GND>
+dpa_pll_cal_busy <= <GND>
+pll_phaseupdown <= <GND>
+pll_phasestep <= <GND>
+pll_phasecounterselect[0] <= <GND>
+pll_phasecounterselect[1] <= <GND>
+pll_phasecounterselect[2] <= <GND>
+pll_phasecounterselect[3] <= <GND>
+pll_scanclk <= <GND>
+
+
+|lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated
+rx_data_align => int_sync_reg0.DATAIN
+rx_in[0] => rx_in[0].IN1
+rx_inclock => fast_clock.IN4
+rx_out[0] <= h_shiftreg2a[0].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[1] <= l_shiftreg1a[0].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[2] <= h_shiftreg2a[1].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[3] <= l_shiftreg1a[1].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[4] <= h_shiftreg2a[2].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[5] <= l_shiftreg1a[2].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[6] <= h_shiftreg2a[3].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[7] <= l_shiftreg1a[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_lvds_ddio_in:ddio_in
+clock => ddio_h_reg[0].CLK
+clock => dataout_l_reg[0].CLK
+clock => dataout_h_reg[0].CLK
+clock => ddio_l_reg[0].CLK
+clock => dataout_l_latch[0].CLK
+datain[0] => ddio_l_reg[0].DATAIN
+datain[0] => ddio_h_reg[0].DATAIN
+dataout_h[0] <= dataout_l_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+dataout_l[0] <= dataout_h_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_dffpipe:h_dffpipe
+clock => dffe7a[0].CLK
+d[0] => dffe7a[0].DATAIN
+q[0] <= dffe7a[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_dffpipe:l_dffpipe
+clock => dffe7a[0].CLK
+d[0] => dffe7a[0].DATAIN
+q[0] <= dffe7a[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_cntr:bitslip_cntr
+clock => counter_reg_bit[2].CLK
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+cnt_en => counter_reg_bit[0].ENA
+cnt_en => counter_reg_bit[2].ENA
+cnt_en => counter_reg_bit[1].ENA
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_mux:h_mux5a
+data[0] => result_node.IN0
+data[1] => result_node.IN0
+data[2] => result_node.IN0
+data[3] => result_node.IN0
+data[4] => result_node.IN0
+data[5] => result_node.IN0
+data[6] => result_node.IN0
+data[7] => result_node.IN0
+result[0] <= result_node.DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[1] => result_node.IN1
+sel[1] => result_node.IN1
+sel[1] => result_node.IN1
+sel[1] => result_node.IN1
+sel[2] => result_node.IN1
+sel[2] => result_node.IN1
+
+
+|lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_mux:l_mux6a
+data[0] => result_node.IN0
+data[1] => result_node.IN0
+data[2] => result_node.IN0
+data[3] => result_node.IN0
+data[4] => result_node.IN0
+data[5] => result_node.IN0
+data[6] => result_node.IN0
+data[7] => result_node.IN0
+result[0] <= result_node.DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[0] => result_node.IN1
+sel[1] => result_node.IN1
+sel[1] => result_node.IN1
+sel[1] => result_node.IN1
+sel[1] => result_node.IN1
+sel[2] => result_node.IN1
+sel[2] => result_node.IN1
+
+

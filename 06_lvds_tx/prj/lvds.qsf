@@ -67,7 +67,6 @@ set_instance_assignment -name IO_STANDARD LVDS -to tx_out[0]
 set_global_assignment -name EDA_TEST_BENCH_FILE ../testbench/lvds_test_tb.v -section_id lvds_test_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE ../testbench/lvds_tx_tb.v -section_id lvds_tx_tb
 set_global_assignment -name VERILOG_FILE ../rtl/lvds_test.v
-set_global_assignment -name VERILOG_FILE ../testbench/lvds_tx_tb.v
 set_global_assignment -name QIP_FILE ip/lvds_tx.qip
 set_global_assignment -name QIP_FILE ip/lvds_rx.qip
 set_global_assignment -name VERILOG_FILE ../testbench/lvds_test_tb.v

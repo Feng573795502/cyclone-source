@@ -3,7 +3,7 @@ module lvds_align(
 	input       [9:0]rx_data,    //rx接收数据
 	input       rst_n,           //rx初始化完成标志 用于rst_n
 	input       data_cnt_done,   //数据cnt完成
-	output reg  align_done,      //数据对齐完成输出
+	output reg  clk_align_done,      //数据对齐完成输出
 	output reg  rx_data_align    //接收数据对其输出
 );
 
@@ -19,7 +19,7 @@ module lvds_align(
 	always @(posedge rx_clk or negedge rst_n)begin
 		if(!rst_n)
 			cnt <= 5'b0;
-			else if(align_done)         //校准完成不在操作
+			else if(clk_align_done)         //校准完成不在操作
 			cnt <= 5'b0;
 		else 
 			cnt <= cnt + 1'b1;           
@@ -51,16 +51,16 @@ module lvds_align(
 	//校准查看
 	always @(posedge rx_clk or negedge rst_n)  begin
 		if(!rst_n)
-			align_done <= 1'b0;
+			clk_align_done <= 1'b0;
 		else if(!data_cnt_done) 
-			align_done <= 1'b0;
+			clk_align_done <= 1'b0;
 		else if(cnt == 19) begin
 			if(judge_done == 3'b111)  //校准完成
-				align_done <= 1'b1;
+				clk_align_done <= 1'b1;
 			else 
-				align_done <= 1'b0;   
+				clk_align_done <= 1'b0;   
 		end
 		else 
-			align_done <= align_done; 
+			clk_align_done <= clk_align_done; 
 	end
 endmodule 
