@@ -1,0 +1,125 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1000mV 100C Model Setup 'clk_in'
+Slack : 29.491
+TNS   : 0.000
+
+Type  : Slow 1000mV 100C Model Setup 'sysclk'
+Slack : 55.757
+TNS   : 0.000
+
+Type  : Slow 1000mV 100C Model Hold 'clk_in'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1000mV 100C Model Hold 'sysclk'
+Slack : 0.531
+TNS   : 0.000
+
+Type  : Slow 1000mV 100C Model Recovery 'sysclk'
+Slack : 54.374
+TNS   : 0.000
+
+Type  : Slow 1000mV 100C Model Recovery 'clk_in'
+Slack : 58.335
+TNS   : 0.000
+
+Type  : Slow 1000mV 100C Model Removal 'clk_in'
+Slack : 1.516
+TNS   : 0.000
+
+Type  : Slow 1000mV 100C Model Removal 'sysclk'
+Slack : 5.438
+TNS   : 0.000
+
+Type  : Slow 1000mV 100C Model Minimum Pulse Width 'sysclk'
+Slack : 30.176
+TNS   : 0.000
+
+Type  : Slow 1000mV 100C Model Minimum Pulse Width 'clk_in'
+Slack : 30.184
+TNS   : 0.000
+
+Type  : Slow 1000mV -40C Model Setup 'clk_in'
+Slack : 29.567
+TNS   : 0.000
+
+Type  : Slow 1000mV -40C Model Setup 'sysclk'
+Slack : 55.956
+TNS   : 0.000
+
+Type  : Slow 1000mV -40C Model Hold 'clk_in'
+Slack : 0.405
+TNS   : 0.000
+
+Type  : Slow 1000mV -40C Model Hold 'sysclk'
+Slack : 0.524
+TNS   : 0.000
+
+Type  : Slow 1000mV -40C Model Recovery 'sysclk'
+Slack : 54.837
+TNS   : 0.000
+
+Type  : Slow 1000mV -40C Model Recovery 'clk_in'
+Slack : 58.390
+TNS   : 0.000
+
+Type  : Slow 1000mV -40C Model Removal 'clk_in'
+Slack : 1.521
+TNS   : 0.000
+
+Type  : Slow 1000mV -40C Model Removal 'sysclk'
+Slack : 4.934
+TNS   : 0.000
+
+Type  : Slow 1000mV -40C Model Minimum Pulse Width 'sysclk'
+Slack : 30.113
+TNS   : 0.000
+
+Type  : Slow 1000mV -40C Model Minimum Pulse Width 'clk_in'
+Slack : 30.151
+TNS   : 0.000
+
+Type  : Fast 1000mV -40C Model Setup 'clk_in'
+Slack : 29.677
+TNS   : 0.000
+
+Type  : Fast 1000mV -40C Model Setup 'sysclk'
+Slack : 58.166
+TNS   : 0.000
+
+Type  : Fast 1000mV -40C Model Hold 'clk_in'
+Slack : 0.203
+TNS   : 0.000
+
+Type  : Fast 1000mV -40C Model Hold 'sysclk'
+Slack : 0.278
+TNS   : 0.000
+
+Type  : Fast 1000mV -40C Model Recovery 'sysclk'
+Slack : 57.100
+TNS   : 0.000
+
+Type  : Fast 1000mV -40C Model Recovery 'clk_in'
+Slack : 59.515
+TNS   : 0.000
+
+Type  : Fast 1000mV -40C Model Removal 'clk_in'
+Slack : 0.827
+TNS   : 0.000
+
+Type  : Fast 1000mV -40C Model Removal 'sysclk'
+Slack : 3.156
+TNS   : 0.000
+
+Type  : Fast 1000mV -40C Model Minimum Pulse Width 'sysclk'
+Slack : 29.956
+TNS   : 0.000
+
+Type  : Fast 1000mV -40C Model Minimum Pulse Width 'clk_in'
+Slack : 29.988
+TNS   : 0.000
+
+------------------------------------------------------------

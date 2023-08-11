@@ -1,0 +1,638 @@
+module ads_ctr(
+		input clk,
+		input rst_n,
+		input wr_req,
+		input rd_req,
+		input access_start,
+		input cfg_valid,
+		input [7:0]cfg_data,
+		output[15:0] ad_voltage,
+		output ads_scl,
+		inout ads_sda,
+		output s_ready
+);
+
+  // clk=10M   clk_200k=200k  clk_div=50 ads_scl=100k
+  parameter clk_div=50;
+   reg clk_200k;
+   reg [6:0]counter;
+   always@(posedge clk or negedge rst_n)
+	begin
+		if(!rst_n)
+			begin
+			counter<=0;
+			end
+		else if (counter==clk_div/2-1)
+		    begin
+			counter<=0;
+			end
+		else	
+			begin
+			counter<=counter+1'b1;
+			end
+	end
+	  // generate clock=200khz 
+	always@(posedge clk_200 or negedge rst_n)
+	begin
+	    if(!rst_n)
+		   begin
+		    clk_200k<=1'b0;
+		   end
+		else if(counter==24) // count value between 0-24
+			begin
+			    clk_200k<=~clk_200k;
+			end
+		else
+			clk_200k<=clk_200k;
+	end
+	 // scl=100khz
+	reg scl;
+	always@(posedge clk_200k or negedge rst_n)
+		begin
+			if(!rst_n)
+			scl<=1'b1;
+			else
+			scl<=~scl;
+		end
+	// scl output	
+	reg scl_delay;
+	always@(negedge clk_200k or negedge rst_n)
+		begin
+			if(!rst_n) 
+			   scl_delay<=1'b1;
+			else
+				scl_delay<=scl;
+		end
+	// state machine contrvl signal
+	
+	reg start;
+	assign idle_wait=(state==IDLE) ? 1'b1 :1'b0;
+	always@ (posedge clk or negedge rst_n)
+		begin
+			if(!rst_n)
+				start<=1'b0;
+			else if(access_start)
+				start<=1'b1;
+			else if(idle_wait)
+				start<=1'b0;
+			else 
+			    start<=start;
+		end
+		
+    reg iicwr_req;
+	reg iicrd_req;
+	wire iic_wr_en;
+	wire iic_rd_en;
+	wire iic_wr_en_pos,iic_rd_en_pos;
+	assign iic_rd_en=rd_req;
+	assign iic_wr_en=wr_req;
+	reg iic_wr_en_r0,iic_wr_en_r1;
+	reg iic_rd_en_r0,iic_rd_en_r1;
+	always@ (posedge clk or negedge rst_n)
+		begin
+		    if(!rst_n)
+			 begin
+				iic_rd_en_r0<=1'b0;
+				iic_rd_en_r1<=1'b1;
+			 end
+			else
+			  begin
+			     iic_rd_en_r0<=iic_rd_en;
+				 iic_rd_en_r1<=iic_rd_en_r0;
+			  end
+		end
+	assign iic_rd_en_pos=(~iic_rd_en_r1&&iic_rd_en_r0); //读使能上升沿
+    
+	always@(posedge clk or negedge rst_n)
+		begin
+			if(!rst_n)
+			 begin
+				iic_wr_en_r0<=1'b0;
+				iic_wr_en_r1<=1'b1;
+			 end
+			else
+			 begin
+			     iic_wr_en_r0<=iic_wr_en;
+				 iic_wr_en_r1<=iic_wr_en_r0;
+			 end
+		end
+	assign iic_wr_en_pos=(~iic_wr_en_r1&&iic_wr_en_r0);	
+	
+	// scl generate
+	
+	reg [4:0] state;
+	reg[4:0] state_next;
+	parameter   IDLE=5'd0,
+				STR=5'd1,
+				ADDR=5'd2,  // slave write address
+				S_ACK0=5'd3, 
+				APRADDR=5'd4,// address point register address
+				S_ACK1=5'd5,
+				//START1=5'd6,
+				ADDR1=5'd6, // slave read address
+				S_ACK2=5'd7,
+				RX_D1=5'd8,
+				M_ACK0=5'd9,
+				RX_D2=5'd10,
+				M_ACK1=5'd11,
+				TX_D1=5'd12,
+				S_ACK3=5'd13,
+				TX_D2=5'd14,
+				S_ACK4=5'd15,
+				STOP=5'd16,
+				ERROR1=5'd17,
+				
+     // state machine 
+	always@(posedge scl or negedge rst_n)
+		begin
+			if(!rst_n)
+			 state<=IDLE;
+			else
+			 state<=state_next;
+		end		
+	wire byte_end;
+	always@(*)
+		begin
+			case(state)
+				IDLE:
+					begin
+						if(start)
+							state_next=STR;
+						else 
+							state_next=IDLE;
+					end
+				STR:
+					state_next<=ADDR;
+				ADDR:
+				    begin
+						if(byte_end)
+							state_next<=S_ACK0;
+						else
+						   state_next<=ADDR;
+					end
+				S_ACK0:
+					begin
+						if(sda_latch==1)
+						  state_next<=ERROR1;
+						else 
+						   state_next<=APRADDR;
+					end
+				APRADDR:
+				    begin
+						if(byte_end)
+						   state_next<=S_ACK1;
+						else 
+						   state_next<=APRADDR;						
+					end
+				S_ACK1:	
+					begin
+					    if(sda_latch==1)
+						  state_next<=ERROR1;
+						else if(iic_rd_en_pos)
+							state_next<=ADDR1;
+						else if(iic_wr_en_pos)
+							state_next<=TX_D1；
+						else 
+						    state_next<=IDLE;	
+					end
+				TX_D1:
+					begin
+					    if(byte_end)
+						  state_next<=S_ACK2;
+						else 
+						  state_next<=TX_D1;
+					end
+				S_ACK2:
+					begin
+						if(sda_latch==1)
+						   state_next<=ERROR1;
+						else   
+						  state_next<=TX_D2;
+					end
+				TX_D2:
+					begin
+					    if(byte_end)
+						  state_next<=S_ACK3;
+						else 
+						  state_next<=TX_D2;
+					end
+				S_ACK3:
+					begin
+					     if(sda_latch==1)
+							state_next<=ERROR1;
+						 else
+						    state_next<=STOP;
+					end
+				ADDR1:
+					begin
+						if(byte_end)
+						  state_next<=S_ACK4;
+						else
+						  state_next<=ADDR1;
+					end
+				S_ACK4:
+					begin
+						if(sda_latch==1)
+						   state_next<=ERROR1;
+						else 
+							state_next<=RX_D1;
+					end
+				RX_D1:
+					begin
+						if(byte_end)
+						 state_next<=M_ACK0;
+						else 
+						  state_next<=RX_D1;
+					end
+				M_ACK0:
+					begin
+						state_next<=RX_D2;
+					end
+				RX_D2:
+					begin
+						if(byte_end)
+						  state_next<=M_ACK1;
+						else
+						  state_next<=RX_D2;
+					end
+				M_ACK1:
+				    state_next<=STOP;
+				STOP:
+					state_next<=IDLE;
+				default:
+					state_next<=state;					
+			endcase		
+		end
+    // SDA output
+		reg sda;
+		reg highz_en;
+		reg [2:0] cnt8;
+		always@(posedge scl or negedge rst_n)
+			begin
+				if(!rst_n)
+					cnt8<=3'b0;
+				else if(cnt8==3'b111)
+					cnt8<=3'b0;
+				else if((state==ADDR)|| state==APRADDR || state==ADDR1 || state==RX_D1 || state==RX_D2 ||
+				state==TX_D1 || state==TX_D2)
+					cnt8<=cnt8+1;
+				else 
+                   cnt8<=3'b0;				
+			end
+	assign byte_end=(cnt8==3'b111)? 1'b1:1'b0;
+	
+	wire tx_d1,tx_d2;
+	reg addr_wr_sda,addr_rd_sda,apraddr_sda;
+    always@(posedge scl or negedge rst_n)
+		begin
+			if(!rst_n)
+				begin
+					sda<=1'b1;
+					highz_en<=1'b1;
+				end
+			else
+				begin
+				highz_en<=1'b0;
+					case(state_next)
+						IDLE:
+							begin
+							sda<=1'b1;
+							highz_en<=1'b1;
+							end
+						STR:
+							begin
+								sda<=1'b0;
+							end
+						ADDR:
+							begin
+								sda<=addr_wr_sda;
+							end
+						ADDR1:
+							begin
+								sda<=addr_rd_sda;							
+							end
+						APRADDR:
+							begin
+								sda<=apraddr_sda;
+							end
+						S_ACK0:
+							begin
+								sda<=1'b1;
+								highz_en<=1'b1;
+							end
+						S_ACK1:	
+							begin
+								sda<=1'b1;
+								highz_en<=1'b1;
+							end
+						S_ACK2:
+							begin
+								sda<=1'b1;
+								highz_en<=1'b1;
+							end
+						S_ACK3:
+							begin
+								sda<=1'b1;
+								highz_en<=1'b1;
+							end
+						S_ACK4:
+							begin
+								sda<=1'b1;
+								highz_en<=1'b1;
+							end
+						M_ACK0:
+							begin
+								sda<=1'b0;
+							end
+						M_ACK1:
+							begin
+								sda<=1'b0;
+							end
+						TX_D1:
+							begin
+							   sda<=tx_d1;
+							end
+						TX_D2:
+							begin
+								sda<=tx_d2;
+							end
+						RX_D1:
+							begin
+								sda<=1'b1;
+								highz_en<=1'b1;
+							end
+						RX_D2:
+							begin
+								sda<=1'b1;
+								highz_en<=1'b1;
+							end
+						STOP:
+							begin
+							    sda<=1'b0;
+							end
+						default:
+							begin
+								sda<=1'b0;
+								highz_en<=1'b1;
+							end
+					endcase		
+				end
+		end
+		
+	// configuration register 
+	
+	reg[7:0] reg_addr_wr; // slave write address 
+	reg [7:0]point_reg; // address pointer address
+	reg [7:0]reg_addr_rd; // slave read address
+	reg [7:0] data_h;// high byte  for ads writing 
+	reg [7:0] data_l;// low byte for ads writing
+	parameter IDLE1=8'd0,
+	          S_ADDR_WR=8'd1,
+			  S_APR_ADDR=8'd2,
+			  WR_DATA1=8'd3,
+			  WR_DATA2=8'd4,
+			  S_ADDR_RD=8'd5,
+			  STOP1=8'd6;
+		reg[7:0] data_state;
+		reg [7:0] data_state_next;
+		
+	always@(posedge clk or negedge rst_n)
+		begin
+			if(!rst_n)
+			data_state<=IDLE1;
+			else
+			data_state<=data_state_next;
+		end
+	
+	always@(posedge clk or negedge rst_n)
+		begin
+		    if(!rst_n)
+			 data_state<=IDLE1;
+			else 
+				begin
+					case(data_state)
+						IDLE1:
+						    begin
+								if(cfg_valid)
+									begin
+								   data_state_next<=S_ADDR_WR;
+								   end
+								else
+									data_state_next<=IDLE1;
+							end
+						S_ADDR_WR:
+							begin
+								data_state_next<=S_APR_ADDR;
+							end
+						S_APR_ADDR:
+							begin
+							     if(cfg_valid&&wr_req)
+									data_state_next<=WR_DATA1;
+								else if(cfg_valid&&rd_req)
+									 data_state_next<=S_ADDR_RD;
+								else	 
+									data_state_next<=IDLE1;
+							end
+						WR_DATA1:
+							begin
+								if(cfg_valid&&wr_req)
+									data_state_next<=WR_DATA2;
+								else 
+									data_state_next<=WR_DATA1;
+							end
+						WR_DATA2:
+							begin
+								data_state_next<=STOP1;
+							end
+						S_ADDR_RD:
+							begin
+								data_state_next<=STOP1;
+							end
+						STOP1:
+							begin
+								data_state_next<=IDLE1;
+							end
+						default:
+							begin
+							data_state_next<=data_state;
+							end
+				end
+		end
+			  
+	always@(posedge clk or negedge rst_n)
+		begin
+			if(!rst_n)
+				begin
+					reg_addr_rd<=8'h00;
+					reg_addr_wr<=8'h00;
+					point_reg<=8'h00;
+					data_h<=8'h00;
+					data_l=8'h00;
+				end
+			else 
+				begin
+					case(data_state_next)
+						IDLE:
+							begin
+							reg_addr_rd<=reg_addr_rd;
+							reg_addr_wr<=reg_addr_wr;
+							point_reg<=point_reg;
+							data_l<=data_l;
+							data_h<=data_h;
+							end
+						S_ADDR_WR:
+							begin
+							 reg_addr_wr<=cfg_data;
+							end
+						S_APR_ADDR:
+							begin
+							  point_reg<=cfg_data;
+							end
+						WR_DATA1:
+							begin
+							   data_h<=cfg_data;
+							end
+						WR_DATA2:
+							begin
+								data_l<=cfg_data;
+							end
+						S_ADDR_RD:
+							begin
+								reg_addr_rd<=cfg_data;
+							end
+						STOP1:
+							begin
+							reg_addr_rd<=reg_addr_rd;
+							reg_addr_wr<=reg_addr_wr;
+							point_reg<=point_reg;
+							data_l<=data_l;
+							data_h<=data_h;	
+							end
+				end
+		end
+	
+	// ADDR register 
+    wire addr_sda,apraddr_sda;
+	reg[7:0]addr_wr_data;
+	reg[7:0]addr_rd_data;
+	reg [7:0]apraddr_data;
+	assign addr_wr_sda=addr_wr_data[7];
+	assign addr_rd_sda=addr_rd_data[7];
+	assign apraddr_sda=point_reg[7];
+	assign tx_d1=data_h[7];
+	assign tx_d2=data_l[7];
+	
+
+			  
+	always@(posedge scl or negedge rst_n)
+		begin
+			if(!rst_n)
+			    begin
+				 addr_wr_data<=8'b0;
+				 data_h<=8'b0;
+				 data_l<=8'b0;
+				end
+			else if(state_next==STR)
+			    begin
+				  addr_wr_data<=reg_addr_wr; // write operation
+				end
+			else if(state_next==ADDR)
+				begin
+					addr_wr_data[7:1]<=addr_wr_data[6:0];
+				end
+			else if(state_next==APRADDR)
+				begin
+					point_reg[7:1]<=point[6:0];
+				end
+			else if(state_next==TX_D1)
+				begin
+					data_h[7:1]<=data_h[6:0];
+					
+				end
+			else if(state_next==TX_D2)
+				begin
+				    data_l[7:1]<=data_l[6:0];
+				end
+			else 
+				begin
+					addr_wr_data<=addr_wr_data;
+					data_h<=data_h;
+					data_l<=data_l;
+				end
+				
+		end
+	// master receive data,series to paralle
+	   reg[7:0] rx_data1;
+	   reg [7:0]rx_data2;
+	   always@(posedge scl or negedge rst_n)
+			begin
+				if(!rst_n)
+				     begin
+						rx_data1<=0;
+						rx_data2<=0;
+					 end
+				else if(state_next==ADDR1)
+					 begin
+						addr_rd_data[7:1]<=addr_rd_data[6:0];
+					 end
+				else if(state==RX_D1)
+					begin
+					   rx_data1[0]<=sda_latch;
+					   rx_data1[7:1]<=rx_data1[6:0];
+					   rx_data2<=rx_data2;
+					end
+				else if(state==RX_D2)
+					begin
+						rx_data2[0]<=sda_latch;
+						rx_data2[7:1]<=rx_data2[6:0];
+						rx_data1<=rx_data1;
+					end
+				else if(state==IDLE)
+					begin
+						rx_data1<=0;
+						rx_data2<=0;
+					end
+				else 
+					begin
+						rx_data1<=rx_data1;
+						rx_data2<=rx_data2;
+					end					
+			end
+	reg sda_latch;
+	always@(negedge scl or negedge rst_n) //注意 下降沿采样 
+		begin
+			if(!rst_n)
+				begin
+					sda_latch<=1'b0;
+				end
+			else if(highz_en)
+				sda_latch<=ads_sda;
+			else 
+			    sda_latch<=sda_latch;
+    			
+		end
+	// scl gate	
+	reg scl_gate;
+	always@(negedge scl or negedge rst_n)
+		begin
+		   if(!rst_n)
+				begin
+					scl_gate<=1'b0;
+				end
+		   else if(state==STR)
+				begin
+				   scl_gate<=1'b1;
+				end
+			else if(state==STOP || state== ERROR1)
+				begin
+				 scl_gate<=1'b0;
+				end
+			else 
+				scl_gate<=scl_gate;
+		end
+	assign ads_scl=~scl_gate||scl_delay;
+	assign ads_sda=highz_en?1'bz:sda;
+	
+	assign ad_voltage={rxdata1,rxdata2};
+	assign s_ready=(state==STR)?1'b1:1'b0;	//
+endmodule

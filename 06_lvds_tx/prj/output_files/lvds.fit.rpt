@@ -1,5 +1,5 @@
 Fitter report for lvds
-Thu Aug 10 13:51:53 2023
+Fri Aug 11 16:37:42 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -58,7 +58,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Failed - Thu Aug 10 13:51:53 2023               ;
+; Fitter Status                      ; Failed - Fri Aug 11 16:37:42 2023               ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; lvds                                            ;
 ; Top-level Entity Name              ; lvds_test                                       ;
@@ -866,8 +866,8 @@ Warning (169069): Following 3 pins have nothing, GND, or VCC driving datain port
     Info (169070): Pin clk_in_en has GND driving its datain port File: H:/FPGA/cyclone source/06_lvds_tx/rtl/lvds_test.v Line: 9
 Error: Quartus Prime Fitter was unsuccessful. 2 errors, 5 warnings
     Error: Peak virtual memory: 4949 megabytes
-    Error: Processing ended: Thu Aug 10 13:51:53 2023
-    Error: Elapsed time: 00:00:01
+    Error: Processing ended: Fri Aug 11 16:37:42 2023
+    Error: Elapsed time: 00:00:02
     Error: Total CPU time (on all processors): 00:00:01
 
 

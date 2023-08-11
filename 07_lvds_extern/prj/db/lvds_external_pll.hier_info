@@ -1,10 +1,14 @@
 |lvds_external_pll
 clk => clk.IN1
-lvds_txp << lvds_tx:lvds_tx.tx_out
+lvds_txp <= lvds_tx:lvds_tx.tx_out
 lvds_rxp => lvds_rxp.IN1
-lvds_slow_clk << lvds_slow_clk.DB_MAX_OUTPUT_PORT_TYPE
-lvds_fast_clk << lvds_fast_clk.DB_MAX_OUTPUT_PORT_TYPE
-clk_locked << clk_locked.DB_MAX_OUTPUT_PORT_TYPE
+tx_inclock <= tx_inclock.DB_MAX_OUTPUT_PORT_TYPE
+tx_outclk <= tx_inclock.DB_MAX_OUTPUT_PORT_TYPE
+rx_data_align => rx_data_align.IN1
+rx_inclock => rx_inclock.IN1
+rx_locked <= <GND>
+rx_outclock <= lvds_rx:lvds_rx.rx_outclock
+clk_locked <= lvds_pll:lvds_pll.locked
 data_in[0] => data_in[0].IN1
 data_in[1] => data_in[1].IN1
 data_in[2] => data_in[2].IN1
@@ -13,14 +17,14 @@ data_in[4] => data_in[4].IN1
 data_in[5] => data_in[5].IN1
 data_in[6] => data_in[6].IN1
 data_in[7] => data_in[7].IN1
-rx_out[0] << lvds_rx:lvds_rx.rx_out
-rx_out[1] << lvds_rx:lvds_rx.rx_out
-rx_out[2] << lvds_rx:lvds_rx.rx_out
-rx_out[3] << lvds_rx:lvds_rx.rx_out
-rx_out[4] << lvds_rx:lvds_rx.rx_out
-rx_out[5] << lvds_rx:lvds_rx.rx_out
-rx_out[6] << lvds_rx:lvds_rx.rx_out
-rx_out[7] << lvds_rx:lvds_rx.rx_out
+rx_out[0] <= lvds_rx:lvds_rx.rx_out
+rx_out[1] <= lvds_rx:lvds_rx.rx_out
+rx_out[2] <= lvds_rx:lvds_rx.rx_out
+rx_out[3] <= lvds_rx:lvds_rx.rx_out
+rx_out[4] <= lvds_rx:lvds_rx.rx_out
+rx_out[5] <= lvds_rx:lvds_rx.rx_out
+rx_out[6] <= lvds_rx:lvds_rx.rx_out
+rx_out[7] <= lvds_rx:lvds_rx.rx_out
 
 
 |lvds_external_pll|lvds_pll:lvds_pll
@@ -230,6 +234,7 @@ rx_out[4] <= altlvds_rx:ALTLVDS_RX_component.rx_out
 rx_out[5] <= altlvds_rx:ALTLVDS_RX_component.rx_out
 rx_out[6] <= altlvds_rx:ALTLVDS_RX_component.rx_out
 rx_out[7] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_outclock <= altlvds_rx:ALTLVDS_RX_component.rx_outclock
 
 
 |lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component
@@ -264,7 +269,7 @@ rx_out[4] <= lvds_rx_lvds_rx:auto_generated.rx_out[4]
 rx_out[5] <= lvds_rx_lvds_rx:auto_generated.rx_out[5]
 rx_out[6] <= lvds_rx_lvds_rx:auto_generated.rx_out[6]
 rx_out[7] <= lvds_rx_lvds_rx:auto_generated.rx_out[7]
-rx_outclock <= <GND>
+rx_outclock <= lvds_rx_lvds_rx:auto_generated.rx_outclock
 rx_locked <= <GND>
 rx_dpa_locked[0] <= <GND>
 rx_cda_max[0] <= <GND>
@@ -280,9 +285,9 @@ pll_scanclk <= <GND>
 
 
 |lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated
-rx_data_align => int_sync_reg0.DATAIN
+rx_data_align => rx_data_align_reg.DATAIN
 rx_in[0] => rx_in[0].IN1
-rx_inclock => fast_clock.IN4
+rx_inclock => lvds_rx_pll.CLK
 rx_out[0] <= h_shiftreg2a[0].DB_MAX_OUTPUT_PORT_TYPE
 rx_out[1] <= l_shiftreg1a[0].DB_MAX_OUTPUT_PORT_TYPE
 rx_out[2] <= h_shiftreg2a[1].DB_MAX_OUTPUT_PORT_TYPE
@@ -291,6 +296,7 @@ rx_out[4] <= h_shiftreg2a[2].DB_MAX_OUTPUT_PORT_TYPE
 rx_out[5] <= l_shiftreg1a[2].DB_MAX_OUTPUT_PORT_TYPE
 rx_out[6] <= h_shiftreg2a[3].DB_MAX_OUTPUT_PORT_TYPE
 rx_out[7] <= l_shiftreg1a[3].DB_MAX_OUTPUT_PORT_TYPE
+rx_outclock <= lvds_rx_pll.CLK1
 
 
 |lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_lvds_ddio_in:ddio_in

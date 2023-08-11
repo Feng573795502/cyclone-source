@@ -1,0 +1,76 @@
+module iic_cfg(
+input clk,
+input rst_n,
+output reg m_wr_req,
+output reg m_rd_req,
+//output reg[7:0]m_cfg_data,
+input [15:0]m_ad_voltage,
+//input ready
+output reg [15:0]ad_voltage_valid
+
+);
+// clk=10M   
+ 
+   reg [15:0]counter;
+   always@(posedge clk or negedge rst_n)
+	begin
+		if(!rst_n)
+			begin
+			counter<=0;
+			end
+		else if (counter==12000)
+		    begin
+			counter<=0;
+			end
+		else	
+			begin
+			counter<=counter+1'b1;
+			end
+	end
+    
+  always@(posedge clk or negedge rst_n)
+	begin
+		if(!rst_n)
+			begin
+			m_wr_req<=1'b0;
+			m_rd_req<=1'b0;			
+			end
+		else if(counter==500)
+			begin
+			m_wr_req<=1'b1;
+			m_rd_req<=1'b0;
+			end
+		else if(counter==5500)
+			begin
+			m_wr_req<=1'b0;
+			m_rd_req<=1'b1;
+			end
+		else 
+			begin
+			m_wr_req<=m_wr_req;
+			m_rd_req<=m_rd_req;
+			end		
+	end
+	 
+	
+	reg [15:0]ad_voltage_invalid;
+  
+  always@(posedge clk or negedge rst_n)
+	begin
+		if(!rst_n)
+			begin
+				ad_voltage_invalid<=16'd0;
+				ad_voltage_valid<=16'd0;
+			end
+		else if(m_ad_voltage[15:0]!=0)
+			begin
+			ad_voltage_valid<=m_ad_voltage;	
+			end
+		else if(m_ad_voltage==16'd0)
+			begin
+			ad_voltage_invalid<=m_ad_voltage;
+			end
+	end
+
+	
+endmodule

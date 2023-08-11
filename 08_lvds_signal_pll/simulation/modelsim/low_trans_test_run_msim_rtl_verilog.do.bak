@@ -1,0 +1,11 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+E:/workspace/quartus/low_trans_test {E:/workspace/quartus/low_trans_test/low_trans_test.v}
+vlog -vlog01compat -work work +incdir+E:/workspace/quartus/low_trans_test {E:/workspace/quartus/low_trans_test/clk_pll.v}
+vlog -vlog01compat -work work +incdir+E:/workspace/quartus/low_trans_test/db {E:/workspace/quartus/low_trans_test/db/clk_pll_altpll.v}
+

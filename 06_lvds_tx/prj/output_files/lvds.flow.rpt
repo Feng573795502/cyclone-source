@@ -1,5 +1,5 @@
 Flow report for lvds
-Thu Aug 10 13:51:53 2023
+Fri Aug 11 16:37:42 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Flow Failed - Thu Aug 10 13:51:53 2023          ;
+; Flow Status                        ; Flow Failed - Fri Aug 11 16:37:42 2023          ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; lvds                                            ;
 ; Top-level Entity Name              ; lvds_test                                       ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/10/2023 13:51:43 ;
+; Start date & time ; 08/11/2023 16:37:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lvds                ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 198112243479721.169164670321164        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 198112243479721.169174305118232        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; lvds_tx_tb     ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; lvds_test_tb   ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; lvds_test_tb                           ; --            ; --          ; eda_simulation ;
@@ -121,9 +121,9 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4851 MB             ; 00:00:19                           ;
-; Fitter               ; 00:00:01     ; 1.0                     ; 4949 MB             ; 00:00:01                           ;
-; Total                ; 00:00:09     ; --                      ; --                  ; 00:00:20                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4850 MB             ; 00:00:18                           ;
+; Fitter               ; 00:00:02     ; 1.0                     ; 4949 MB             ; 00:00:01                           ;
+; Total                ; 00:00:10     ; --                      ; --                  ; 00:00:19                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

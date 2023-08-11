@@ -1,0 +1,232 @@
+Partition Merge report for low_trans_test
+Fri Jun 26 12:18:43 2020
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Partition Merge Partition Statistics
+  5. Partition Merge Partition Pin Processing
+  6. Partition Merge Resource Usage Summary
+  7. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Partition Merge Summary                                                              ;
++------------------------------------+-------------------------------------------------+
+; Partition Merge Status             ; Successful - Fri Jun 26 12:18:43 2020           ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
+; Revision Name                      ; low_trans_test                                  ;
+; Top-level Entity Name              ; lvds_ip_auto_align                              ;
+; Family                             ; Cyclone 10 LP                                   ;
+; Total logic elements               ; 202 / 39,600 ( < 1 % )                          ;
+;     Total combinational functions  ; 150 / 39,600 ( < 1 % )                          ;
+;     Dedicated logic registers      ; 143 / 39,600 ( < 1 % )                          ;
+; Total registers                    ; 149                                             ;
+; Total pins                         ; 8 / 326 ( 2 % )                                 ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0 / 1,161,216 ( 0 % )                           ;
+; Embedded Multiplier 9-bit elements ; 0 / 252 ( 0 % )                                 ;
+; Total PLLs                         ; 3 / 4 ( 75 % )                                  ;
++------------------------------------+-------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Post-Fit          ; Post-Fit               ;                                ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                 ;
++---------------------------------------------+-----------------------+--------------------------------+
+; Statistic                                   ; Top                   ; hard_block:auto_generated_inst ;
++---------------------------------------------+-----------------------+--------------------------------+
+; Estimated Total logic elements              ; 202 / 39600 ( < 1 % ) ; 0 / 39600 ( 0 % )              ;
+;                                             ;                       ;                                ;
+; Total combinational functions               ; 150                   ; 0                              ;
+; Logic element usage by number of LUT inputs ;                       ;                                ;
+;     -- 4 input functions                    ; 48                    ; 0                              ;
+;     -- 3 input functions                    ; 35                    ; 0                              ;
+;     -- <=2 input functions                  ; 67                    ; 0                              ;
+;                                             ;                       ;                                ;
+; Logic elements by mode                      ;                       ;                                ;
+;     -- normal mode                          ; 109                   ; 0                              ;
+;     -- arithmetic mode                      ; 41                    ; 0                              ;
+;                                             ;                       ;                                ;
+; Total registers                             ; 145                   ; 4                              ;
+;     -- Dedicated logic registers            ; 143 / 39600 ( < 1 % ) ; 0 / 39600 ( 0 % )              ;
+;     -- I/O registers                        ; 4                     ; 8                              ;
+;                                             ;                       ;                                ;
+; Virtual pins                                ; 0                     ; 0                              ;
+; I/O pins                                    ; 6                     ; 2                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 252 ( 0 % )       ; 0 / 252 ( 0 % )                ;
+; Total memory bits                           ; 0                     ; 0                              ;
+; Total RAM block bits                        ; 0                     ; 0                              ;
+; PLL                                         ; 0 / 4 ( 0 % )         ; 3 / 4 ( 75 % )                 ;
+; Double Data Rate I/O Output Circuitry       ; 0 / 520 ( 0 % )       ; 2 / 520 ( < 1 % )              ;
+;                                             ;                       ;                                ;
+; Connections                                 ;                       ;                                ;
+;     -- Input Connections                    ; 177                   ; 6                              ;
+;     -- Registered Input Connections         ; 175                   ; 0                              ;
+;     -- Output Connections                   ; 6                     ; 177                            ;
+;     -- Registered Output Connections        ; 4                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Internal Connections                        ;                       ;                                ;
+;     -- Total Connections                    ; 879                   ; 197                            ;
+;     -- Registered Connections               ; 556                   ; 0                              ;
+;                                             ;                       ;                                ;
+; External Connections                        ;                       ;                                ;
+;     -- Top                                  ; 0                     ; 183                            ;
+;     -- hard_block:auto_generated_inst       ; 183                   ; 0                              ;
+;                                             ;                       ;                                ;
+; Partition Interface                         ;                       ;                                ;
+;     -- Input Ports                          ; 3                     ; 6                              ;
+;     -- Output Ports                         ; 4                     ; 7                              ;
+;     -- Bidir Ports                          ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Registered Ports                            ;                       ;                                ;
+;     -- Registered Input Ports               ; 0                     ; 0                              ;
+;     -- Registered Output Ports              ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Port Connectivity                           ;                       ;                                ;
+;     -- Input Ports driven by GND            ; 0                     ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                     ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                     ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                     ; 0                              ;
+;     -- Input Ports with no Source           ; 0                     ; 0                              ;
+;     -- Output Ports with no Source          ; 0                     ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                     ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                     ; 0                              ;
++---------------------------------------------+-----------------------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Pin Processing                                                                                ;
++--------------------------+-----------+---------------+--------------------+---------------------------------------------+
+; Name                     ; Partition ; Type          ; Location           ; Status                                      ;
++--------------------------+-----------+---------------+--------------------+---------------------------------------------+
+; clk_in                   ; Top       ; Input Port    ; n/a                ;                                             ;
+;     -- clk_in            ; Top       ; Input Pad     ; IOPAD_X67_Y22_N7   ; Preserved from Post-Fit or Imported Netlist ;
+;     -- clk_in~input      ; Top       ; Input Buffer  ; IOIBUF_X67_Y22_N8  ; Preserved from Post-Fit or Imported Netlist ;
+;                          ;           ;               ;                    ;                                             ;
+; clk_in_en                ; Top       ; Output Port   ; n/a                ;                                             ;
+;     -- clk_in_en         ; Top       ; Output Pad    ; IOPAD_X67_Y12_N14  ; Preserved from Post-Fit or Imported Netlist ;
+;     -- clk_in_en~output  ; Top       ; Output Buffer ; IOOBUF_X67_Y12_N16 ; Preserved from Post-Fit or Imported Netlist ;
+;                          ;           ;               ;                    ;                                             ;
+; clk_out                  ; Top       ; Output Port   ; n/a                ;                                             ;
+;     -- clk_out           ; Top       ; Output Pad    ; Unplaced           ; Preserved from Synthesis Netlist (WYSIWYG)  ;
+;     -- clk_out~output    ; Top       ; Output Buffer ; Unplaced           ; Preserved from Synthesis Netlist (WYSIWYG)  ;
+;                          ;           ;               ;                    ;                                             ;
+; clk_out_en               ; Top       ; Output Port   ; n/a                ;                                             ;
+;     -- clk_out_en        ; Top       ; Output Pad    ; IOPAD_X0_Y10_N7    ; Preserved from Post-Fit or Imported Netlist ;
+;     -- clk_out_en~output ; Top       ; Output Buffer ; IOOBUF_X0_Y10_N9   ; Preserved from Post-Fit or Imported Netlist ;
+;                          ;           ;               ;                    ;                                             ;
+; data_rxp                 ; Top       ; Input Port    ; n/a                ;                                             ;
+;     -- data_rxp          ; Top       ; Input Pad     ; IOPAD_X67_Y18_N0   ; Preserved from Post-Fit or Imported Netlist ;
+;     -- data_rxp~input    ; Top       ; Input Buffer  ; IOIBUF_X67_Y18_N1  ; Preserved from Post-Fit or Imported Netlist ;
+;                          ;           ;               ;                    ;                                             ;
+; data_txp                 ; Top       ; Output Port   ; n/a                ;                                             ;
+;     -- data_txp          ; Top       ; Output Pad    ; Unplaced           ; Preserved from Synthesis Netlist (WYSIWYG)  ;
+;     -- data_txp~output   ; Top       ; Output Buffer ; Unplaced           ; Preserved from Synthesis Netlist (WYSIWYG)  ;
+;                          ;           ;               ;                    ;                                             ;
+; sysclk                   ; Top       ; Input Port    ; n/a                ;                                             ;
+;     -- sysclk            ; Top       ; Input Pad     ; IOPAD_X36_Y0_N14   ; Preserved from Post-Fit or Imported Netlist ;
+;     -- sysclk~input      ; Top       ; Input Buffer  ; IOIBUF_X36_Y0_N15  ; Preserved from Post-Fit or Imported Netlist ;
+;                          ;           ;               ;                    ;                                             ;
++--------------------------+-----------+---------------+--------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Resource Usage Summary                                                                                                                                   ;
++---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                                                      ;
++---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 202 / 39,600 ( < 1 % )                                                                                                     ;
+;                                             ;                                                                                                                            ;
+; Total combinational functions               ; 150                                                                                                                        ;
+; Logic element usage by number of LUT inputs ;                                                                                                                            ;
+;     -- 4 input functions                    ; 48                                                                                                                         ;
+;     -- 3 input functions                    ; 35                                                                                                                         ;
+;     -- <=2 input functions                  ; 67                                                                                                                         ;
+;                                             ;                                                                                                                            ;
+; Logic elements by mode                      ;                                                                                                                            ;
+;     -- normal mode                          ; 109                                                                                                                        ;
+;     -- arithmetic mode                      ; 41                                                                                                                         ;
+;                                             ;                                                                                                                            ;
+; Total registers                             ; 149                                                                                                                        ;
+;     -- Dedicated logic registers            ; 143                                                                                                                        ;
+;     -- I/O registers                        ; 12                                                                                                                         ;
+;                                             ;                                                                                                                            ;
+; I/O pins                                    ; 8                                                                                                                          ;
+;                                             ;                                                                                                                            ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                                                          ;
+;                                             ;                                                                                                                            ;
+; Total PLLs                                  ; 3                                                                                                                          ;
+;     -- PLLs                                 ; 3                                                                                                                          ;
+;                                             ;                                                                                                                            ;
+; Maximum fan-out node                        ; data_tranmit_auto_align:trans_inst|clk_pll:clk_ins|altpll:altpll_component|clk_pll_altpll2:auto_generated|wire_pll1_clk[0] ;
+; Maximum fan-out                             ; 76                                                                                                                         ;
+; Total fan-out                               ; 857                                                                                                                        ;
+; Average fan-out                             ; 2.49                                                                                                                       ;
++---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Partition Merge
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+    Info: Processing started: Fri Jun 26 12:18:41 2020
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off low_trans_test -c low_trans_test --merge=on
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (35006): Using previously generated Fitter netlist for partition "Top"
+Info (35002): Resolved and merged 1 partition(s)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 9 node(s), including 2 DDIO, 3 PLL, 0 transceiver and 0 LCELL
+Warning (15899): PLL "data_receive:rece|iserdes:des_ins|altlvds_rx:ALTLVDS_RX_component|iserdes_lvds_rx1:auto_generated|lvds_rx_pll" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected File: C:/Users/Administrator/Desktop/test_trans/low_trans_test_1220/low_trans_test/db/iserdes_lvds_rx1.v Line: 468
+Warning (15899): PLL "data_tranmit_auto_align:trans_inst|clk_pll:clk_ins|altpll:altpll_component|clk_pll_altpll2:auto_generated|pll1" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected File: C:/Users/Administrator/Desktop/test_trans/low_trans_test_1220/low_trans_test/db/clk_pll_altpll2.v Line: 45
+Critical Warning (15042): The input clock frequency specification of PLL "data_tranmit_auto_align:trans_inst|oserdes:ser_ins|altlvds_tx:ALTLVDS_TX_component|oserdes_lvds_tx1:auto_generated|lvds_tx_pll" is different from the output clock frequency specification of the source PLLs that are driving it File: C:/Users/Administrator/Desktop/test_trans/low_trans_test_1220/low_trans_test/db/oserdes_lvds_tx1.v Line: 460
+    Critical Warning (15043): Input port inclk[0] of PLL "data_tranmit_auto_align:trans_inst|oserdes:ser_ins|altlvds_tx:ALTLVDS_TX_component|oserdes_lvds_tx1:auto_generated|lvds_tx_pll" and its source clk[0] (the output port of PLL "data_tranmit_auto_align:trans_inst|clk_pll:clk_ins|altpll:altpll_component|clk_pll_altpll2:auto_generated|pll1") have different specified frequencies, 16.4 MHz and 16.4 MHz respectively File: C:/Users/Administrator/Desktop/test_trans/low_trans_test_1220/low_trans_test/db/oserdes_lvds_tx1.v Line: 460
+Info (21057): Implemented 219 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 4 output pins
+    Info (21061): Implemented 205 logic cells
+    Info (21065): Implemented 3 PLLs
+Info: Quartus Prime Partition Merge was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4761 megabytes
+    Info: Processing ended: Fri Jun 26 12:18:44 2020
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

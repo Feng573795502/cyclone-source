@@ -1,0 +1,69 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "06/19/2020 11:23:02"
+                                                                                
+// Verilog Test Bench template for design : lvds_ip_test
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ns/ 1 ns
+module lvds_ip_test_tst();
+// constants                                           
+// general purpose registers
+//reg eachvec;
+// test vector input registers
+reg  clk_in;
+reg data_rxp;
+reg sysclk;
+// wires                                               
+wire clk_in_en;
+wire clk_out;
+wire clk_out_en;
+wire data_txp;
+
+// assign statements (if any)                          
+lvds_ip_test i1 (
+// port map - connection between master ports and signals/registers   
+	.clk_in(clk_in),
+	.clk_in_en(clk_in_en),
+	.clk_out(clk_out),
+	.clk_out_en(clk_out_en),
+	.data_rxp(data_txp),
+	.data_txp(data_txp),
+	.sysclk(sysclk)
+);
+// initial                                                
+// begin                                                  
+// // code that executes only once                        
+// // insert code here --> begin                          
+                                                       
+// // --> end                                             
+// $display("Running testbench");                       
+// end    
+initial 
+	begin
+		sysclk=1'b0;
+	end
+always  #30.5 sysclk=~sysclk;    
+always 	@(*)   clk_in= #30 clk_out;
+
+endmodule
+

@@ -1,0 +1,915 @@
+|lvds_ip_auto_align
+sysclk => sysclk.IN1
+data_txp << data_tranmit_auto_align:trans_inst.data_txp
+data_rxp => data_rxp.IN1
+clk_out << data_tranmit_auto_align:trans_inst.tx_outclock
+clk_out_en << <VCC>
+clk_in => clk_in.IN1
+clk_in_en << <GND>
+rx_out[0] << rx_out[0].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[1] << rx_out[1].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[2] << rx_out[2].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[3] << rx_out[3].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[4] << rx_out[4].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[5] << rx_out[5].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[6] << rx_out[6].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[7] << rx_out[7].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[8] << rx_out[8].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[9] << rx_out[9].DB_MAX_OUTPUT_PORT_TYPE
+dedata[0] << dedata[0].DB_MAX_OUTPUT_PORT_TYPE
+dedata[1] << dedata[1].DB_MAX_OUTPUT_PORT_TYPE
+dedata[2] << dedata[2].DB_MAX_OUTPUT_PORT_TYPE
+dedata[3] << dedata[3].DB_MAX_OUTPUT_PORT_TYPE
+dedata[4] << dedata[4].DB_MAX_OUTPUT_PORT_TYPE
+dedata[5] << dedata[5].DB_MAX_OUTPUT_PORT_TYPE
+dedata[6] << dedata[6].DB_MAX_OUTPUT_PORT_TYPE
+dedata[7] << dedata[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst
+sysclk => sysclk.IN1
+tx_outclock <= clk_10m.DB_MAX_OUTPUT_PORT_TYPE
+data_txp <= oserdes:ser_ins.tx_out
+rst_n <= reset_i.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|clk_pll:clk_ins
+inclk0 => sub_wire1[0].IN1
+c0 <= altpll:altpll_component.clk
+c1 <= altpll:altpll_component.clk
+locked <= altpll:altpll_component.locked
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|clk_pll:clk_ins|altpll:altpll_component
+inclk[0] => clk_pll_altpll2:auto_generated.inclk[0]
+inclk[1] => clk_pll_altpll2:auto_generated.inclk[1]
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => ~NO_FANOUT~
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
+clk[1] <= clk[1].DB_MAX_OUTPUT_PORT_TYPE
+clk[2] <= clk[2].DB_MAX_OUTPUT_PORT_TYPE
+clk[3] <= clk[3].DB_MAX_OUTPUT_PORT_TYPE
+clk[4] <= clk[4].DB_MAX_OUTPUT_PORT_TYPE
+extclk[0] <= <GND>
+extclk[1] <= <GND>
+extclk[2] <= <GND>
+extclk[3] <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+enable1 <= <GND>
+enable0 <= <GND>
+activeclock <= <GND>
+clkloss <= <GND>
+locked <= clk_pll_altpll2:auto_generated.locked
+scandataout <= <GND>
+scandone <= <GND>
+sclkout0 <= <GND>
+sclkout1 <= <GND>
+phasedone <= <GND>
+vcooverrange <= <GND>
+vcounderrange <= <GND>
+fbout <= <GND>
+fref <= <GND>
+icdrclk <= <GND>
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|clk_pll:clk_ins|altpll:altpll_component|clk_pll_altpll2:auto_generated
+clk[0] <= pll1.CLK
+clk[1] <= pll1.CLK1
+clk[2] <= pll1.CLK2
+clk[3] <= pll1.CLK3
+clk[4] <= pll1.CLK4
+inclk[0] => pll1.CLK
+inclk[1] => pll1.CLK1
+locked <= pll1.LOCKED
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|encode:encoder
+clk => dataout_reg[0].CLK
+clk => dataout_reg[1].CLK
+clk => dataout_reg[2].CLK
+clk => dataout_reg[3].CLK
+clk => dataout_reg[4].CLK
+clk => dataout_reg[5].CLK
+clk => LPDL6.CLK
+clk => s.CLK
+clk => ki.CLK
+clk => hi.CLK
+clk => gi.CLK
+clk => fi.CLK
+clk => ei.CLK
+clk => di.CLK
+clk => ci.CLK
+clk => bi.CLK
+clk => ai.CLK
+clk => legaldata_reg.CLK
+clk => dataout[0]~reg0.CLK
+clk => dataout[1]~reg0.CLK
+clk => dataout[2]~reg0.CLK
+clk => dataout[3]~reg0.CLK
+clk => dataout[4]~reg0.CLK
+clk => dataout[5]~reg0.CLK
+clk => dataout[6]~reg0.CLK
+clk => dataout[7]~reg0.CLK
+clk => dataout[8]~reg0.CLK
+clk => dataout[9]~reg0.CLK
+clk => valid~reg0.CLK
+clk => kin_reg.CLK
+clk => hi_reg.CLK
+clk => gi_reg.CLK
+clk => fi_reg.CLK
+clk => LPDL4.CLK
+rst_n => legaldata_reg.ACLR
+rst_n => dataout[0]~reg0.ACLR
+rst_n => dataout[1]~reg0.ACLR
+rst_n => dataout[2]~reg0.ACLR
+rst_n => dataout[3]~reg0.ACLR
+rst_n => dataout[4]~reg0.ACLR
+rst_n => dataout[5]~reg0.ACLR
+rst_n => dataout[6]~reg0.ACLR
+rst_n => dataout[7]~reg0.ACLR
+rst_n => dataout[8]~reg0.ACLR
+rst_n => dataout[9]~reg0.ACLR
+rst_n => valid~reg0.ACLR
+rst_n => ki.PRESET
+rst_n => hi.ACLR
+rst_n => gi.ACLR
+rst_n => fi.ACLR
+rst_n => ei.ACLR
+rst_n => di.ACLR
+rst_n => ci.ACLR
+rst_n => bi.ACLR
+rst_n => ai.ACLR
+rst_n => kin_reg.ACLR
+rst_n => hi_reg.ACLR
+rst_n => gi_reg.ACLR
+rst_n => fi_reg.ACLR
+rst_n => s.ACLR
+rst_n => LPDL6.ACLR
+rst_n => LPDL4.ACLR
+rst_n => dataout_reg[0].ACLR
+rst_n => dataout_reg[1].ACLR
+rst_n => dataout_reg[2].ACLR
+rst_n => dataout_reg[3].ACLR
+rst_n => dataout_reg[4].ACLR
+rst_n => dataout_reg[5].ACLR
+kin => ki.DATAIN
+datain[0] => ai.DATAIN
+datain[1] => bi.DATAIN
+datain[2] => ci.DATAIN
+datain[3] => di.DATAIN
+datain[4] => ei.DATAIN
+datain[5] => fi.DATAIN
+datain[6] => gi.DATAIN
+datain[7] => hi.DATAIN
+dataout[0] <= dataout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[1] <= dataout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[2] <= dataout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[3] <= dataout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[4] <= dataout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[5] <= dataout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[6] <= dataout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[7] <= dataout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[8] <= dataout[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataout[9] <= dataout[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+valid <= valid~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|oserdes:ser_ins
+tx_in[0] => tx_in[0].IN1
+tx_in[1] => tx_in[1].IN1
+tx_in[2] => tx_in[2].IN1
+tx_in[3] => tx_in[3].IN1
+tx_in[4] => tx_in[4].IN1
+tx_in[5] => tx_in[5].IN1
+tx_in[6] => tx_in[6].IN1
+tx_in[7] => tx_in[7].IN1
+tx_in[8] => tx_in[8].IN1
+tx_in[9] => tx_in[9].IN1
+tx_inclock => tx_inclock.IN1
+tx_syncclock => tx_syncclock.IN1
+tx_out[0] <= altlvds_tx:ALTLVDS_TX_component.tx_out
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|oserdes:ser_ins|altlvds_tx:ALTLVDS_TX_component
+tx_in[0] => oserdes_lvds_tx1:auto_generated.tx_in[0]
+tx_in[1] => oserdes_lvds_tx1:auto_generated.tx_in[1]
+tx_in[2] => oserdes_lvds_tx1:auto_generated.tx_in[2]
+tx_in[3] => oserdes_lvds_tx1:auto_generated.tx_in[3]
+tx_in[4] => oserdes_lvds_tx1:auto_generated.tx_in[4]
+tx_in[5] => oserdes_lvds_tx1:auto_generated.tx_in[5]
+tx_in[6] => oserdes_lvds_tx1:auto_generated.tx_in[6]
+tx_in[7] => oserdes_lvds_tx1:auto_generated.tx_in[7]
+tx_in[8] => oserdes_lvds_tx1:auto_generated.tx_in[8]
+tx_in[9] => oserdes_lvds_tx1:auto_generated.tx_in[9]
+tx_inclock => oserdes_lvds_tx1:auto_generated.tx_inclock
+tx_syncclock => oserdes_lvds_tx1:auto_generated.tx_syncclock
+tx_enable => ~NO_FANOUT~
+sync_inclock => ~NO_FANOUT~
+tx_pll_enable => ~NO_FANOUT~
+pll_areset => ~NO_FANOUT~
+tx_data_reset => ~NO_FANOUT~
+tx_out[0] <= oserdes_lvds_tx1:auto_generated.tx_out[0]
+tx_outclock <= <GND>
+tx_coreclock <= <GND>
+tx_locked <= <GND>
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|oserdes:ser_ins|altlvds_tx:ALTLVDS_TX_component|oserdes_lvds_tx1:auto_generated
+tx_in[0] => tx_in_wire[0].IN1
+tx_in[1] => tx_in_wire[1].IN1
+tx_in[2] => tx_in_wire[2].IN1
+tx_in[3] => tx_in_wire[3].IN1
+tx_in[4] => tx_in_wire[4].IN1
+tx_in[5] => tx_in_wire[5].IN1
+tx_in[6] => tx_in_wire[6].IN1
+tx_in[7] => tx_in_wire[7].IN1
+tx_in[8] => tx_in_wire[8].IN1
+tx_in[9] => tx_in_wire[9].IN1
+tx_inclock => fast_clock.IN4
+tx_out[0] <= oserdes_lvds_tx1_oserdes_ddio_out:ddio_out.dataout
+tx_syncclock => sync_dffe1a.CLK
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|oserdes:ser_ins|altlvds_tx:ALTLVDS_TX_component|oserdes_lvds_tx1:auto_generated|oserdes_lvds_tx1_oserdes_ddio_out:ddio_out
+datain_h[0] => ddio_outa_0.DATAINHI
+datain_l[0] => ddio_outa_0.DATAINLO
+dataout[0] <= ddio_outa_0.DATAOUT
+outclock => ddio_outa_0.CLKHI
+outclock => ddio_outa_0.CLKLO
+outclock => ddio_outa_0.MUXSEL
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|oserdes:ser_ins|altlvds_tx:ALTLVDS_TX_component|oserdes_lvds_tx1:auto_generated|oserdes_lvds_tx1_oserdes_cmpr:cmpr10
+aeb <= aneb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire.IN0
+dataa[1] => data_wire.IN0
+dataa[2] => data_wire[1].IN0
+datab[0] => data_wire.IN1
+datab[1] => data_wire.IN1
+datab[2] => data_wire[1].IN1
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|oserdes:ser_ins|altlvds_tx:ALTLVDS_TX_component|oserdes_lvds_tx1:auto_generated|oserdes_lvds_tx1_oserdes_cmpr:cmpr9
+aeb <= aneb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire.IN0
+dataa[1] => data_wire.IN0
+dataa[2] => data_wire[1].IN0
+datab[0] => data_wire.IN1
+datab[1] => data_wire.IN1
+datab[2] => data_wire[1].IN1
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|oserdes:ser_ins|altlvds_tx:ALTLVDS_TX_component|oserdes_lvds_tx1:auto_generated|oserdes_lvds_tx1_oserdes_cntr:cntr2
+clock => counter_reg_bit[2].CLK
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
+updown => cout_actual.IN1
+updown => counter_comb_bita_0.DATAB
+updown => counter_comb_bita_1.DATAB
+updown => counter_comb_bita_2.DATAB
+updown => wire_counter_reg_bit_asdata.IN0
+updown => wire_counter_reg_bit_asdata.IN0
+updown => wire_counter_reg_bit_asdata.IN0
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|oserdes:ser_ins|altlvds_tx:ALTLVDS_TX_component|oserdes_lvds_tx1:auto_generated|oserdes_lvds_tx1_oserdes_cntr:cntr2|oserdes_lvds_tx1_oserdes_cmpr1:cmpr14
+aeb <= aneb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire.IN0
+dataa[1] => data_wire.IN0
+dataa[2] => data_wire[1].IN0
+datab[0] => data_wire.IN1
+datab[1] => data_wire.IN1
+datab[2] => data_wire[1].IN1
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|oserdes:ser_ins|altlvds_tx:ALTLVDS_TX_component|oserdes_lvds_tx1:auto_generated|oserdes_lvds_tx1_oserdes_shift_reg:shift_reg12
+clock => shift_reg[0].CLK
+clock => shift_reg[1].CLK
+clock => shift_reg[2].CLK
+clock => shift_reg[3].CLK
+clock => shift_reg[4].CLK
+data[0] => shift_reg.DATAB
+data[1] => shift_reg.DATAB
+data[2] => shift_reg.DATAB
+data[3] => shift_reg.DATAB
+data[4] => shift_reg.DATAB
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+shiftin => shift_reg.DATAA
+shiftout <= shift_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_ip_auto_align|data_tranmit_auto_align:trans_inst|oserdes:ser_ins|altlvds_tx:ALTLVDS_TX_component|oserdes_lvds_tx1:auto_generated|oserdes_lvds_tx1_oserdes_shift_reg:shift_reg13
+clock => shift_reg[0].CLK
+clock => shift_reg[1].CLK
+clock => shift_reg[2].CLK
+clock => shift_reg[3].CLK
+clock => shift_reg[4].CLK
+data[0] => shift_reg.DATAB
+data[1] => shift_reg.DATAB
+data[2] => shift_reg.DATAB
+data[3] => shift_reg.DATAB
+data[4] => shift_reg.DATAB
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+load => shift_reg.OUTPUTSELECT
+shiftin => shift_reg.DATAA
+shiftout <= shift_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_ip_auto_align|data_receive:rece
+data_rxp => data_rxp.IN1
+rx_inclock => rx_inclock.IN1
+dedata[0] <= decode:decoder.dataout
+dedata[1] <= decode:decoder.dataout
+dedata[2] <= decode:decoder.dataout
+dedata[3] <= decode:decoder.dataout
+dedata[4] <= decode:decoder.dataout
+dedata[5] <= decode:decoder.dataout
+dedata[6] <= decode:decoder.dataout
+dedata[7] <= decode:decoder.dataout
+rx_locked <= iserdes:des_ins.rx_locked
+align_done => align_done.IN1
+rx_data_align => rx_data_align.IN1
+rx_outclock <= rx_outclock.DB_MAX_OUTPUT_PORT_TYPE
+rx_out[0] <= rx_out[0].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[1] <= rx_out[1].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[2] <= rx_out[2].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[3] <= rx_out[3].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[4] <= rx_out[4].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[5] <= rx_out[5].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[6] <= rx_out[6].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[7] <= rx_out[7].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[8] <= rx_out[8].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[9] <= rx_out[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_ip_auto_align|data_receive:rece|iserdes:des_ins
+rx_data_align => rx_data_align.IN1
+rx_in[0] => rx_in[0].IN1
+rx_inclock => rx_inclock.IN1
+rx_locked <= altlvds_rx:ALTLVDS_RX_component.rx_locked
+rx_out[0] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[1] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[2] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[3] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[4] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[5] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[6] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[7] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[8] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_out[9] <= altlvds_rx:ALTLVDS_RX_component.rx_out
+rx_outclock <= altlvds_rx:ALTLVDS_RX_component.rx_outclock
+
+
+|lvds_ip_auto_align|data_receive:rece|iserdes:des_ins|altlvds_rx:ALTLVDS_RX_component
+rx_in[0] => iserdes_lvds_rx1:auto_generated.rx_in[0]
+rx_inclock => iserdes_lvds_rx1:auto_generated.rx_inclock
+rx_syncclock => ~NO_FANOUT~
+rx_dpaclock => ~NO_FANOUT~
+rx_readclock => ~NO_FANOUT~
+rx_enable => ~NO_FANOUT~
+rx_deskew => ~NO_FANOUT~
+rx_pll_enable => ~NO_FANOUT~
+rx_data_align => iserdes_lvds_rx1:auto_generated.rx_data_align
+rx_data_align_reset => ~NO_FANOUT~
+rx_reset[0] => ~NO_FANOUT~
+rx_dpll_reset[0] => ~NO_FANOUT~
+rx_dpll_hold[0] => ~NO_FANOUT~
+rx_dpll_enable[0] => ~NO_FANOUT~
+rx_fifo_reset[0] => ~NO_FANOUT~
+rx_channel_data_align[0] => ~NO_FANOUT~
+rx_cda_reset[0] => ~NO_FANOUT~
+rx_coreclk[0] => ~NO_FANOUT~
+pll_areset => ~NO_FANOUT~
+rx_data_reset => ~NO_FANOUT~
+pll_phasedone => ~NO_FANOUT~
+rx_dpa_lock_reset[0] => ~NO_FANOUT~
+dpa_pll_recal => ~NO_FANOUT~
+rx_out[0] <= iserdes_lvds_rx1:auto_generated.rx_out[0]
+rx_out[1] <= iserdes_lvds_rx1:auto_generated.rx_out[1]
+rx_out[2] <= iserdes_lvds_rx1:auto_generated.rx_out[2]
+rx_out[3] <= iserdes_lvds_rx1:auto_generated.rx_out[3]
+rx_out[4] <= iserdes_lvds_rx1:auto_generated.rx_out[4]
+rx_out[5] <= iserdes_lvds_rx1:auto_generated.rx_out[5]
+rx_out[6] <= iserdes_lvds_rx1:auto_generated.rx_out[6]
+rx_out[7] <= iserdes_lvds_rx1:auto_generated.rx_out[7]
+rx_out[8] <= iserdes_lvds_rx1:auto_generated.rx_out[8]
+rx_out[9] <= iserdes_lvds_rx1:auto_generated.rx_out[9]
+rx_outclock <= iserdes_lvds_rx1:auto_generated.rx_outclock
+rx_locked <= iserdes_lvds_rx1:auto_generated.rx_locked
+rx_dpa_locked[0] <= <GND>
+rx_cda_max[0] <= <GND>
+rx_divfwdclk[0] <= <GND>
+dpa_pll_cal_busy <= <GND>
+pll_phaseupdown <= <GND>
+pll_phasestep <= <GND>
+pll_phasecounterselect[0] <= <GND>
+pll_phasecounterselect[1] <= <GND>
+pll_phasecounterselect[2] <= <GND>
+pll_phasecounterselect[3] <= <GND>
+pll_scanclk <= <GND>
+
+
+|lvds_ip_auto_align|data_receive:rece|iserdes:des_ins|altlvds_rx:ALTLVDS_RX_component|iserdes_lvds_rx1:auto_generated
+rx_data_align => rx_data_align_reg.DATAIN
+rx_in[0] => rx_in[0].IN1
+rx_inclock => lvds_rx_pll.CLK
+rx_locked <= lvds_rx_pll.LOCKED
+rx_out[0] <= h_shiftreg2a[0].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[1] <= l_shiftreg1a[0].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[2] <= h_shiftreg2a[1].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[3] <= l_shiftreg1a[1].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[4] <= h_shiftreg2a[2].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[5] <= l_shiftreg1a[2].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[6] <= h_shiftreg2a[3].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[7] <= l_shiftreg1a[3].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[8] <= h_shiftreg2a[4].DB_MAX_OUTPUT_PORT_TYPE
+rx_out[9] <= l_shiftreg1a[4].DB_MAX_OUTPUT_PORT_TYPE
+rx_outclock <= lvds_rx_pll.CLK1
+
+
+|lvds_ip_auto_align|data_receive:rece|iserdes:des_ins|altlvds_rx:ALTLVDS_RX_component|iserdes_lvds_rx1:auto_generated|iserdes_lvds_rx1_iserdes_lvds_ddio_in:ddio_in
+clock => ddio_h_reg[0].CLK
+clock => dataout_l_reg[0].CLK
+clock => dataout_h_reg[0].CLK
+clock => ddio_l_reg[0].CLK
+clock => dataout_l_latch[0].CLK
+datain[0] => ddio_l_reg[0].DATAIN
+datain[0] => ddio_h_reg[0].DATAIN
+dataout_h[0] <= dataout_l_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+dataout_l[0] <= dataout_h_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_ip_auto_align|data_receive:rece|iserdes:des_ins|altlvds_rx:ALTLVDS_RX_component|iserdes_lvds_rx1:auto_generated|iserdes_lvds_rx1_iserdes_dffpipe:h_dffpipe
+clock => dffe8a[0].CLK
+clock => dffe7a[0].CLK
+d[0] => dffe7a[0].DATAIN
+q[0] <= dffe8a[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_ip_auto_align|data_receive:rece|iserdes:des_ins|altlvds_rx:ALTLVDS_RX_component|iserdes_lvds_rx1:auto_generated|iserdes_lvds_rx1_iserdes_dffpipe:l_dffpipe
+clock => dffe8a[0].CLK
+clock => dffe7a[0].CLK
+d[0] => dffe7a[0].DATAIN
+q[0] <= dffe8a[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_ip_auto_align|data_receive:rece|iserdes:des_ins|altlvds_rx:ALTLVDS_RX_component|iserdes_lvds_rx1:auto_generated|iserdes_lvds_rx1_iserdes_cntr:bitslip_cntr
+clock => counter_reg_bit[3].CLK
+clock => counter_reg_bit[2].CLK
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+cnt_en => counter_reg_bit.OUTPUTSELECT
+cnt_en => counter_reg_bit.OUTPUTSELECT
+cnt_en => counter_reg_bit.OUTPUTSELECT
+cnt_en => counter_reg_bit.OUTPUTSELECT
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= counter_reg_bit[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_ip_auto_align|data_receive:rece|iserdes:des_ins|altlvds_rx:ALTLVDS_RX_component|iserdes_lvds_rx1:auto_generated|iserdes_lvds_rx1_iserdes_cntr:bitslip_cntr|iserdes_lvds_rx1_iserdes_cmpr:cmpr9
+aeb <= aneb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire.IN0
+dataa[1] => data_wire.IN0
+dataa[2] => data_wire.IN0
+dataa[3] => data_wire.IN0
+datab[0] => data_wire.IN1
+datab[1] => data_wire.IN1
+datab[2] => data_wire.IN1
+datab[3] => data_wire.IN1
+
+
+|lvds_ip_auto_align|data_receive:rece|iserdes:des_ins|altlvds_rx:ALTLVDS_RX_component|iserdes_lvds_rx1:auto_generated|iserdes_lvds_rx1_iserdes_mux:h_mux5a
+data[0] => w_mux_outputs188w.IN0
+data[1] => w_mux_outputs188w.IN0
+data[2] => w_mux_outputs188w.IN0
+data[3] => w_mux_outputs188w.IN0
+data[4] => w_mux_outputs188w.IN0
+data[5] => w_mux_outputs188w.IN0
+data[6] => w_mux_outputs188w.IN0
+data[7] => w_mux_outputs188w.IN0
+data[8] => w_mux_outputs188w.IN0
+data[9] => w_mux_outputs188w.IN0
+result[0] <= muxlut_result0w.DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[1] => w_mux_outputs188w.IN1
+sel[1] => w_mux_outputs188w.IN1
+sel[1] => w_mux_outputs188w.IN1
+sel[1] => w_mux_outputs188w.IN1
+sel[2] => muxlut_result0w.IN1
+sel[2] => muxlut_result0w.IN1
+sel[2] => muxlut_result0w.IN1
+sel[3] => muxlut_result0w.IN1
+sel[3] => muxlut_result0w.IN1
+
+
+|lvds_ip_auto_align|data_receive:rece|iserdes:des_ins|altlvds_rx:ALTLVDS_RX_component|iserdes_lvds_rx1:auto_generated|iserdes_lvds_rx1_iserdes_mux:l_mux6a
+data[0] => w_mux_outputs188w.IN0
+data[1] => w_mux_outputs188w.IN0
+data[2] => w_mux_outputs188w.IN0
+data[3] => w_mux_outputs188w.IN0
+data[4] => w_mux_outputs188w.IN0
+data[5] => w_mux_outputs188w.IN0
+data[6] => w_mux_outputs188w.IN0
+data[7] => w_mux_outputs188w.IN0
+data[8] => w_mux_outputs188w.IN0
+data[9] => w_mux_outputs188w.IN0
+result[0] <= muxlut_result0w.DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[0] => w_mux_outputs188w.IN1
+sel[1] => w_mux_outputs188w.IN1
+sel[1] => w_mux_outputs188w.IN1
+sel[1] => w_mux_outputs188w.IN1
+sel[1] => w_mux_outputs188w.IN1
+sel[2] => muxlut_result0w.IN1
+sel[2] => muxlut_result0w.IN1
+sel[2] => muxlut_result0w.IN1
+sel[3] => muxlut_result0w.IN1
+sel[3] => muxlut_result0w.IN1
+
+
+|lvds_ip_auto_align|data_receive:rece|decode:decoder
+clk => ho.CLK
+clk => go.CLK
+clk => fo.CLK
+clk => eo.CLK
+clk => d_o.CLK
+clk => co.CLK
+clk => bo.CLK
+clk => ao.CLK
+clk => ji_2.CLK
+clk => ii_2.CLK
+clk => hi_2.CLK
+clk => gi_2.CLK
+clk => fi_2.CLK
+clk => ei_2.CLK
+clk => di_2.CLK
+clk => ci_2.CLK
+clk => bi_2.CLK
+clk => ai_2.CLK
+clk => err7.CLK
+clk => err6.CLK
+clk => err5.CLK
+clk => err4.CLK
+clk => err3.CLK
+clk => err2.CLK
+clk => err1.CLK
+clk => ho_6.CLK
+clk => ho_5.CLK
+clk => ho_4.CLK
+clk => ho_3.CLK
+clk => ho_2.CLK
+clk => ho_1.CLK
+clk => go_4.CLK
+clk => go_3.CLK
+clk => go_2.CLK
+clk => go_1.CLK
+clk => fo_4.CLK
+clk => fo_3.CLK
+clk => fo_2.CLK
+clk => fo_1.CLK
+clk => disp4n.CLK
+clk => disp4p.CLK
+clk => disp6n.CLK
+clk => disp6p.CLK
+clk => ko_temp4.CLK
+clk => ko_temp3.CLK
+clk => ko_temp2.CLK
+clk => ko_temp1.CLK
+clk => fghjp31_2.CLK
+clk => fghjp13_2.CLK
+clk => p04_2.CLK
+clk => p40_2.CLK
+clk => cndnenin.CLK
+clk => abei.CLK
+clk => anbnenin.CLK
+clk => p13en.CLK
+clk => p22ancneeqi.CLK
+clk => p22aceeqi.CLK
+clk => p13dei.CLK
+clk => p31i.CLK
+clk => p13in.CLK
+clk => p22bncneeqi.CLK
+clk => p22bceeqi.CLK
+clk => k28p.CLK
+clk => ji_1.CLK
+clk => ii_1.CLK
+clk => hi_1.CLK
+clk => gi_1.CLK
+clk => fi_1.CLK
+clk => ei_1.CLK
+clk => di_1.CLK
+clk => ci_1.CLK
+clk => bi_1.CLK
+clk => ai_1.CLK
+clk => fghjp31.CLK
+clk => fghjp13.CLK
+clk => p04.CLK
+clk => p40.CLK
+clk => p31.CLK
+clk => p13.CLK
+clk => p22.CLK
+clk => ji.CLK
+clk => hi.CLK
+clk => gi.CLK
+clk => fi.CLK
+clk => ii.CLK
+clk => ei.CLK
+clk => di.CLK
+clk => ci.CLK
+clk => bi.CLK
+clk => ai.CLK
+clk => code_err~reg0.CLK
+clk => kout~reg0.CLK
+rst_n => code_err~reg0.PRESET
+rst_n => kout~reg0.ACLR
+rst_n => ho.ENA
+rst_n => ai.ENA
+rst_n => bi.ENA
+rst_n => ci.ENA
+rst_n => di.ENA
+rst_n => ei.ENA
+rst_n => ii.ENA
+rst_n => fi.ENA
+rst_n => gi.ENA
+rst_n => hi.ENA
+rst_n => ji.ENA
+rst_n => p22.ENA
+rst_n => p13.ENA
+rst_n => p31.ENA
+rst_n => p40.ENA
+rst_n => p04.ENA
+rst_n => fghjp13.ENA
+rst_n => fghjp31.ENA
+rst_n => ai_1.ENA
+rst_n => bi_1.ENA
+rst_n => ci_1.ENA
+rst_n => di_1.ENA
+rst_n => ei_1.ENA
+rst_n => fi_1.ENA
+rst_n => gi_1.ENA
+rst_n => hi_1.ENA
+rst_n => ii_1.ENA
+rst_n => ji_1.ENA
+rst_n => k28p.ENA
+rst_n => p22bceeqi.ENA
+rst_n => p22bncneeqi.ENA
+rst_n => p13in.ENA
+rst_n => p31i.ENA
+rst_n => p13dei.ENA
+rst_n => p22aceeqi.ENA
+rst_n => p22ancneeqi.ENA
+rst_n => p13en.ENA
+rst_n => anbnenin.ENA
+rst_n => abei.ENA
+rst_n => cndnenin.ENA
+rst_n => p40_2.ENA
+rst_n => p04_2.ENA
+rst_n => fghjp13_2.ENA
+rst_n => fghjp31_2.ENA
+rst_n => ko_temp1.ENA
+rst_n => ko_temp2.ENA
+rst_n => ko_temp3.ENA
+rst_n => ko_temp4.ENA
+rst_n => disp6p.ENA
+rst_n => disp6n.ENA
+rst_n => disp4p.ENA
+rst_n => disp4n.ENA
+rst_n => fo_1.ENA
+rst_n => fo_2.ENA
+rst_n => fo_3.ENA
+rst_n => fo_4.ENA
+rst_n => go_1.ENA
+rst_n => go_2.ENA
+rst_n => go_3.ENA
+rst_n => go_4.ENA
+rst_n => ho_1.ENA
+rst_n => ho_2.ENA
+rst_n => ho_3.ENA
+rst_n => ho_4.ENA
+rst_n => ho_5.ENA
+rst_n => ho_6.ENA
+rst_n => err1.ENA
+rst_n => err2.ENA
+rst_n => err3.ENA
+rst_n => err4.ENA
+rst_n => err5.ENA
+rst_n => err6.ENA
+rst_n => err7.ENA
+rst_n => ai_2.ENA
+rst_n => bi_2.ENA
+rst_n => ci_2.ENA
+rst_n => di_2.ENA
+rst_n => ei_2.ENA
+rst_n => fi_2.ENA
+rst_n => gi_2.ENA
+rst_n => hi_2.ENA
+rst_n => ii_2.ENA
+rst_n => ji_2.ENA
+rst_n => ao.ENA
+rst_n => bo.ENA
+rst_n => co.ENA
+rst_n => d_o.ENA
+rst_n => eo.ENA
+rst_n => fo.ENA
+rst_n => go.ENA
+datain[0] => ai.DATAB
+datain[1] => bi.DATAB
+datain[2] => ci.DATAB
+datain[3] => di.DATAB
+datain[4] => ei.DATAB
+datain[5] => ii.DATAB
+datain[6] => fi.DATAB
+datain[7] => gi.DATAB
+datain[8] => hi.DATAB
+datain[9] => ji.DATAB
+lock_n => ai.OUTPUTSELECT
+lock_n => bi.OUTPUTSELECT
+lock_n => ci.OUTPUTSELECT
+lock_n => di.OUTPUTSELECT
+lock_n => ei.OUTPUTSELECT
+lock_n => ii.OUTPUTSELECT
+lock_n => fi.OUTPUTSELECT
+lock_n => gi.OUTPUTSELECT
+lock_n => hi.OUTPUTSELECT
+lock_n => ji.OUTPUTSELECT
+dataout[0] <= ao.DB_MAX_OUTPUT_PORT_TYPE
+dataout[1] <= bo.DB_MAX_OUTPUT_PORT_TYPE
+dataout[2] <= co.DB_MAX_OUTPUT_PORT_TYPE
+dataout[3] <= d_o.DB_MAX_OUTPUT_PORT_TYPE
+dataout[4] <= eo.DB_MAX_OUTPUT_PORT_TYPE
+dataout[5] <= fo.DB_MAX_OUTPUT_PORT_TYPE
+dataout[6] <= go.DB_MAX_OUTPUT_PORT_TYPE
+dataout[7] <= ho.DB_MAX_OUTPUT_PORT_TYPE
+kout <= kout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+code_err <= code_err~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_ip_auto_align|data_repeat_align:align_inst
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+clk => cnt[5].CLK
+clk => cnt[6].CLK
+clk => cnt[7].CLK
+clk => cnt[8].CLK
+clk => cnt[9].CLK
+clk => head_flag.CLK
+clk => data_reg2[0].CLK
+clk => data_reg2[1].CLK
+clk => data_reg2[2].CLK
+clk => data_reg2[3].CLK
+clk => data_reg2[4].CLK
+clk => data_reg2[5].CLK
+clk => data_reg2[6].CLK
+clk => data_reg2[7].CLK
+clk => data_reg1[0].CLK
+clk => data_reg1[1].CLK
+clk => data_reg1[2].CLK
+clk => data_reg1[3].CLK
+clk => data_reg1[4].CLK
+clk => data_reg1[5].CLK
+clk => data_reg1[6].CLK
+clk => data_reg1[7].CLK
+rst_n => data_reg2[0].ACLR
+rst_n => data_reg2[1].ACLR
+rst_n => data_reg2[2].ACLR
+rst_n => data_reg2[3].ACLR
+rst_n => data_reg2[4].ACLR
+rst_n => data_reg2[5].ACLR
+rst_n => data_reg2[6].ACLR
+rst_n => data_reg2[7].ACLR
+rst_n => data_reg1[0].ACLR
+rst_n => data_reg1[1].ACLR
+rst_n => data_reg1[2].ACLR
+rst_n => data_reg1[3].ACLR
+rst_n => data_reg1[4].ACLR
+rst_n => data_reg1[5].ACLR
+rst_n => data_reg1[6].ACLR
+rst_n => data_reg1[7].ACLR
+rst_n => cnt[0].ACLR
+rst_n => cnt[1].ACLR
+rst_n => cnt[2].ACLR
+rst_n => cnt[3].ACLR
+rst_n => cnt[4].ACLR
+rst_n => cnt[5].ACLR
+rst_n => cnt[6].ACLR
+rst_n => cnt[7].ACLR
+rst_n => cnt[8].ACLR
+rst_n => cnt[9].ACLR
+rst_n => head_flag.ACLR
+data[0] => data_reg1[0].DATAIN
+data[1] => data_reg1[1].DATAIN
+data[2] => data_reg1[2].DATAIN
+data[3] => data_reg1[3].DATAIN
+data[4] => data_reg1[4].DATAIN
+data[5] => data_reg1[5].DATAIN
+data[6] => data_reg1[6].DATAIN
+data[7] => data_reg1[7].DATAIN
+data_cnt_done <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lvds_ip_auto_align|lvds_align:inst
+rx_clk => align_done~reg0.CLK
+rx_clk => judge_done[0].CLK
+rx_clk => judge_done[1].CLK
+rx_clk => judge_done[2].CLK
+rx_clk => rx_data_align~reg0.CLK
+rx_clk => cnt[0].CLK
+rx_clk => cnt[1].CLK
+rx_clk => cnt[2].CLK
+rx_clk => cnt[3].CLK
+rx_clk => cnt[4].CLK
+rx_data[0] => Equal4.IN9
+rx_data[0] => Equal5.IN3
+rx_data[1] => Equal4.IN8
+rx_data[1] => Equal5.IN2
+rx_data[2] => Equal4.IN5
+rx_data[2] => Equal5.IN9
+rx_data[3] => Equal4.IN4
+rx_data[3] => Equal5.IN8
+rx_data[4] => Equal4.IN3
+rx_data[4] => Equal5.IN7
+rx_data[5] => Equal4.IN2
+rx_data[5] => Equal5.IN6
+rx_data[6] => Equal4.IN1
+rx_data[6] => Equal5.IN5
+rx_data[7] => Equal4.IN7
+rx_data[7] => Equal5.IN1
+rx_data[8] => Equal4.IN0
+rx_data[8] => Equal5.IN4
+rx_data[9] => Equal4.IN6
+rx_data[9] => Equal5.IN0
+rx_locked => cnt[0].ACLR
+rx_locked => cnt[1].ACLR
+rx_locked => cnt[2].ACLR
+rx_locked => cnt[3].ACLR
+rx_locked => cnt[4].ACLR
+rx_locked => align_done~reg0.ACLR
+rx_locked => rx_data_align~reg0.ACLR
+rx_locked => judge_done[0].ACLR
+rx_locked => judge_done[1].ACLR
+rx_locked => judge_done[2].ACLR
+data_cnt_done => align_done.OUTPUTSELECT
+align_done <= align_done~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rx_data_align <= rx_data_align~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

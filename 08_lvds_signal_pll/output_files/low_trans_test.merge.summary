@@ -1,0 +1,14 @@
+Partition Merge Status : Successful - Fri Jun 26 12:18:43 2020
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : low_trans_test
+Top-level Entity Name : lvds_ip_auto_align
+Family : Cyclone 10 LP
+Total logic elements : 202 / 39,600 ( < 1 % )
+    Total combinational functions : 150 / 39,600 ( < 1 % )
+    Dedicated logic registers : 143 / 39,600 ( < 1 % )
+Total registers : 149
+Total pins : 8 / 326 ( 2 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,161,216 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 252 ( 0 % )
+Total PLLs : 3 / 4 ( 75 % )

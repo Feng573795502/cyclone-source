@@ -1,0 +1,136 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/workspace/quartus/low_trans_test/simulation/modelsim
+vads_ctrl
+!s110 1558421160
+!i10b 1
+!s100 g72VDNacB>XX^;O>lBj<L2
+IiB@L_Ue6?bK]]l;XAQe;<1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Administrator/Desktop/test_trans/low_trans_test/simulation/modelsim
+w1558405932
+8C:\Users\Administrator\Desktop\test_trans\low_trans_test\ads_ctrl.v
+FC:\Users\Administrator\Desktop\test_trans\low_trans_test\ads_ctrl.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1558421160.000000
+!s107 C:\Users\Administrator\Desktop\test_trans\low_trans_test\ads_ctrl.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Administrator\Desktop\test_trans\low_trans_test\ads_ctrl.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+vclk_pll
+Z6 !s110 1544259692
+!i10b 1
+!s100 1V2^iTNJeFh8GUFKVzOGD3
+I1O`[9@fL^QD;^Id::2HdR3
+R1
+R0
+w1544238313
+8E:/workspace/quartus/low_trans_test/clk_pll.v
+FE:/workspace/quartus/low_trans_test/clk_pll.v
+L0 39
+R3
+r1
+!s85 0
+31
+Z7 !s108 1544259692.000000
+!s107 E:/workspace/quartus/low_trans_test/clk_pll.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/workspace/quartus/low_trans_test/clk_pll.v|
+!i113 1
+R4
+R5
+viic_cfg
+!s110 1558421347
+!i10b 1
+!s100 ?Yc<Oj<b11SIUZ?<<<onV1
+II5D6b;jkzVH4g8<iRMomW2
+R1
+R2
+w1558405429
+8C:/Users/Administrator/Desktop/test_trans/low_trans_test/iic_cfg.v
+FC:/Users/Administrator/Desktop/test_trans/low_trans_test/iic_cfg.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1558421347.000000
+!s107 C:/Users/Administrator/Desktop/test_trans/low_trans_test/iic_cfg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/test_trans/low_trans_test/iic_cfg.v|
+!i113 1
+R4
+R5
+vlow_trans_test
+R6
+!i10b 1
+!s100 RF0cAoLlehIi[<TZYUK7]1
+I0=6m5aai3TATDEF3S7d]F2
+R1
+R0
+w1544239084
+8E:/workspace/quartus/low_trans_test/low_trans_test.v
+FE:/workspace/quartus/low_trans_test/low_trans_test.v
+L0 1
+R3
+r1
+!s85 0
+31
+R7
+!s107 E:/workspace/quartus/low_trans_test/low_trans_test.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/workspace/quartus/low_trans_test/low_trans_test.v|
+!i113 1
+R4
+R5
+vtrans_tb
+!s110 1544267164
+!i10b 1
+!s100 2P0Ic0LfdT?W0Q`=i:JB?2
+I:gD6:D6UJn3^a;o`kH?Yg3
+R1
+R0
+w1544267126
+8E:/workspace/quartus/low_trans_test/trans_tb.v
+FE:/workspace/quartus/low_trans_test/trans_tb.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1544267164.000000
+!s107 E:/workspace/quartus/low_trans_test/trans_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/workspace/quartus/low_trans_test/trans_tb.v|
+!i113 1
+R4
+R5
+vvtb
+!s110 1558422829
+!i10b 1
+!s100 P<nD]9DUo]aJ04zE3Lb9D0
+I@aAC9nc;f<GX^LSe=hdZH1
+R1
+R2
+w1558422822
+8C:/Users/Administrator/Desktop/test_trans/low_trans_test/vtb.v
+FC:/Users/Administrator/Desktop/test_trans/low_trans_test/vtb.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1558422829.000000
+!s107 C:/Users/Administrator/Desktop/test_trans/low_trans_test/vtb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Administrator/Desktop/test_trans/low_trans_test/vtb.v|
+!i113 1
+R4
+R5

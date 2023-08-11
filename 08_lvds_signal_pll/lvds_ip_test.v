@@ -1,0 +1,48 @@
+module lvds_ip_test(
+input                                     sysclk,
+output                                    data_txp,
+//output                                    data_txn,                         
+input                                     data_rxp,
+//input                                     data_rxn,
+output                                    clk_out,   //16.384Mhz
+output                                    clk_out_en,
+input                                     clk_in,
+output                                    clk_in_en
+
+);
+
+assign clk_out_en=1'b1;
+//assign mes_out_down_en=1'b1;
+assign clk_in_en=1'b0;
+data_transmit trans(
+.sysclk(sysclk),
+.tx_outclock(tx_outclock),
+.data_txp(data_txp),
+.rst_n(rst_n)
+);
+wire [7:0]dedata;
+wire rx_locked;
+wire align_done;
+wire rx_data_align;
+wire rx_outclock;
+wire [9:0]rx_out;
+data_receive rece(
+.data_rxp(data_rxp),
+.rx_inclock(clk_in),
+.dedata(dedata),
+.rx_locked(rx_locked),
+.align_done(align_done),
+.rx_data_align(rx_data_align),
+.rx_outclock(rx_outclock),
+.rx_out(rx_out)
+);
+lvds_align align_inst(
+.rx_clk(rx_outclock),
+.rx_data(rx_out),
+.rx_locked(rx_locked),
+.align_done(align_done),
+.rx_data_align(rx_data_align),
+.data_cnt_done(1'b1)
+);
+assign clk_out=tx_outclock;
+endmodule 

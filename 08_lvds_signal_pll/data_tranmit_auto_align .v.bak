@@ -1,0 +1,125 @@
+module data_tranmit_auto_align (
+input sysclk,
+output tx_outclock,
+output data_txp,
+output rst_n
+
+);
+wire locked;
+wire clk_10m;
+wire clk_40m;
+reg [20:0] cnt/*synthesis noprune*/;
+reg reset_i;
+
+clk_pll clk_ins(
+	.inclk0(sysclk),
+	.c0(clk_10m),
+	.c1(clk_40m),
+	.locked(locked)
+);
+assign    rst_n = reset_i;
+parameter data_length = 10'd125,
+          BASE_CNT_VALUE = 10'd200,
+          comma_8B = 8'hbc;
+
+
+always@(posedge sysclk or negedge locked)
+	begin
+		if(!locked)
+			begin
+				reset_i<=1'b0;
+				cnt<=0;
+			end
+		else 
+		   begin
+			   if(cnt==300)
+			   begin
+				   reset_i<=1'b1;
+				   cnt<=cnt;
+			   end 
+			   else 
+			     begin
+					 reset_i<=1'b0;
+					 cnt<=cnt+1'b1;
+				 end
+		   end
+	end
+reg [9:0]count;
+always @(posedge clk_10m or negedge rst_n)
+	begin
+		if(!rst_n)
+		  count<=0;
+		else if (count<10'd700)
+		  count<=count+1'b1;
+		else 
+		   count<=10'd0;
+	end	
+
+    // generated unencoded data  
+ reg [7:0] unendata/*synthesis noprune*/;
+ reg comma;
+  wire tx_coreclock;
+reg dvalid;
+always@(posedge clk_10m or negedge rst_n)
+	begin
+		if(~rst_n)
+		 begin
+		dvalid<=1'b0;
+		 end
+		else if((count>=BASE_CNT_VALUE+10'd1)&&(count<(BASE_CNT_VALUE+10'd125)))
+		dvalid<=1'b1;
+		else dvalid<=1'b0;
+	end
+ always @(posedge clk_10m or negedge rst_n)
+	begin
+		if(!rst_n)  
+		 begin
+			 unendata<=comma_8B;
+			 comma<=1'b1;
+		 end
+		else if(count==(BASE_CNT_VALUE+10'd0)) 
+	     begin
+			 unendata<=8'hee;
+			 comma<=1'b0;
+		 end
+		else if(count==(BASE_CNT_VALUE+10'd1))
+		 begin
+			 unendata<=8'h33;
+			 comma<=1'b0;
+		 end
+		else if(dvalid)
+		   begin
+			   unendata<=unendata+1'b1;
+			   comma<=1'b0;
+		   end 
+		else 
+		   begin
+			   unendata<=comma_8B;
+			   comma<=1'b1;
+		   end       
+	end
+ 
+ wire valid; 
+ wire [9:0]datatx;
+
+encode encoder(
+.clk(clk_out),
+.rst_n(locked),
+.kin(comma),
+.datain(unendata),
+.dataout(datatx),
+.valid(valid)
+);
+
+
+oserdes ser_ins(
+.tx_in(datatx),
+.tx_inclock(clk),    //串口时钟
+.tx_syncclock(),     //并口时钟
+.tx_out(data_txp),
+//.tx_outclock(tx_outclock),
+//.tx_coreclock(tx_coreclock),
+//.tx_locked(tx_locked)
+);
+
+endmodule

@@ -1,4 +1,4 @@
-Fitter Status : Successful - Thu Aug 10 17:23:41 2023
+Fitter Status : Successful - Fri Aug 11 14:17:04 2023
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : lvds_external_pll
 Top-level Entity Name : lvds_external_pll
@@ -9,7 +9,7 @@ Total logic elements : 54 / 10,320 ( < 1 % )
     Total combinational functions : 28 / 10,320 ( < 1 % )
     Dedicated logic registers : 52 / 10,320 ( < 1 % )
 Total registers : 54
-Total pins : 22 / 180 ( 12 % )
+Total pins : 26 / 180 ( 14 % )
 Total virtual pins : 0
 Total memory bits : 0 / 423,936 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )

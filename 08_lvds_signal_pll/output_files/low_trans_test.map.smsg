@@ -1,0 +1,4 @@
+Warning (10268): Verilog HDL information at low_trans_test.v(163): always construct contains both blocking and non-blocking assignments File: C:/Users/Administrator/Desktop/test_trans/low_trans_test_1220/low_trans_test/low_trans_test.v Line: 163
+Warning (10268): Verilog HDL information at ads_ctrl.v(190): always construct contains both blocking and non-blocking assignments File: C:/Users/Administrator/Desktop/test_trans/low_trans_test_1220/low_trans_test/ads_ctrl.v Line: 190
+Info (10281): Verilog HDL Declaration information at ads_ctrl.v(153): object "TX_D1" differs only in case from object "tx_d1" in the same scope File: C:/Users/Administrator/Desktop/test_trans/low_trans_test_1220/low_trans_test/ads_ctrl.v Line: 153
+Info (10281): Verilog HDL Declaration information at ads_ctrl.v(155): object "TX_D2" differs only in case from object "tx_d2" in the same scope File: C:/Users/Administrator/Desktop/test_trans/low_trans_test_1220/low_trans_test/ads_ctrl.v Line: 155

@@ -74,6 +74,10 @@
 				{
 					"name" : "data_in[1]",
 					"strict" : false
+				},
+				{
+					"name" : "rx_data_align",
+					"strict" : false
 				}
 			]
 		}

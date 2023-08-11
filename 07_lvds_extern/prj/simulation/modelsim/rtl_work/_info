@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dH:/FPGA/cyclone source/07_lvds_extern/prj/simulation/modelsim
 vlvds_external_pll
-Z1 !s110 1691663689
+Z1 !s110 1691736856
 !i10b 1
-!s100 6`Q9dc79mTWiSNK3UDI:e2
-IF4]F@<IfnaWJZZ@PGc6Xd2
+!s100 Q<=7iK<WhcViEJ1oL<KfC1
+ID6c5]LUJ?K44ECTje8oBI2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1691663680
+w1691736639
 8H:/FPGA/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v
 FH:/FPGA/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v
 L0 1
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1691663689.000000
+Z4 !s108 1691736856.000000
 !s107 H:/FPGA/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/07_lvds_extern/rtl|H:/FPGA/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v|
 !i113 1
@@ -33,11 +33,11 @@ Z6 tCvgOpt 0
 vlvds_pll
 R1
 !i10b 1
-!s100 Z0E_[GUG39JGFk@U`_W2@3
-I;PQRDKIk52IndKJWajP:N2
+!s100 O4A`KTO]W7:C2=e4dE==n1
+I6XmRi46ZF;H8oTVeioi_M0
 R2
 R0
-w1691656663
+w1691723731
 8H:/FPGA/cyclone source/07_lvds_extern/prj/lvds_pll.v
 FH:/FPGA/cyclone source/07_lvds_extern/prj/lvds_pll.v
 Z7 L0 39
@@ -55,11 +55,11 @@ R6
 vlvds_pll_altpll
 R1
 !i10b 1
-!s100 PSbad;B<JP4h7:58gf_WC3
-I6Y9<73lIm=ic5;T5=X3KF0
+!s100 fcG5z`Q?D_QbO;QaoI<T21
+I5PeoCE=n5_Nh^VW9<Y_OF2
 R2
 R0
-Z8 w1691657249
+w1691725693
 8H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_pll_altpll.v
 FH:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_pll_altpll.v
 L0 29
@@ -72,16 +72,16 @@ R4
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/07_lvds_extern/prj/db|H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_pll_altpll.v|
 !i113 1
 R5
-Z9 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/07_lvds_extern/prj/db}
+Z8 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/07_lvds_extern/prj/db}
 R6
 vlvds_rx
 R1
 !i10b 1
-!s100 280kL2LaFXnGDU^[]`4Y<3
-ITR`U?XYOealEF4]Zf>8XQ0
+!s100 `@[lBZ]ULI5=HOA>dcC`N3
+IP7A>GW[WznRjo>DIQ?^da1
 R2
 R0
-w1691658161
+w1691736832
 8H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_rx.v
 FH:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_rx.v
 R7
@@ -94,7 +94,7 @@ R4
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/07_lvds_extern/prj/ip|H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_rx.v|
 !i113 1
 R5
-Z10 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/07_lvds_extern/prj/ip}
+Z9 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/07_lvds_extern/prj/ip}
 R6
 vlvds_rx_cntr
 R1
@@ -103,20 +103,20 @@ R1
 Io5iNZ=Z@Hg1>eP[6g[BbM2
 R2
 R0
-Z11 w1691658449
-Z12 8H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v
-Z13 FH:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v
+Z10 w1691736450
+Z11 8H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v
+Z12 FH:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v
 L0 143
 R3
 r1
 !s85 0
 31
 R4
-Z14 !s107 H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v|
-Z15 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/07_lvds_extern/prj/db|H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v|
+Z13 !s107 H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v|
+Z14 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/07_lvds_extern/prj/db|H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v|
 !i113 1
 R5
-R9
+R8
 R6
 vlvds_rx_dffpipe
 R1
@@ -125,20 +125,20 @@ R1
 IMa]JCd0hU0zX6U33;C3Q[3
 R2
 R0
+R10
 R11
 R12
-R13
 L0 97
 R3
 r1
 !s85 0
 31
 R4
+R13
 R14
-R15
 !i113 1
 R5
-R9
+R8
 R6
 vlvds_rx_lvds_ddio_in
 R1
@@ -147,73 +147,73 @@ R1
 I?[Jz>PMCWencI>>NQRY@[0
 R2
 R0
+R10
 R11
 R12
-R13
-Z16 L0 34
+Z15 L0 34
 R3
 r1
 !s85 0
 31
 R4
+R13
 R14
-R15
 !i113 1
 R5
-R9
+R8
 R6
 vlvds_rx_lvds_rx
 R1
 !i10b 1
-!s100 fknie7c5E3TV6hz[jMzi10
-I^NTS<c4PGO__kLPaDMP`Q2
+!s100 Hm:fIJJ]HH1VRLA93f@2>2
+ISz0MMo_<_lMNa;nLRjHD[0
 R2
 R0
+R10
 R11
 R12
-R13
 L0 318
 R3
 r1
 !s85 0
 31
 R4
+R13
 R14
-R15
 !i113 1
 R5
-R9
+R8
 R6
 vlvds_rx_mux
 R1
 !i10b 1
-!s100 3h1Fn;2RiXTK3:BHaTC3Z2
-I2RSTiaXUQePURfbC<fb5h0
+!s100 PD^Eobj;D;Wk4:[G0OGiS1
+Iz`@4kXLXI8n5W[;Hd@SfF0
 R2
 R0
+R10
 R11
 R12
-R13
 L0 277
 R3
 r1
 !s85 0
 31
 R4
+R13
 R14
-R15
 !i113 1
 R5
-R9
+R8
 R6
 vlvds_test_tb
 R1
 !i10b 1
-!s100 =TRaUe5IB=3BLDFQZ;bUT0
-I;B<mSiP5i>X`CPCJU36Gz1
+!s100 8@9YE7^bYJ=Eic@E9]>5D2
+I8j[JdXg`PjR]JN?:36o5G2
 R2
 R0
-w1691663667
+w1691736674
 8H:/FPGA/cyclone source/07_lvds_extern/prj/../testbench/lvds_test_tb.v
 FH:/FPGA/cyclone source/07_lvds_extern/prj/../testbench/lvds_test_tb.v
 L0 4
@@ -229,13 +229,13 @@ R5
 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/07_lvds_extern/prj/../testbench}
 R6
 vlvds_tx
-R1
+!s110 1691736855
 !i10b 1
-!s100 43QGHCzC6hFNcg6=2G?9>0
-IK7FkVQmg]oI;DJW8PA8aj3
+!s100 ldzlRWONnLJC>hAlaZT^i3
+I>G>8RkHjd3JPU<H7NIhOf3
 R2
 R0
-w1691656609
+w1691722283
 8H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_tx.v
 FH:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_tx.v
 R7
@@ -243,12 +243,12 @@ R3
 r1
 !s85 0
 31
-R4
+!s108 1691736855.000000
 !s107 H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_tx.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/07_lvds_extern/prj/ip|H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_tx.v|
 !i113 1
 R5
-R10
+R9
 R6
 vlvds_tx_cmpr
 R1
@@ -257,7 +257,7 @@ R1
 IGCSW_[MGP3IiH7D3lGg?b0
 R2
 R0
-R8
+Z16 w1691725694
 Z17 8H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_tx_lvds_tx.v
 Z18 FH:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_tx_lvds_tx.v
 L0 92
@@ -270,7 +270,7 @@ Z19 !s107 H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_tx_lvds_tx.v|
 Z20 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/07_lvds_extern/prj/db|H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_tx_lvds_tx.v|
 !i113 1
 R5
-R9
+R8
 R6
 vlvds_tx_cntr
 R1
@@ -279,7 +279,7 @@ R1
 I0?cG`N38mzeg7HHfZOIo=0
 R2
 R0
-R8
+R16
 R17
 R18
 L0 130
@@ -292,7 +292,7 @@ R19
 R20
 !i113 1
 R5
-R9
+R8
 R6
 vlvds_tx_ddio_out
 R1
@@ -301,10 +301,10 @@ R1
 I6ZaNf_7QcOdUVo?LzdmM<2
 R2
 R0
-R8
+R16
 R17
 R18
-R16
+R15
 R3
 r1
 !s85 0
@@ -314,7 +314,7 @@ R19
 R20
 !i113 1
 R5
-R9
+R8
 R6
 vlvds_tx_lvds_tx
 R1
@@ -323,7 +323,7 @@ R1
 I[<Hg4S4Se7FM^UfJFn24Y0
 R2
 R0
-R8
+R16
 R17
 R18
 L0 283
@@ -336,7 +336,7 @@ R19
 R20
 !i113 1
 R5
-R9
+R8
 R6
 vlvds_tx_shift_reg
 R1
@@ -345,7 +345,7 @@ R1
 I1HXlhXF0h^Onz2?k7OQeY2
 R2
 R0
-R8
+R16
 R17
 R18
 L0 241
@@ -358,5 +358,5 @@ R19
 R20
 !i113 1
 R5
-R9
+R8
 R6

@@ -1,11 +1,11 @@
 |lvds_test
 sys_clk => sys_clk.IN1
-data_txp <= data_transmit_auto_align:trans_inst.data_txp
+data_txp << data_transmit_auto_align:trans_inst.data_txp
 data_rxp => data_rxp.IN1
-clk_out <= <GND>
-clk_out_en <= <VCC>
+clk_out << <GND>
+clk_out_en << <VCC>
 clk_in => clk_in.IN1
-clk_in_en <= <GND>
+clk_in_en << <GND>
 
 
 |lvds_test|data_transmit_auto_align:trans_inst

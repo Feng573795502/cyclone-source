@@ -1,0 +1,387 @@
+# Reading H:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# ERROR: No extended dataflow license exists
+# do low_trans_test_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying H:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test {H:/FPGA/low_trans_test/lvds_ip_auto_align.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:41 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test" H:/FPGA/low_trans_test/lvds_ip_auto_align.v 
+# -- Compiling module lvds_ip_auto_align
+# 
+# Top level modules:
+# 	lvds_ip_auto_align
+# End time: 17:30:41 on Aug 11,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test {H:/FPGA/low_trans_test/data_repeat_align.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:41 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test" H:/FPGA/low_trans_test/data_repeat_align.v 
+# -- Compiling module data_repeat_align
+# 
+# Top level modules:
+# 	data_repeat_align
+# End time: 17:30:41 on Aug 11,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test {H:/FPGA/low_trans_test/data_tranmit_auto_align .v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:41 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test" H:/FPGA/low_trans_test/data_tranmit_auto_align .v 
+# -- Compiling module data_tranmit_auto_align
+# 
+# Top level modules:
+# 	data_tranmit_auto_align
+# End time: 17:30:42 on Aug 11,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test {H:/FPGA/low_trans_test/lvds_align.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:42 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test" H:/FPGA/low_trans_test/lvds_align.v 
+# -- Compiling module lvds_align
+# 
+# Top level modules:
+# 	lvds_align
+# End time: 17:30:42 on Aug 11,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test {H:/FPGA/low_trans_test/data_receive.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:42 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test" H:/FPGA/low_trans_test/data_receive.v 
+# -- Compiling module data_receive
+# 
+# Top level modules:
+# 	data_receive
+# End time: 17:30:42 on Aug 11,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test {H:/FPGA/low_trans_test/decode.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:42 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test" H:/FPGA/low_trans_test/decode.v 
+# -- Compiling module decode
+# 
+# Top level modules:
+# 	decode
+# End time: 17:30:42 on Aug 11,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test {H:/FPGA/low_trans_test/encode.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:42 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test" H:/FPGA/low_trans_test/encode.v 
+# -- Compiling module encode
+# 
+# Top level modules:
+# 	encode
+# End time: 17:30:42 on Aug 11,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test {H:/FPGA/low_trans_test/clk_pll.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:42 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test" H:/FPGA/low_trans_test/clk_pll.v 
+# -- Compiling module clk_pll
+# 
+# Top level modules:
+# 	clk_pll
+# End time: 17:30:42 on Aug 11,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test {H:/FPGA/low_trans_test/iserdes.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:42 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test" H:/FPGA/low_trans_test/iserdes.v 
+# -- Compiling module iserdes
+# 
+# Top level modules:
+# 	iserdes
+# End time: 17:30:42 on Aug 11,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test {H:/FPGA/low_trans_test/oserdes.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:42 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test" H:/FPGA/low_trans_test/oserdes.v 
+# -- Compiling module oserdes
+# 
+# Top level modules:
+# 	oserdes
+# End time: 17:30:42 on Aug 11,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test/db {H:/FPGA/low_trans_test/db/clk_pll_altpll2.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:42 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test/db" H:/FPGA/low_trans_test/db/clk_pll_altpll2.v 
+# -- Compiling module clk_pll_altpll2
+# 
+# Top level modules:
+# 	clk_pll_altpll2
+# End time: 17:30:42 on Aug 11,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test/db {H:/FPGA/low_trans_test/db/oserdes_lvds_tx1.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:42 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test/db" H:/FPGA/low_trans_test/db/oserdes_lvds_tx1.v 
+# -- Compiling module oserdes_lvds_tx1_oserdes_ddio_out
+# -- Compiling module oserdes_lvds_tx1_oserdes_cmpr
+# -- Compiling module oserdes_lvds_tx1_oserdes_cmpr1
+# -- Compiling module oserdes_lvds_tx1_oserdes_cntr
+# -- Compiling module oserdes_lvds_tx1_oserdes_shift_reg
+# -- Compiling module oserdes_lvds_tx1
+# 
+# Top level modules:
+# 	oserdes_lvds_tx1
+# End time: 17:30:42 on Aug 11,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test/db {H:/FPGA/low_trans_test/db/iserdes_lvds_rx1.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:42 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test/db" H:/FPGA/low_trans_test/db/iserdes_lvds_rx1.v 
+# -- Compiling module iserdes_lvds_rx1_iserdes_lvds_ddio_in
+# -- Compiling module iserdes_lvds_rx1_iserdes_dffpipe
+# -- Compiling module iserdes_lvds_rx1_iserdes_cmpr
+# -- Compiling module iserdes_lvds_rx1_iserdes_cntr
+# -- Compiling module iserdes_lvds_rx1_iserdes_mux
+# -- Compiling module iserdes_lvds_rx1
+# 
+# Top level modules:
+# 	iserdes_lvds_rx1
+# End time: 17:30:42 on Aug 11,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+H:/FPGA/low_trans_test/simulation/modelsim {H:/FPGA/low_trans_test/simulation/modelsim/lvds_ip_test_vlg_tst.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:42 on Aug 11,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/low_trans_test/simulation/modelsim" H:/FPGA/low_trans_test/simulation/modelsim/lvds_ip_test_vlg_tst.v 
+# -- Compiling module lvds_ip_test_vlg_tst
+# 
+# Top level modules:
+# 	lvds_ip_test_vlg_tst
+# End time: 17:30:42 on Aug 11,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver -L rtl_work -L work -voptargs="+acc"  lvds_ip_test_vlg_tst
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver -L rtl_work -L work -voptargs=""+acc"" lvds_ip_test_vlg_tst 
+# Start time: 17:30:42 on Aug 11,2023
+# Loading work.lvds_ip_test_vlg_tst
+# Loading work.lvds_ip_auto_align
+# Loading work.data_tranmit_auto_align
+# Loading work.clk_pll
+# Loading altera_mf_ver.altpll
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.pll_iobuf
+# Loading work.encode
+# Loading work.oserdes
+# Loading altera_mf_ver.altlvds_tx
+# Loading work.data_receive
+# Loading work.iserdes
+# Loading altera_mf_ver.altlvds_rx
+# Loading altera_mf_ver.stratix_lvds_rx
+# Loading altera_mf_ver.stratixgx_dpa_lvds_rx
+# Loading altera_mf_ver.flexible_lvds_rx
+# Loading work.decode
+# Loading work.data_repeat_align
+# Loading work.lvds_align
+# Loading altera_mf_ver.MF_cycloneiii_pll
+# Loading altera_mf_ver.cda_m_cntr
+# Loading altera_mf_ver.cda_n_cntr
+# Loading altera_mf_ver.cda_scale_cntr
+# Loading altera_mf_ver.flexible_lvds_tx
+# Loading altera_mf_ver.MF_stratixiii_pll
+# Loading altera_mf_ver.ttn_m_cntr
+# Loading altera_mf_ver.ttn_n_cntr
+# Loading altera_mf_ver.ttn_scale_cntr
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Administrator  Hostname: YHW1993  ProcessID: 5540
+#           Attempting to use alternate WLF file "./wlftrgd90e".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftrgd90e
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+#  Note : Cyclone 10 LP PLL locked to incoming clock
+# Time: 90000  Instance: lvds_ip_test_vlg_tst.i1.trans_inst.clk_ins.altpll_component.cycloneiii_pll.pll3
+#  Note : Cyclone 10 LP PLL locked to incoming clock
+# Time: 410000  Instance: lvds_ip_test_vlg_tst.i1.rece.des_ins.ALTLVDS_RX_component.MF_stratixiii_pll.u8
+add wave -position insertpoint  \
+sim:/lvds_ip_test_vlg_tst/i1/rx_outclock
+restart
+run
+run
+#  Note : Cyclone 10 LP PLL locked to incoming clock
+# Time: 90000  Instance: lvds_ip_test_vlg_tst.i1.trans_inst.clk_ins.altpll_component.cycloneiii_pll.pll3
+run
+run
+run
+run
+#  Note : Cyclone 10 LP PLL locked to incoming clock
+# Time: 410000  Instance: lvds_ip_test_vlg_tst.i1.rece.des_ins.ALTLVDS_RX_component.MF_stratixiii_pll.u8
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 17:44:29 on Aug 11,2023, Elapsed time: 0:13:47
+# Errors: 0, Warnings: 2

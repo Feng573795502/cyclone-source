@@ -35,12 +35,14 @@ module lvds_rx (
 	rx_data_align,
 	rx_in,
 	rx_inclock,
-	rx_out);
+	rx_out,
+	rx_outclock);
 
 	input	  rx_data_align;
 	input	[0:0]  rx_in;
 	input	  rx_inclock;
 	output	[7:0]  rx_out;
+	output	  rx_outclock;
 
 endmodule
 
@@ -51,13 +53,13 @@ endmodule
 // Retrieval info: PRIVATE: Bitslip NUMERIC "0"
 // Retrieval info: PRIVATE: Clock_Choices STRING "tx_coreclock"
 // Retrieval info: PRIVATE: Clock_Mode NUMERIC "0"
-// Retrieval info: PRIVATE: Data_rate STRING "800.0"
+// Retrieval info: PRIVATE: Data_rate STRING "80.0"
 // Retrieval info: PRIVATE: Deser_Factor NUMERIC "8"
 // Retrieval info: PRIVATE: Dpll_Lock_Count NUMERIC "0"
 // Retrieval info: PRIVATE: Dpll_Lock_Window NUMERIC "0"
 // Retrieval info: PRIVATE: Enable_DPA_Mode STRING "OFF"
 // Retrieval info: PRIVATE: Enable_FIFO_DPA_Channels NUMERIC "0"
-// Retrieval info: PRIVATE: Ext_PLL STRING "ON"
+// Retrieval info: PRIVATE: Ext_PLL STRING "OFF"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: PRIVATE: Le_Serdes STRING "ON"
 // Retrieval info: PRIVATE: Num_Channel NUMERIC "1"
@@ -65,10 +67,10 @@ endmodule
 // Retrieval info: PRIVATE: pCNX_OUTCLK_ALIGN NUMERIC "0"
 // Retrieval info: PRIVATE: pINCLOCK_PHASE_SHIFT STRING "0.00"
 // Retrieval info: PRIVATE: PLL_Enable NUMERIC "0"
-// Retrieval info: PRIVATE: PLL_Freq STRING "100.00"
-// Retrieval info: PRIVATE: PLL_Period STRING "10.000"
+// Retrieval info: PRIVATE: PLL_Freq STRING "10.00"
+// Retrieval info: PRIVATE: PLL_Period STRING "100.000"
 // Retrieval info: PRIVATE: pOUTCLOCK_PHASE_SHIFT NUMERIC "0"
-// Retrieval info: PRIVATE: Reg_InOut NUMERIC "0"
+// Retrieval info: PRIVATE: Reg_InOut NUMERIC "1"
 // Retrieval info: PRIVATE: Use_Cda_Reset NUMERIC "0"
 // Retrieval info: PRIVATE: Use_Clock_Resc STRING "AUTO"
 // Retrieval info: PRIVATE: Use_Common_Rx_Tx_Plls NUMERIC "0"
@@ -82,7 +84,7 @@ endmodule
 // Retrieval info: CONSTANT: COMMON_RX_TX_PLL STRING "OFF"
 // Retrieval info: CONSTANT: clk_src_is_pll STRING "off"
 // Retrieval info: CONSTANT: DATA_ALIGN_ROLLOVER NUMERIC "4"
-// Retrieval info: CONSTANT: DATA_RATE STRING "800.0 Mbps"
+// Retrieval info: CONSTANT: DATA_RATE STRING "80.0 Mbps"
 // Retrieval info: CONSTANT: DESERIALIZATION_FACTOR NUMERIC "8"
 // Retrieval info: CONSTANT: DPA_INITIAL_PHASE_VALUE NUMERIC "0"
 // Retrieval info: CONSTANT: DPLL_LOCK_COUNT NUMERIC "0"
@@ -98,9 +100,9 @@ endmodule
 // Retrieval info: CONSTANT: IMPLEMENT_IN_LES STRING "ON"
 // Retrieval info: CONSTANT: INCLOCK_BOOST NUMERIC "0"
 // Retrieval info: CONSTANT: INCLOCK_DATA_ALIGNMENT STRING "EDGE_ALIGNED"
-// Retrieval info: CONSTANT: INCLOCK_PERIOD NUMERIC "10000"
+// Retrieval info: CONSTANT: INCLOCK_PERIOD NUMERIC "100000"
 // Retrieval info: CONSTANT: INCLOCK_PHASE_SHIFT NUMERIC "0"
-// Retrieval info: CONSTANT: INPUT_DATA_RATE NUMERIC "800"
+// Retrieval info: CONSTANT: INPUT_DATA_RATE NUMERIC "80"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: CONSTANT: LOSE_LOCK_ON_ONE_CHANGE STRING "UNUSED"
 // Retrieval info: CONSTANT: LPM_HINT STRING "UNUSED"
@@ -113,7 +115,7 @@ endmodule
 // Retrieval info: CONSTANT: PORT_RX_DATA_ALIGN STRING "PORT_USED"
 // Retrieval info: CONSTANT: REFCLK_FREQUENCY STRING "UNUSED"
 // Retrieval info: CONSTANT: REGISTERED_DATA_ALIGN_INPUT STRING "UNUSED"
-// Retrieval info: CONSTANT: REGISTERED_OUTPUT STRING "OFF"
+// Retrieval info: CONSTANT: REGISTERED_OUTPUT STRING "ON"
 // Retrieval info: CONSTANT: RESET_FIFO_AT_FIRST_LOCK STRING "UNUSED"
 // Retrieval info: CONSTANT: RX_ALIGN_DATA_REG STRING "UNUSED"
 // Retrieval info: CONSTANT: SIM_DPA_IS_NEGATIVE_PPM_DRIFT STRING "OFF"
@@ -121,7 +123,7 @@ endmodule
 // Retrieval info: CONSTANT: SIM_DPA_OUTPUT_CLOCK_PHASE_SHIFT NUMERIC "0"
 // Retrieval info: CONSTANT: USE_CORECLOCK_INPUT STRING "OFF"
 // Retrieval info: CONSTANT: USE_DPLL_RAWPERROR STRING "OFF"
-// Retrieval info: CONSTANT: USE_EXTERNAL_PLL STRING "ON"
+// Retrieval info: CONSTANT: USE_EXTERNAL_PLL STRING "OFF"
 // Retrieval info: CONSTANT: USE_NO_PHASE_SHIFT STRING "ON"
 // Retrieval info: CONSTANT: X_ON_BITSLIP STRING "ON"
 // Retrieval info: USED_PORT: rx_data_align 0 0 0 0 INPUT NODEFVAL "rx_data_align"
@@ -132,6 +134,8 @@ endmodule
 // Retrieval info: CONNECT: @rx_inclock 0 0 0 0 rx_inclock 0 0 0 0
 // Retrieval info: USED_PORT: rx_out 0 0 8 0 OUTPUT NODEFVAL "rx_out[7..0]"
 // Retrieval info: CONNECT: rx_out 0 0 8 0 @rx_out 0 0 8 0
+// Retrieval info: USED_PORT: rx_outclock 0 0 0 0 OUTPUT NODEFVAL "rx_outclock"
+// Retrieval info: CONNECT: rx_outclock 0 0 0 0 @rx_outclock 0 0 0 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL lvds_rx.v TRUE FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL lvds_rx.qip TRUE FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL lvds_rx.bsf TRUE TRUE

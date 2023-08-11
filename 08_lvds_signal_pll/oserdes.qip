@@ -1,0 +1,10 @@
+set_global_assignment -name IP_TOOL_NAME "ALTLVDS_TX"
+set_global_assignment -name IP_TOOL_VERSION "18.1"
+set_global_assignment -name IP_GENERATED_DEVICE_FAMILY "{Cyclone 10 LP}"
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) "oserdes.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "oserdes.bsf"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "oserdes_inst.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "oserdes_bb.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "oserdes.inc"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "oserdes.cmp"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "oserdes.ppf"]

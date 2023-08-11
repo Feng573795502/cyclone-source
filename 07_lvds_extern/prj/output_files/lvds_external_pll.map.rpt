@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lvds_external_pll
-Thu Aug 10 17:23:38 2023
+Fri Aug 11 14:48:42 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -54,20 +54,20 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Aug 10 17:23:38 2023           ;
+; Analysis & Synthesis Status        ; Successful - Fri Aug 11 14:48:42 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; lvds_external_pll                               ;
 ; Top-level Entity Name              ; lvds_external_pll                               ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 63                                              ;
+; Total logic elements               ; 64                                              ;
 ;     Total combinational functions  ; 28                                              ;
-;     Dedicated logic registers      ; 52                                              ;
-; Total registers                    ; 54                                              ;
-; Total pins                         ; 22                                              ;
+;     Dedicated logic registers      ; 53                                              ;
+; Total registers                    ; 55                                              ;
+; Total pins                         ; 26                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 1                                               ;
+; Total PLLs                         ; 2                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -212,7 +212,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                     ;
 +---------------------------------------------+-------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 63                                                                                        ;
+; Estimated Total logic elements              ; 64                                                                                        ;
 ;                                             ;                                                                                           ;
 ; Total combinational functions               ; 28                                                                                        ;
 ; Logic element usage by number of LUT inputs ;                                                                                           ;
@@ -224,21 +224,21 @@ refer to the applicable agreement for further details.
 ;     -- normal mode                          ; 25                                                                                        ;
 ;     -- arithmetic mode                      ; 3                                                                                         ;
 ;                                             ;                                                                                           ;
-; Total registers                             ; 54                                                                                        ;
-;     -- Dedicated logic registers            ; 52                                                                                        ;
+; Total registers                             ; 55                                                                                        ;
+;     -- Dedicated logic registers            ; 53                                                                                        ;
 ;     -- I/O registers                        ; 4                                                                                         ;
 ;                                             ;                                                                                           ;
-; I/O pins                                    ; 22                                                                                        ;
+; I/O pins                                    ; 26                                                                                        ;
 ;                                             ;                                                                                           ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                                         ;
 ;                                             ;                                                                                           ;
-; Total PLLs                                  ; 1                                                                                         ;
-;     -- PLLs                                 ; 1                                                                                         ;
+; Total PLLs                                  ; 2                                                                                         ;
+;     -- PLLs                                 ; 2                                                                                         ;
 ;                                             ;                                                                                           ;
-; Maximum fan-out node                        ; lvds_pll:lvds_pll|altpll:altpll_component|lvds_pll_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 57                                                                                        ;
-; Total fan-out                               ; 236                                                                                       ;
-; Average fan-out                             ; 1.87                                                                                      ;
+; Maximum fan-out node                        ; lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|fast_clock ;
+; Maximum fan-out                             ; 31                                                                                        ;
+; Total fan-out                               ; 246                                                                                       ;
+; Average fan-out                             ; 1.81                                                                                      ;
 +---------------------------------------------+-------------------------------------------------------------------------------------------+
 
 
@@ -247,13 +247,13 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                             ; Entity Name          ; Library Name ;
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |lvds_external_pll                          ; 28 (0)              ; 52 (0)                    ; 0           ; 0            ; 0       ; 0         ; 22   ; 0            ; |lvds_external_pll                                                                                                              ; lvds_external_pll    ; work         ;
+; |lvds_external_pll                          ; 28 (0)              ; 53 (0)                    ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |lvds_external_pll                                                                                                              ; lvds_external_pll    ; work         ;
 ;    |lvds_pll:lvds_pll|                      ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lvds_external_pll|lvds_pll:lvds_pll                                                                                            ; lvds_pll             ; work         ;
 ;       |altpll:altpll_component|             ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lvds_external_pll|lvds_pll:lvds_pll|altpll:altpll_component                                                                    ; altpll               ; work         ;
 ;          |lvds_pll_altpll:auto_generated|   ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lvds_external_pll|lvds_pll:lvds_pll|altpll:altpll_component|lvds_pll_altpll:auto_generated                                     ; lvds_pll_altpll      ; work         ;
-;    |lvds_rx:lvds_rx|                        ; 14 (0)              ; 28 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lvds_external_pll|lvds_rx:lvds_rx                                                                                              ; lvds_rx              ; work         ;
-;       |altlvds_rx:ALTLVDS_RX_component|     ; 14 (0)              ; 28 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component                                                              ; altlvds_rx           ; work         ;
-;          |lvds_rx_lvds_rx:auto_generated|   ; 14 (1)              ; 28 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated                               ; lvds_rx_lvds_rx      ; work         ;
+;    |lvds_rx:lvds_rx|                        ; 14 (0)              ; 29 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lvds_external_pll|lvds_rx:lvds_rx                                                                                              ; lvds_rx              ; work         ;
+;       |altlvds_rx:ALTLVDS_RX_component|     ; 14 (0)              ; 29 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component                                                              ; altlvds_rx           ; work         ;
+;          |lvds_rx_lvds_rx:auto_generated|   ; 14 (1)              ; 29 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated                               ; lvds_rx_lvds_rx      ; work         ;
 ;             |lvds_rx_cntr:bitslip_cntr|     ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_cntr:bitslip_cntr     ; lvds_rx_cntr         ; work         ;
 ;             |lvds_rx_dffpipe:h_dffpipe|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_dffpipe:h_dffpipe     ; lvds_rx_dffpipe      ; work         ;
 ;             |lvds_rx_dffpipe:l_dffpipe|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lvds_external_pll|lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_dffpipe:l_dffpipe     ; lvds_rx_dffpipe      ; work         ;
@@ -301,7 +301,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 52    ;
+; Total registers                              ; 53    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -336,6 +336,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Assignment                      ; Value ; From ; To                                                   ;
 +---------------------------------+-------+------+------------------------------------------------------+
 ; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                    ;
+; AUTO_MERGE_PLLS                 ; OFF   ; -    ; lvds_rx_pll                                          ;
 +---------------------------------+-------+------+------------------------------------------------------+
 
 
@@ -414,8 +415,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLK4_MULTIPLY_BY              ; 1                          ; Untyped                   ;
 ; CLK3_MULTIPLY_BY              ; 1                          ; Untyped                   ;
 ; CLK2_MULTIPLY_BY              ; 1                          ; Untyped                   ;
-; CLK1_MULTIPLY_BY              ; 3                          ; Signed Integer            ;
-; CLK0_MULTIPLY_BY              ; 6                          ; Signed Integer            ;
+; CLK1_MULTIPLY_BY              ; 1                          ; Signed Integer            ;
+; CLK0_MULTIPLY_BY              ; 4                          ; Signed Integer            ;
 ; CLK9_DIVIDE_BY                ; 0                          ; Untyped                   ;
 ; CLK8_DIVIDE_BY                ; 0                          ; Untyped                   ;
 ; CLK7_DIVIDE_BY                ; 0                          ; Untyped                   ;
@@ -424,8 +425,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLK4_DIVIDE_BY                ; 1                          ; Untyped                   ;
 ; CLK3_DIVIDE_BY                ; 1                          ; Untyped                   ;
 ; CLK2_DIVIDE_BY                ; 1                          ; Untyped                   ;
-; CLK1_DIVIDE_BY                ; 2                          ; Signed Integer            ;
-; CLK0_DIVIDE_BY                ; 1                          ; Signed Integer            ;
+; CLK1_DIVIDE_BY                ; 5                          ; Signed Integer            ;
+; CLK0_DIVIDE_BY                ; 5                          ; Signed Integer            ;
 ; CLK9_PHASE_SHIFT              ; 0                          ; Untyped                   ;
 ; CLK8_PHASE_SHIFT              ; 0                          ; Untyped                   ;
 ; CLK7_PHASE_SHIFT              ; 0                          ; Untyped                   ;
@@ -434,8 +435,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLK4_PHASE_SHIFT              ; 0                          ; Untyped                   ;
 ; CLK3_PHASE_SHIFT              ; 0                          ; Untyped                   ;
 ; CLK2_PHASE_SHIFT              ; 0                          ; Untyped                   ;
-; CLK1_PHASE_SHIFT              ; 0                          ; Untyped                   ;
-; CLK0_PHASE_SHIFT              ; 0                          ; Untyped                   ;
+; CLK1_PHASE_SHIFT              ; 60000                      ; Untyped                   ;
+; CLK0_PHASE_SHIFT              ; -12500                     ; Untyped                   ;
 ; CLK5_TIME_DELAY               ; 0                          ; Untyped                   ;
 ; CLK4_TIME_DELAY               ; 0                          ; Untyped                   ;
 ; CLK3_TIME_DELAY               ; 0                          ; Untyped                   ;
@@ -761,12 +762,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; REGISTERED_INPUT            ; OFF             ; Untyped                                      ;
 ; MULTI_CLOCK                 ; OFF             ; Untyped                                      ;
 ; INCLOCK_PERIOD              ; 100000          ; Signed Integer                               ;
-; OUTCLOCK_DIVIDE_BY          ; 1               ; Signed Integer                               ;
+; OUTCLOCK_DIVIDE_BY          ; 4               ; Signed Integer                               ;
 ; INCLOCK_BOOST               ; 0               ; Signed Integer                               ;
 ; CENTER_ALIGN_MSB            ; UNUSED          ; Untyped                                      ;
 ; INTENDED_DEVICE_FAMILY      ; Cyclone IV E    ; Untyped                                      ;
 ; DEVICE_FAMILY               ; Cyclone IV E    ; Untyped                                      ;
-; OUTPUT_DATA_RATE            ; 800             ; Signed Integer                               ;
+; OUTPUT_DATA_RATE            ; 80              ; Signed Integer                               ;
 ; INCLOCK_DATA_ALIGNMENT      ; EDGE_ALIGNED    ; Untyped                                      ;
 ; OUTCLOCK_ALIGNMENT          ; EDGE_ALIGNED    ; Untyped                                      ;
 ; INCLOCK_PHASE_SHIFT         ; 0               ; Signed Integer                               ;
@@ -800,13 +801,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; NUMBER_OF_CHANNELS                   ; 1               ; Signed Integer                      ;
 ; DESERIALIZATION_FACTOR               ; 8               ; Signed Integer                      ;
 ; REGISTERED_OUTPUT                    ; OFF             ; Untyped                             ;
-; INCLOCK_PERIOD                       ; 10000           ; Signed Integer                      ;
+; INCLOCK_PERIOD                       ; 100000          ; Signed Integer                      ;
 ; INCLOCK_BOOST                        ; 0               ; Signed Integer                      ;
 ; CDS_MODE                             ; UNUSED          ; Untyped                             ;
 ; INTENDED_DEVICE_FAMILY               ; Cyclone IV E    ; Untyped                             ;
 ; DEVICE_FAMILY                        ; Cyclone IV E    ; Untyped                             ;
 ; PORT_RX_DATA_ALIGN                   ; PORT_USED       ; Untyped                             ;
-; INPUT_DATA_RATE                      ; 800             ; Signed Integer                      ;
+; INPUT_DATA_RATE                      ; 80              ; Signed Integer                      ;
 ; INCLOCK_DATA_ALIGNMENT               ; EDGE_ALIGNED    ; Untyped                             ;
 ; INCLOCK_PHASE_SHIFT                  ; 0               ; Signed Integer                      ;
 ; REGISTERED_DATA_ALIGN_INPUT          ; ON              ; Untyped                             ;
@@ -822,7 +823,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; DATA_ALIGN_ROLLOVER                  ; 4               ; Signed Integer                      ;
 ; LOSE_LOCK_ON_ONE_CHANGE              ; OFF             ; Untyped                             ;
 ; RESET_FIFO_AT_FIRST_LOCK             ; ON              ; Untyped                             ;
-; USE_EXTERNAL_PLL                     ; ON              ; Untyped                             ;
+; USE_EXTERNAL_PLL                     ; OFF             ; Untyped                             ;
 ; IMPLEMENT_IN_LES                     ; ON              ; Untyped                             ;
 ; BUFFER_IMPLEMENTATION                ; RAM             ; Untyped                             ;
 ; DPA_INITIAL_PHASE_VALUE              ; 0               ; Signed Integer                      ;
@@ -865,24 +866,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 22                          ;
+; boundary_port         ; 26                          ;
 ; cycloneiii_ddio_out   ; 1                           ;
-; cycloneiii_ff         ; 52                          ;
+; cycloneiii_ff         ; 53                          ;
 ;     ENA               ; 15                          ;
-;     plain             ; 37                          ;
-; cycloneiii_lcell_comb ; 28                          ;
+;     plain             ; 38                          ;
+; cycloneiii_lcell_comb ; 29                          ;
 ;     arith             ; 3                           ;
 ;         2 data inputs ; 2                           ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 25                          ;
+;     normal            ; 26                          ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 3                           ;
 ;         3 data inputs ; 13                          ;
 ;         4 data inputs ; 6                           ;
-; cycloneiii_pll        ; 1                           ;
+; cycloneiii_pll        ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.22                        ;
+; Average LUT depth     ; 1.13                        ;
 +-----------------------+-----------------------------+
 
 
@@ -901,7 +903,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Thu Aug 10 17:23:30 2023
+    Info: Processing started: Fri Aug 11 14:48:34 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lvds_external_pll -c lvds_external_pll
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -911,26 +913,25 @@ Info (12021): Found 1 design units, including 1 entities, in source file lvds_pl
     Info (12023): Found entity 1: lvds_pll File: H:/FPGA/cyclone source/07_lvds_extern/prj/lvds_pll.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v
     Info (12023): Found entity 1: lvds_external_pll File: H:/FPGA/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v Line: 1
-Warning (10275): Verilog HDL Module Instantiation warning at lvds_test_tb.v(23): ignored dangling comma in List of Port Connections File: H:/FPGA/cyclone source/07_lvds_extern/testbench/lvds_test_tb.v Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/07_lvds_extern/testbench/lvds_test_tb.v
     Info (12023): Found entity 1: lvds_test_tb File: H:/FPGA/cyclone source/07_lvds_extern/testbench/lvds_test_tb.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file ip/lvds_rx.v
     Info (12023): Found entity 1: lvds_rx File: H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_rx.v Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at lvds_test_tb.v(22): created implicit net for "rx_out" File: H:/FPGA/cyclone source/07_lvds_extern/testbench/lvds_test_tb.v Line: 22
 Info (12127): Elaborating entity "lvds_external_pll" for the top level hierarchy
-Info (12128): Elaborating entity "lvds_pll" for hierarchy "lvds_pll:lvds_pll" File: H:/FPGA/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v Line: 21
+Warning (10034): Output port "rx_locked" at lvds_external_pll.v(12) has no driver File: H:/FPGA/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v Line: 12
+Info (12128): Elaborating entity "lvds_pll" for hierarchy "lvds_pll:lvds_pll" File: H:/FPGA/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v Line: 29
 Info (12128): Elaborating entity "altpll" for hierarchy "lvds_pll:lvds_pll|altpll:altpll_component" File: H:/FPGA/cyclone source/07_lvds_extern/prj/lvds_pll.v Line: 98
 Info (12130): Elaborated megafunction instantiation "lvds_pll:lvds_pll|altpll:altpll_component" File: H:/FPGA/cyclone source/07_lvds_extern/prj/lvds_pll.v Line: 98
 Info (12133): Instantiated megafunction "lvds_pll:lvds_pll|altpll:altpll_component" with the following parameter: File: H:/FPGA/cyclone source/07_lvds_extern/prj/lvds_pll.v Line: 98
     Info (12134): Parameter "bandwidth_type" = "AUTO"
-    Info (12134): Parameter "clk0_divide_by" = "1"
+    Info (12134): Parameter "clk0_divide_by" = "5"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
-    Info (12134): Parameter "clk0_multiply_by" = "6"
-    Info (12134): Parameter "clk0_phase_shift" = "0"
-    Info (12134): Parameter "clk1_divide_by" = "2"
+    Info (12134): Parameter "clk0_multiply_by" = "4"
+    Info (12134): Parameter "clk0_phase_shift" = "-12500"
+    Info (12134): Parameter "clk1_divide_by" = "5"
     Info (12134): Parameter "clk1_duty_cycle" = "50"
-    Info (12134): Parameter "clk1_multiply_by" = "3"
-    Info (12134): Parameter "clk1_phase_shift" = "0"
+    Info (12134): Parameter "clk1_multiply_by" = "1"
+    Info (12134): Parameter "clk1_phase_shift" = "60000"
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "20000"
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
@@ -984,14 +985,14 @@ Info (12133): Instantiated megafunction "lvds_pll:lvds_pll|altpll:altpll_compone
 Info (12021): Found 1 design units, including 1 entities, in source file db/lvds_pll_altpll.v
     Info (12023): Found entity 1: lvds_pll_altpll File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_pll_altpll.v Line: 29
 Info (12128): Elaborating entity "lvds_pll_altpll" for hierarchy "lvds_pll:lvds_pll|altpll:altpll_component|lvds_pll_altpll:auto_generated" File: h:/intelfpga/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "lvds_tx" for hierarchy "lvds_tx:lvds_tx" File: H:/FPGA/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v Line: 28
+Info (12128): Elaborating entity "lvds_tx" for hierarchy "lvds_tx:lvds_tx" File: H:/FPGA/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v Line: 36
 Info (12128): Elaborating entity "altlvds_tx" for hierarchy "lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component" File: H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_tx.v Line: 65
 Info (12130): Elaborated megafunction instantiation "lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component" File: H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_tx.v Line: 65
 Info (12133): Instantiated megafunction "lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component" with the following parameter: File: H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_tx.v Line: 65
     Info (12134): Parameter "center_align_msb" = "UNUSED"
     Info (12134): Parameter "common_rx_tx_pll" = "OFF"
     Info (12134): Parameter "coreclock_divide_by" = "2"
-    Info (12134): Parameter "data_rate" = "800.0 Mbps"
+    Info (12134): Parameter "data_rate" = "80.0 Mbps"
     Info (12134): Parameter "deserialization_factor" = "8"
     Info (12134): Parameter "differential_drive" = "0"
     Info (12134): Parameter "enable_clock_pin_mode" = "UNUSED"
@@ -1006,12 +1007,12 @@ Info (12133): Instantiated megafunction "lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_c
     Info (12134): Parameter "multi_clock" = "OFF"
     Info (12134): Parameter "number_of_channels" = "1"
     Info (12134): Parameter "outclock_alignment" = "EDGE_ALIGNED"
-    Info (12134): Parameter "outclock_divide_by" = "1"
+    Info (12134): Parameter "outclock_divide_by" = "4"
     Info (12134): Parameter "outclock_duty_cycle" = "50"
     Info (12134): Parameter "outclock_multiply_by" = "1"
     Info (12134): Parameter "outclock_phase_shift" = "0"
     Info (12134): Parameter "outclock_resource" = "AUTO"
-    Info (12134): Parameter "output_data_rate" = "800"
+    Info (12134): Parameter "output_data_rate" = "80"
     Info (12134): Parameter "pll_compensation_mode" = "AUTO"
     Info (12134): Parameter "pll_self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "preemphasis_setting" = "0"
@@ -1032,15 +1033,15 @@ Info (12128): Elaborating entity "lvds_tx_ddio_out" for hierarchy "lvds_tx:lvds_
 Info (12128): Elaborating entity "lvds_tx_cmpr" for hierarchy "lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component|lvds_tx_lvds_tx:auto_generated|lvds_tx_cmpr:cmpr10" File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_tx_lvds_tx.v Line: 380
 Info (12128): Elaborating entity "lvds_tx_cntr" for hierarchy "lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component|lvds_tx_lvds_tx:auto_generated|lvds_tx_cntr:cntr2" File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_tx_lvds_tx.v Line: 390
 Info (12128): Elaborating entity "lvds_tx_shift_reg" for hierarchy "lvds_tx:lvds_tx|altlvds_tx:ALTLVDS_TX_component|lvds_tx_lvds_tx:auto_generated|lvds_tx_shift_reg:shift_reg12" File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_tx_lvds_tx.v Line: 397
-Info (12128): Elaborating entity "lvds_rx" for hierarchy "lvds_rx:lvds_rx" File: H:/FPGA/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v Line: 35
-Info (12128): Elaborating entity "altlvds_rx" for hierarchy "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component" File: H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_rx.v Line: 87
-Info (12130): Elaborated megafunction instantiation "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component" File: H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_rx.v Line: 87
-Info (12133): Instantiated megafunction "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component" with the following parameter: File: H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_rx.v Line: 87
+Info (12128): Elaborating entity "lvds_rx" for hierarchy "lvds_rx:lvds_rx" File: H:/FPGA/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v Line: 45
+Info (12128): Elaborating entity "altlvds_rx" for hierarchy "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component" File: H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_rx.v Line: 91
+Info (12130): Elaborated megafunction instantiation "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component" File: H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_rx.v Line: 91
+Info (12133): Instantiated megafunction "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component" with the following parameter: File: H:/FPGA/cyclone source/07_lvds_extern/prj/ip/lvds_rx.v Line: 91
     Info (12134): Parameter "buffer_implementation" = "RAM"
     Info (12134): Parameter "cds_mode" = "UNUSED"
     Info (12134): Parameter "common_rx_tx_pll" = "OFF"
     Info (12134): Parameter "data_align_rollover" = "4"
-    Info (12134): Parameter "data_rate" = "800.0 Mbps"
+    Info (12134): Parameter "data_rate" = "80.0 Mbps"
     Info (12134): Parameter "deserialization_factor" = "8"
     Info (12134): Parameter "dpa_initial_phase_value" = "0"
     Info (12134): Parameter "dpll_lock_count" = "0"
@@ -1056,9 +1057,9 @@ Info (12133): Instantiated megafunction "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_c
     Info (12134): Parameter "implement_in_les" = "ON"
     Info (12134): Parameter "inclock_boost" = "0"
     Info (12134): Parameter "inclock_data_alignment" = "EDGE_ALIGNED"
-    Info (12134): Parameter "inclock_period" = "10000"
+    Info (12134): Parameter "inclock_period" = "100000"
     Info (12134): Parameter "inclock_phase_shift" = "0"
-    Info (12134): Parameter "input_data_rate" = "800"
+    Info (12134): Parameter "input_data_rate" = "80"
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
     Info (12134): Parameter "lose_lock_on_one_change" = "UNUSED"
     Info (12134): Parameter "lpm_hint" = "CBX_MODULE_PREFIX=lvds_rx"
@@ -1079,7 +1080,7 @@ Info (12133): Instantiated megafunction "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_c
     Info (12134): Parameter "sim_dpa_output_clock_phase_shift" = "0"
     Info (12134): Parameter "use_coreclock_input" = "OFF"
     Info (12134): Parameter "use_dpll_rawperror" = "OFF"
-    Info (12134): Parameter "use_external_pll" = "ON"
+    Info (12134): Parameter "use_external_pll" = "OFF"
     Info (12134): Parameter "use_no_phase_shift" = "ON"
     Info (12134): Parameter "x_on_bitslip" = "ON"
     Info (12134): Parameter "clk_src_is_pll" = "off"
@@ -1090,21 +1091,23 @@ Info (12021): Found 5 design units, including 5 entities, in source file db/lvds
     Info (12023): Found entity 4: lvds_rx_mux File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v Line: 277
     Info (12023): Found entity 5: lvds_rx_lvds_rx File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v Line: 318
 Info (12128): Elaborating entity "lvds_rx_lvds_rx" for hierarchy "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated" File: h:/intelfpga/18.1/quartus/libraries/megafunctions/altlvds_rx.tdf Line: 256
-Info (12128): Elaborating entity "lvds_rx_lvds_ddio_in" for hierarchy "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_lvds_ddio_in:ddio_in" File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v Line: 365
-Info (12128): Elaborating entity "lvds_rx_dffpipe" for hierarchy "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_dffpipe:h_dffpipe" File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v Line: 412
-Info (12128): Elaborating entity "lvds_rx_cntr" for hierarchy "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_cntr:bitslip_cntr" File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v Line: 422
-Info (12128): Elaborating entity "lvds_rx_mux" for hierarchy "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_mux:h_mux5a" File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v Line: 427
+Info (12128): Elaborating entity "lvds_rx_lvds_ddio_in" for hierarchy "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_lvds_ddio_in:ddio_in" File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v Line: 371
+Info (12128): Elaborating entity "lvds_rx_dffpipe" for hierarchy "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_dffpipe:h_dffpipe" File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v Line: 424
+Info (12128): Elaborating entity "lvds_rx_cntr" for hierarchy "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_cntr:bitslip_cntr" File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v Line: 434
+Info (12128): Elaborating entity "lvds_rx_mux" for hierarchy "lvds_rx:lvds_rx|altlvds_rx:ALTLVDS_RX_component|lvds_rx_lvds_rx:auto_generated|lvds_rx_mux:h_mux5a" File: H:/FPGA/cyclone source/07_lvds_extern/prj/db/lvds_rx_lvds_rx.v Line: 439
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "rx_locked" is stuck at GND File: H:/FPGA/cyclone source/07_lvds_extern/rtl/lvds_external_pll.v Line: 12
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 87 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 63 logic cells
-    Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4846 megabytes
-    Info: Processing ended: Thu Aug 10 17:23:38 2023
+    Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 93 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 64 logic cells
+    Info (21065): Implemented 2 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4849 megabytes
+    Info: Processing ended: Fri Aug 11 14:48:42 2023
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:18
 

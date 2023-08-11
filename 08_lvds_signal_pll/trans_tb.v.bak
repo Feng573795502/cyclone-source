@@ -1,0 +1,28 @@
+`timescale 1ns/100ps
+module trans_tb();
+reg sysclk;
+reg [9:0]datarx;
+reg recover_clk;
+reg lock_n;
+wire snd_clk;
+wire [9:0]datatx;
+wire refclk;
+initial 
+  begin
+    sysclk=1'b0;
+	lock_n=1'b0;
+  end
+  always #30 sysclk=~sysclk;
+
+  
+  low_trans_test tb(
+	.sysclk(sysclk),
+	.datarx(datatx),
+	.recover_clk(recover_clk),
+	.lock_n(lock_n),
+	.datatx(datatx),
+	.snd_clk(snd_clk),
+	.refclk(refclk)
+  
+  );
+  endmodule
