@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at ad7606.v(76): always construct contains both blocking and non-blocking assignments File: H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v Line: 76

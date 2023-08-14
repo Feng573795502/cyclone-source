@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Aug 14 17:22:16 2023
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : ad7606
+Top-level Entity Name : ad7606
+Family : Cyclone IV E
+Device : EP4CE10F17C8
+Timing Models : Final
+Total logic elements : 27 / 10,320 ( < 1 % )
+    Total combinational functions : 27 / 10,320 ( < 1 % )
+    Dedicated logic registers : 18 / 10,320 ( < 1 % )
+Total registers : 18
+Total pins : 22 / 180 ( 12 % )
+Total virtual pins : 0
+Total memory bits : 0 / 423,936 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

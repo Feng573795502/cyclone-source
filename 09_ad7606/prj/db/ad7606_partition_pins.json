@@ -1,0 +1,29 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "conv",
+					"strict" : false
+				},
+				{
+					"name" : "ad_clk[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rd_en",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst_n",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

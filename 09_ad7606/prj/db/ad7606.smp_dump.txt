@@ -1,0 +1,5 @@
+
+State Machine - |ad7606|mode
+Name mode.001 
+mode.000 0 
+mode.001 1 
