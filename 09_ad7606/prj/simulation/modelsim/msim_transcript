@@ -11,33 +11,53 @@
 # Copying H:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/rtl {H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v}
+# vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/prj/ip {H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:23:00 on Aug 14,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/09_ad7606/rtl" H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v 
-# -- Compiling module ad7606
+# Start time: 16:52:25 on Aug 15,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip" H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v 
+# -- Compiling module short_to_float_altbarrel_shift_uvf
+# -- Compiling module short_to_float_altpriority_encoder_3v7
+# -- Compiling module short_to_float_altpriority_encoder_3e8
+# -- Compiling module short_to_float_altpriority_encoder_6v7
+# -- Compiling module short_to_float_altpriority_encoder_6e8
+# -- Compiling module short_to_float_altpriority_encoder_bv7
+# -- Compiling module short_to_float_altpriority_encoder_be8
+# -- Compiling module short_to_float_altpriority_encoder_rb6
+# -- Compiling module short_to_float_altfp_convert_p1n
+# -- Compiling module short_to_float
 # 
 # Top level modules:
-# 	ad7606
-# End time: 17:23:00 on Aug 14,2023, Elapsed time: 0:00:00
+# 	short_to_float
+# End time: 16:52:25 on Aug 15,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/prj/../testbench {H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:23:00 on Aug 14,2023
+# Start time: 16:52:25 on Aug 15,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/09_ad7606/prj/../testbench" H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v 
 # -- Compiling module ad7606_tb
 # 
 # Top level modules:
 # 	ad7606_tb
-# End time: 17:23:00 on Aug 14,2023, Elapsed time: 0:00:00
+# End time: 16:52:25 on Aug 15,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  ad7606_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" ad7606_tb 
-# Start time: 17:23:00 on Aug 14,2023
+# Start time: 16:52:25 on Aug 15,2023
 # Loading work.ad7606_tb
-# Loading work.ad7606
+# Loading work.short_to_float
+# Loading work.short_to_float_altfp_convert_p1n
+# Loading work.short_to_float_altbarrel_shift_uvf
+# Loading work.short_to_float_altpriority_encoder_rb6
+# Loading work.short_to_float_altpriority_encoder_bv7
+# Loading work.short_to_float_altpriority_encoder_6v7
+# Loading work.short_to_float_altpriority_encoder_3v7
+# Loading work.short_to_float_altpriority_encoder_3e8
+# Loading work.short_to_float_altpriority_encoder_6e8
+# Loading work.short_to_float_altpriority_encoder_be8
+# Loading lpm_ver.lpm_add_sub
+# Loading lpm_ver.lpm_compare
 # 
 # add wave *
 # view structure
@@ -45,8 +65,6 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Note: $stop    : H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v(39)
-#    Time: 1100 ns  Iteration: 0  Instance: /ad7606_tb
-# Break in Module ad7606_tb at H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v line 39
-# End time: 17:24:02 on Aug 14,2023, Elapsed time: 0:01:02
-# Errors: 0, Warnings: 0
+# ** Note: $stop    : H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v(56)
+#    Time: 2110 ns  Iteration: 0  Instance: /ad7606_tb
+# Break in Module ad7606_tb at H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v line 56

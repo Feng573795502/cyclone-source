@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ad7606
-Mon Aug 14 17:28:27 2023
+Tue Aug 15 16:45:08 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -10,8 +10,27 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|altshift_taps:exponent_bus_pre_reg3_rtl_0|shift_taps_v4m:auto_generated|altsyncram_2b81:altsyncram2
+ 16. Source assignments for short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|altshift_taps:sbit_piper2d_rtl_0|shift_taps_a6m:auto_generated|altsyncram_vk31:altsyncram4
+ 17. Parameter Settings for User Entity Instance: short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub1
+ 18. Parameter Settings for User Entity Instance: short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub3
+ 19. Parameter Settings for User Entity Instance: short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_compare:cmpr4
+ 20. Parameter Settings for Inferred Entity Instance: short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|altshift_taps:exponent_bus_pre_reg3_rtl_0
+ 21. Parameter Settings for Inferred Entity Instance: short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|altshift_taps:sbit_piper2d_rtl_0
+ 22. altshift_taps Parameter Settings by Entity Instance
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +56,20 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Aug 14 17:28:27 2023               ;
+; Analysis & Synthesis Status        ; Successful - Tue Aug 15 16:45:08 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; ad7606                                          ;
-; Top-level Entity Name              ; ad7606                                          ;
+; Top-level Entity Name              ; short_to_float                                  ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 100                                             ;
+;     Total combinational functions  ; 82                                              ;
+;     Dedicated logic registers      ; 56                                              ;
+; Total registers                    ; 56                                              ;
+; Total pins                         ; 49                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 60                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -60,7 +79,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE10F17C8       ;                    ;
-; Top-level entity name                                            ; ad7606             ; ad7606             ;
+; Top-level entity name                                            ; short_to_float     ; ad7606             ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -149,11 +168,393 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+; ip/short_to_float.v              ; yes             ; User Wizard-Generated File   ; H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v                  ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/aglobal181.inc          ;         ;
+; db/add_sub_71f.tdf               ; yes             ; Auto-Generated Megafunction  ; H:/FPGA/cyclone source/09_ad7606/prj/db/add_sub_71f.tdf                   ;         ;
+; db/add_sub_q0f.tdf               ; yes             ; Auto-Generated Megafunction  ; H:/FPGA/cyclone source/09_ad7606/prj/db/add_sub_q0f.tdf                   ;         ;
+; lpm_compare.tdf                  ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_compare.tdf         ;         ;
+; comptree.inc                     ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/comptree.inc            ;         ;
+; db/cmpr_6mg.tdf                  ; yes             ; Auto-Generated Megafunction  ; H:/FPGA/cyclone source/09_ad7606/prj/db/cmpr_6mg.tdf                      ;         ;
+; altshift_taps.tdf                ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/altshift_taps.tdf       ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/altdpram.inc            ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_counter.inc         ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_compare.inc         ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                 ; h:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_constant.inc        ;         ;
+; db/shift_taps_v4m.tdf            ; yes             ; Auto-Generated Megafunction  ; H:/FPGA/cyclone source/09_ad7606/prj/db/shift_taps_v4m.tdf                ;         ;
+; db/altsyncram_2b81.tdf           ; yes             ; Auto-Generated Megafunction  ; H:/FPGA/cyclone source/09_ad7606/prj/db/altsyncram_2b81.tdf               ;         ;
+; db/cntr_4pf.tdf                  ; yes             ; Auto-Generated Megafunction  ; H:/FPGA/cyclone source/09_ad7606/prj/db/cntr_4pf.tdf                      ;         ;
+; db/shift_taps_a6m.tdf            ; yes             ; Auto-Generated Megafunction  ; H:/FPGA/cyclone source/09_ad7606/prj/db/shift_taps_a6m.tdf                ;         ;
+; db/altsyncram_vk31.tdf           ; yes             ; Auto-Generated Megafunction  ; H:/FPGA/cyclone source/09_ad7606/prj/db/altsyncram_vk31.tdf               ;         ;
+; db/add_sub_24e.tdf               ; yes             ; Auto-Generated Megafunction  ; H:/FPGA/cyclone source/09_ad7606/prj/db/add_sub_24e.tdf                   ;         ;
+; db/cntr_6pf.tdf                  ; yes             ; Auto-Generated Megafunction  ; H:/FPGA/cyclone source/09_ad7606/prj/db/cntr_6pf.tdf                      ;         ;
+; db/cmpr_ogc.tdf                  ; yes             ; Auto-Generated Megafunction  ; H:/FPGA/cyclone source/09_ad7606/prj/db/cmpr_ogc.tdf                      ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 100         ;
+;                                             ;             ;
+; Total combinational functions               ; 82          ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 33          ;
+;     -- 3 input functions                    ; 24          ;
+;     -- <=2 input functions                  ; 25          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 67          ;
+;     -- arithmetic mode                      ; 15          ;
+;                                             ;             ;
+; Total registers                             ; 56          ;
+;     -- Dedicated logic registers            ; 56          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 49          ;
+; Total memory bits                           ; 60          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 79          ;
+; Total fan-out                               ; 593         ;
+; Average fan-out                             ; 2.29        ;
++---------------------------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ;
++----------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
+; Compilation Hierarchy Node                                                       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                              ; Entity Name                            ; Library Name ;
++----------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
+; |short_to_float                                                                  ; 82 (0)              ; 56 (0)                    ; 60          ; 0            ; 0       ; 0         ; 49   ; 0            ; |short_to_float                                                                                                                                                                                                                                                                  ; short_to_float                         ; work         ;
+;    |short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component| ; 82 (19)             ; 56 (35)                   ; 60          ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component                                                                                                                                                                                      ; short_to_float_altfp_convert_p1n       ; work         ;
+;       |altshift_taps:exponent_bus_pre_reg3_rtl_0|                                ; 1 (0)               ; 1 (0)                     ; 18          ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|altshift_taps:exponent_bus_pre_reg3_rtl_0                                                                                                                                            ; altshift_taps                          ; work         ;
+;          |shift_taps_v4m:auto_generated|                                         ; 1 (0)               ; 1 (0)                     ; 18          ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|altshift_taps:exponent_bus_pre_reg3_rtl_0|shift_taps_v4m:auto_generated                                                                                                              ; shift_taps_v4m                         ; work         ;
+;             |altsyncram_2b81:altsyncram2|                                        ; 0 (0)               ; 0 (0)                     ; 18          ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|altshift_taps:exponent_bus_pre_reg3_rtl_0|shift_taps_v4m:auto_generated|altsyncram_2b81:altsyncram2                                                                                  ; altsyncram_2b81                        ; work         ;
+;             |cntr_4pf:cntr1|                                                     ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|altshift_taps:exponent_bus_pre_reg3_rtl_0|shift_taps_v4m:auto_generated|cntr_4pf:cntr1                                                                                               ; cntr_4pf                               ; work         ;
+;       |lpm_add_sub:add_sub3|                                                     ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub3                                                                                                                                                                 ; lpm_add_sub                            ; work         ;
+;          |add_sub_q0f:auto_generated|                                            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub3|add_sub_q0f:auto_generated                                                                                                                                      ; add_sub_q0f                            ; work         ;
+;       |lpm_compare:cmpr4|                                                        ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_compare:cmpr4                                                                                                                                                                    ; lpm_compare                            ; work         ;
+;          |cmpr_6mg:auto_generated|                                               ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_compare:cmpr4|cmpr_6mg:auto_generated                                                                                                                                            ; cmpr_6mg                               ; work         ;
+;       |short_to_float_altbarrel_shift_uvf:altbarrel_shift5|                      ; 45 (38)             ; 20 (16)                   ; 42          ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5                                                                                                                                  ; short_to_float_altbarrel_shift_uvf     ; work         ;
+;          |altshift_taps:sbit_piper2d_rtl_0|                                      ; 7 (0)               ; 4 (0)                     ; 42          ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|altshift_taps:sbit_piper2d_rtl_0                                                                                                 ; altshift_taps                          ; work         ;
+;             |shift_taps_a6m:auto_generated|                                      ; 7 (2)               ; 4 (2)                     ; 42          ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|altshift_taps:sbit_piper2d_rtl_0|shift_taps_a6m:auto_generated                                                                   ; shift_taps_a6m                         ; work         ;
+;                |altsyncram_vk31:altsyncram4|                                     ; 0 (0)               ; 0 (0)                     ; 42          ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|altshift_taps:sbit_piper2d_rtl_0|shift_taps_a6m:auto_generated|altsyncram_vk31:altsyncram4                                       ; altsyncram_vk31                        ; work         ;
+;                |cntr_6pf:cntr1|                                                  ; 5 (5)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|altshift_taps:sbit_piper2d_rtl_0|shift_taps_a6m:auto_generated|cntr_6pf:cntr1                                                    ; cntr_6pf                               ; work         ;
+;       |short_to_float_altpriority_encoder_rb6:altpriority_encoder2|              ; 15 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altpriority_encoder_rb6:altpriority_encoder2                                                                                                                          ; short_to_float_altpriority_encoder_rb6 ; work         ;
+;          |short_to_float_altpriority_encoder_be8:altpriority_encoder7|           ; 3 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altpriority_encoder_rb6:altpriority_encoder2|short_to_float_altpriority_encoder_be8:altpriority_encoder7                                                              ; short_to_float_altpriority_encoder_be8 ; work         ;
+;             |short_to_float_altpriority_encoder_6e8:altpriority_encoder15|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altpriority_encoder_rb6:altpriority_encoder2|short_to_float_altpriority_encoder_be8:altpriority_encoder7|short_to_float_altpriority_encoder_6e8:altpriority_encoder15 ; short_to_float_altpriority_encoder_6e8 ; work         ;
+;          |short_to_float_altpriority_encoder_bv7:altpriority_encoder6|           ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altpriority_encoder_rb6:altpriority_encoder2|short_to_float_altpriority_encoder_bv7:altpriority_encoder6                                                              ; short_to_float_altpriority_encoder_bv7 ; work         ;
+;             |short_to_float_altpriority_encoder_6e8:altpriority_encoder9|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altpriority_encoder_rb6:altpriority_encoder2|short_to_float_altpriority_encoder_bv7:altpriority_encoder6|short_to_float_altpriority_encoder_6e8:altpriority_encoder9  ; short_to_float_altpriority_encoder_6e8 ; work         ;
++----------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                                                          ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|altshift_taps:exponent_bus_pre_reg3_rtl_0|shift_taps_v4m:auto_generated|altsyncram_2b81:altsyncram2|ALTSYNCRAM                                            ; AUTO ; Simple Dual Port ; 2            ; 9            ; 2            ; 9            ; 18   ; None ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|altshift_taps:sbit_piper2d_rtl_0|shift_taps_a6m:auto_generated|altsyncram_vk31:altsyncram4|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 3            ; 14           ; 3            ; 14           ; 42   ; None ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                  ;
++--------+---------------+---------+--------------+--------------+-----------------+---------------------+
+; Vendor ; IP Core Name  ; Version ; Release Date ; License Type ; Entity Instance ; IP Include File     ;
++--------+---------------+---------+--------------+--------------+-----------------+---------------------+
+; Altera ; ALTFP_CONVERT ; 18.1    ; N/A          ; N/A          ; |short_to_float ; ip/short_to_float.v ;
++--------+---------------+---------+--------------+--------------+-----------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                           ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                                                                                       ; Reason for Removal                     ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|mantissa_pre_round_reg[0..8]                                            ; Stuck at GND due to stuck port data_in ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|result_reg[0..8]                                                        ; Stuck at GND due to stuck port data_in ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|dir_pipe[0]         ; Stuck at GND due to stuck port data_in ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|sbit_piper1d[14,15] ; Lost fanout                            ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|mag_int_a_reg2[14]                                                      ; Lost fanout                            ;
+; Total Number of Removed Registers = 22                                                                                                              ;                                        ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                                                                                 ;
++---------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                               ; Reason for Removal        ; Registers Removed due to This Register                                                                                                            ;
++---------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|dir_pipe[0] ; Stuck at GND              ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|sbit_piper1d[14], ;
+;                                                                                                                                             ; due to stuck port data_in ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|sbit_piper1d[15], ;
+;                                                                                                                                             ;                           ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|mag_int_a_reg2[14]                                                    ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|mantissa_pre_round_reg[8]                                       ; Stuck at GND              ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|result_reg[8]                                                         ;
+;                                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                   ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|mantissa_pre_round_reg[7]                                       ; Stuck at GND              ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|result_reg[7]                                                         ;
+;                                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                   ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|mantissa_pre_round_reg[6]                                       ; Stuck at GND              ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|result_reg[6]                                                         ;
+;                                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                   ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|mantissa_pre_round_reg[5]                                       ; Stuck at GND              ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|result_reg[5]                                                         ;
+;                                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                   ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|mantissa_pre_round_reg[4]                                       ; Stuck at GND              ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|result_reg[4]                                                         ;
+;                                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                   ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|mantissa_pre_round_reg[3]                                       ; Stuck at GND              ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|result_reg[3]                                                         ;
+;                                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                   ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|mantissa_pre_round_reg[2]                                       ; Stuck at GND              ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|result_reg[2]                                                         ;
+;                                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                   ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|mantissa_pre_round_reg[1]                                       ; Stuck at GND              ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|result_reg[1]                                                         ;
+;                                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                   ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|mantissa_pre_round_reg[0]                                       ; Stuck at GND              ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|result_reg[0]                                                         ;
+;                                                                                                                                             ; due to stuck port data_in ;                                                                                                                                                   ;
++---------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 56    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 26    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                                                                                                                                                                                                                          ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+; Register Name                                                                                                                                       ; Megafunction                                                                                                                                       ; Type       ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|result_reg[23..31]                                                      ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|exponent_bus_pre_reg3_rtl_0                                            ; SHIFT_TAPS ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|exponent_bus_pre_reg[0..7]                                              ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|exponent_bus_pre_reg3_rtl_0                                            ; SHIFT_TAPS ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|exponent_bus_pre_reg2[0..7]                                             ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|exponent_bus_pre_reg3_rtl_0                                            ; SHIFT_TAPS ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|exponent_bus_pre_reg3[0..7]                                             ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|exponent_bus_pre_reg3_rtl_0                                            ; SHIFT_TAPS ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|sign_int_a_reg5                                                         ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|exponent_bus_pre_reg3_rtl_0                                            ; SHIFT_TAPS ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|sign_int_a_reg4                                                         ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|exponent_bus_pre_reg3_rtl_0                                            ; SHIFT_TAPS ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|sign_int_a_reg3                                                         ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|exponent_bus_pre_reg3_rtl_0                                            ; SHIFT_TAPS ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|result_reg[9..22]                                                       ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|sbit_piper2d_rtl_0 ; SHIFT_TAPS ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|mantissa_pre_round_reg[9..22]                                           ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|sbit_piper2d_rtl_0 ; SHIFT_TAPS ;
+; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|sbit_piper2d[0..13] ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|sbit_piper2d_rtl_0 ; SHIFT_TAPS ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|sbit_piper1d[12] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |short_to_float|short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|smux_w[59]       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|altshift_taps:exponent_bus_pre_reg3_rtl_0|shift_taps_v4m:auto_generated|altsyncram_2b81:altsyncram2 ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                                                       ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                        ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|altshift_taps:sbit_piper2d_rtl_0|shift_taps_a6m:auto_generated|altsyncram_vk31:altsyncram4 ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                                                                                                  ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                                                                   ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub1 ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                                                                  ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------------+
+; LPM_WIDTH              ; 15           ; Signed Integer                                                                                        ;
+; LPM_REPRESENTATION     ; SIGNED       ; Untyped                                                                                               ;
+; LPM_DIRECTION          ; ADD          ; Untyped                                                                                               ;
+; ONE_INPUT_IS_CONSTANT  ; YES          ; Untyped                                                                                               ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                                                               ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                                                                               ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                                                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                                                                               ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                                                                               ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                                                               ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                                                                    ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                                                               ;
+; USE_WYS                ; OFF          ; Untyped                                                                                               ;
+; STYLE                  ; FAST         ; Untyped                                                                                               ;
+; CBXI_PARAMETER         ; add_sub_71f  ; Untyped                                                                                               ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                                                        ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub3 ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                                                                  ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------------+
+; LPM_WIDTH              ; 8            ; Signed Integer                                                                                        ;
+; LPM_REPRESENTATION     ; SIGNED       ; Untyped                                                                                               ;
+; LPM_DIRECTION          ; SUB          ; Untyped                                                                                               ;
+; ONE_INPUT_IS_CONSTANT  ; YES          ; Untyped                                                                                               ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                                                               ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                                                                               ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                                                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                                                                               ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                                                                               ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                                                               ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                                                                    ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                                                               ;
+; USE_WYS                ; OFF          ; Untyped                                                                                               ;
+; STYLE                  ; FAST         ; Untyped                                                                                               ;
+; CBXI_PARAMETER         ; add_sub_q0f  ; Untyped                                                                                               ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                                                        ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_compare:cmpr4 ;
++------------------------+--------------+----------------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                                                               ;
++------------------------+--------------+----------------------------------------------------------------------------------------------------+
+; lpm_width              ; 8            ; Signed Integer                                                                                     ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                                                                            ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                                                            ;
+; CHAIN_SIZE             ; 8            ; Untyped                                                                                            ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                                                                            ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                                                            ;
+; CASCADE_CHAIN          ; MANUAL       ; Untyped                                                                                            ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                                                                 ;
+; CASCADE_CHAIN_LENGTH   ; 2            ; CASCADE_CHAIN_LENGTH                                                                               ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                                                            ;
+; CBXI_PARAMETER         ; cmpr_6mg     ; Untyped                                                                                            ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                                                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                                                       ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                                                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                                                     ;
++------------------------+--------------+----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|altshift_taps:exponent_bus_pre_reg3_rtl_0 ;
++----------------+----------------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value          ; Type                                                                                                                                 ;
++----------------+----------------+--------------------------------------------------------------------------------------------------------------------------------------+
+; WIDTH_BYTEENA  ; 1              ; Untyped                                                                                                                              ;
+; NUMBER_OF_TAPS ; 1              ; Untyped                                                                                                                              ;
+; TAP_DISTANCE   ; 4              ; Untyped                                                                                                                              ;
+; WIDTH          ; 9              ; Untyped                                                                                                                              ;
+; POWER_UP_STATE ; CLEARED        ; Untyped                                                                                                                              ;
+; CBXI_PARAMETER ; shift_taps_v4m ; Untyped                                                                                                                              ;
++----------------+----------------+--------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|altshift_taps:sbit_piper2d_rtl_0 ;
++----------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value          ; Type                                                                                                                                                                            ;
++----------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; WIDTH_BYTEENA  ; 1              ; Untyped                                                                                                                                                                         ;
+; NUMBER_OF_TAPS ; 1              ; Untyped                                                                                                                                                                         ;
+; TAP_DISTANCE   ; 3              ; Untyped                                                                                                                                                                         ;
+; WIDTH          ; 14             ; Untyped                                                                                                                                                                         ;
+; POWER_UP_STATE ; CLEARED        ; Untyped                                                                                                                                                                         ;
+; CBXI_PARAMETER ; shift_taps_a6m ; Untyped                                                                                                                                                                         ;
++----------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; altshift_taps Parameter Settings by Entity Instance                                                                                                                                           ;
++----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Name                       ; Value                                                                                                                                                            ;
++----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Number of entity instances ; 2                                                                                                                                                                ;
+; Entity Instance            ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|altshift_taps:exponent_bus_pre_reg3_rtl_0                                            ;
+;     -- NUMBER_OF_TAPS      ; 1                                                                                                                                                                ;
+;     -- TAP_DISTANCE        ; 4                                                                                                                                                                ;
+;     -- WIDTH               ; 9                                                                                                                                                                ;
+; Entity Instance            ; short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|altshift_taps:sbit_piper2d_rtl_0 ;
+;     -- NUMBER_OF_TAPS      ; 1                                                                                                                                                                ;
+;     -- TAP_DISTANCE        ; 3                                                                                                                                                                ;
+;     -- WIDTH               ; 14                                                                                                                                                               ;
++----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 49                          ;
+; cycloneiii_ff         ; 56                          ;
+;     SLD               ; 26                          ;
+;     plain             ; 30                          ;
+; cycloneiii_lcell_comb ; 83                          ;
+;     arith             ; 15                          ;
+;         2 data inputs ; 14                          ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 68                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 23                          ;
+;         4 data inputs ; 33                          ;
+; cycloneiii_ram_block  ; 23                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.60                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,26 +563,127 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Mon Aug 14 17:28:20 2023
+    Info: Processing started: Tue Aug 15 16:45:00 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ad7606 -c ad7606
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
-Error (10170): Verilog HDL syntax error at ad7606.v(32) near text: "always";  expecting an identifier ("always" is a reserved keyword ). Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v Line: 32
-Error (10112): Ignored design unit "ad7606" at ad7606.v(1) due to previous errors File: H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v Line: 1
-Info (12021): Found 0 design units, including 0 entities, in source file /fpga/cyclone source/09_ad7606/rtl/ad7606.v
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/09_ad7606/rtl/ad7606.v
+    Info (12023): Found entity 1: ad7606 File: H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/09_ad7606/testbench/ad7606_tb.v
     Info (12023): Found entity 1: ad7606_tb File: H:/FPGA/cyclone source/09_ad7606/testbench/ad7606_tb.v Line: 4
-Info (144001): Generated suppressed messages file H:/FPGA/cyclone source/09_ad7606/prj/output_files/ad7606.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
-    Error: Peak virtual memory: 4707 megabytes
-    Error: Processing ended: Mon Aug 14 17:28:27 2023
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:17
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in H:/FPGA/cyclone source/09_ad7606/prj/output_files/ad7606.map.smsg.
+Info (12021): Found 1 design units, including 1 entities, in source file ip/ad_fifo.v
+    Info (12023): Found entity 1: ad_fifo File: H:/FPGA/cyclone source/09_ad7606/prj/ip/ad_fifo.v Line: 39
+Info (12021): Found 10 design units, including 10 entities, in source file ip/short_to_float.v
+    Info (12023): Found entity 1: short_to_float_altbarrel_shift_uvf File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 50
+    Info (12023): Found entity 2: short_to_float_altpriority_encoder_3v7 File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 151
+    Info (12023): Found entity 3: short_to_float_altpriority_encoder_3e8 File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 171
+    Info (12023): Found entity 4: short_to_float_altpriority_encoder_6v7 File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 190
+    Info (12023): Found entity 5: short_to_float_altpriority_encoder_6e8 File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 222
+    Info (12023): Found entity 6: short_to_float_altpriority_encoder_bv7 File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 255
+    Info (12023): Found entity 7: short_to_float_altpriority_encoder_be8 File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 287
+    Info (12023): Found entity 8: short_to_float_altpriority_encoder_rb6 File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 320
+    Info (12023): Found entity 9: short_to_float_altfp_convert_p1n File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 348
+    Info (12023): Found entity 10: short_to_float File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 617
+Info (12021): Found 2 design units, including 2 entities, in source file ip/mult.v
+    Info (12023): Found entity 1: mult_altfp_mult_9go File: H:/FPGA/cyclone source/09_ad7606/prj/ip/mult.v Line: 46
+    Info (12023): Found entity 2: mult File: H:/FPGA/cyclone source/09_ad7606/prj/ip/mult.v Line: 517
+Info (12127): Elaborating entity "short_to_float" for the top level hierarchy
+Info (12128): Elaborating entity "short_to_float_altfp_convert_p1n" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 632
+Info (12128): Elaborating entity "short_to_float_altbarrel_shift_uvf" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 410
+Info (12128): Elaborating entity "short_to_float_altpriority_encoder_rb6" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altpriority_encoder_rb6:altpriority_encoder2" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 414
+Info (12128): Elaborating entity "short_to_float_altpriority_encoder_bv7" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altpriority_encoder_rb6:altpriority_encoder2|short_to_float_altpriority_encoder_bv7:altpriority_encoder6" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 334
+Info (12128): Elaborating entity "short_to_float_altpriority_encoder_6v7" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altpriority_encoder_rb6:altpriority_encoder2|short_to_float_altpriority_encoder_bv7:altpriority_encoder6|short_to_float_altpriority_encoder_6v7:altpriority_encoder8" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 269
+Info (12128): Elaborating entity "short_to_float_altpriority_encoder_3v7" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altpriority_encoder_rb6:altpriority_encoder2|short_to_float_altpriority_encoder_bv7:altpriority_encoder6|short_to_float_altpriority_encoder_6v7:altpriority_encoder8|short_to_float_altpriority_encoder_3v7:altpriority_encoder10" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 204
+Info (12128): Elaborating entity "short_to_float_altpriority_encoder_3e8" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altpriority_encoder_rb6:altpriority_encoder2|short_to_float_altpriority_encoder_bv7:altpriority_encoder6|short_to_float_altpriority_encoder_6v7:altpriority_encoder8|short_to_float_altpriority_encoder_3e8:altpriority_encoder11" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 209
+Info (12128): Elaborating entity "short_to_float_altpriority_encoder_6e8" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altpriority_encoder_rb6:altpriority_encoder2|short_to_float_altpriority_encoder_bv7:altpriority_encoder6|short_to_float_altpriority_encoder_6e8:altpriority_encoder9" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 274
+Info (12128): Elaborating entity "short_to_float_altpriority_encoder_be8" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altpriority_encoder_rb6:altpriority_encoder2|short_to_float_altpriority_encoder_be8:altpriority_encoder7" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 339
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub1" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 525
+Info (12130): Elaborated megafunction instantiation "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub1" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 525
+Info (12133): Instantiated megafunction "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub1" with the following parameter: File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 525
+    Info (12134): Parameter "lpm_direction" = "ADD"
+    Info (12134): Parameter "lpm_width" = "15"
+    Info (12134): Parameter "lpm_type" = "lpm_add_sub"
+    Info (12134): Parameter "lpm_hint" = "ONE_INPUT_IS_CONSTANT=YES"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_71f.tdf
+    Info (12023): Found entity 1: add_sub_71f File: H:/FPGA/cyclone source/09_ad7606/prj/db/add_sub_71f.tdf Line: 22
+Info (12128): Elaborating entity "add_sub_71f" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub1|add_sub_71f:auto_generated" File: h:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
+Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub3" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 550
+Info (12130): Elaborated megafunction instantiation "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub3" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 550
+Info (12133): Instantiated megafunction "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub3" with the following parameter: File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 550
+    Info (12134): Parameter "lpm_direction" = "SUB"
+    Info (12134): Parameter "lpm_width" = "8"
+    Info (12134): Parameter "lpm_type" = "lpm_add_sub"
+    Info (12134): Parameter "lpm_hint" = "ONE_INPUT_IS_CONSTANT=YES"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_q0f.tdf
+    Info (12023): Found entity 1: add_sub_q0f File: H:/FPGA/cyclone source/09_ad7606/prj/db/add_sub_q0f.tdf Line: 22
+Info (12128): Elaborating entity "add_sub_q0f" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_add_sub:add_sub3|add_sub_q0f:auto_generated" File: h:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
+Info (12128): Elaborating entity "lpm_compare" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_compare:cmpr4" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 576
+Info (12130): Elaborated megafunction instantiation "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_compare:cmpr4" File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 576
+Info (12133): Instantiated megafunction "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_compare:cmpr4" with the following parameter: File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 576
+    Info (12134): Parameter "lpm_representation" = "UNSIGNED"
+    Info (12134): Parameter "lpm_width" = "8"
+    Info (12134): Parameter "lpm_type" = "lpm_compare"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_6mg.tdf
+    Info (12023): Found entity 1: cmpr_6mg File: H:/FPGA/cyclone source/09_ad7606/prj/db/cmpr_6mg.tdf Line: 22
+Info (12128): Elaborating entity "cmpr_6mg" for hierarchy "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|lpm_compare:cmpr4|cmpr_6mg:auto_generated" File: h:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_compare.tdf Line: 280
+Info (19000): Inferred 2 megafunctions from design logic
+    Info (276034): Inferred altshift_taps megafunction from the following design logic: "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|exponent_bus_pre_reg3_rtl_0"
+        Info (286033): Parameter NUMBER_OF_TAPS set to 1
+        Info (286033): Parameter TAP_DISTANCE set to 4
+        Info (286033): Parameter WIDTH set to 9
+    Info (276034): Inferred altshift_taps megafunction from the following design logic: "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|sbit_piper2d_rtl_0"
+        Info (286033): Parameter NUMBER_OF_TAPS set to 1
+        Info (286033): Parameter TAP_DISTANCE set to 3
+        Info (286033): Parameter WIDTH set to 14
+Info (12130): Elaborated megafunction instantiation "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|altshift_taps:exponent_bus_pre_reg3_rtl_0"
+Info (12133): Instantiated megafunction "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|altshift_taps:exponent_bus_pre_reg3_rtl_0" with the following parameter:
+    Info (12134): Parameter "NUMBER_OF_TAPS" = "1"
+    Info (12134): Parameter "TAP_DISTANCE" = "4"
+    Info (12134): Parameter "WIDTH" = "9"
+Info (12021): Found 1 design units, including 1 entities, in source file db/shift_taps_v4m.tdf
+    Info (12023): Found entity 1: shift_taps_v4m File: H:/FPGA/cyclone source/09_ad7606/prj/db/shift_taps_v4m.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2b81.tdf
+    Info (12023): Found entity 1: altsyncram_2b81 File: H:/FPGA/cyclone source/09_ad7606/prj/db/altsyncram_2b81.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_4pf.tdf
+    Info (12023): Found entity 1: cntr_4pf File: H:/FPGA/cyclone source/09_ad7606/prj/db/cntr_4pf.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|altshift_taps:sbit_piper2d_rtl_0"
+Info (12133): Instantiated megafunction "short_to_float_altfp_convert_p1n:short_to_float_altfp_convert_p1n_component|short_to_float_altbarrel_shift_uvf:altbarrel_shift5|altshift_taps:sbit_piper2d_rtl_0" with the following parameter:
+    Info (12134): Parameter "NUMBER_OF_TAPS" = "1"
+    Info (12134): Parameter "TAP_DISTANCE" = "3"
+    Info (12134): Parameter "WIDTH" = "14"
+Info (12021): Found 1 design units, including 1 entities, in source file db/shift_taps_a6m.tdf
+    Info (12023): Found entity 1: shift_taps_a6m File: H:/FPGA/cyclone source/09_ad7606/prj/db/shift_taps_a6m.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_vk31.tdf
+    Info (12023): Found entity 1: altsyncram_vk31 File: H:/FPGA/cyclone source/09_ad7606/prj/db/altsyncram_vk31.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_24e.tdf
+    Info (12023): Found entity 1: add_sub_24e File: H:/FPGA/cyclone source/09_ad7606/prj/db/add_sub_24e.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_6pf.tdf
+    Info (12023): Found entity 1: cntr_6pf File: H:/FPGA/cyclone source/09_ad7606/prj/db/cntr_6pf.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ogc.tdf
+    Info (12023): Found entity 1: cmpr_ogc File: H:/FPGA/cyclone source/09_ad7606/prj/db/cmpr_ogc.tdf Line: 22
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "result[0]" is stuck at GND File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 624
+    Warning (13410): Pin "result[1]" is stuck at GND File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 624
+    Warning (13410): Pin "result[2]" is stuck at GND File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 624
+    Warning (13410): Pin "result[3]" is stuck at GND File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 624
+    Warning (13410): Pin "result[4]" is stuck at GND File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 624
+    Warning (13410): Pin "result[5]" is stuck at GND File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 624
+    Warning (13410): Pin "result[6]" is stuck at GND File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 624
+    Warning (13410): Pin "result[7]" is stuck at GND File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 624
+    Warning (13410): Pin "result[8]" is stuck at GND File: H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v Line: 624
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 183 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 17 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 111 logic cells
+    Info (21064): Implemented 23 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4849 megabytes
+    Info: Processing ended: Tue Aug 15 16:45:08 2023
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:19
 
 

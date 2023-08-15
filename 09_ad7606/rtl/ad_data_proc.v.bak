@@ -1,0 +1,13 @@
+module ad_data_proc(
+	input clk,
+	input rst_n,
+	
+	output [31:0]result
+};
+
+reg [15:0]cnt;
+
+
+always@(
+
+endmodule

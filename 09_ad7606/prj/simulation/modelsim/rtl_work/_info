@@ -8,47 +8,245 @@ z2
 !i10f 100
 cModel Technology
 Z0 dH:/FPGA/cyclone source/09_ad7606/prj/simulation/modelsim
-vad7606
-Z1 !s110 1692004980
+vad7606_tb
+Z1 !s110 1692089545
 !i10b 1
-!s100 d2MkoZM2MhPObWHDzoG3j2
-IUGO_glMZ5X=leiTHnll_43
+!s100 LW2ffz]MlZPc2A?Pj?i_72
+I7WMF2F_]lMXD93KH:CCjI3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1692004914
-8H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v
-FH:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v
-L0 1
+w1692089534
+8H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v
+FH:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v
+L0 4
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1692004980.000000
-!s107 H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/rtl|H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v|
+Z4 !s108 1692089545.000000
+!s107 H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/prj/../testbench|H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v|
 !i113 1
 Z5 o-vlog01compat -work work
-!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/09_ad7606/rtl}
+!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/09_ad7606/prj/../testbench}
 Z6 tCvgOpt 0
-vad7606_tb
+vshort_to_float
 R1
 !i10b 1
-!s100 ;ZkX[LC16P_@2;kOA2>DY2
-IbLGlcmJn`UB[TMfzkbX3L2
+!s100 PP?CYdCATIQF;:l2jm]QQ0
+Ig8O^o@8;=FlSGgfWl^[eL2
 R2
 R0
-w1692004330
-8H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v
-FH:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v
-L0 4
+Z7 w1692089305
+Z8 8H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v
+Z9 FH:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v
+L0 617
 R3
 r1
 !s85 0
 31
 R4
-!s107 H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/prj/../testbench|H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad7606_tb.v|
+Z10 !s107 H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v|
+Z11 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip|H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v|
 !i113 1
 R5
-!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/09_ad7606/prj/../testbench}
+Z12 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip}
+R6
+vshort_to_float_altbarrel_shift_uvf
+R1
+!i10b 1
+!s100 3OiC1fD5]MOE]W3OIUXz[3
+I`>[;kjH]<7d_]m:MTB2mZ1
+R2
+R0
+R7
+R8
+R9
+L0 50
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R12
+R6
+vshort_to_float_altfp_convert_p1n
+R1
+!i10b 1
+!s100 hA<`TW5Mk71kLP7VRB`Zn1
+IkMVIdDjH79ml[H3=^bNcY3
+R2
+R0
+R7
+R8
+R9
+L0 348
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R12
+R6
+vshort_to_float_altpriority_encoder_3e8
+R1
+!i10b 1
+!s100 mmR>KElB>kSCfZ1S8cLeD0
+Iz]VlA5=8oW>AQL]<b:Zj:0
+R2
+R0
+R7
+R8
+R9
+L0 171
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R12
+R6
+vshort_to_float_altpriority_encoder_3v7
+R1
+!i10b 1
+!s100 JOBH=DEB]h7jQdb[nP;:]0
+IW>XNcTlfUWMDSbQnQ@kM83
+R2
+R0
+R7
+R8
+R9
+L0 151
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R12
+R6
+vshort_to_float_altpriority_encoder_6e8
+R1
+!i10b 1
+!s100 fbH[MfX@CX=MnGhAD0fR^2
+I=3@HKjX76ic;dogg8=Ica2
+R2
+R0
+R7
+R8
+R9
+L0 222
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R12
+R6
+vshort_to_float_altpriority_encoder_6v7
+R1
+!i10b 1
+!s100 K9mKgeK3<3VFRz;2SShSN3
+IJHldmJfX?okhke5l<5OiO0
+R2
+R0
+R7
+R8
+R9
+L0 190
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R12
+R6
+vshort_to_float_altpriority_encoder_be8
+R1
+!i10b 1
+!s100 zJ;J29o`CS3?k6BLTc8_00
+ID=h1oCZ8_Bja]EX`98K`:3
+R2
+R0
+R7
+R8
+R9
+L0 287
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R12
+R6
+vshort_to_float_altpriority_encoder_bv7
+R1
+!i10b 1
+!s100 5]hkS9g@b>:1ZdBaNZK2b3
+IWDUIBgmflDlXWEV8do_]83
+R2
+R0
+R7
+R8
+R9
+L0 255
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R12
+R6
+vshort_to_float_altpriority_encoder_rb6
+R1
+!i10b 1
+!s100 U6PZAmX7PMl>kdW@<2d1@2
+IiNd:edJzW8nlGYJVcmM;02
+R2
+R0
+R7
+R8
+R9
+L0 320
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R12
 R6
