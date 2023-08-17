@@ -1,0 +1,19 @@
+`timescale 1ns/1ns
+`define CLK_PERIOD 20
+
+module ad_data_proc_tb();
+
+reg clk;
+reg rst_n;
+
+wire valid;
+wire result;
+
+	ad_data_proc ad_data_proc(
+		.clk(clk),
+		.rst_n(rst_n),
+		.valid(valid),
+		.result(result)
+	);
+	
+	

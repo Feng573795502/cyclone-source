@@ -33,7 +33,7 @@
 //refer to the applicable agreement for further details.
 
 
-//altfp_mult CBX_AUTO_BLACKBOX="ALL" DEDICATED_MULTIPLIER_CIRCUITRY="YES" DENORMAL_SUPPORT="NO" DEVICE_FAMILY="Cyclone IV E" EXCEPTION_HANDLING="NO" PIPELINE=5 REDUCED_FUNCTIONALITY="NO" ROUNDING="TO_NEAREST" WIDTH_EXP=8 WIDTH_MAN=23 clk_en clock dataa datab result
+//altfp_mult CBX_AUTO_BLACKBOX="ALL" DEDICATED_MULTIPLIER_CIRCUITRY="YES" DENORMAL_SUPPORT="NO" DEVICE_FAMILY="Cyclone IV E" EXCEPTION_HANDLING="NO" PIPELINE=5 REDUCED_FUNCTIONALITY="NO" ROUNDING="TO_NEAREST" WIDTH_EXP=8 WIDTH_MAN=23 clock dataa datab result
 //VERSION_BEGIN 18.1 cbx_alt_ded_mult_y 2018:09:12:13:04:24:SJ cbx_altbarrel_shift 2018:09:12:13:04:24:SJ cbx_altera_mult_add 2018:09:12:13:04:24:SJ cbx_altera_mult_add_rtl 2018:09:12:13:04:24:SJ cbx_altfp_mult 2018:09:12:13:04:24:SJ cbx_altmult_add 2018:09:12:13:04:24:SJ cbx_cycloneii 2018:09:12:13:04:24:SJ cbx_lpm_add_sub 2018:09:12:13:04:24:SJ cbx_lpm_compare 2018:09:12:13:04:24:SJ cbx_lpm_mult 2018:09:12:13:04:24:SJ cbx_mgl 2018:09:12:13:10:36:SJ cbx_nadder 2018:09:12:13:04:24:SJ cbx_padd 2018:09:12:13:04:24:SJ cbx_parallel_add 2018:09:12:13:04:24:SJ cbx_stratix 2018:09:12:13:04:24:SJ cbx_stratixii 2018:09:12:13:04:24:SJ cbx_util_mgl 2018:09:12:13:04:24:SJ  VERSION_END
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
 // altera message_off 10463
@@ -43,25 +43,16 @@
 //synopsys translate_off
 `timescale 1 ps / 1 ps
 //synopsys translate_on
-module  mult_altfp_mult_9go
+module  mult_altfp_mult_trn
 	( 
-	clk_en,
 	clock,
 	dataa,
 	datab,
 	result) ;
-	input   clk_en;
 	input   clock;
 	input   [31:0]  dataa;
 	input   [31:0]  datab;
 	output   [31:0]  result;
-`ifndef ALTERA_RESERVED_QIS
-// synopsys translate_off
-`endif
-	tri1   clk_en;
-`ifndef ALTERA_RESERVED_QIS
-// synopsys translate_on
-`endif
 
 	reg	dataa_exp_all_one_ff_p1;
 	reg	dataa_exp_not_zero_ff_p1;
@@ -104,6 +95,7 @@ module  mult_altfp_mult_9go
 	wire  [47:0]   wire_man_product2_mult_result;
 	wire aclr;
 	wire  [9:0]  bias;
+	wire clk_en;
 	wire  [7:0]  dataa_exp_all_one;
 	wire  [7:0]  dataa_exp_not_zero;
 	wire  [22:0]  dataa_man_not_zero;
@@ -488,6 +480,7 @@ module  mult_altfp_mult_9go
 	assign
 		aclr = 1'b0,
 		bias = {{3{1'b0}}, {7{1'b1}}},
+		clk_en = 1'b1,
 		dataa_exp_all_one = {(dataa[30] & dataa_exp_all_one[6]), (dataa[29] & dataa_exp_all_one[5]), (dataa[28] & dataa_exp_all_one[4]), (dataa[27] & dataa_exp_all_one[3]), (dataa[26] & dataa_exp_all_one[2]), (dataa[25] & dataa_exp_all_one[1]), (dataa[24] & dataa_exp_all_one[0]), dataa[23]},
 		dataa_exp_not_zero = {(dataa[30] | dataa_exp_not_zero[6]), (dataa[29] | dataa_exp_not_zero[5]), (dataa[28] | dataa_exp_not_zero[4]), (dataa[27] | dataa_exp_not_zero[3]), (dataa[26] | dataa_exp_not_zero[2]), (dataa[25] | dataa_exp_not_zero[1]), (dataa[24] | dataa_exp_not_zero[0]), dataa[23]},
 		dataa_man_not_zero = {(dataa[22] | dataa_man_not_zero[21]), (dataa[21] | dataa_man_not_zero[20]), (dataa[20] | dataa_man_not_zero[19]), (dataa[19] | dataa_man_not_zero[18]), (dataa[18] | dataa_man_not_zero[17]), (dataa[17] | dataa_man_not_zero[16]), (dataa[16] | dataa_man_not_zero[15]), (dataa[15] | dataa_man_not_zero[14]), (dataa[14] | dataa_man_not_zero[13]), (dataa[13] | dataa_man_not_zero[12]), (dataa[12] | dataa_man_not_zero[11]), dataa[11], (dataa[10] | dataa_man_not_zero[9]), (dataa[9] | dataa_man_not_zero[8]), (dataa[8] | dataa_man_not_zero[7]), (dataa[7] | dataa_man_not_zero[6]), (dataa[6] | dataa_man_not_zero[5]), (dataa[5] | dataa_man_not_zero[4]), (dataa[4] | dataa_man_not_zero[3]), (dataa[3] | dataa_man_not_zero[2]), (dataa[2] | dataa_man_not_zero[1]), (dataa[1] | dataa_man_not_zero[0]), dataa[0]},
@@ -507,7 +500,7 @@ module  mult_altfp_mult_9go
 		round_bit = man_shift_full[0],
 		round_carry = (round_dffe & (lsb_dffe | sticky_dffe)),
 		sticky_bit = {(sticky_bit[21] | (wire_man_product2_mult_result[47] & wire_man_product2_mult_result[22])), (sticky_bit[20] | wire_man_product2_mult_result[21]), (sticky_bit[19] | wire_man_product2_mult_result[20]), (sticky_bit[18] | wire_man_product2_mult_result[19]), (sticky_bit[17] | wire_man_product2_mult_result[18]), (sticky_bit[16] | wire_man_product2_mult_result[17]), (sticky_bit[15] | wire_man_product2_mult_result[16]), (sticky_bit[14] | wire_man_product2_mult_result[15]), (sticky_bit[13] | wire_man_product2_mult_result[14]), (sticky_bit[12] | wire_man_product2_mult_result[13]), (sticky_bit[11] | wire_man_product2_mult_result[12]), (sticky_bit[10] | wire_man_product2_mult_result[11]), (sticky_bit[9] | wire_man_product2_mult_result[10]), (sticky_bit[8] | wire_man_product2_mult_result[9]), (sticky_bit[7] | wire_man_product2_mult_result[8]), (sticky_bit[6] | wire_man_product2_mult_result[7]), (sticky_bit[5] | wire_man_product2_mult_result[6]), (sticky_bit[4] | wire_man_product2_mult_result[5]), (sticky_bit[3] | wire_man_product2_mult_result[4]), (sticky_bit[2] | wire_man_product2_mult_result[3]), (sticky_bit[1] | wire_man_product2_mult_result[2]), (sticky_bit[0] | wire_man_product2_mult_result[1]), wire_man_product2_mult_result[0]};
-endmodule //mult_altfp_mult_9go
+endmodule //mult_altfp_mult_trn
 //VALID FILE
 
 
@@ -515,13 +508,11 @@ endmodule //mult_altfp_mult_9go
 `timescale 1 ps / 1 ps
 // synopsys translate_on
 module mult (
-	clk_en,
 	clock,
 	dataa,
 	datab,
 	result);
 
-	input	  clk_en;
 	input	  clock;
 	input	[31:0]  dataa;
 	input	[31:0]  datab;
@@ -530,8 +521,7 @@ module mult (
 	wire [31:0] sub_wire0;
 	wire [31:0] result = sub_wire0[31:0];
 
-	mult_altfp_mult_9go	mult_altfp_mult_9go_component (
-				.clk_en (clk_en),
+	mult_altfp_mult_trn	mult_altfp_mult_trn_component (
 				.clock (clock),
 				.dataa (dataa),
 				.datab (datab),
@@ -556,8 +546,6 @@ endmodule
 // Retrieval info: CONSTANT: ROUNDING STRING "TO_NEAREST"
 // Retrieval info: CONSTANT: WIDTH_EXP NUMERIC "8"
 // Retrieval info: CONSTANT: WIDTH_MAN NUMERIC "23"
-// Retrieval info: USED_PORT: clk_en 0 0 0 0 INPUT NODEFVAL "clk_en"
-// Retrieval info: CONNECT: @clk_en 0 0 0 0 clk_en 0 0 0 0
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
 // Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
 // Retrieval info: USED_PORT: dataa 0 0 32 0 INPUT NODEFVAL "dataa[31..0]"

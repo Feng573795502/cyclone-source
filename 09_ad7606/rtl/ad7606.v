@@ -1,16 +1,15 @@
 module ad7606(
 	input clk,
 	input rst_n,
-	
 	input busy,
-	input rdreq,
+
 	input [15:0]data_in,
 	
 	//adc时钟
 	output clk_adc,
 	output conv,
 	
-	
+	input rdreq,
 	output [15:0]ad_data,
 	output [5:0]rdusedw
 );
@@ -44,15 +43,15 @@ wire clk_25  = clk_25m;
 wire reset = ~rst_n;
 
 ad_fifo ad_fifo(
-	.aclr(reset),
-	.data(data_in),
-	.rdclk(clk_25m),
-	.rdreq(rdreq),
-	
-	.wrclk(clk_25m),
-	.wrreq(wrreq),
-	.q(ad_data),
-	.rdusedw(rdusedw)
+		.aclr(reset),
+		.data(data_in),
+		.rdclk(clk),  //供外部读取,选择外部时钟z
+		.rdreq(rdreq),
+		
+		.wrclk(clk_25m),
+		.wrreq(wrreq),
+		.q(ad_data),
+		.rdusedw(rdusedw)
 	);
 
 //输出读取信号

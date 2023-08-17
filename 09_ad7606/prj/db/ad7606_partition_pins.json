@@ -4,6 +4,50 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "clk_adc",
+					"strict" : false
+				},
+				{
+					"name" : "conv",
+					"strict" : false
+				},
+				{
+					"name" : "result[0]",
+					"strict" : false
+				},
+				{
+					"name" : "result[1]",
+					"strict" : false
+				},
+				{
+					"name" : "result[2]",
+					"strict" : false
+				},
+				{
+					"name" : "result[3]",
+					"strict" : false
+				},
+				{
+					"name" : "result[4]",
+					"strict" : false
+				},
+				{
+					"name" : "result[5]",
+					"strict" : false
+				},
+				{
+					"name" : "result[6]",
+					"strict" : false
+				},
+				{
+					"name" : "result[7]",
+					"strict" : false
+				},
+				{
+					"name" : "result[8]",
+					"strict" : false
+				},
+				{
 					"name" : "result[9]",
 					"strict" : false
 				},
@@ -96,71 +140,75 @@
 					"strict" : false
 				},
 				{
-					"name" : "clock",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[9]",
+					"name" : "rst_n",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[8]",
+					"name" : "data_in[13]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[7]",
+					"name" : "data_in[12]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[6]",
+					"name" : "data_in[11]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[5]",
+					"name" : "data_in[10]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[4]",
+					"name" : "data_in[9]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[3]",
+					"name" : "data_in[8]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[2]",
+					"name" : "data_in[7]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[1]",
+					"name" : "data_in[6]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[0]",
+					"name" : "data_in[5]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[15]",
+					"name" : "data_in[4]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[10]",
+					"name" : "data_in[3]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[14]",
+					"name" : "data_in[2]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[13]",
+					"name" : "data_in[1]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[12]",
+					"name" : "data_in[0]",
 					"strict" : false
 				},
 				{
-					"name" : "dataa[11]",
+					"name" : "data_in[15]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[14]",
 					"strict" : false
 				}
 			]

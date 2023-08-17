@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue Aug 15 16:45:08 2023
+Analysis & Synthesis Status : Successful - Thu Aug 17 18:45:24 2023
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : ad7606
-Top-level Entity Name : short_to_float
+Top-level Entity Name : ad_control_top
 Family : Cyclone IV E
-Total logic elements : 100
-    Total combinational functions : 82
-    Dedicated logic registers : 56
-Total registers : 56
-Total pins : 49
+Total logic elements : 441
+    Total combinational functions : 326
+    Dedicated logic registers : 309
+Total registers : 309
+Total pins : 54
 Total virtual pins : 0
-Total memory bits : 60
-Embedded Multiplier 9-bit elements : 0
+Total memory bits : 1,090
+Embedded Multiplier 9-bit elements : 7
 Total PLLs : 0

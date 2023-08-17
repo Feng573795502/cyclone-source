@@ -1,0 +1,6 @@
+module ad_control_top(
+	input clk,
+	input rst_n,
+	
+	
+)

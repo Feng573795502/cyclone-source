@@ -15,7 +15,6 @@
 
 FUNCTION mult 
 (
-	clk_en,
 	clock,
 	dataa[31..0],
 	datab[31..0]

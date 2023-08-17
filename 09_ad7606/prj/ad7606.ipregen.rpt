@@ -1,5 +1,5 @@
 IP Upgrade report for ad7606
-Tue Aug 15 16:51:21 2023
+Wed Aug 16 09:32:46 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -34,10 +34,10 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; IP Upgrade Summary                                                             ;
 +------------------------------+-------------------------------------------------+
-; IP Components Upgrade Status ; Failed - Tue Aug 15 16:51:21 2023               ;
+; IP Components Upgrade Status ; Failed - Wed Aug 16 09:32:46 2023               ;
 ; Quartus Prime Version        ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                ; ad7606                                          ;
-; Top-level Entity Name        ; short_to_float                                  ;
+; Top-level Entity Name        ; ad_data_proc                                    ;
 ; Family                       ; Cyclone IV E                                    ;
 +------------------------------+-------------------------------------------------+
 
@@ -48,8 +48,8 @@ refer to the applicable agreement for further details.
 Info (23030): Evaluation of Tcl script h:/intelfpga/18.1/quartus/common/tcl/internal/ip_regen/ip_regen.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4859 megabytes
-    Info: Processing ended: Tue Aug 15 16:51:21 2023
-    Info: Elapsed time: 00:00:06
+    Info: Processing ended: Wed Aug 16 09:32:46 2023
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:16
 
 
