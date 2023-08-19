@@ -1,0 +1,35 @@
+module calibration_top
+(
+	input clk,
+	input rst_n,
+	
+	//数据和数据有效值
+	input [32:0]data,
+	input valid,
+	
+	input go, //清除缓存区
+);
+
+	reg        rdreq;
+	wire [7:0] rdusedw;
+	reg[32:0]  data1;
+	reg[32:0]  data2;
+	reg[32:0]  data3;
+	reg[32:0]  data4;
+	reg[32:0]  data5;
+	reg[32:0]  data6;
+	reg[32:0]  data7;
+	reg[32:0]  data8;
+	
+
+	data_cache data_cache (
+	.aclr(go),
+	.data(data),
+	.rdclk(clk),
+	.rdreq(rdreq),
+	.wrclk(clk),
+	.wrreq(valid),
+	.q(
+	{data1,data2,data3,data4,data5,data6,data7,data8}
+	),
+	.rdusedw);

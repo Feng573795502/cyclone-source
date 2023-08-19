@@ -11,6 +11,7 @@ vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/prj/ip {
 vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/prj/ip {H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v}
 vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/prj/ip {H:/FPGA/cyclone source/09_ad7606/prj/ip/mult.v}
 vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/rtl {H:/FPGA/cyclone source/09_ad7606/rtl/ad_control_top.v}
+vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/prj/ip {H:/FPGA/cyclone source/09_ad7606/prj/ip/data_fifo.v}
 
 vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/prj/../testbench {H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v}
 

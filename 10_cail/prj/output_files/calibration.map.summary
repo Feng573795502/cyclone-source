@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Aug 19 18:07:37 2023
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : calibration
+Top-level Entity Name : iic_ctrl
+Family : Cyclone IV E
+Total logic elements : 198
+    Total combinational functions : 198
+    Dedicated logic registers : 74
+Total registers : 74
+Total pins : 56
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

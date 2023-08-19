@@ -140,11 +140,51 @@
 					"strict" : false
 				},
 				{
+					"name" : "usedw[0]",
+					"strict" : false
+				},
+				{
+					"name" : "usedw[1]",
+					"strict" : false
+				},
+				{
+					"name" : "usedw[2]",
+					"strict" : false
+				},
+				{
+					"name" : "usedw[3]",
+					"strict" : false
+				},
+				{
+					"name" : "usedw[4]",
+					"strict" : false
+				},
+				{
+					"name" : "usedw[5]",
+					"strict" : false
+				},
+				{
+					"name" : "usedw[6]",
+					"strict" : false
+				},
+				{
+					"name" : "usedw[7]",
+					"strict" : false
+				},
+				{
+					"name" : "usedw[8]",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},
 				{
 					"name" : "rst_n",
+					"strict" : false
+				},
+				{
+					"name" : "read_data",
 					"strict" : false
 				},
 				{

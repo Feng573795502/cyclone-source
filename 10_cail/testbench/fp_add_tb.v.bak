@@ -1,0 +1,28 @@
+`timescale 1ns/1ns
+`define CLK_PERIOD 20
+
+reg clk;
+reg [31:0]dataa;
+reg [31:0]datab;
+wire [31:0]result;
+
+fp_add fp_add(
+	clock(clk),
+	dataa(dataa),
+	datab(datab),
+	result(result)
+	);
+	
+	
+	initial clk = 1;
+	always #(`CLK_PERIOD/2) clk = ~clk;
+	
+	
+	initial begin
+	
+	dataa = 32'h40000000;
+	datab = 32'h40000000;
+	
+	#200;
+	
+	end

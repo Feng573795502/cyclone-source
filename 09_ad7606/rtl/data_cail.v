@@ -4,7 +4,7 @@
 		
 		input  cail_en,
 		input  [15:0]short_data,
-		input  [16:0]data_len,
+		input  [15:0]data_len,
 		
 		output reg valid,
 		
@@ -66,6 +66,7 @@
 		.datab(cail_param),
 		.result(result)
 	);	
+	
 
 endmodule
 	

@@ -1,18 +1,21 @@
+
+
 module ad_control_top(
 	input clk,
 	input rst_n,
 	
-	input [15:0]data_in,
-	
+	//ADC 接口
+	input [15:0]data_in, 
 	input  busy,
 	output clk_adc,
 	output conv,
 	
-	output valid,
-	output [31:0]result
+	output [31:0]result,
+	input  read_data,
+	output [8:0]usedw
 );
 
-	localparam DATA_LEN = 4'd8;
+	localparam DATA_LEN = 15'd8;
 
 	reg        rdreq;
 	wire [15:0] ad_data;
@@ -25,7 +28,9 @@ module ad_control_top(
 	reg  [3:0]       rd_cnt;
 	
 	reg   read_state;
-
+	
+	wire [31:0]cail_data;
+	wire       valid;
 	//计算信号 启动计算
 //	assign cail_en = (rdusedw >= DATA_LEN) ? 1'b1 : 1'b0;
 //	assign rdreq   = (rd_cnt != 4'd0) ? 1'b1 : 1'b0;
@@ -33,7 +38,7 @@ module ad_control_top(
 	//8 tick
 	always @(posedge clk or negedge rst_n)begin
 		if(!rst_n)
-			rd_cnt <= 4'd0;
+			read_state <= 1'b0;
 		else if(rdusedw >= DATA_LEN)
 			read_state <= 1'b1;
 		else if(rd_cnt == 7)
@@ -51,14 +56,23 @@ module ad_control_top(
 			rd_cnt <= 'd0;
 	end
 	
-//	always @(posedge clk or negedge rst_n)begin
-//		if(!rst_n)
-//			rdreq <= 1'b0;
-//		else if(rd_cnt != 4'd0)
-//			rdreq <= 1;
-//		else 
-//			rdreq <= 0;
-//	end
+	always @(posedge clk or negedge rst_n)begin
+		if(!rst_n)
+			rdreq <= 1'b0;
+		else if(read_state)
+			rdreq <= 1'b1;
+		else
+			rdreq <= 1'b0;
+	end
+	
+	always @(posedge clk or negedge rst_n)begin
+		if(!rst_n)
+			cail_en <= 1'b0;
+		else if(read_state)
+			cail_en <= 1'b1;
+		else
+			cail_en <= 1'b0;
+	end
 
 //ad例化
 ad7606 ad7606(
@@ -82,12 +96,22 @@ data_cail data_cail(
 		
 	.cail_en(cail_en),
 	.short_data(ad_data),
-	.data_len(DATA_LEN),
+	.data_len(16'd8),
 		
 	.valid(valid),
 		
 	.cail_param(32'h40000000),
-	.result(result)
+	.result(cail_data)
 );
+
+data_fifo data_fifo (
+	.clock(clk),
+	.data(cail_data),
+	.rdreq(read_data),
+	.wrreq(valid),
+	.q(result),
+	.usedw(usedw)
+	);
+
 
 endmodule

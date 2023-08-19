@@ -13,37 +13,37 @@
 # 
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/rtl {H:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:36:07 on Aug 17,2023
+# Start time: 15:30:03 on Aug 18,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/09_ad7606/rtl" H:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v 
 # -- Compiling module data_cail
 # 
 # Top level modules:
 # 	data_cail
-# End time: 17:36:07 on Aug 17,2023, Elapsed time: 0:00:00
+# End time: 15:30:03 on Aug 18,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/rtl {H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:36:07 on Aug 17,2023
+# Start time: 15:30:03 on Aug 18,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/09_ad7606/rtl" H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v 
 # -- Compiling module ad7606
 # 
 # Top level modules:
 # 	ad7606
-# End time: 17:36:07 on Aug 17,2023, Elapsed time: 0:00:00
+# End time: 15:30:03 on Aug 18,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/prj/ip {H:/FPGA/cyclone source/09_ad7606/prj/ip/ad_fifo.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:36:07 on Aug 17,2023
+# Start time: 15:30:03 on Aug 18,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip" H:/FPGA/cyclone source/09_ad7606/prj/ip/ad_fifo.v 
 # -- Compiling module ad_fifo
 # 
 # Top level modules:
 # 	ad_fifo
-# End time: 17:36:07 on Aug 17,2023, Elapsed time: 0:00:00
+# End time: 15:30:03 on Aug 18,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/prj/ip {H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:36:07 on Aug 17,2023
+# Start time: 15:30:03 on Aug 18,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip" H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v 
 # -- Compiling module short_to_float_altbarrel_shift_uvf
 # -- Compiling module short_to_float_altpriority_encoder_3v7
@@ -58,44 +58,54 @@
 # 
 # Top level modules:
 # 	short_to_float
-# End time: 17:36:07 on Aug 17,2023, Elapsed time: 0:00:00
+# End time: 15:30:03 on Aug 18,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/prj/ip {H:/FPGA/cyclone source/09_ad7606/prj/ip/mult.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:36:07 on Aug 17,2023
+# Start time: 15:30:03 on Aug 18,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip" H:/FPGA/cyclone source/09_ad7606/prj/ip/mult.v 
 # -- Compiling module mult_altfp_mult_trn
 # -- Compiling module mult
 # 
 # Top level modules:
 # 	mult
-# End time: 17:36:07 on Aug 17,2023, Elapsed time: 0:00:00
+# End time: 15:30:03 on Aug 18,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/rtl {H:/FPGA/cyclone source/09_ad7606/rtl/ad_control_top.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:36:07 on Aug 17,2023
+# Start time: 15:30:03 on Aug 18,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/09_ad7606/rtl" H:/FPGA/cyclone source/09_ad7606/rtl/ad_control_top.v 
 # -- Compiling module ad_control_top
 # 
 # Top level modules:
 # 	ad_control_top
-# End time: 17:36:07 on Aug 17,2023, Elapsed time: 0:00:00
+# End time: 15:30:03 on Aug 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/prj/ip {H:/FPGA/cyclone source/09_ad7606/prj/ip/data_fifo.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:30:03 on Aug 18,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip" H:/FPGA/cyclone source/09_ad7606/prj/ip/data_fifo.v 
+# -- Compiling module data_fifo
+# 
+# Top level modules:
+# 	data_fifo
+# End time: 15:30:03 on Aug 18,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/09_ad7606/prj/../testbench {H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:36:07 on Aug 17,2023
+# Start time: 15:30:03 on Aug 18,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/09_ad7606/prj/../testbench" H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v 
 # -- Compiling module ad_control_top_tb
 # 
 # Top level modules:
 # 	ad_control_top_tb
-# End time: 17:36:08 on Aug 17,2023, Elapsed time: 0:00:01
+# End time: 15:30:03 on Aug 18,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  ad_control_top_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" ad_control_top_tb 
-# Start time: 17:36:08 on Aug 17,2023
+# Start time: 15:30:03 on Aug 18,2023
 # Loading work.ad_control_top_tb
 # Loading work.ad_control_top
 # Loading work.ad7606
@@ -123,13 +133,13 @@
 # Loading work.mult_altfp_mult_trn
 # Loading lpm_ver.lpm_mult
 # Loading lpm_ver.LPM_HINT_EVALUATION
+# Loading work.data_fifo
+# Loading altera_mf_ver.scfifo
 # Loading altera_mf_ver.dcfifo_async
 # Loading altera_mf_ver.dcfifo_fefifo
 # ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(31790): [TFMPC] - Too few port connections. Expected 14, found 13.
 #    Time: 0 ps  Iteration: 0  Instance: /ad_control_top_tb/ad_control_top/ad7606/ad_fifo/dcfifo_component/DCFIFO_MW File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v
 # ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(31790): [TFMPC] - Missing connection for port 'eccstatus'.
-# ** Warning: (vsim-3015) H:/FPGA/cyclone source/09_ad7606/rtl/ad_control_top.v(70): [PCDPC] - Port size (17) does not match connection size (4) for port 'data_len'. The port definition is at: H:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /ad_control_top_tb/ad_control_top/data_cail File: H:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v
 # 
 # add wave *
 # view structure
@@ -137,61 +147,8 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Note: $stop    : H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v(44)
-#    Time: 2100 ns  Iteration: 0  Instance: /ad_control_top_tb
-# Break in Module ad_control_top_tb at H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v line 44
-add wave -position insertpoint  \
-sim:/ad_control_top_tb/ad_control_top/data_in
-restart
-# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(31790): [TFMPC] - Too few port connections. Expected 14, found 13.
-#    Time: 0 ps  Iteration: 0  Instance: /ad_control_top_tb/ad_control_top/ad7606/ad_fifo/dcfifo_component/DCFIFO_MW File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v
-# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(31790): [TFMPC] - Missing connection for port 'eccstatus'.
-# ** Warning: (vsim-3015) H:/FPGA/cyclone source/09_ad7606/rtl/ad_control_top.v(70): [PCDPC] - Port size (17) does not match connection size (4) for port 'data_len'. The port definition is at: H:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /ad_control_top_tb/ad_control_top/data_cail File: H:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v
-run
-run -all
-# ** Note: $stop    : H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v(44)
-#    Time: 2100 ns  Iteration: 0  Instance: /ad_control_top_tb
-# Break in Module ad_control_top_tb at H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v line 44
-add wave -position insertpoint  \
-sim:/ad_control_top_tb/ad_control_top/clk_adc
-add wave -position insertpoint  \
-sim:/ad_control_top_tb/ad_control_top/rdreq
-add wave -position insertpoint  \
-sim:/ad_control_top_tb/ad_control_top/ad_data
-add wave -position insertpoint  \
-sim:/ad_control_top_tb/ad_control_top/rdusedw
-add wave -position insertpoint  \
-sim:/ad_control_top_tb/ad_control_top/cail_en
-add wave -position insertpoint  \
-sim:/ad_control_top_tb/ad_control_top/rd_cnt
-restart
-# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(31790): [TFMPC] - Too few port connections. Expected 14, found 13.
-#    Time: 0 ps  Iteration: 0  Instance: /ad_control_top_tb/ad_control_top/ad7606/ad_fifo/dcfifo_component/DCFIFO_MW File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v
-# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(31790): [TFMPC] - Missing connection for port 'eccstatus'.
-# ** Warning: (vsim-3015) H:/FPGA/cyclone source/09_ad7606/rtl/ad_control_top.v(70): [PCDPC] - Port size (17) does not match connection size (4) for port 'data_len'. The port definition is at: H:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /ad_control_top_tb/ad_control_top/data_cail File: H:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v
-run -all
-# ** Note: $stop    : H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v(44)
-#    Time: 2100 ns  Iteration: 0  Instance: /ad_control_top_tb
-# Break in Module ad_control_top_tb at H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v line 44
-add wave -position insertpoint  \
-sim:/ad_control_top_tb/ad_control_top/ad7606/rdreq \
-sim:/ad_control_top_tb/ad_control_top/ad7606/rdusedw
-add wave -position insertpoint  \
-sim:/ad_control_top_tb/ad_control_top/ad7606/ad_fifo/data \
-sim:/ad_control_top_tb/ad_control_top/ad7606/ad_fifo/rdclk \
-sim:/ad_control_top_tb/ad_control_top/ad7606/ad_fifo/rdreq \
-sim:/ad_control_top_tb/ad_control_top/ad7606/ad_fifo/rdusedw
-restart
-# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(31790): [TFMPC] - Too few port connections. Expected 14, found 13.
-#    Time: 0 ps  Iteration: 0  Instance: /ad_control_top_tb/ad_control_top/ad7606/ad_fifo/dcfifo_component/DCFIFO_MW File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v
-# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(31790): [TFMPC] - Missing connection for port 'eccstatus'.
-# ** Warning: (vsim-3015) H:/FPGA/cyclone source/09_ad7606/rtl/ad_control_top.v(70): [PCDPC] - Port size (17) does not match connection size (4) for port 'data_len'. The port definition is at: H:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /ad_control_top_tb/ad_control_top/data_cail File: H:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v
-run -all
-# ** Note: $stop    : H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v(44)
-#    Time: 2100 ns  Iteration: 0  Instance: /ad_control_top_tb
-# Break in Module ad_control_top_tb at H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v line 44
-# End time: 18:48:05 on Aug 17,2023, Elapsed time: 1:11:57
-# Errors: 0, Warnings: 12
+# ** Note: $stop    : H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v(59)
+#    Time: 3330 ns  Iteration: 0  Instance: /ad_control_top_tb
+# Break in Module ad_control_top_tb at H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v line 59
+# End time: 15:35:48 on Aug 18,2023, Elapsed time: 0:05:45
+# Errors: 0, Warnings: 2
