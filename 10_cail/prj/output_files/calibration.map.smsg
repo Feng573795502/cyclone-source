@@ -1,1 +1,1 @@
-Info (10281): Verilog HDL Declaration information at iic_ctrl.v(36): object "ack" differs only in case from object "ACK" in the same scope File: H:/FPGA/cyclone source/10_cail/rtl/iic_ctrl.v Line: 36
+Info (10281): Verilog HDL Declaration information at iic_ctrl.v(37): object "ack" differs only in case from object "ACK" in the same scope File: H:/FPGA/cyclone source/10_cail/rtl/iic_ctrl.v Line: 37

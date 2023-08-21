@@ -1,0 +1,16 @@
+module cail_param_control(
+	clk,
+	rst_n,
+	
+	iic_clk,
+	iic_sda
+);
+
+	input clk;
+	input rst_n;
+	
+	output iic_clk;
+	inout  iic_sda;
+	
+	
+

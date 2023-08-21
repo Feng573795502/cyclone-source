@@ -42,7 +42,7 @@
 	
 	//时钟计算
 	parameter SYS_CLOCK = 50_000_000;
-	parameter SCL_CLOCK = 400_000;
+	parameter SCL_CLOCK = 100_000;
 	parameter SCL_CNT_M = SYS_CLOCK / SCL_CLOCK/4 - 1;
 	
 	//命令

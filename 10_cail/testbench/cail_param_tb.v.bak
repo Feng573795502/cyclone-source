@@ -1,0 +1,19 @@
+module cail_param_tb();
+
+cail_param (
+	clock,
+	data,
+	rdaddress,
+	wraddress,
+	wren,
+	q);
+
+	reg	clock;
+	reg	[7:0]  data;
+	reg	[2:0]  rdaddress;
+	reg	[4:0]  wraddress;
+	reg	wren;
+	wire	[31:0]  q;
+	
+	
+	endmodule

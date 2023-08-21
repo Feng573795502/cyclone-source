@@ -10,9 +10,10 @@ module iic_ctrl(
 	wr_done,
 	ack,
 	r_valid,
+	w_valid,
 	
+	w_num,
 	r_num,
-	
 	
 	wr_data,
 	rd_data,
@@ -35,27 +36,29 @@ module iic_ctrl(
 	output reg wr_done;
 	output reg ack;
 	output reg r_valid; //读有效值输出
-	
+	output reg w_valid;
+	input [5:0]w_num;
 	input [5:0]r_num;
 	
 	//读写数据
 	input [7:0]wr_data;
 	output reg [7:0]rd_data;
 	
-	output iic_clk;
-	inout  iic_sda;
+	output    iic_clk;
+	inout     iic_sda;
 	
 	//连接部分
-	reg [5:0]cmd;
-	reg [7:0]tx_data;
+	reg  [5:0]cmd;
+	reg  [7:0]tx_data;
 	wire [7:0]rx_data;
-	reg go;
-	wire trans_done;
-	wire ack_o;
+	reg       go;
+	wire      trans_done;
+	wire      ack_o;
 	
 	wire [15:0]addr;
 	
-	reg [5:0]r_cnt;
+	reg [5:0]  r_cnt;
+	reg [5:0]  w_cnt;
 	
 	//8bit的时候需要做高低位互换保证输出是低位
 	assign addr = addr_mode ? reg_addr : {reg_addr[7:0],reg_addr[15:8]};
@@ -86,6 +89,7 @@ module iic_ctrl(
 			rd_data <= 8'b0;
 			state   <= IDLE;
 			r_cnt   <= 6'b0;
+			w_cnt   <= 6'b0;
 		end
 		else begin
 			case(state)
@@ -108,8 +112,19 @@ module iic_ctrl(
 					case(cnt)
 						0:write_byte(STA | WR, device_id);
 						1:write_byte(WR, addr[15:8]);
-						2:write_byte(WR, addr[7:0]);
-						3:write_byte(WR | STO, wr_data);
+						2:begin 
+							write_byte(WR, addr[7:0]);
+							w_cnt <= 6'b0;
+							w_valid <= 1'b1;
+						end
+						
+						default: begin
+							if(w_cnt == w_num - 1)  //最后一个 直接写入
+								write_byte(WR | STO, wr_data);
+							else 
+								write_byte(WR, wr_data);
+						end
+						
 					endcase
 				end
 				
@@ -137,15 +152,25 @@ module iic_ctrl(
 								cnt <= 3;
 							end
 							
-							3:begin //代码做了延迟一个时钟周期，是否需要
-								state <= IDLE;
-								wr_done <= 1'b1;
+							default :begin
+								w_valid <= 1'b1;
+								cnt     <= cnt + 1'b1;
+								w_cnt   <= w_cnt + 1'b1;
+								
+								if(w_cnt == w_num - 1)begin
+									state   <= IDLE;
+									wr_done <= 1'b1;
+								end
+								else
+									state  <= WR_REG;
 							end
 							
 						endcase
 					end
-					else 
-						state <= WAIT_WR_DONE;
+					else begin
+						state   <= WAIT_WR_DONE;
+						w_valid <= 1'b0;
+					end
 				end
 				
 				RD_REG:begin
@@ -197,7 +222,9 @@ module iic_ctrl(
 							end
 							
 							default :begin
+								rd_data <= rx_data;
 								r_valid <= 1'b1;
+								
 								cnt <= cnt + 1'b1;
 								r_cnt <= r_cnt + 1'b1;
 								if(r_cnt == r_num - 1)begin
