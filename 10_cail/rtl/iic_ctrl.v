@@ -185,6 +185,7 @@ module iic_ctrl(
 						end
 						
 						default: begin
+							r_valid <= 1'b0;
 							if(r_cnt == r_num - 1)
 								read_byte(RD | NACK | STO);
 							else 

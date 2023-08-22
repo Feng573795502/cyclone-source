@@ -5,6 +5,9 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/rtl {H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v}
+vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/rtl {H:/FPGA/cyclone source/10_cail/rtl/iic_ctrl.v}
+vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/prj/ip {H:/FPGA/cyclone source/10_cail/prj/ip/cail_param.v}
 vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/rtl {H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v}
 
 vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/prj/../testbench {H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v}
