@@ -1,5 +1,5 @@
 Analysis & Synthesis report for calibration
-Tue Aug 22 15:46:36 2023
+Wed Aug 23 18:59:57 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -13,21 +13,21 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis IP Cores Summary
- 10. State Machine - |cail_param_control|state
- 11. State Machine - |cail_param_control|iic_ctrl:iic_ctrl|state
- 12. State Machine - |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|state
- 13. Registers Removed During Synthesis
- 14. Removed Registers Triggering Further Register Optimizations
- 15. General Register Statistics
- 16. Inverted Register Statistics
- 17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Source assignments for cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated
- 19. Parameter Settings for User Entity Instance: Top-level Entity: |cail_param_control
- 20. Parameter Settings for User Entity Instance: iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift
- 21. Parameter Settings for User Entity Instance: cail_param:cail_param|altsyncram:altsyncram_component
- 22. altsyncram Parameter Settings by Entity Instance
+  8. Analysis & Synthesis IP Cores Summary
+  9. State Machine - |cail_param_control|state
+ 10. State Machine - |cail_param_control|iic_ctrl:iic_ctrl|state
+ 11. State Machine - |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|state
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated
+ 18. Parameter Settings for User Entity Instance: Top-level Entity: |cail_param_control
+ 19. Parameter Settings for User Entity Instance: iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift
+ 20. Parameter Settings for User Entity Instance: cail_param:cail_param|altsyncram:altsyncram_component
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "cail_param:cail_param"
  23. Port Connectivity Checks: "iic_ctrl:iic_ctrl"
  24. Post-Synthesis Netlist Statistics for Top Partition
  25. Elapsed Time Per Partition
@@ -58,18 +58,18 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Aug 22 15:46:36 2023           ;
+; Analysis & Synthesis Status        ; Successful - Wed Aug 23 18:59:57 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; calibration                                     ;
 ; Top-level Entity Name              ; cail_param_control                              ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 215                                             ;
-;     Total combinational functions  ; 199                                             ;
-;     Dedicated logic registers      ; 109                                             ;
-; Total registers                    ; 109                                             ;
-; Total pins                         ; 77                                              ;
+; Total logic elements               ; 199                                             ;
+;     Total combinational functions  ; 198                                             ;
+;     Dedicated logic registers      ; 88                                              ;
+; Total registers                    ; 88                                              ;
+; Total pins                         ; 26                                              ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 8,192                                           ;
+; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
 ; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
@@ -205,56 +205,43 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 215       ;
+; Estimated Total logic elements              ; 199       ;
 ;                                             ;           ;
-; Total combinational functions               ; 199       ;
+; Total combinational functions               ; 198       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 92        ;
-;     -- 3 input functions                    ; 26        ;
-;     -- <=2 input functions                  ; 81        ;
+;     -- 4 input functions                    ; 81        ;
+;     -- 3 input functions                    ; 34        ;
+;     -- <=2 input functions                  ; 83        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 142       ;
-;     -- arithmetic mode                      ; 57        ;
+;     -- normal mode                          ; 145       ;
+;     -- arithmetic mode                      ; 53        ;
 ;                                             ;           ;
-; Total registers                             ; 109       ;
-;     -- Dedicated logic registers            ; 109       ;
+; Total registers                             ; 88        ;
+;     -- Dedicated logic registers            ; 88        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 77        ;
-; Total memory bits                           ; 8192      ;
+; I/O pins                                    ; 26        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 117       ;
-; Total fan-out                               ; 1206      ;
-; Average fan-out                             ; 2.56      ;
+; Maximum fan-out                             ; 88        ;
+; Total fan-out                               ; 954       ;
+; Average fan-out                             ; 2.81      ;
 +---------------------------------------------+-----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                 ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                      ; Entity Name        ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; |cail_param_control                       ; 199 (41)            ; 109 (31)                  ; 8192        ; 0            ; 0       ; 0         ; 77   ; 0            ; |cail_param_control                                                                                      ; cail_param_control ; work         ;
-;    |cail_param:cail_param|                ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|cail_param:cail_param                                                                ; cail_param         ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|cail_param:cail_param|altsyncram:altsyncram_component                                ; altsyncram         ; work         ;
-;          |altsyncram_4ln1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated ; altsyncram_4ln1    ; work         ;
-;    |iic_ctrl:iic_ctrl|                    ; 158 (66)            ; 78 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|iic_ctrl:iic_ctrl                                                                    ; iic_ctrl           ; work         ;
-;       |iic_bit_shift:iic_bit_shift|       ; 92 (92)             ; 44 (44)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift                                        ; iic_bit_shift      ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                    ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                               ; Entity Name        ; Library Name ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+--------------------+--------------+
+; |cail_param_control                 ; 198 (33)            ; 88 (23)                   ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |cail_param_control                                               ; cail_param_control ; work         ;
+;    |iic_ctrl:iic_ctrl|              ; 165 (70)            ; 65 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|iic_ctrl:iic_ctrl                             ; iic_ctrl           ; work         ;
+;       |iic_bit_shift:iic_bit_shift| ; 95 (95)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift ; iic_bit_shift      ; work         ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                    ;
-+-------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
-; Name                                                                                            ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
-+-------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
-; cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; None ;
-+-------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -307,34 +294,52 @@ Encoding Type:  One-Hot
 +-----------------+----------------+---------------+-----------------+---------------+---------------+---------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                    ;
-+--------------------------------------------------------------+----------------------------------------+
-; Register name                                                ; Reason for Removal                     ;
-+--------------------------------------------------------------+----------------------------------------+
-; r_num[0..5]                                                  ; Stuck at GND due to stuck port data_in ;
-; iic_ctrl:iic_ctrl|r_cnt[0..5]                                ; Lost fanout                            ;
-; iic_ctrl:iic_ctrl|w_cnt[0..5]                                ; Lost fanout                            ;
-; iic_ctrl:iic_ctrl|cmd[4]                                     ; Merged with iic_ctrl:iic_ctrl|cmd[2]   ;
-; iic_ctrl:iic_ctrl|wr_done                                    ; Stuck at GND due to stuck port data_in ;
-; iic_ctrl:iic_ctrl|cmd[3]                                     ; Stuck at GND due to stuck port data_in ;
-; state~6                                                      ; Lost fanout                            ;
-; state~7                                                      ; Lost fanout                            ;
-; state~8                                                      ; Lost fanout                            ;
-; iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|state~18       ; Lost fanout                            ;
-; iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|state.GEN_STOP ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 26                       ;                                        ;
-+--------------------------------------------------------------+----------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                     ;
++-------------------------------------------------------------+------------------------------------------+
+; Register name                                               ; Reason for Removal                       ;
++-------------------------------------------------------------+------------------------------------------+
+; ee_rvalid_dly                                               ; Lost fanout                              ;
+; ee_r_data_dly[1..7]                                         ; Lost fanout                              ;
+; ram_wr                                                      ; Lost fanout                              ;
+; ee_r_data_dly[0]                                            ; Lost fanout                              ;
+; ram_w_data[1..7]                                            ; Lost fanout                              ;
+; ram_w_addr_dly[0..9]                                        ; Lost fanout                              ;
+; ram_w_addr[0..9]                                            ; Lost fanout                              ;
+; ram_w_data[0]                                               ; Lost fanout                              ;
+; iic_ctrl:iic_ctrl|rd_data[0..7]                             ; Lost fanout                              ;
+; iic_ctrl:iic_ctrl|r_valid                                   ; Lost fanout                              ;
+; iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|rx_data[0..7] ; Lost fanout                              ;
+; ee_r_num[0,3..15]                                           ; Stuck at GND due to stuck port data_in   ;
+; iic_ctrl:iic_ctrl|w_cnt[0..5]                               ; Lost fanout                              ;
+; ee_r_num[2]                                                 ; Merged with ee_r_num[1]                  ;
+; iic_ctrl:iic_ctrl|tx_data[2..4,6]                           ; Merged with iic_ctrl:iic_ctrl|tx_data[1] ;
+; iic_ctrl:iic_ctrl|tx_data[7]                                ; Merged with iic_ctrl:iic_ctrl|tx_data[5] ;
+; iic_ctrl:iic_ctrl|tx_data[1]                                ; Stuck at GND due to stuck port data_in   ;
+; state~7                                                     ; Lost fanout                              ;
+; state~8                                                     ; Lost fanout                              ;
+; state~9                                                     ; Lost fanout                              ;
+; state~10                                                    ; Lost fanout                              ;
+; iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|state~18      ; Lost fanout                              ;
+; Total Number of Removed Registers = 87                      ;                                          ;
++-------------------------------------------------------------+------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                     ;
-+---------------+---------------------------+-----------------------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register              ;
-+---------------+---------------------------+-----------------------------------------------------+
-; r_num[5]      ; Stuck at GND              ; iic_ctrl:iic_ctrl|wr_done, iic_ctrl:iic_ctrl|cmd[3] ;
-;               ; due to stuck port data_in ;                                                     ;
-+---------------+---------------------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                    ;
++------------------+--------------------+----------------------------------------+
+; Register name    ; Reason for Removal ; Registers Removed due to This Register ;
++------------------+--------------------+----------------------------------------+
+; ee_rvalid_dly    ; Lost Fanouts       ; iic_ctrl:iic_ctrl|r_valid              ;
+; ee_r_data_dly[7] ; Lost Fanouts       ; iic_ctrl:iic_ctrl|rd_data[7]           ;
+; ee_r_data_dly[6] ; Lost Fanouts       ; iic_ctrl:iic_ctrl|rd_data[6]           ;
+; ee_r_data_dly[5] ; Lost Fanouts       ; iic_ctrl:iic_ctrl|rd_data[5]           ;
+; ee_r_data_dly[4] ; Lost Fanouts       ; iic_ctrl:iic_ctrl|rd_data[4]           ;
+; ee_r_data_dly[3] ; Lost Fanouts       ; iic_ctrl:iic_ctrl|rd_data[3]           ;
+; ee_r_data_dly[2] ; Lost Fanouts       ; iic_ctrl:iic_ctrl|rd_data[2]           ;
+; ee_r_data_dly[1] ; Lost Fanouts       ; iic_ctrl:iic_ctrl|rd_data[1]           ;
+; ee_r_data_dly[0] ; Lost Fanouts       ; iic_ctrl:iic_ctrl|rd_data[0]           ;
++------------------+--------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -342,12 +347,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 109   ;
-; Number of registers using Synchronous Clear  ; 35    ;
-; Number of registers using Synchronous Load   ; 19    ;
-; Number of registers using Asynchronous Clear ; 88    ;
+; Total registers                              ; 88    ;
+; Number of registers using Synchronous Clear  ; 31    ;
+; Number of registers using Synchronous Load   ; 21    ;
+; Number of registers using Asynchronous Clear ; 73    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 41    ;
+; Number of registers using Clock Enable       ; 25    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -357,25 +362,23 @@ Encoding Type:  One-Hot
 +----------------------------------------------------------+---------+
 ; Inverted Register                                        ; Fan out ;
 +----------------------------------------------------------+---------+
-; iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|iic_clk    ; 2       ;
-; iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|iic_sda_od ; 2       ;
+; iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|iic_clk    ; 5       ;
+; iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|iic_sda_od ; 4       ;
 ; Total number of inverted registers = 2                   ;         ;
 +----------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|div_cnt[2] ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|tx_data[6]                             ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 5 LEs                ; 20 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|cnt[7]                                 ;
-; 7:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|cnt[4]     ;
-; 513:1              ; 2 bits    ; 684 LEs       ; 10 LEs               ; 674 LEs                ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|tx_data[5]                             ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|Selector11 ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 8 LEs                ; 6 LEs                  ; No         ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|Selector6  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|div_cnt[13] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|r_cnt[5]                                ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 5 LEs                ; 20 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|cnt[5]                                  ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|cnt[3]      ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|Selector11  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------+
@@ -490,19 +493,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-------------------------------------------------------+
 
 
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cail_param:cail_param"                                                                   ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; rdaddress ; Input  ; Info     ; Stuck at GND                                                                        ;
+; q         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +---------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "iic_ctrl:iic_ctrl"                                                                             ;
 +-----------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port            ; Type   ; Severity ; Details                                                                             ;
 +-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; w_req           ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; device_id[4..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; device_id[7]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; device_id[6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; device_id[5]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; reg_addr        ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; addr_mode       ; Input  ; Info     ; Stuck at GND                                                                        ;
-; ack             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ack             ; Output ; Info     ; Explicitly unconnected                                                              ;
 ; w_valid         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; w_num           ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wr_data         ; Input  ; Info     ; Stuck at GND                                                                        ;
 +-----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -511,30 +527,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 77                          ;
-; cycloneiii_ff         ; 109                         ;
-;     CLR               ; 18                          ;
-;     CLR SCLR          ; 30                          ;
+; boundary_port         ; 26                          ;
+; cycloneiii_ff         ; 88                          ;
+;     CLR               ; 23                          ;
+;     CLR SCLR          ; 20                          ;
 ;     CLR SLD           ; 19                          ;
-;     ENA               ; 20                          ;
-;     ENA CLR           ; 16                          ;
-;     ENA CLR SCLR      ; 5                           ;
+;     ENA               ; 12                          ;
+;     ENA CLR SCLR      ; 11                          ;
+;     ENA SLD           ; 2                           ;
 ;     plain             ; 1                           ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 200                         ;
-;     arith             ; 57                          ;
-;         2 data inputs ; 56                          ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 143                         ;
+; cycloneiii_lcell_comb ; 199                         ;
+;     arith             ; 53                          ;
+;         2 data inputs ; 53                          ;
+;     normal            ; 146                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 6                           ;
-;         2 data inputs ; 19                          ;
-;         3 data inputs ; 25                          ;
-;         4 data inputs ; 92                          ;
-; cycloneiii_ram_block  ; 8                           ;
+;         2 data inputs ; 24                          ;
+;         3 data inputs ; 34                          ;
+;         4 data inputs ; 81                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.15                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 3.46                        ;
 +-----------------------+-----------------------------+
 
 
@@ -543,7 +557,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -553,7 +567,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Tue Aug 22 15:46:28 2023
+    Info: Processing started: Wed Aug 23 18:59:49 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calibration -c calibration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -569,18 +583,54 @@ Info (12021): Found 1 design units, including 1 entities, in source file ip/cail
     Info (12023): Found entity 1: cail_param File: H:/FPGA/cyclone source/10_cail/prj/ip/cail_param.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/10_cail/testbench/cail_param_tb.v
     Info (12023): Found entity 1: cail_param_tb File: H:/FPGA/cyclone source/10_cail/testbench/cail_param_tb.v Line: 4
-Warning (10463): Verilog HDL Declaration warning at cail_param_control.v(26): "type" is SystemVerilog-2005 keyword File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/10_cail/rtl/cail_param_control.v
     Info (12023): Found entity 1: cail_param_control File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 1
 Warning (10463): Verilog HDL Declaration warning at cail_param_control_tb.v(10): "type" is SystemVerilog-2005 keyword File: H:/FPGA/cyclone source/10_cail/testbench/cail_param_control_tb.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/10_cail/testbench/cail_param_control_tb.v
     Info (12023): Found entity 1: cail_param_control_tb File: H:/FPGA/cyclone source/10_cail/testbench/cail_param_control_tb.v Line: 2
-Warning (10236): Verilog HDL Implicit Net warning at cail_param_control.v(127): created implicit net for "ack" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 127
 Info (12127): Elaborating entity "cail_param_control" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at cail_param_control.v(101): truncated value with size 32 to match size of target (6) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 101
-Warning (10034): Output port "result" at cail_param_control.v(30) has no driver File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-Info (12128): Elaborating entity "iic_ctrl" for hierarchy "iic_ctrl:iic_ctrl" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 139
-Info (12128): Elaborating entity "iic_bit_shift" for hierarchy "iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift" File: H:/FPGA/cyclone source/10_cail/rtl/iic_ctrl.v Line: 289
+Warning (10036): Verilog HDL or VHDL warning at cail_param_control.v(39): object "ee_wvalid_dly" assigned a value but never read File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at cail_param_control.v(93): inferring latch(es) for variable "ee_w_req", which holds its previous value in one or more paths through the always construct File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Warning (10240): Verilog HDL Always Construct warning at cail_param_control.v(93): inferring latch(es) for variable "ram_r_addr", which holds its previous value in one or more paths through the always construct File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Warning (10240): Verilog HDL Always Construct warning at cail_param_control.v(93): inferring latch(es) for variable "ee_w_num", which holds its previous value in one or more paths through the always construct File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Warning (10240): Verilog HDL Always Construct warning at cail_param_control.v(93): inferring latch(es) for variable "ee_w_data", which holds its previous value in one or more paths through the always construct File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_data[0]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_data[1]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_data[2]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_data[3]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_data[4]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_data[5]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_data[6]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_data[7]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[0]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[1]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[2]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[3]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[4]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[5]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[6]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[7]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[8]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[9]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[10]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[11]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[12]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[13]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[14]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_num[15]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ram_r_addr[0]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ram_r_addr[1]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ram_r_addr[2]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ram_r_addr[3]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ram_r_addr[4]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ram_r_addr[5]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ram_r_addr[6]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ram_r_addr[7]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ram_r_addr[8]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ram_r_addr[9]" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (10041): Inferred latch for "ee_w_req" at cail_param_control.v(93) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 93
+Info (12128): Elaborating entity "iic_ctrl" for hierarchy "iic_ctrl:iic_ctrl" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 161
+Info (12128): Elaborating entity "iic_bit_shift" for hierarchy "iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift" File: H:/FPGA/cyclone source/10_cail/rtl/iic_ctrl.v Line: 291
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(96): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 96
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(125): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 125
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(127): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 127
@@ -589,7 +639,7 @@ Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(170): truncat
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(195): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 195
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(213): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 213
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(243): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 243
-Info (12128): Elaborating entity "cail_param" for hierarchy "cail_param:cail_param" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 149
+Info (12128): Elaborating entity "cail_param" for hierarchy "cail_param:cail_param" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 174
 Info (12128): Elaborating entity "altsyncram" for hierarchy "cail_param:cail_param|altsyncram:altsyncram_component" File: H:/FPGA/cyclone source/10_cail/prj/ip/cail_param.v Line: 88
 Info (12130): Elaborated megafunction instantiation "cail_param:cail_param|altsyncram:altsyncram_component" File: H:/FPGA/cyclone source/10_cail/prj/ip/cail_param.v Line: 88
 Info (12133): Instantiated megafunction "cail_param:cail_param|altsyncram:altsyncram_component" with the following parameter: File: H:/FPGA/cyclone source/10_cail/prj/ip/cail_param.v Line: 88
@@ -615,99 +665,56 @@ Info (12133): Instantiated megafunction "cail_param:cail_param|altsyncram:altsyn
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4ln1.tdf
     Info (12023): Found entity 1: altsyncram_4ln1 File: H:/FPGA/cyclone source/10_cail/prj/db/altsyncram_4ln1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_4ln1" for hierarchy "cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated" File: h:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated|q_b[0]" File: H:/FPGA/cyclone source/10_cail/prj/db/altsyncram_4ln1.tdf Line: 37
+        Warning (14320): Synthesized away node "cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated|q_b[1]" File: H:/FPGA/cyclone source/10_cail/prj/db/altsyncram_4ln1.tdf Line: 70
+        Warning (14320): Synthesized away node "cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated|q_b[2]" File: H:/FPGA/cyclone source/10_cail/prj/db/altsyncram_4ln1.tdf Line: 103
+        Warning (14320): Synthesized away node "cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated|q_b[3]" File: H:/FPGA/cyclone source/10_cail/prj/db/altsyncram_4ln1.tdf Line: 136
+        Warning (14320): Synthesized away node "cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated|q_b[4]" File: H:/FPGA/cyclone source/10_cail/prj/db/altsyncram_4ln1.tdf Line: 169
+        Warning (14320): Synthesized away node "cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated|q_b[5]" File: H:/FPGA/cyclone source/10_cail/prj/db/altsyncram_4ln1.tdf Line: 202
+        Warning (14320): Synthesized away node "cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated|q_b[6]" File: H:/FPGA/cyclone source/10_cail/prj/db/altsyncram_4ln1.tdf Line: 235
+        Warning (14320): Synthesized away node "cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated|q_b[7]" File: H:/FPGA/cyclone source/10_cail/prj/db/altsyncram_4ln1.tdf Line: 268
 Info (13000): Registers with preset signals will power-up high File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 28
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "result[0]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[1]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[2]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[3]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[4]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[5]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[6]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[7]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[8]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[9]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[10]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[11]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[12]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[13]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[14]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[15]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[16]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[17]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[18]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[19]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[20]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[21]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[22]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[23]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[24]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[25]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[26]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[27]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[28]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[29]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[30]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
-    Warning (13410): Pin "result[31]" is stuck at GND File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 30
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 16 registers lost all their fanouts during netlist optimizations.
+Info (17049): 66 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file H:/FPGA/cyclone source/10_cail/prj/output_files/calibration.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 41 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "wr_req" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 22
-    Warning (15610): No output dependent on input pin "rd_req" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 23
-    Warning (15610): No output dependent on input pin "ch[0]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 25
-    Warning (15610): No output dependent on input pin "ch[1]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 25
-    Warning (15610): No output dependent on input pin "ch[2]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 25
-    Warning (15610): No output dependent on input pin "ch[3]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 25
-    Warning (15610): No output dependent on input pin "type[0]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 26
-    Warning (15610): No output dependent on input pin "type[1]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 26
-    Warning (15610): No output dependent on input pin "mult" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 27
-    Warning (15610): No output dependent on input pin "in_data[0]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[1]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[2]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[3]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[4]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[5]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[6]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[7]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[8]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[9]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[10]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[11]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[12]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[13]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[14]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[15]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[16]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[17]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[18]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[19]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[20]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[21]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[22]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[23]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[24]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[25]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[26]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[27]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[28]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[29]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[30]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-    Warning (15610): No output dependent on input pin "in_data[31]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 29
-Info (21057): Implemented 301 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 43 input pins
-    Info (21059): Implemented 33 output pins
+Warning (21074): Design contains 22 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "wr_req" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 18
+    Warning (15610): No output dependent on input pin "rd_req" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 19
+    Warning (15610): No output dependent on input pin "wr_addr[0]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 21
+    Warning (15610): No output dependent on input pin "wr_addr[1]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 21
+    Warning (15610): No output dependent on input pin "wr_addr[2]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 21
+    Warning (15610): No output dependent on input pin "wr_addr[3]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 21
+    Warning (15610): No output dependent on input pin "wr_addr[4]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 21
+    Warning (15610): No output dependent on input pin "wr_addr[5]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 21
+    Warning (15610): No output dependent on input pin "wr_addr[6]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 21
+    Warning (15610): No output dependent on input pin "wr_addr[7]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 21
+    Warning (15610): No output dependent on input pin "wr_addr[8]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 21
+    Warning (15610): No output dependent on input pin "wr_addr[9]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 21
+    Warning (15610): No output dependent on input pin "rd_addr[0]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 22
+    Warning (15610): No output dependent on input pin "rd_addr[1]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 22
+    Warning (15610): No output dependent on input pin "rd_addr[2]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 22
+    Warning (15610): No output dependent on input pin "rd_addr[3]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 22
+    Warning (15610): No output dependent on input pin "rd_addr[4]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 22
+    Warning (15610): No output dependent on input pin "rd_addr[5]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 22
+    Warning (15610): No output dependent on input pin "rd_addr[6]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 22
+    Warning (15610): No output dependent on input pin "rd_addr[7]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 22
+    Warning (15610): No output dependent on input pin "rd_addr[8]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 22
+    Warning (15610): No output dependent on input pin "rd_addr[9]" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 22
+Info (21057): Implemented 226 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 24 input pins
+    Info (21059): Implemented 1 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 216 logic cells
-    Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 89 warnings
-    Info: Peak virtual memory: 4844 megabytes
-    Info: Processing ended: Tue Aug 22 15:46:36 2023
+    Info (21061): Implemented 200 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
+    Info: Peak virtual memory: 4842 megabytes
+    Info: Processing ended: Wed Aug 23 18:59:57 2023
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Total CPU time (on all processors): 00:00:17
 
 
 +------------------------------------------+
