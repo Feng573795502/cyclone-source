@@ -1,0 +1,9 @@
+|io
+clk => in~reg0.CLK
+clk => out~reg0.CLK
+rst_n => in~reg0.ACLR
+rst_n => out~reg0.ACLR
+in <= in~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

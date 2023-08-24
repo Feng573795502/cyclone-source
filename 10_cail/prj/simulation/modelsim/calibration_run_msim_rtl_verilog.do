@@ -11,6 +11,7 @@ vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/prj/ip {H:
 vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/rtl {H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v}
 
 vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/prj/../testbench {H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v}
+vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/prj/../testbench {H:/FPGA/cyclone source/10_cail/prj/../testbench/M24LC04B.v}
 
 vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  cail_param_control_tb
 

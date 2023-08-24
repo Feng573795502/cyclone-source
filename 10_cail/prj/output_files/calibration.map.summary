@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Wed Aug 23 18:59:57 2023
+Analysis & Synthesis Status : Successful - Thu Aug 24 18:23:55 2023
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : calibration
 Top-level Entity Name : cail_param_control
 Family : Cyclone IV E
-Total logic elements : 199
-    Total combinational functions : 198
-    Dedicated logic registers : 88
-Total registers : 88
-Total pins : 26
+Total logic elements : 351
+    Total combinational functions : 302
+    Dedicated logic registers : 196
+Total registers : 196
+Total pins : 44
 Total virtual pins : 0
-Total memory bits : 0
+Total memory bits : 8,192
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

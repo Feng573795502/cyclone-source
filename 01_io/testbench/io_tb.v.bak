@@ -1,0 +1,12 @@
+`timescale 1ns/1ns
+
+module io_tb();
+
+reg clk;
+reg rst_n;
+
+wire in;
+wire out;
+
+initial clk = 1;
+always #10 clk = ~clk;

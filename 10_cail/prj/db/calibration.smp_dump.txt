@@ -1,8 +1,11 @@
 
 State Machine - |cail_param_control|state
-Name state.INIT 
-state.IDLE 0 
-state.INIT 1 
+Name state.SAVE state.RD_RAM state.WR_RAM state.INIT state.IDLE 
+state.IDLE 0 0 0 0 0 
+state.INIT 0 0 0 1 1 
+state.WR_RAM 0 0 1 0 1 
+state.RD_RAM 0 1 0 0 1 
+state.SAVE 1 0 0 0 1 
 
 State Machine - |cail_param_control|iic_ctrl:iic_ctrl|state
 Name state.WAIT_RD_DONE state.RD_REG state.WAIT_WR_DONE state.WR_REG state.IDLE 

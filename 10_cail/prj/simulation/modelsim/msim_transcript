@@ -13,65 +13,76 @@
 # 
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/rtl {H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:03:49 on Aug 23,2023
+# Start time: 18:24:09 on Aug 24,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/10_cail/rtl" H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v 
 # -- Compiling module iic_bit_shift
 # 
 # Top level modules:
 # 	iic_bit_shift
-# End time: 19:03:49 on Aug 23,2023, Elapsed time: 0:00:00
+# End time: 18:24:09 on Aug 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/rtl {H:/FPGA/cyclone source/10_cail/rtl/iic_ctrl.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:03:49 on Aug 23,2023
+# Start time: 18:24:09 on Aug 24,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/10_cail/rtl" H:/FPGA/cyclone source/10_cail/rtl/iic_ctrl.v 
 # -- Compiling module iic_ctrl
 # 
 # Top level modules:
 # 	iic_ctrl
-# End time: 19:03:49 on Aug 23,2023, Elapsed time: 0:00:00
+# End time: 18:24:09 on Aug 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/prj/ip {H:/FPGA/cyclone source/10_cail/prj/ip/cail_param.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:03:49 on Aug 23,2023
+# Start time: 18:24:09 on Aug 24,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/10_cail/prj/ip" H:/FPGA/cyclone source/10_cail/prj/ip/cail_param.v 
 # -- Compiling module cail_param
 # 
 # Top level modules:
 # 	cail_param
-# End time: 19:03:49 on Aug 23,2023, Elapsed time: 0:00:00
+# End time: 18:24:09 on Aug 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/rtl {H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:03:50 on Aug 23,2023
+# Start time: 18:24:09 on Aug 24,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/10_cail/rtl" H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v 
 # -- Compiling module cail_param_control
 # 
 # Top level modules:
 # 	cail_param_control
-# End time: 19:03:50 on Aug 23,2023, Elapsed time: 0:00:00
+# End time: 18:24:09 on Aug 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/prj/../testbench {H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:03:50 on Aug 23,2023
+# Start time: 18:24:09 on Aug 24,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/10_cail/prj/../testbench" H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v 
 # -- Compiling module cail_param_control_tb
 # 
 # Top level modules:
 # 	cail_param_control_tb
-# End time: 19:03:50 on Aug 23,2023, Elapsed time: 0:00:00
+# End time: 18:24:09 on Aug 24,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/10_cail/prj/../testbench {H:/FPGA/cyclone source/10_cail/prj/../testbench/M24LC04B.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:24:09 on Aug 24,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/10_cail/prj/../testbench" H:/FPGA/cyclone source/10_cail/prj/../testbench/M24LC04B.v 
+# -- Compiling module M24LC04B
+# 
+# Top level modules:
+# 	M24LC04B
+# End time: 18:24:09 on Aug 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  cail_param_control_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" cail_param_control_tb 
-# Start time: 19:03:50 on Aug 23,2023
+# Start time: 18:24:09 on Aug 24,2023
 # Loading work.cail_param_control_tb
 # Loading work.cail_param_control
 # Loading work.iic_ctrl
 # Loading work.iic_bit_shift
 # Loading work.cail_param
 # Loading altera_mf_ver.altsyncram
+# Loading work.M24LC04B
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
@@ -84,46 +95,55 @@
 # run -all
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: cail_param_control_tb.cail_param_control.cail_param.altsyncram_component.m_default.altsyncram_inst
-# ** Note: $stop    : H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v(45)
-#    Time: 10000200 ns  Iteration: 0  Instance: /cail_param_control_tb
-# Break in Module cail_param_control_tb at H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v line 45
+# ** Note: $stop    : H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v(117)
+#    Time: 6008640 ns  Iteration: 0  Instance: /cail_param_control_tb
+# Break in Module cail_param_control_tb at H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v line 117
 add wave -position insertpoint  \
-sim:/cail_param_control_tb/cail_param_control/clk \
-sim:/cail_param_control_tb/cail_param_control/rst_n \
-sim:/cail_param_control_tb/cail_param_control/wr_req \
-sim:/cail_param_control_tb/cail_param_control/rd_req \
-sim:/cail_param_control_tb/cail_param_control/wr_addr \
-sim:/cail_param_control_tb/cail_param_control/rd_addr \
-sim:/cail_param_control_tb/cail_param_control/iic_clk \
-sim:/cail_param_control_tb/cail_param_control/iic_sda \
-sim:/cail_param_control_tb/cail_param_control/ee_w_req \
-sim:/cail_param_control_tb/cail_param_control/ee_r_req \
-sim:/cail_param_control_tb/cail_param_control/ee_wr_done \
-sim:/cail_param_control_tb/cail_param_control/ee_rvalid \
-sim:/cail_param_control_tb/cail_param_control/ee_wvalid \
-sim:/cail_param_control_tb/cail_param_control/ee_w_num \
-sim:/cail_param_control_tb/cail_param_control/ee_r_num \
-sim:/cail_param_control_tb/cail_param_control/ee_w_data \
-sim:/cail_param_control_tb/cail_param_control/ee_r_data \
-sim:/cail_param_control_tb/cail_param_control/ee_rvalid_dly \
-sim:/cail_param_control_tb/cail_param_control/ee_wvalid_dly \
-sim:/cail_param_control_tb/cail_param_control/ee_wr_done_dly \
-sim:/cail_param_control_tb/cail_param_control/ee_r_data_dly \
-sim:/cail_param_control_tb/cail_param_control/ram_w_data \
-sim:/cail_param_control_tb/cail_param_control/ram_r_data \
-sim:/cail_param_control_tb/cail_param_control/ram_w_addr_dly \
-sim:/cail_param_control_tb/cail_param_control/ram_w_addr \
-sim:/cail_param_control_tb/cail_param_control/ram_r_addr \
-sim:/cail_param_control_tb/cail_param_control/ram_wr \
-sim:/cail_param_control_tb/cail_param_control/state \
-sim:/cail_param_control_tb/cail_param_control/rst_cnt \
-sim:/cail_param_control_tb/cail_param_control/data
+sim:/cail_param_control_tb/cail_param_control/ee_w_num
+add wave -position insertpoint  \
+sim:/cail_param_control_tb/cail_param_control/ee_wvalid
 restart
 run -all
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: cail_param_control_tb.cail_param_control.cail_param.altsyncram_component.m_default.altsyncram_inst
-# ** Note: $stop    : H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v(45)
-#    Time: 10000200 ns  Iteration: 0  Instance: /cail_param_control_tb
-# Break in Module cail_param_control_tb at H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v line 45
-# End time: 19:05:51 on Aug 23,2023, Elapsed time: 0:02:01
+# ** Note: $stop    : H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v(117)
+#    Time: 6008640 ns  Iteration: 0  Instance: /cail_param_control_tb
+# Break in Module cail_param_control_tb at H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v line 117
+add wave -position insertpoint  \
+sim:/cail_param_control_tb/cail_param_control/iic_ctrl/wr_data
+restart
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: cail_param_control_tb.cail_param_control.cail_param.altsyncram_component.m_default.altsyncram_inst
+# ** Note: $stop    : H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v(117)
+#    Time: 6008640 ns  Iteration: 0  Instance: /cail_param_control_tb
+# Break in Module cail_param_control_tb at H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v line 117
+add wave -position insertpoint  \
+sim:/cail_param_control_tb/cail_param_control/iic_ctrl/iic_bit_shift/tx_data
+restart
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: cail_param_control_tb.cail_param_control.cail_param.altsyncram_component.m_default.altsyncram_inst
+# ** Note: $stop    : H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v(117)
+#    Time: 6008640 ns  Iteration: 0  Instance: /cail_param_control_tb
+# Break in Module cail_param_control_tb at H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v line 117
+add wave -position insertpoint  \
+sim:/cail_param_control_tb/cail_param_control/ee_wvalid_dly
+restart
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: cail_param_control_tb.cail_param_control.cail_param.altsyncram_component.m_default.altsyncram_inst
+# ** Note: $stop    : H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v(117)
+#    Time: 6008640 ns  Iteration: 0  Instance: /cail_param_control_tb
+# Break in Module cail_param_control_tb at H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v line 117
+add wave -position insertpoint  \
+sim:/cail_param_control_tb/cail_param_control/ram_r_addr
+restart
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: cail_param_control_tb.cail_param_control.cail_param.altsyncram_component.m_default.altsyncram_inst
+# ** Note: $stop    : H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v(117)
+#    Time: 6008640 ns  Iteration: 0  Instance: /cail_param_control_tb
+# Break in Module cail_param_control_tb at H:/FPGA/cyclone source/10_cail/prj/../testbench/cail_param_control_tb.v line 117
+# End time: 18:37:09 on Aug 24,2023, Elapsed time: 0:13:00
 # Errors: 0, Warnings: 0

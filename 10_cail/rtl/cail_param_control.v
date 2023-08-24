@@ -4,9 +4,15 @@ module cail_param_control(
 	
 	wr_req,
 	rd_req,
+
+	update_req,
+	init_done,
 	
 	wr_addr,
 	rd_addr,
+	
+	wr_data,
+	rd_data,
 	
 	iic_clk,
 	iic_sda
@@ -18,8 +24,14 @@ module cail_param_control(
 	input  wr_req;
 	input  rd_req;
 	
+	input  update_req;
+	output reg init_done;
+	
 	input [9:0]wr_addr;
 	input [9:0]rd_addr;
+	
+	input [7:0]wr_data;
+	output reg [7:0]rd_data;
 	
 	output iic_clk;
 	inout  iic_sda;
@@ -30,8 +42,8 @@ module cail_param_control(
 	wire ee_wr_done;
 	wire ee_rvalid;
 	wire ee_wvalid;
-	reg [15:0]ee_w_num;
-	reg [15:0]ee_r_num;
+	reg [7:0]ee_w_num;
+	reg [7:0]ee_r_num;
 	reg [7:0]ee_w_data;
 	wire [7:0]ee_r_data;
 	
@@ -46,8 +58,15 @@ module cail_param_control(
 	reg  [9:0]ram_w_addr_dly;
 	reg  [9:0]ram_w_addr;
 	reg  [9:0]ram_r_addr;
+	reg  [9:0]ram_r_addr_dly;
 	reg  ram_wr;
 	
+	reg [9:0]wr_addr_dly;
+	reg [9:0]rd_addr_dly;
+	reg wr_req_dly;
+	reg rd_req_dly;
+	
+	reg [7:0]wr_data_dly;
 	reg [4:0]state;
 	
 	localparam EEPROM_ID = 8'hA0;
@@ -56,7 +75,7 @@ module cail_param_control(
 		IDLE   = 5'b00001,
 		INIT   = 5'b00010,
 		WR_RAM = 5'b00100,
-		RD_RAM = 5'b00100,
+		RD_RAM = 5'b01000,
 		SAVE   = 5'b10000;
 		
 	parameter RST_TIME = 18'd249_999;
@@ -89,6 +108,34 @@ module cail_param_control(
 		end
 	end
 	
+	//打拍
+	always@(posedge clk or negedge rst_n)begin
+		if(!rst_n)begin
+			wr_req_dly <= 1'b0;
+			rd_req_dly <= 1'b0;
+			wr_addr_dly <= 10'b0;
+			rd_addr_dly <= 10'b0;
+			wr_data_dly <= 8'b0;
+		end
+		else begin
+			wr_req_dly <= wr_req;
+			rd_req_dly <= rd_req;
+			wr_addr_dly <= wr_addr;
+			rd_addr_dly <= rd_addr;
+			wr_data_dly <= wr_data;
+			
+		end
+	end
+	
+	//对外输出数据
+	always@(posedge clk or negedge rst_n)begin
+		if(!rst_n)begin
+			rd_data    <= 8'b0;
+		end
+		else 
+			rd_data    <= ram_r_data;
+	end
+	
 	//主状态机
 	always @(posedge clk or negedge rst_n)begin
 		if(!rst_n)begin
@@ -105,13 +152,29 @@ module cail_param_control(
 			case(state)
 				IDLE:begin
 					ram_wr         <= 1'b0;
+					init_done      <= 1'b0;
 					if(rst_cnt == RST_TIME)begin
 						state <= INIT;
-						//读取192个数据
-						ee_r_num       <= 'd6;
+						ee_r_num       <= 'd6;						//读取192个数据
 						ee_r_req       <= 1'b1;
 						ram_w_addr_dly <= 10'b0;
 						ram_w_addr     <= 10'b0;
+					end
+					else if(rd_req_dly)begin                  //读数据
+						state <= RD_RAM;
+						ram_r_addr <= rd_addr_dly;
+					end
+					else if(wr_req_dly)begin                  //写请求
+						state      <= WR_RAM;
+						ram_wr     <= 1'b1;
+						ram_w_addr <= wr_addr_dly;
+						ram_w_data <= wr_data_dly;
+					end
+					else if(update_req)begin                 //写入请求
+						state <= SAVE;
+						ee_w_num       <= 'd6;
+						ee_w_req       <= 1'b1;
+						ram_r_addr     <= 10'b0;
 					end
 				end
 				
@@ -119,14 +182,45 @@ module cail_param_control(
 					ee_r_req          <= 1'b0;
 					if(ee_rvalid_dly)begin
 						ram_wr         <= 1'b1;
-						ram_w_data     <= ee_r_data_dly;
+						//ram_w_data     <= ee_r_data_dly;
+						ram_w_data     <= ram_w_addr_dly + 'd10;  //测试 后续改回上面的
 						ram_w_addr_dly <= ram_w_addr_dly + 1'b1;
 						ram_w_addr     <= ram_w_addr_dly;
 					end
 					else 
 						ram_wr         <= 1'b0;
-					if(ee_wr_done_dly)
+					if(ee_wr_done_dly)begin
 						state          <= IDLE;
+						init_done      <= 1'b1;
+					end
+				end
+				
+				RD_RAM:begin
+					if(rd_req_dly == 1'b0)
+						state <= IDLE;
+					else 
+						ram_r_addr <= rd_addr_dly;
+				end
+				
+				WR_RAM:begin
+					ram_w_addr <= wr_addr_dly;
+					ram_w_data <= wr_data_dly;
+					if(wr_req_dly == 1'b0)begin
+						ram_wr <= 1'b0;
+						state  <= IDLE;
+					end
+				end
+				
+				SAVE:begin
+					ee_w_req <= 1'b0;
+					ee_w_data <= ram_r_data;
+					
+					if(ee_wvalid_dly)begin
+						ram_r_addr <= ram_r_addr + 1'b1;
+					end
+					if(ee_wr_done_dly)begin
+						state          <= IDLE;
+					end
 				end
 			
 			endcase

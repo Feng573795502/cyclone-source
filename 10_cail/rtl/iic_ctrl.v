@@ -37,8 +37,8 @@ module iic_ctrl(
 	output reg ack;
 	output reg r_valid; //读有效值输出
 	output reg w_valid;
-	input [15:0]w_num;
-	input [15:0]r_num;
+	input [7:0]w_num;
+	input [7:0]r_num;
 	
 	//读写数据
 	input [7:0]wr_data;
@@ -121,6 +121,7 @@ module iic_ctrl(
 						end
 						
 						default: begin
+							w_valid <= 1'b0;
 							if(w_cnt == w_num - 1)  //最后一个 直接写入
 								write_byte(WR | STO, wr_data);
 							else 
