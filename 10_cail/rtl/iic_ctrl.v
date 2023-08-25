@@ -111,17 +111,17 @@ module iic_ctrl(
 				
 				WR_REG: begin
 					state <= WAIT_WR_DONE;
+					w_valid <= 1'b0;
 					case(cnt)
 						0:write_byte(STA | WR, device_id);
 						1:write_byte(WR, addr[15:8]);
 						2:begin 
 							write_byte(WR, addr[7:0]);
 							w_cnt <= 6'b0;
-							w_valid <= 1'b1;
 						end
 						
 						default: begin
-							w_valid <= 1'b0;
+
 							if(w_cnt == w_num - 1)  //最后一个 直接写入
 								write_byte(WR | STO, wr_data);
 							else 
@@ -146,17 +146,20 @@ module iic_ctrl(
 								
 								if(addr_mode)
 									cnt <= 2;
-								else 
+								else begin
+									w_valid <= 1'b1;
 									cnt <= 3;
+								end
 							end
 							
 							2:begin 
 								state <= WR_REG;
 								cnt <= 3;
+								w_valid <= 1'b1;
 							end
 							
 							default :begin
-								w_valid <= 1'b1;
+								
 								cnt     <= cnt + 1'b1;
 								w_cnt   <= w_cnt + 1'b1;
 								
@@ -164,8 +167,10 @@ module iic_ctrl(
 									state   <= IDLE;
 									wr_done <= 1'b1;
 								end
-								else
+								else begin
+									w_valid <= 1'b1;
 									state  <= WR_REG;
+								end
 							end
 							
 						endcase

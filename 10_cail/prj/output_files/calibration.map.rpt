@@ -1,5 +1,5 @@
 Analysis & Synthesis report for calibration
-Thu Aug 24 18:23:55 2023
+Fri Aug 25 17:12:57 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -57,13 +57,13 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Aug 24 18:23:55 2023           ;
+; Analysis & Synthesis Status        ; Successful - Fri Aug 25 17:12:57 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; calibration                                     ;
 ; Top-level Entity Name              ; cail_param_control                              ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 351                                             ;
-;     Total combinational functions  ; 302                                             ;
+; Total logic elements               ; 358                                             ;
+;     Total combinational functions  ; 309                                             ;
 ;     Dedicated logic registers      ; 196                                             ;
 ; Total registers                    ; 196                                             ;
 ; Total pins                         ; 44                                              ;
@@ -204,16 +204,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 351       ;
+; Estimated Total logic elements              ; 358       ;
 ;                                             ;           ;
-; Total combinational functions               ; 302       ;
+; Total combinational functions               ; 309       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 145       ;
-;     -- 3 input functions                    ; 43        ;
+;     -- 4 input functions                    ; 158       ;
+;     -- 3 input functions                    ; 37        ;
 ;     -- <=2 input functions                  ; 114       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 220       ;
+;     -- normal mode                          ; 227       ;
 ;     -- arithmetic mode                      ; 82        ;
 ;                                             ;           ;
 ; Total registers                             ; 196       ;
@@ -227,8 +227,8 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 204       ;
-; Total fan-out                               ; 1889      ;
-; Average fan-out                             ; 3.17      ;
+; Total fan-out                               ; 1923      ;
+; Average fan-out                             ; 3.19      ;
 +---------------------------------------------+-----------+
 
 
@@ -237,12 +237,12 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                      ; Entity Name        ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; |cail_param_control                       ; 302 (111)           ; 196 (117)                 ; 8192        ; 0            ; 0       ; 0         ; 44   ; 0            ; |cail_param_control                                                                                      ; cail_param_control ; work         ;
+; |cail_param_control                       ; 309 (110)           ; 196 (117)                 ; 8192        ; 0            ; 0       ; 0         ; 44   ; 0            ; |cail_param_control                                                                                      ; cail_param_control ; work         ;
 ;    |cail_param:cail_param|                ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|cail_param:cail_param                                                                ; cail_param         ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|cail_param:cail_param|altsyncram:altsyncram_component                                ; altsyncram         ; work         ;
 ;          |altsyncram_4ln1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated ; altsyncram_4ln1    ; work         ;
-;    |iic_ctrl:iic_ctrl|                    ; 191 (97)            ; 79 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|iic_ctrl:iic_ctrl                                                                    ; iic_ctrl           ; work         ;
-;       |iic_bit_shift:iic_bit_shift|       ; 94 (94)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift                                        ; iic_bit_shift      ; work         ;
+;    |iic_ctrl:iic_ctrl|                    ; 199 (102)           ; 79 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|iic_ctrl:iic_ctrl                                                                    ; iic_ctrl           ; work         ;
+;       |iic_bit_shift:iic_bit_shift|       ; 97 (97)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift                                        ; iic_bit_shift      ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -366,7 +366,7 @@ Encoding Type:  One-Hot
 ; 7:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|cnt[4]     ;
 ; 513:1              ; 2 bits    ; 684 LEs       ; 10 LEs               ; 674 LEs                ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|tx_data[7]                             ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|Selector10 ;
-; 11:1               ; 5 bits    ; 35 LEs        ; 20 LEs               ; 15 LEs                 ; No         ; |cail_param_control|Selector5                                                ;
+; 11:1               ; 5 bits    ; 35 LEs        ; 20 LEs               ; 15 LEs                 ; No         ; |cail_param_control|Selector6                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
 
 
@@ -515,20 +515,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 10                          ;
 ;     plain             ; 1                           ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 303                         ;
+; cycloneiii_lcell_comb ; 310                         ;
 ;     arith             ; 82                          ;
 ;         2 data inputs ; 80                          ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 221                         ;
+;     normal            ; 228                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 10                          ;
 ;         2 data inputs ; 24                          ;
-;         3 data inputs ; 41                          ;
-;         4 data inputs ; 145                         ;
+;         3 data inputs ; 35                          ;
+;         4 data inputs ; 158                         ;
 ; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 2.98                        ;
+; Average LUT depth     ; 3.05                        ;
 +-----------------------+-----------------------------+
 
 
@@ -547,7 +547,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Thu Aug 24 18:23:47 2023
+    Info: Processing started: Fri Aug 25 17:12:49 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calibration -c calibration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -571,7 +571,7 @@ Info (12127): Elaborating entity "cail_param_control" for the top level hierarch
 Warning (10036): Verilog HDL or VHDL warning at cail_param_control.v(53): object "ee_r_data_dly" assigned a value but never read File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 53
 Warning (10230): Verilog HDL assignment warning at cail_param_control.v(186): truncated value with size 32 to match size of target (8) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 186
 Info (12128): Elaborating entity "iic_ctrl" for hierarchy "iic_ctrl:iic_ctrl" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 256
-Info (12128): Elaborating entity "iic_bit_shift" for hierarchy "iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift" File: H:/FPGA/cyclone source/10_cail/rtl/iic_ctrl.v Line: 292
+Info (12128): Elaborating entity "iic_bit_shift" for hierarchy "iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift" File: H:/FPGA/cyclone source/10_cail/rtl/iic_ctrl.v Line: 297
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(96): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 96
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(125): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 125
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(127): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 127
@@ -613,15 +613,15 @@ Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file H:/FPGA/cyclone source/10_cail/prj/output_files/calibration.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 404 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 411 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 33 input pins
     Info (21059): Implemented 10 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 352 logic cells
+    Info (21061): Implemented 359 logic cells
     Info (21064): Implemented 8 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4846 megabytes
-    Info: Processing ended: Thu Aug 24 18:23:55 2023
+    Info: Peak virtual memory: 4844 megabytes
+    Info: Processing ended: Fri Aug 25 17:12:57 2023
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:17
 
