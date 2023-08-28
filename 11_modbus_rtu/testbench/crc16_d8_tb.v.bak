@@ -1,0 +1,15 @@
+`timescale 1ns/1ns
+`define CLK_PERIOD 20
+
+module crc16_d8_tb();
+
+crc16_d8(
+		input clk,
+		input rst_n,
+		
+		input [7:0]data,
+		input crc_init,
+		input crc_en,
+		
+		output [15:0]crc_result
+	);

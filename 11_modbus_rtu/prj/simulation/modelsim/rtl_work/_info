@@ -1,0 +1,142 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dH:/FPGA/cyclone source/11_modbus_rtu/prj/simulation/modelsim
+vcrc16_d8
+Z1 !s110 1693218044
+!i10b 1
+!s100 RL:b=@IZNdfOaWTST@=6P1
+IKU4a3nFOJ;HT]`d]bB1[e3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1693193332
+8H:/FPGA/cyclone source/11_modbus_rtu/rtl/crc16_d8.v
+FH:/FPGA/cyclone source/11_modbus_rtu/rtl/crc16_d8.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1693218044.000000
+!s107 H:/FPGA/cyclone source/11_modbus_rtu/rtl/crc16_d8.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/11_modbus_rtu/rtl|H:/FPGA/cyclone source/11_modbus_rtu/rtl/crc16_d8.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/11_modbus_rtu/rtl}
+Z7 tCvgOpt 0
+vex_data
+Z8 !s110 1693218045
+!i10b 1
+!s100 m[Q[W?K5<ja@SLD`lBhVL1
+IOBlChC?<6Hk[c^[h2<@Oj1
+R2
+R0
+w1693217789
+8H:/FPGA/cyclone source/11_modbus_rtu/prj/ip/ex_data.v
+FH:/FPGA/cyclone source/11_modbus_rtu/prj/ip/ex_data.v
+L0 39
+R3
+r1
+!s85 0
+31
+R4
+!s107 H:/FPGA/cyclone source/11_modbus_rtu/prj/ip/ex_data.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/11_modbus_rtu/prj/ip|H:/FPGA/cyclone source/11_modbus_rtu/prj/ip/ex_data.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/11_modbus_rtu/prj/ip}
+R7
+vmb_rtu
+R1
+!i10b 1
+!s100 6m<kkE;Z2C<Dz;hY79FVD2
+II3MKd]QSMWamzabQFYggC3
+R2
+R0
+w1693217892
+8H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu.v
+FH:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/11_modbus_rtu/rtl|H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu.v|
+!i113 1
+R5
+R6
+R7
+vmb_rtu_tb
+R8
+!i10b 1
+!s100 PUm35>0PlZZ;81MLQ5;@K2
+IlfmAY@dJhggm8T;_JXZ=[0
+R2
+R0
+w1693218035
+8H:/FPGA/cyclone source/11_modbus_rtu/prj/../testbench/mb_rtu_tb.v
+FH:/FPGA/cyclone source/11_modbus_rtu/prj/../testbench/mb_rtu_tb.v
+L0 2
+R3
+r1
+!s85 0
+31
+Z9 !s108 1693218045.000000
+!s107 H:/FPGA/cyclone source/11_modbus_rtu/prj/../testbench/mb_rtu_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/11_modbus_rtu/prj/../testbench|H:/FPGA/cyclone source/11_modbus_rtu/prj/../testbench/mb_rtu_tb.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/11_modbus_rtu/prj/../testbench}
+R7
+vuart_rx
+R1
+!i10b 1
+!s100 O0LoWdl;Kd4Mdm3Y@31:@1
+I`D2K;iio<SYVBEB1C:b=K1
+R2
+R0
+w1693208252
+8H:/FPGA/cyclone source/11_modbus_rtu/rtl/uart_rx.v
+FH:/FPGA/cyclone source/11_modbus_rtu/rtl/uart_rx.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 H:/FPGA/cyclone source/11_modbus_rtu/rtl/uart_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/11_modbus_rtu/rtl|H:/FPGA/cyclone source/11_modbus_rtu/rtl/uart_rx.v|
+!i113 1
+R5
+R6
+R7
+vuart_tx
+R8
+!i10b 1
+!s100 ^08:C?mkFG0]g3NgSZR@<2
+I^e5i@4PFGRIVncUoD7N1B0
+R2
+R0
+w1693204457
+8H:/FPGA/cyclone source/11_modbus_rtu/prj/../rtl/uart_tx.v
+FH:/FPGA/cyclone source/11_modbus_rtu/prj/../rtl/uart_tx.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 H:/FPGA/cyclone source/11_modbus_rtu/prj/../rtl/uart_tx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/11_modbus_rtu/prj/../rtl|H:/FPGA/cyclone source/11_modbus_rtu/prj/../rtl/uart_tx.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/11_modbus_rtu/prj/../rtl}
+R7
