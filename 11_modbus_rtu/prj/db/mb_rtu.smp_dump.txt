@@ -1,0 +1,10 @@
+
+State Machine - |mb_rtu|curr_state
+Name curr_state.RX_ERR curr_state.RX_CRC curr_state.RX_WRITE curr_state.RX_READ curr_state.RX_FUN curr_state.RX_HEAD curr_state.IDLE 
+curr_state.IDLE 0 0 0 0 0 0 0 
+curr_state.RX_HEAD 0 0 0 0 0 1 1 
+curr_state.RX_FUN 0 0 0 0 1 0 1 
+curr_state.RX_READ 0 0 0 1 0 0 1 
+curr_state.RX_WRITE 0 0 1 0 0 0 1 
+curr_state.RX_CRC 0 1 0 0 0 0 1 
+curr_state.RX_ERR 1 0 0 0 0 0 1 

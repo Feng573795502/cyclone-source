@@ -3,10 +3,15 @@ module mb_rtu_tb();
 
 reg clk;
 reg rst_n;
+wire [15:0]mb_reg;
+wire [15:0]mb_num;
+wire wr_en;
+wire [7:0]wr_data;
 
 wire uart_data_wire;
 
 reg send_en;
+wire crc_err;
 reg [7:0]data_byte;
 wire tx_done;
 
@@ -14,9 +19,15 @@ wire tx_done;
 mb_rtu mb_rtu(
 		.clk(clk),
 		.rst_n(rst_n),
+		.mb_reg(mb_reg),
+		.mb_num(mb_num),
+		.wr_en(wr_en),
+		.wr_data(wr_data),
+		.rd_en(rd_en),
+		.crc_err(crc_err),
 		.uart_rx_wire(uart_data_wire)
 	);
-
+	
 defparam mb_rtu.TIMER_OUT = (200000/20);
 	
 uart_tx uart_tx(
@@ -43,22 +54,36 @@ uart_tx uart_tx(
 		data_byte = 8'h01;
 		send_en = 1;
 		@(posedge tx_done);
-		data_byte = 8'h03;
+		data_byte = 8'h10;
 		@(posedge tx_done);
 		data_byte = 8'h00;
 		@(posedge tx_done);
-		data_byte = 8'h01;
+		data_byte = 8'h00;
 		@(posedge tx_done);
 		data_byte = 8'h00;
 		@(posedge tx_done);
 		data_byte = 8'h02;
 		@(posedge tx_done);
+		data_byte = 8'h04;
+		@(posedge tx_done);
+		data_byte = 8'h41;
+		@(posedge tx_done);
+		data_byte = 8'h30;
+		@(posedge tx_done);
 		data_byte = 8'h00;
 		@(posedge tx_done);
 		data_byte = 8'h00;
+		@(posedge tx_done);
+		data_byte = 8'he7;
+		@(posedge tx_done);
+		data_byte = 8'h9c;
+		#40;
 		send_en = 0;
 		@(posedge tx_done);
-		#2000;
+		#60000;
+		#60000;
+		#60000;
+		#60000;
 		$stop;
 	 end
 	 

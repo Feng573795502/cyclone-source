@@ -2,7 +2,188 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "mb_reg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[3]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[4]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[5]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[6]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[8]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[9]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[10]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[11]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[12]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[13]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[14]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_reg[15]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[2]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[3]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[4]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[5]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[6]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[8]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[9]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[10]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[11]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[12]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[13]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[14]",
+					"strict" : false
+				},
+				{
+					"name" : "mb_num[15]",
+					"strict" : false
+				},
+				{
+					"name" : "wr_en",
+					"strict" : false
+				},
+				{
+					"name" : "wr_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "wr_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "wr_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "wr_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "wr_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "wr_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "wr_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "wr_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "crc_err",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst_n",
+					"strict" : false
+				},
+				{
+					"name" : "uart_rx_wire",
+					"strict" : false
+				}
+			]
 		}
 	]
 }
