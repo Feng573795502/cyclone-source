@@ -1,5 +1,5 @@
 Flow report for mb_rtu
-Thu Aug 31 17:05:23 2023
+Fri Sep 01 15:28:14 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -40,22 +40,22 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Flow Failed - Thu Aug 31 17:05:23 2023          ;
+; Flow Status                        ; Successful - Fri Sep 01 15:28:14 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; mb_rtu                                          ;
 ; Top-level Entity Name              ; mb_rtu_tx                                       ;
 ; Family                             ; Cyclone IV E                                    ;
 ; Device                             ; EP4CE10F17C8                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 195                                             ;
+;     Total combinational functions  ; 120                                             ;
+;     Dedicated logic registers      ; 134                                             ;
+; Total registers                    ; 134                                             ;
+; Total pins                         ; 62                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/31/2023 17:05:16 ;
+; Start date & time ; 09/01/2023 15:28:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mb_rtu              ;
 +-------------------+---------------------+
@@ -75,11 +75,12 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 198112243479721.169347271626516        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 198112243479721.169355328701088        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; crc16_d8_tb    ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; mb_rtu_tb      ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; uart_rx_tb     ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; mb_rtu_tb                              ; --            ; --          ; eda_simulation ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; mb_rtu_tx_tb   ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; mb_rtu_tx_tb                           ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation ;
@@ -88,12 +89,15 @@ refer to the applicable agreement for further details.
 ; EDA_TEST_BENCH_FILE                  ; ../rtl/uart_tx.v                       ; --            ; --          ; mb_rtu_tb      ;
 ; EDA_TEST_BENCH_FILE                  ; ../testbench/uart_rx_tb.v              ; --            ; --          ; uart_rx_tb     ;
 ; EDA_TEST_BENCH_FILE                  ; ../rtl/uart_tx.v                       ; --            ; --          ; uart_rx_tb     ;
+; EDA_TEST_BENCH_FILE                  ; mb_rtu_tx_tb.v                         ; --            ; --          ; mb_rtu_tx_tb   ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; crc16_d8_tb                            ; --            ; --          ; crc16_d8_tb    ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; mb_rtu_tb                              ; --            ; --          ; mb_rtu_tb      ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; uart_rx_tb                             ; --            ; --          ; uart_rx_tb     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; mb_rtu_tx_tb                           ; --            ; --          ; mb_rtu_tx_tb   ;
 ; EDA_TEST_BENCH_NAME                  ; crc16_d8_tb                            ; --            ; --          ; eda_simulation ;
 ; EDA_TEST_BENCH_NAME                  ; uart_rx_tb                             ; --            ; --          ; eda_simulation ;
 ; EDA_TEST_BENCH_NAME                  ; mb_rtu_tb                              ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; mb_rtu_tx_tb                           ; --            ; --          ; eda_simulation ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --             ;
@@ -114,8 +118,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4707 MB             ; 00:00:18                           ;
-; Total                ; 00:00:07     ; --                      ; --                  ; 00:00:18                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4837 MB             ; 00:00:17                           ;
+; Total                ; 00:00:07     ; --                      ; --                  ; 00:00:17                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

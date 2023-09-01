@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mb_rtu
-Thu Aug 31 17:05:23 2023
+Fri Sep 01 15:28:14 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -10,8 +10,18 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |mb_rtu_tx|curr_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,20 +47,20 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Aug 31 17:05:23 2023               ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep 01 15:28:14 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; mb_rtu                                          ;
 ; Top-level Entity Name              ; mb_rtu_tx                                       ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 195                                             ;
+;     Total combinational functions  ; 120                                             ;
+;     Dedicated logic registers      ; 134                                             ;
+; Total registers                    ; 134                                             ;
+; Total pins                         ; 62                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -149,11 +159,174 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; ../rtl/crc16_d8.v                ; yes             ; User Verilog HDL File  ; H:/FPGA/cyclone source/11_modbus_rtu/rtl/crc16_d8.v  ;         ;
+; ../rtl/mb_rtu_tx.v               ; yes             ; User Verilog HDL File  ; H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 195       ;
+;                                             ;           ;
+; Total combinational functions               ; 120       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 65        ;
+;     -- 3 input functions                    ; 27        ;
+;     -- <=2 input functions                  ; 28        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 113       ;
+;     -- arithmetic mode                      ; 7         ;
+;                                             ;           ;
+; Total registers                             ; 134       ;
+;     -- Dedicated logic registers            ; 134       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 62        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 134       ;
+; Total fan-out                               ; 975       ;
+; Average fan-out                             ; 2.58      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                               ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name          ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+-------------+--------------+
+; |mb_rtu_tx                 ; 120 (96)            ; 134 (118)                 ; 0           ; 0            ; 0       ; 0         ; 62   ; 0            ; |mb_rtu_tx                   ; mb_rtu_tx   ; work         ;
+;    |crc16_d8:crc_inst|     ; 24 (24)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mb_rtu_tx|crc16_d8:crc_inst ; crc16_d8    ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------+
+; State Machine - |mb_rtu_tx|curr_state                                                              ;
++--------------------+-------------------+--------------------+--------------------+-----------------+
+; Name               ; curr_state.TX_CRC ; curr_state.TX_DATA ; curr_state.TX_HEAD ; curr_state.IDLE ;
++--------------------+-------------------+--------------------+--------------------+-----------------+
+; curr_state.IDLE    ; 0                 ; 0                  ; 0                  ; 0               ;
+; curr_state.TX_HEAD ; 0                 ; 0                  ; 1                  ; 1               ;
+; curr_state.TX_DATA ; 0                 ; 1                  ; 0                  ; 1               ;
+; curr_state.TX_CRC  ; 1                 ; 0                  ; 0                  ; 1               ;
++--------------------+-------------------+--------------------+--------------------+-----------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; curr_state~8                          ; Lost fanout        ;
+; curr_state~9                          ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 134   ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 134   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 80    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; crc16_d8:crc_inst|crc_result_o[15]      ; 3       ;
+; crc16_d8:crc_inst|crc_result_o[7]       ; 2       ;
+; crc16_d8:crc_inst|crc_result_o[14]      ; 3       ;
+; crc16_d8:crc_inst|crc_result_o[6]       ; 2       ;
+; crc16_d8:crc_inst|crc_result_o[13]      ; 3       ;
+; crc16_d8:crc_inst|crc_result_o[5]       ; 2       ;
+; crc16_d8:crc_inst|crc_result_o[12]      ; 3       ;
+; crc16_d8:crc_inst|crc_result_o[4]       ; 2       ;
+; crc16_d8:crc_inst|crc_result_o[11]      ; 2       ;
+; crc16_d8:crc_inst|crc_result_o[3]       ; 2       ;
+; crc16_d8:crc_inst|crc_result_o[10]      ; 3       ;
+; crc16_d8:crc_inst|crc_result_o[2]       ; 2       ;
+; crc16_d8:crc_inst|crc_result_o[9]       ; 3       ;
+; crc16_d8:crc_inst|crc_result_o[1]       ; 2       ;
+; crc16_d8:crc_inst|crc_result_o[8]       ; 3       ;
+; crc16_d8:crc_inst|crc_result_o[0]       ; 2       ;
+; Total number of inverted registers = 16 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |mb_rtu_tx|tx_data_renewcrc[0]               ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |mb_rtu_tx|crc16_d8:crc_inst|crc_result_o[7] ;
+; 258:1              ; 8 bits    ; 1376 LEs      ; 32 LEs               ; 1344 LEs               ; No         ; |mb_rtu_tx|tx_data                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 62                          ;
+; cycloneiii_ff         ; 134                         ;
+;     CLR               ; 46                          ;
+;     CLR SCLR          ; 8                           ;
+;     ENA CLR           ; 72                          ;
+;     ENA CLR SLD       ; 8                           ;
+; cycloneiii_lcell_comb ; 120                         ;
+;     arith             ; 7                           ;
+;         2 data inputs ; 7                           ;
+;     normal            ; 113                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 20                          ;
+;         3 data inputs ; 27                          ;
+;         4 data inputs ; 65                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 2.55                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,7 +335,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Thu Aug 31 17:05:16 2023
+    Info: Processing started: Fri Sep 01 15:28:07 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mb_rtu -c mb_rtu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -180,17 +353,27 @@ Info (12021): Found 1 design units, including 1 entities, in source file /fpga/c
     Info (12023): Found entity 1: mb_rtu_tb File: H:/FPGA/cyclone source/11_modbus_rtu/testbench/mb_rtu_tb.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v
     Info (12023): Found entity 1: mb_rtu_tx File: H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at mb_rtu_tb.v(26): created implicit net for "rd_en" File: H:/FPGA/cyclone source/11_modbus_rtu/testbench/mb_rtu_tb.v Line: 26
-Error (10161): Verilog HDL error at mb_rtu_tx.v(40): object "crc_state_dly2" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v Line: 40
-Error (10161): Verilog HDL error at mb_rtu_tx.v(41): object "cnt_crc_dly2" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v Line: 41
-Error (10161): Verilog HDL error at mb_rtu_tx.v(42): object "crc_result" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v Line: 42
-Error (10161): Verilog HDL error at mb_rtu_tx.v(43): object "crc_result" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file mb_rtu_tx_tb.v
+    Info (12023): Found entity 1: mb_rtu_tx_tb File: H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v Line: 4
+Info (12127): Elaborating entity "mb_rtu_tx" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at mb_rtu_tx.v(85): truncated value with size 32 to match size of target (8) File: H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v Line: 85
+Info (12128): Elaborating entity "crc16_d8" for hierarchy "crc16_d8:crc_inst" File: H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v Line: 219
+Info (13000): Registers with preset signals will power-up high File: H:/FPGA/cyclone source/11_modbus_rtu/rtl/crc16_d8.v Line: 59
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file H:/FPGA/cyclone source/11_modbus_rtu/prj/output_files/mb_rtu.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 2 warnings
-    Error: Peak virtual memory: 4707 megabytes
-    Error: Processing ended: Thu Aug 31 17:05:23 2023
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:18
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 259 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 51 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 197 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4837 megabytes
+    Info: Processing ended: Fri Sep 01 15:28:14 2023
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:17
 
 
 +------------------------------------------+

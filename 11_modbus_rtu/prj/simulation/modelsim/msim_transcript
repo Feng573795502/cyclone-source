@@ -13,77 +13,42 @@
 # 
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/11_modbus_rtu/rtl {H:/FPGA/cyclone source/11_modbus_rtu/rtl/crc16_d8.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:05:14 on Aug 31,2023
+# Start time: 15:30:37 on Sep 01,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/11_modbus_rtu/rtl" H:/FPGA/cyclone source/11_modbus_rtu/rtl/crc16_d8.v 
 # -- Compiling module crc16_d8
 # 
 # Top level modules:
 # 	crc16_d8
-# End time: 15:05:14 on Aug 31,2023, Elapsed time: 0:00:00
+# End time: 15:30:37 on Sep 01,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/11_modbus_rtu/rtl {H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu.v}
+# vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/11_modbus_rtu/rtl {H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:05:14 on Aug 31,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/11_modbus_rtu/rtl" H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu.v 
-# -- Compiling module mb_rtu
+# Start time: 15:30:37 on Sep 01,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/11_modbus_rtu/rtl" H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v 
+# -- Compiling module mb_rtu_tx
 # 
 # Top level modules:
-# 	mb_rtu
-# End time: 15:05:14 on Aug 31,2023, Elapsed time: 0:00:00
+# 	mb_rtu_tx
+# End time: 15:30:37 on Sep 01,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/11_modbus_rtu/rtl {H:/FPGA/cyclone source/11_modbus_rtu/rtl/uart_rx.v}
+# 
+# vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/11_modbus_rtu/prj {H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:05:14 on Aug 31,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/11_modbus_rtu/rtl" H:/FPGA/cyclone source/11_modbus_rtu/rtl/uart_rx.v 
-# -- Compiling module uart_rx
+# Start time: 15:30:37 on Sep 01,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/11_modbus_rtu/prj" H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v 
+# -- Compiling module mb_rtu_tx_tb
 # 
 # Top level modules:
-# 	uart_rx
-# End time: 15:05:14 on Aug 31,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/11_modbus_rtu/prj/ip {H:/FPGA/cyclone source/11_modbus_rtu/prj/ip/ex_data.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:05:14 on Aug 31,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/11_modbus_rtu/prj/ip" H:/FPGA/cyclone source/11_modbus_rtu/prj/ip/ex_data.v 
-# -- Compiling module ex_data
-# 
-# Top level modules:
-# 	ex_data
-# End time: 15:05:14 on Aug 31,2023, Elapsed time: 0:00:00
+# 	mb_rtu_tx_tb
+# End time: 15:30:37 on Sep 01,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/11_modbus_rtu/prj/../testbench {H:/FPGA/cyclone source/11_modbus_rtu/prj/../testbench/mb_rtu_tb.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:05:14 on Aug 31,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/11_modbus_rtu/prj/../testbench" H:/FPGA/cyclone source/11_modbus_rtu/prj/../testbench/mb_rtu_tb.v 
-# -- Compiling module mb_rtu_tb
-# 
-# Top level modules:
-# 	mb_rtu_tb
-# End time: 15:05:14 on Aug 31,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/11_modbus_rtu/prj/../rtl {H:/FPGA/cyclone source/11_modbus_rtu/prj/../rtl/uart_tx.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:05:14 on Aug 31,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/11_modbus_rtu/prj/../rtl" H:/FPGA/cyclone source/11_modbus_rtu/prj/../rtl/uart_tx.v 
-# -- Compiling module uart_tx
-# 
-# Top level modules:
-# 	uart_tx
-# End time: 15:05:14 on Aug 31,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  mb_rtu_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" mb_rtu_tb 
-# Start time: 15:05:14 on Aug 31,2023
-# Loading work.mb_rtu_tb
-# Loading work.mb_rtu
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  mb_rtu_tx_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" mb_rtu_tx_tb 
+# Start time: 15:30:37 on Sep 01,2023
+# Loading work.mb_rtu_tx_tb
+# Loading work.mb_rtu_tx
 # Loading work.crc16_d8
-# Loading work.uart_rx
-# Loading work.ex_data
-# Loading altera_mf_ver.scfifo
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading work.uart_tx
 # 
 # add wave *
 # view structure
@@ -91,8 +56,31 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Note: $stop    : H:/FPGA/cyclone source/11_modbus_rtu/prj/../testbench/mb_rtu_tb.v(87)
-#    Time: 1472820 ns  Iteration: 0  Instance: /mb_rtu_tb
-# Break in Module mb_rtu_tb at H:/FPGA/cyclone source/11_modbus_rtu/prj/../testbench/mb_rtu_tb.v line 87
-# End time: 18:31:28 on Aug 31,2023, Elapsed time: 3:26:14
+# ** Note: $stop    : H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v(79)
+#    Time: 2500 ns  Iteration: 0  Instance: /mb_rtu_tx_tb
+# Break in Module mb_rtu_tx_tb at H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v line 79
+add wave -position insertpoint  \
+sim:/mb_rtu_tx_tb/mb_rtu_tx/curr_state
+add wave -position insertpoint  \
+sim:/mb_rtu_tx_tb/mb_rtu_tx/tx_data
+add wave -position insertpoint  \
+sim:/mb_rtu_tx_tb/mb_rtu_tx/reg_data
+restart
+run -all
+# ** Note: $stop    : H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v(79)
+#    Time: 2500 ns  Iteration: 0  Instance: /mb_rtu_tx_tb
+# Break in Module mb_rtu_tx_tb at H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v line 79
+restart
+run -all
+# ** Note: $stop    : H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v(79)
+#    Time: 2500 ns  Iteration: 0  Instance: /mb_rtu_tx_tb
+# Break in Module mb_rtu_tx_tb at H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v line 79
+add wave -position insertpoint  \
+sim:/mb_rtu_tx_tb/mb_rtu_tx/cnt_data
+restart
+run -all
+# ** Note: $stop    : H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v(79)
+#    Time: 2500 ns  Iteration: 0  Instance: /mb_rtu_tx_tb
+# Break in Module mb_rtu_tx_tb at H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v line 79
+# End time: 16:05:33 on Sep 01,2023, Elapsed time: 0:34:56
 # Errors: 0, Warnings: 0

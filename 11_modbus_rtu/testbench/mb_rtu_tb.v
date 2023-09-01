@@ -11,6 +11,7 @@ wire [7:0]wr_data;
 wire uart_data_wire;
 
 reg send_en;
+reg rd_en;
 wire crc_err;
 reg [7:0]data_byte;
 wire tx_done;
