@@ -1,5 +1,5 @@
 Flow report for mb_rtu
-Fri Sep 01 15:28:14 2023
+Mon Sep 04 11:32:03 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Fri Sep 01 15:28:14 2023           ;
+; Flow Status                        ; Successful - Mon Sep 04 11:32:03 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; mb_rtu                                          ;
 ; Top-level Entity Name              ; mb_rtu_tx                                       ;
 ; Family                             ; Cyclone IV E                                    ;
 ; Device                             ; EP4CE10F17C8                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 195                                             ;
-;     Total combinational functions  ; 120                                             ;
-;     Dedicated logic registers      ; 134                                             ;
-; Total registers                    ; 134                                             ;
+; Total logic elements               ; 201                                             ;
+;     Total combinational functions  ; 126                                             ;
+;     Dedicated logic registers      ; 135                                             ;
+; Total registers                    ; 135                                             ;
 ; Total pins                         ; 62                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/01/2023 15:28:07 ;
+; Start date & time ; 09/04/2023 11:31:56 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mb_rtu              ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 198112243479721.169355328701088        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 198112243479721.169379831625440        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; crc16_d8_tb    ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; mb_rtu_tb      ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; uart_rx_tb     ;
@@ -118,8 +118,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4837 MB             ; 00:00:17                           ;
-; Total                ; 00:00:07     ; --                      ; --                  ; 00:00:17                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4838 MB             ; 00:00:16                           ;
+; Total                ; 00:00:07     ; --                      ; --                  ; 00:00:16                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

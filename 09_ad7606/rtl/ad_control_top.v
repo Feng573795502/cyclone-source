@@ -10,9 +10,14 @@ module ad_control_top(
 	output clk_adc,
 	output conv,
 	
-	output [31:0]result,
-	input  read_data,
-	output [8:0]usedw
+	
+	output reg ad_reset,
+	output ad_rd,
+	output [2:0]ad_os
+	
+	//output [31:0]result,
+	//input  read_data
+	//output 
 );
 
 	localparam DATA_LEN = 15'd8;
@@ -21,8 +26,7 @@ module ad_control_top(
 	wire [15:0] ad_data;
 	wire [5:0]  rdusedw;
 
-	reg        cail_en;
-
+	reg         cail_en;
 	reg  [31:0] cail_param; //校准参数
 	
 	reg  [3:0]       rd_cnt;
@@ -31,9 +35,21 @@ module ad_control_top(
 	
 	wire [31:0]cail_data;
 	wire       valid;
-	//计算信号 启动计算
-//	assign cail_en = (rdusedw >= DATA_LEN) ? 1'b1 : 1'b0;
-//	assign rdreq   = (rd_cnt != 4'd0) ? 1'b1 : 1'b0;
+	
+	wire [31:0]result;
+	wire [8:0]usedw;
+	reg read_data;
+	
+	//后期合并起来使用
+	assign ad_rd = clk_adc;
+	assign ad_os = 3'b000;
+	
+	always @(posedge clk or negedge rst_n)begin
+		if(!rst_n)
+			ad_reset <= 1'b1;
+		else 
+			ad_reset <= 1'b0;
+	end
 	
 	//8 tick
 	always @(posedge clk or negedge rst_n)begin
@@ -100,7 +116,7 @@ data_cail data_cail(
 		
 	.valid(valid),
 		
-	.cail_param(32'h40000000),
+	.cail_param(32'h3c1c4138),
 	.result(cail_data)
 );
 

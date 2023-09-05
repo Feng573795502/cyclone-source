@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dH:/FPGA/cyclone source/09_ad7606/prj/simulation/modelsim
 vad7606
-Z1 !s110 1692343803
+Z1 !s110 1693909605
 !i10b 1
 !s100 XnPN;miGIcMCCYPlh2Z=]0
 IR>68HaKGD;@]dP2zlWlzA3
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1692343803.000000
+Z4 !s108 1693909605.000000
 !s107 H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/rtl|H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v|
 !i113 1
@@ -33,14 +33,14 @@ Z7 tCvgOpt 0
 vad_control_top
 R1
 !i10b 1
-!s100 24@L1dLVz?KnFPSPj=I7A3
-I1zIV4@=`CZjVIgQFEl9VA2
+!s100 RH^b8`9I^>mSD522B@<M93
+Ie1NC9A[KG=d]HK@E>Q[J41
 R2
 R0
-w1692342739
+w1693908601
 8H:/FPGA/cyclone source/09_ad7606/rtl/ad_control_top.v
 FH:/FPGA/cyclone source/09_ad7606/rtl/ad_control_top.v
-L0 1
+L0 3
 R3
 r1
 !s85 0
@@ -55,11 +55,11 @@ R7
 vad_control_top_tb
 R1
 !i10b 1
-!s100 0Zl5>dz1Ih0i[Pj6WdM;l0
-Ioe874R]NY_?90a[:59Izk2
+!s100 eWPdIJ[=FJW]Lzh59ZG8l0
+IIRKbKZNei<P79;FFAPEZo2
 R2
 R0
-w1692343236
+w1693904288
 8H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v
 FH:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v
 L0 4

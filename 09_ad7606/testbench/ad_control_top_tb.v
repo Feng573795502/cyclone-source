@@ -15,6 +15,10 @@
 	wire [8:0]usedw;
 	reg read_data;
 	
+	wire ad_reset;
+	wire ad_rd;
+	wire [2:0]ad_os;
+	
 	ad_control_top ad_control_top(
 	.clk(clk),
 	.rst_n(rst_n),
@@ -25,9 +29,9 @@
 	.clk_adc(clk_adc),
 	.conv(conv),
 	
-	.result(result),
-	.read_data(read_data),
-	.usedw(usedw)
+	.ad_reset(ad_reset),
+	.ad_rd(ad_rd),
+	.ad_os(ad_os)
 );
 
 initial clk = 0;

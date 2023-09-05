@@ -1,7 +1,7 @@
 |mb_rtu_tx
 clk => clk.IN1
 rst_n => rst_n.IN1
-tx_en_pulse => always8.IN0
+tx_en_pulse => always9.IN0
 tx_en_pulse => Selector1.IN3
 tx_en_pulse => Selector0.IN1
 tx_en_pulse => mb_addr_reg[15].ENA
@@ -107,7 +107,7 @@ mb_fun[6] => Equal0.IN2
 mb_fun[6] => mb_fun_reg[6].DATAIN
 mb_fun[7] => Equal0.IN1
 mb_fun[7] => mb_fun_reg[7].DATAIN
-payload_req_o <= payload_req_o.DB_MAX_OUTPUT_PORT_TYPE
+payload_req_o <= payload_req_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
 reg_data[0] => tx_data.DATAA
 reg_data[1] => tx_data.DATAA
 reg_data[2] => tx_data.DATAA

@@ -4,11 +4,11 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "in",
+					"name" : "out",
 					"strict" : false
 				},
 				{
-					"name" : "out",
+					"name" : "in",
 					"strict" : false
 				},
 				{

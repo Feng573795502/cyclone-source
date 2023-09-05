@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mb_rtu
-Fri Sep 01 15:28:14 2023
+Mon Sep 04 11:32:03 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -47,15 +47,15 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Sep 01 15:28:14 2023           ;
+; Analysis & Synthesis Status        ; Successful - Mon Sep 04 11:32:03 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; mb_rtu                                          ;
 ; Top-level Entity Name              ; mb_rtu_tx                                       ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 195                                             ;
-;     Total combinational functions  ; 120                                             ;
-;     Dedicated logic registers      ; 134                                             ;
-; Total registers                    ; 134                                             ;
+; Total logic elements               ; 201                                             ;
+;     Total combinational functions  ; 126                                             ;
+;     Dedicated logic registers      ; 135                                             ;
+; Total registers                    ; 135                                             ;
 ; Total pins                         ; 62                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -182,20 +182,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 195       ;
+; Estimated Total logic elements              ; 201       ;
 ;                                             ;           ;
-; Total combinational functions               ; 120       ;
+; Total combinational functions               ; 126       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 65        ;
-;     -- 3 input functions                    ; 27        ;
-;     -- <=2 input functions                  ; 28        ;
+;     -- 4 input functions                    ; 66        ;
+;     -- 3 input functions                    ; 30        ;
+;     -- <=2 input functions                  ; 30        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 113       ;
-;     -- arithmetic mode                      ; 7         ;
+;     -- normal mode                          ; 112       ;
+;     -- arithmetic mode                      ; 14        ;
 ;                                             ;           ;
-; Total registers                             ; 134       ;
-;     -- Dedicated logic registers            ; 134       ;
+; Total registers                             ; 135       ;
+;     -- Dedicated logic registers            ; 135       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 62        ;
@@ -203,9 +203,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 134       ;
-; Total fan-out                               ; 975       ;
-; Average fan-out                             ; 2.58      ;
+; Maximum fan-out                             ; 135       ;
+; Total fan-out                               ; 996       ;
+; Average fan-out                             ; 2.59      ;
 +---------------------------------------------+-----------+
 
 
@@ -214,7 +214,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name          ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+-------------+--------------+
-; |mb_rtu_tx                 ; 120 (96)            ; 134 (118)                 ; 0           ; 0            ; 0       ; 0         ; 62   ; 0            ; |mb_rtu_tx                   ; mb_rtu_tx   ; work         ;
+; |mb_rtu_tx                 ; 126 (102)           ; 135 (119)                 ; 0           ; 0            ; 0       ; 0         ; 62   ; 0            ; |mb_rtu_tx                   ; mb_rtu_tx   ; work         ;
 ;    |crc16_d8:crc_inst|     ; 24 (24)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mb_rtu_tx|crc16_d8:crc_inst ; crc16_d8    ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -249,10 +249,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 134   ;
-; Number of registers using Synchronous Clear  ; 8     ;
+; Total registers                              ; 135   ;
+; Number of registers using Synchronous Clear  ; 9     ;
 ; Number of registers using Synchronous Load   ; 8     ;
-; Number of registers using Asynchronous Clear ; 134   ;
+; Number of registers using Asynchronous Clear ; 135   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 80    ;
 ; Number of registers using Preset             ; 0     ;
@@ -301,22 +301,23 @@ Encoding Type:  One-Hot
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 62                          ;
-; cycloneiii_ff         ; 134                         ;
+; cycloneiii_ff         ; 135                         ;
 ;     CLR               ; 46                          ;
-;     CLR SCLR          ; 8                           ;
+;     CLR SCLR          ; 9                           ;
 ;     ENA CLR           ; 72                          ;
 ;     ENA CLR SLD       ; 8                           ;
-; cycloneiii_lcell_comb ; 120                         ;
-;     arith             ; 7                           ;
+; cycloneiii_lcell_comb ; 126                         ;
+;     arith             ; 14                          ;
 ;         2 data inputs ; 7                           ;
-;     normal            ; 113                         ;
+;         3 data inputs ; 7                           ;
+;     normal            ; 112                         ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 20                          ;
-;         3 data inputs ; 27                          ;
-;         4 data inputs ; 65                          ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 23                          ;
+;         4 data inputs ; 66                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 2.55                        ;
+; Average LUT depth     ; 2.52                        ;
 +-----------------------+-----------------------------+
 
 
@@ -335,7 +336,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Fri Sep 01 15:28:07 2023
+    Info: Processing started: Mon Sep 04 11:31:56 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mb_rtu -c mb_rtu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -357,7 +358,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file mb_rtu_
     Info (12023): Found entity 1: mb_rtu_tx_tb File: H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v Line: 4
 Info (12127): Elaborating entity "mb_rtu_tx" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at mb_rtu_tx.v(85): truncated value with size 32 to match size of target (8) File: H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v Line: 85
-Info (12128): Elaborating entity "crc16_d8" for hierarchy "crc16_d8:crc_inst" File: H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v Line: 219
+Info (12128): Elaborating entity "crc16_d8" for hierarchy "crc16_d8:crc_inst" File: H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v Line: 227
 Info (13000): Registers with preset signals will power-up high File: H:/FPGA/cyclone source/11_modbus_rtu/rtl/crc16_d8.v Line: 59
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
@@ -365,15 +366,15 @@ Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file H:/FPGA/cyclone source/11_modbus_rtu/prj/output_files/mb_rtu.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 259 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 265 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 51 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 197 logic cells
+    Info (21061): Implemented 203 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4837 megabytes
-    Info: Processing ended: Fri Sep 01 15:28:14 2023
+    Info: Peak virtual memory: 4838 megabytes
+    Info: Processing ended: Mon Sep 04 11:32:03 2023
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Total CPU time (on all processors): 00:00:16
 
 
 +------------------------------------------+

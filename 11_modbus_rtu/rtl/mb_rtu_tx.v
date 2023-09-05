@@ -7,7 +7,7 @@ module mb_rtu_tx(
 	input [15:0]mb_num,
 	input [7:0] mb_fun,
 	
-	output         payload_req_o,
+	output     reg payload_req_o,
 	input [7:0]reg_data,
 	output     reg tx_done,
 	output     reg mb_tx_en,
@@ -206,7 +206,15 @@ always @(posedge clk or negedge rst_n)begin
 	end
 end
 
-assign payload_req_o = (curr_state == TX_DATA && cnt_data != 0) ? 1'b1 : 1'b0;
+always @(posedge clk or negedge rst_n)begin
+	if(!rst_n)
+		payload_req_o <= 1'b0;
+	else if(curr_state == TX_DATA && cnt_data < data_len_reg)
+		payload_req_o <= 1'b1;
+	else 
+		payload_req_o <= 1'b0;
+
+end
 
 crc16_d8 crc_inst(
 	.clk(clk),
@@ -328,7 +336,7 @@ end
 always @(posedge clk or negedge rst_n)begin
 	if(!rst_n)
 		tx_done <= 1'b0;
-	else if(curr_state == TX_CRC && cnt_crc == 2'd1) //发送完成
+	else if(cnt_crc_dly2 == 2'd1) //发送完成
 		tx_done <= 1'b1;
 	else 
 		tx_done <= 1'b0;

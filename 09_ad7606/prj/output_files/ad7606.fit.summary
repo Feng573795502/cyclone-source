@@ -1,16 +1,16 @@
-Fitter Status : Successful - Fri Aug 18 16:50:32 2023
+Fitter Status : Successful - Tue Sep 05 18:58:37 2023
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : ad7606
 Top-level Entity Name : ad_control_top
 Family : Cyclone IV E
 Device : EP4CE10F17C8
 Timing Models : Final
-Total logic elements : 501 / 10,320 ( 5 % )
-    Total combinational functions : 412 / 10,320 ( 4 % )
-    Dedicated logic registers : 401 / 10,320 ( 4 % )
-Total registers : 401
-Total pins : 63 / 180 ( 35 % )
+Total logic elements : 1,890 / 10,320 ( 18 % )
+    Total combinational functions : 1,161 / 10,320 ( 11 % )
+    Dedicated logic registers : 1,577 / 10,320 ( 15 % )
+Total registers : 1577
+Total pins : 26 / 180 ( 14 % )
 Total virtual pins : 0
-Total memory bits : 17,474 / 423,936 ( 4 % )
+Total memory bits : 205,890 / 423,936 ( 49 % )
 Embedded Multiplier 9-bit elements : 7 / 46 ( 15 % )
 Total PLLs : 0 / 2 ( 0 % )

@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, H:/FPGA/cyclone source/01_io/rtl/io.v
+source_file = 1, H:/FPGA/cyclone source/01_io/testbench/io_tb.v
+source_file = 1, H:/FPGA/cyclone source/01_io/prj/db/io.cbx.xml
+design_name = io
+instance = comp, \out~output , out~output, io, 1
+instance = comp, \clk~input , clk~input, io, 1
+instance = comp, \in~input , in~input, io, 1
+instance = comp, \out~reg0feeder , out~reg0feeder, io, 1
+instance = comp, \rst_n~input , rst_n~input, io, 1
+instance = comp, \out~reg0 , out~reg0, io, 1
+design_name = hard_block
+instance = comp, \~ALTERA_ASDO_DATA1~~ibuf , ~ALTERA_ASDO_DATA1~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_FLASH_nCE_nCSO~~ibuf , ~ALTERA_FLASH_nCE_nCSO~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_DATA0~~ibuf , ~ALTERA_DATA0~~ibuf, hard_block, 1
