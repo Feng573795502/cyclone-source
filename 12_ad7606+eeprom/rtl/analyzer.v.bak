@@ -1,0 +1,119 @@
+module analyzer(
+	input clk,
+	input rst_n,
+	
+	//ADC 接口
+	input  busy_i,
+	output ad_clk_o,
+	output ad_conv_o,
+	input [15:0]data_i,
+	
+	//后续不需要
+	output reg ad_reset_o,
+	output ad_rd_o,
+	output [2:0]ad_os_o,
+	
+	output iic_clk,
+	inout  iic_sda
+	
+);
+
+//校准参数寄存器
+reg [31:0]ch1_sub[3:0];
+reg [31:0]ch1_mult[3:0];
+reg [31:0]ch2_sub[3:0];
+reg [31:0]ch2_mult[3:0];
+reg [31:0]ch3_sub[3:0];
+reg [31:0]ch3_mult[3:0];
+reg [31:0]ch4_sub[3:0];
+reg [31:0]ch4_mult[3:0];
+reg [31:0]ch5_sub[3:0];
+reg [31:0]ch5_mult[3:0];
+reg [31:0]ch6_sub[3:0];
+reg [31:0]ch6_mult[3:0];
+reg [31:0]ch7_sub[3:0];
+reg [31:0]ch7_mult[3:0];
+reg [31:0]ch8_sub[3:0];
+reg [31:0]ch8_mult[3:0];
+
+//加法和乘法
+reg [31:0]cur_sub;
+reg [31:0]cur_mult;
+wire cail_en
+
+	reg [4:0]ch_cnt;
+	
+	//通道增加
+	always@(posedge clk or negedge rst_n)begin
+		if(!rst_n)
+			ch_cnt <= 5'd0;
+		else if(cail_en)
+			ch_cnt <= ch_cnt + 1'b1;
+		else 
+			ch_cnt <= 5'd0;
+	end
+
+	always@(posedge clk or negedge rst_n)begin
+		if(!rst_n)begin
+			cur_sub  <= 32'b0;
+			cur_mult <= 32'b0;
+		end
+		else begin
+			case(ch_cnt)
+				0:begin
+				cur_sub  <= 32'h00000000; 
+				cur_mult <= 32'h3F800000;
+				end
+				1:begin
+				cur_sub  <= 32'h00000000; 
+				cur_mult <= 32'h40000000;
+				end
+				2:begin
+				cur_sub  <= 32'h00000000; 
+				cur_mult <= 32'h40400000;
+				end
+				3:begin
+				cur_sub  <= 32'h00000000; 
+				cur_mult <= 32'h40800000;
+				end
+				4:begin
+				cur_sub  <= 32'h00000000; 
+				cur_mult <= 32'h40a00000;
+				end
+				5:begin
+				cur_sub  <= 32'h00000000; 
+				cur_mult <= 32'h40c00000;
+				end
+				6:begin
+				cur_sub  <= 32'h00000000; 
+				cur_mult <= 32'h40e00000;
+				end
+				7:begin
+				cur_sub  <= 32'h00000000; 
+				cur_mult <= 32'h41000000;
+				end
+			endcase
+		end
+	end
+	
+	//通道采集
+	ad_control_top ad_control_top(
+	.clk(clk),
+	.rst_n(rst_n),
+	
+	//ADC 接口
+	.busy_i(busy_i),
+	.ad_clk_o(ad_clk_o),
+	.ad_conv_o(ad_conv_o),
+	.data_i(data_i),
+	
+	//后续不需要
+	.ad_reset_o(ad_rst_o),
+	.ad_rd_o(ad_rd_o),
+	.ad_os_o(ad_os_o),
+	
+	.cail_sub_i(cur_sub),
+	.cail_mult_i(cur_mult),
+	.cail_en(cail_en)
+	);
+endmodule

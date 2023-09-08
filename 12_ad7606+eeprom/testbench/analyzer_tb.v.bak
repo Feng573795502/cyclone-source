@@ -1,0 +1,23 @@
+module analyzer_tb();
+
+analyzer analyzer(
+	.clk,
+	.rst_n,
+	
+	//ADC 接口
+	input  busy_i,
+	output ad_clk_o,
+	output ad_conv_o,
+	input [15:0]data_i,
+	
+	//后续不需要
+	output reg ad_reset_o,
+	output ad_rd_o,
+	output [2:0]ad_os_o,
+	
+	output iic_clk,
+	inout  iic_sda
+	
+);
+
+endmodule

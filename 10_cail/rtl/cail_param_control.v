@@ -1,41 +1,23 @@
 module cail_param_control(
-	clk,
-	rst_n,
+	input clk,
+	input rst_n,
 	
-	wr_req,
-	rd_req,
-
-	update_req,
-	init_done,
+	input  wr_req,      //写入、读取、更新请求
+	input  rd_req,
+	input  update_req,
 	
-	wr_addr,
-	rd_addr,
+	output reg init_done,
 	
-	wr_data,
-	rd_data,
+	input [9:0]wr_addr,
+	input [9:0]rd_addr,
 	
-	iic_clk,
-	iic_sda
+	input [7:0]wr_data,
+	output reg [7:0]rd_data,
+	
+	output iic_clk,
+	inout  iic_sda
 );
 
-	input clk;
-	input rst_n;
-	
-	input  wr_req;
-	input  rd_req;
-	
-	input  update_req;
-	output reg init_done;
-	
-	input [9:0]wr_addr;
-	input [9:0]rd_addr;
-	
-	input [7:0]wr_data;
-	output reg [7:0]rd_data;
-	
-	output iic_clk;
-	inout  iic_sda;
-	
 	//与IIC控制器连接
 	reg  ee_w_req;
 	reg  ee_r_req;
@@ -78,7 +60,7 @@ module cail_param_control(
 		RD_RAM = 5'b01000,
 		SAVE   = 5'b10000;
 		
-	parameter RST_TIME = 18'd249_999;
+	parameter RST_TIME = 18'd6_0000_000;
 	reg [18:0]rst_cnt;
 	
 	
@@ -257,7 +239,6 @@ module cail_param_control(
 	
 	wire [7:0]data;
 	
-	
 	//内存 直接用ram会导致无法更新到寄存器和eeprom读取出来
 	cail_param cail_param(
 		.clock(clk),
@@ -267,7 +248,5 @@ module cail_param_control(
 		.wren(ram_wr),
 		.q(ram_r_data)
 	);
-	
-	
 	
 endmodule

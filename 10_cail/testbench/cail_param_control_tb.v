@@ -31,7 +31,7 @@ cail_param_control cail_param_control(
 	.iic_sda(iic_sda)
 );
 
-defparam cail_param_control.RST_TIME = 29;
+defparam cail_param_control.RST_TIME = 18'd250000;
 pullup PUP(iic_sda);
 	
 initial clk = 1;
@@ -44,8 +44,7 @@ initial begin
 	update_req = 0;
 	#200;
 	rst_n = 1;
-	#1000000;
-
+	#200;
 	rd_req  <= 1;
 	rd_addr <= 0;
 	#20;
@@ -85,6 +84,8 @@ initial begin
 	#20;
 	wr_addr <= 6;
 	wr_data <= 7;
+	#20;
+	#20;
 	#20;
 	wr_req <= 0;
 	

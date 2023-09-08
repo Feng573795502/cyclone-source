@@ -59,13 +59,11 @@ set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id fp_add_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME fp_add_tb -section_id fp_add_tb
 set_global_assignment -name VERILOG_FILE ../rtl/iic_bit_shift.v
 set_global_assignment -name VERILOG_FILE ../rtl/iic_ctrl.v
-set_global_assignment -name VERILOG_FILE ../testbench/iic_ctrl_tb.v
 set_global_assignment -name EDA_TEST_BENCH_NAME iic_ctrl_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id iic_ctrl_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME iic_ctrl_tb -section_id iic_ctrl_tb
 set_global_assignment -name VERILOG_FILE ../testbench/M24LC04B.v
 set_global_assignment -name QIP_FILE ip/cail_param.qip
-set_global_assignment -name VERILOG_FILE ../testbench/cail_param_tb.v
 set_global_assignment -name EDA_TEST_BENCH_NAME cail_param_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id cail_param_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME cail_param_tb -section_id cail_param_tb

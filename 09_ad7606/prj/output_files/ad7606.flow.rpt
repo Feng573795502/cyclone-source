@@ -1,5 +1,5 @@
 Flow report for ad7606
-Tue Sep 05 18:59:31 2023
+Wed Sep 06 15:08:05 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -40,20 +40,20 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue Sep 05 18:59:31 2023           ;
+; Flow Status                        ; Successful - Wed Sep 06 15:08:05 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; ad7606                                          ;
 ; Top-level Entity Name              ; ad_control_top                                  ;
 ; Family                             ; Cyclone IV E                                    ;
 ; Device                             ; EP4CE10F17C8                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 2,006                                           ;
-;     Total combinational functions  ; 1,157                                           ;
-;     Dedicated logic registers      ; 1,577                                           ;
-; Total registers                    ; 1577                                            ;
-; Total pins                         ; 26                                              ;
+; Total logic elements               ; 2,391                                           ;
+;     Total combinational functions  ; 1,529                                           ;
+;     Dedicated logic registers      ; 1,744                                           ;
+; Total registers                    ; 1744                                            ;
+; Total pins                         ; 28                                              ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 205,890                                         ;
+; Total memory bits                  ; 205,415                                         ;
 ; Embedded Multiplier 9-bit elements ; 7                                               ;
 ; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/05/2023 18:59:07 ;
+; Start date & time ; 09/06/2023 15:07:39 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ad7606              ;
 +-------------------+---------------------+
@@ -75,11 +75,11 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+----------------+-------------------+
 ; Assignment Name                      ; Value                                                                                                                                                                                                                                              ; Default Value ; Entity Name    ; Section Id        ;
 +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+----------------+-------------------+
-; COMPILER_SIGNATURE_ID                ; 198112243479721.169391154716192                                                                                                                                                                                                                    ; --            ; --             ; --                ;
+; COMPILER_SIGNATURE_ID                ; 198112243479721.169398405920052                                                                                                                                                                                                                    ; --            ; --             ; --                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                                                                                                                                                                                                                 ; --            ; --             ; ad7606_tb         ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                                                                                                                                                                                                                 ; --            ; --             ; ad_control_top_tb ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                                                                                                                                                                                                                 ; --            ; --             ; ad_data_proc_tb   ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; ad_control_top_tb                                                                                                                                                                                                                                  ; --            ; --             ; eda_simulation    ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; ad_data_proc_tb                                                                                                                                                                                                                                    ; --            ; --             ; eda_simulation    ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                                                                                                                                                                                                                                        ; --            ; --             ; eda_simulation    ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)                                                                                                                                                                                                                          ; <None>        ; --             ; --                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                                                                                                                                                                                                                                    ; --            ; --             ; eda_simulation    ;
@@ -108,6 +108,7 @@ refer to the applicable agreement for further details.
 ; MISC_FILE                            ; ip/mult.inc                                                                                                                                                                                                                                        ; --            ; --             ; --                ;
 ; MISC_FILE                            ; ip/mult.cmp                                                                                                                                                                                                                                        ; --            ; --             ; --                ;
 ; MISC_FILE                            ; ip/data_fifo_bb.v                                                                                                                                                                                                                                  ; --            ; --             ; --                ;
+; MISC_FILE                            ; ip/float_sub_bb.v                                                                                                                                                                                                                                  ; --            ; --             ; --                ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                                                                                                                                                                                                                               ; --            ; --             ; --                ;
 ; PARTITION_COLOR                      ; -- (Not supported for targeted family)                                                                                                                                                                                                             ; --            ; ad_control_top ; Top               ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)                                                                                                                                                                                                             ; --            ; ad_control_top ; Top               ;
@@ -155,8 +156,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:23     ; 1.0                     ; 4930 MB             ; 00:00:56                           ;
-; Total                ; 00:00:23     ; --                      ; --                  ; 00:00:56                           ;
+; Analysis & Synthesis ; 00:00:24     ; 1.0                     ; 4927 MB             ; 00:00:44                           ;
+; Total                ; 00:00:24     ; --                      ; --                  ; 00:00:44                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

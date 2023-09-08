@@ -8,102 +8,36 @@ z2
 !i10f 100
 cModel Technology
 Z0 dH:/FPGA/cyclone source/09_ad7606/prj/simulation/modelsim
-vad7606
-Z1 !s110 1693909605
+vad_data_proc_tb
+Z1 !s110 1693964399
 !i10b 1
-!s100 XnPN;miGIcMCCYPlh2Z=]0
-IR>68HaKGD;@]dP2zlWlzA3
+!s100 ]UeHPVmKgH@gSCaJ5Uk;h0
+I:di^mKTUiGl2fZ`PY<R[c1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1692263918
-8H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v
-FH:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v
-L0 1
+w1693964219
+8H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_data_proc_tb.v
+FH:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_data_proc_tb.v
+L0 4
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1693909605.000000
-!s107 H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/rtl|H:/FPGA/cyclone source/09_ad7606/rtl/ad7606.v|
+!s108 1693964399.000000
+!s107 H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_data_proc_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/prj/../testbench|H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_data_proc_tb.v|
 !i113 1
-Z5 o-vlog01compat -work work
-Z6 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/09_ad7606/rtl}
-Z7 tCvgOpt 0
-vad_control_top
-R1
-!i10b 1
-!s100 RH^b8`9I^>mSD522B@<M93
-Ie1NC9A[KG=d]HK@E>Q[J41
-R2
-R0
-w1693908601
-8H:/FPGA/cyclone source/09_ad7606/rtl/ad_control_top.v
-FH:/FPGA/cyclone source/09_ad7606/rtl/ad_control_top.v
-L0 3
-R3
-r1
-!s85 0
-31
-R4
-!s107 H:/FPGA/cyclone source/09_ad7606/rtl/ad_control_top.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/rtl|H:/FPGA/cyclone source/09_ad7606/rtl/ad_control_top.v|
-!i113 1
-R5
-R6
-R7
-vad_control_top_tb
-R1
-!i10b 1
-!s100 eWPdIJ[=FJW]Lzh59ZG8l0
-IIRKbKZNei<P79;FFAPEZo2
-R2
-R0
-w1693904288
-8H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v
-FH:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v
-L0 4
-R3
-r1
-!s85 0
-31
-R4
-!s107 H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/prj/../testbench|H:/FPGA/cyclone source/09_ad7606/prj/../testbench/ad_control_top_tb.v|
-!i113 1
-R5
+Z4 o-vlog01compat -work work
 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/09_ad7606/prj/../testbench}
-R7
-vad_fifo
-R1
-!i10b 1
-!s100 _9^E[@EJcCWo?YAo2Mk`82
-I1R[E=:3ShZBZUgc5CPLH:3
-R2
-R0
-w1692061919
-8H:/FPGA/cyclone source/09_ad7606/prj/ip/ad_fifo.v
-FH:/FPGA/cyclone source/09_ad7606/prj/ip/ad_fifo.v
-Z8 L0 39
-R3
-r1
-!s85 0
-31
-R4
-!s107 H:/FPGA/cyclone source/09_ad7606/prj/ip/ad_fifo.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip|H:/FPGA/cyclone source/09_ad7606/prj/ip/ad_fifo.v|
-!i113 1
-R5
-Z9 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip}
-R7
+Z5 tCvgOpt 0
 vdata_cail
-R1
+Z6 !s110 1693964398
 !i10b 1
-!s100 DFgS8?Jc2Cha_0LHHm11K2
-IL85=o=gUm56YDFPQCVf@b2
+!s100 f4DkfZ:5D6Kk418dEbaZn3
+Io>6<m8EBI8f@h4Q4m<3gH2
 R2
 R0
-w1692342226
+w1693964340
 8H:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v
 FH:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v
 L0 1
@@ -111,296 +45,758 @@ R3
 r1
 !s85 0
 31
-R4
+Z7 !s108 1693964398.000000
 !s107 H:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/rtl|H:/FPGA/cyclone source/09_ad7606/rtl/data_cail.v|
 !i113 1
+R4
+!s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/09_ad7606/rtl}
 R5
-R6
-R7
-vdata_fifo
+vfloat_sub
 R1
 !i10b 1
-!s100 _W7D`<bAIjBXDW9Fb=XoE2
-I<Lb9h8<^ZMI_:ge`1ZJM=0
+!s100 AVelDMlEA:bjWEBmOLT9b0
+I1MgneMYSPVIoTDZD1]i_Z3
 R2
 R0
-w1692341409
-8H:/FPGA/cyclone source/09_ad7606/prj/ip/data_fifo.v
-FH:/FPGA/cyclone source/09_ad7606/prj/ip/data_fifo.v
-R8
+Z8 w1693962092
+Z9 8H:/FPGA/cyclone source/09_ad7606/prj/ip/float_sub.v
+Z10 FH:/FPGA/cyclone source/09_ad7606/prj/ip/float_sub.v
+L0 2622
 R3
 r1
 !s85 0
 31
-R4
-!s107 H:/FPGA/cyclone source/09_ad7606/prj/ip/data_fifo.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip|H:/FPGA/cyclone source/09_ad7606/prj/ip/data_fifo.v|
-!i113 1
-R5
-R9
 R7
-vmult
+Z11 !s107 H:/FPGA/cyclone source/09_ad7606/prj/ip/float_sub.v|
+Z12 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip|H:/FPGA/cyclone source/09_ad7606/prj/ip/float_sub.v|
+!i113 1
+R4
+Z13 !s92 -vlog01compat -work work {+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip}
+R5
+vfloat_sub_altbarrel_shift_35e
+R6
+!i10b 1
+!s100 R7_^0I1Wogen54mf0Y3E;0
+IAeOAG:NQb>D=PLiS>9V[k2
+R2
+R0
+R8
+R9
+R10
+Z14 L0 50
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altbarrel_shift_olb
+R6
+!i10b 1
+!s100 :O]mPZJ>dO4@OH@WQCjDh1
+Il9Z_?@F;]6EC@8S?eCeA>3
+R2
+R0
+R8
+R9
+R10
+L0 115
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altfp_add_sub_66j
 R1
+!i10b 1
+!s100 Q_DEo?ZeOljlDL_;j95mb2
+I21_HdXI]a3H:4eS;N[_6D2
+R2
+R0
+R8
+R9
+R10
+L0 709
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_3e8
+R6
+!i10b 1
+!s100 9[fQ][FRO7@ZaL3<DbgRc1
+I0R=0bei:f>3S6MZg_CKBg3
+R2
+R0
+R8
+R9
+R10
+L0 165
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_3v7
+R6
+!i10b 1
+!s100 l@5R4C^QVQ2U;deQ6I_S11
+I^T6;b@b8V3O1;zN4_ZzXK0
+R2
+R0
+R8
+R9
+R10
+L0 262
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_6e8
+R6
+!i10b 1
+!s100 bhR0TYGLS8aC594Foc2PA3
+I7Vj@YPFaX9A0a2e>5eb;72
+R2
+R0
+R8
+R9
+R10
+L0 184
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_6v7
+R1
+!i10b 1
+!s100 AOalW]zU<CGYBd_0RE@gZ1
+ILCzh:?[;K0_hcKSdNdoSz3
+R2
+R0
+R8
+R9
+R10
+L0 278
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_be8
+R6
+!i10b 1
+!s100 hnkWgGl`WZY_0MZ@bGdi52
+IEzdMc?BF@5^^M?5[U9g5I0
+R2
+R0
+R8
+R9
+R10
+L0 217
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_bv7
+R1
+!i10b 1
+!s100 dgADC>;VgCl@b2H1=kzTc2
+IS[2867naVgNAdU^F2;GoI3
+R2
+R0
+R8
+R9
+R10
+L0 306
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_e48
+R1
+!i10b 1
+!s100 J`H73Gc@DQ0e[FD?M>McI1
+I`53fWVf:g@]k9=lg21I?T3
+R2
+R0
+R8
+R9
+R10
+L0 681
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_f48
+R1
+!i10b 1
+!s100 RKcO8YaX=AMI9:27[lXmN2
+I]9@QO<9PU>4Aj0?TNWSbY2
+R2
+R0
+R8
+R9
+R10
+L0 653
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_fj8
+R1
+!i10b 1
+!s100 aZm2Nad:D1EMHHLn_<DFg0
+IQY1b_TLOR]0T^AO0`Sjal0
+R2
+R0
+R8
+R9
+R10
+L0 532
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_n28
+R1
+!i10b 1
+!s100 1BT4JjNWR6zJUgVXAYf_92
+I>jD[2ejLa2mof9:?HlCQb2
+R2
+R0
+R8
+R9
+R10
+L0 581
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_nh8
+R1
+!i10b 1
+!s100 zS``@2?C6TYIID^zXamnm3
+IcUChn7j[nh?9b2m1faf3?3
+R2
+R0
+R8
+R9
+R10
+L0 447
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_q28
+R1
+!i10b 1
+!s100 ^fJYVo?lOUCSgl?LP^o7Q1
+INYLV:2BTWF1MY_2X8A1LB2
+R2
+R0
+R8
+R9
+R10
+L0 597
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_qb6
+R1
+!i10b 1
+!s100 FPMIdbVRa2]8Kj9R^3ML^1
+InNo03V[2]O=cAFf3a`Z>l0
+R2
+R0
+R8
+R9
+R10
+L0 399
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_qh8
+R1
+!i10b 1
+!s100 IgF[^HQ1TL:>_z0INAiVQ1
+IFIZhO:^bVGnB^YlYJkSh13
+R2
+R0
+R8
+R9
+R10
+L0 466
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_r08
+R1
+!i10b 1
+!s100 Ek@N2cm51QZ^5nF`IU0Wo0
+I[O`2FbY435nQCGkh62;OR3
+R2
+R0
+R8
+R9
+R10
+L0 334
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_rf8
+R1
+!i10b 1
+!s100 _AkoIo@P@WaX7>:RZlkVH0
+ISGAB?e?Y3[_am2YHM_OIQ3
+R2
+R0
+R8
+R9
+R10
+L0 366
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_v28
+R1
+!i10b 1
+!s100 m5^IKdFSZ@m__Ndm;27WF1
+IcZL?SzALGRio_f[[86b2[2
+R2
+R0
+R8
+R9
+R10
+L0 625
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vfloat_sub_altpriority_encoder_vh8
+R1
+!i10b 1
+!s100 ^e@jiYXCJz<N0E;VBPicN0
+IlZ>b`n@DIRPKKV0?RF@dX1
+R2
+R0
+R8
+R9
+R10
+L0 499
+R3
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R4
+R13
+R5
+vmult
+R6
 !i10b 1
 !s100 `=7YU4V1Bhce>HC3_8cSj1
 I01D8_c=KgEiS9DEoO?g_?3
 R2
 R0
-Z10 w1692149552
-Z11 8H:/FPGA/cyclone source/09_ad7606/prj/ip/mult.v
-Z12 FH:/FPGA/cyclone source/09_ad7606/prj/ip/mult.v
+Z15 w1692149552
+Z16 8H:/FPGA/cyclone source/09_ad7606/prj/ip/mult.v
+Z17 FH:/FPGA/cyclone source/09_ad7606/prj/ip/mult.v
 L0 510
 R3
 r1
 !s85 0
 31
-R4
-Z13 !s107 H:/FPGA/cyclone source/09_ad7606/prj/ip/mult.v|
-Z14 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip|H:/FPGA/cyclone source/09_ad7606/prj/ip/mult.v|
-!i113 1
-R5
-R9
 R7
+Z18 !s107 H:/FPGA/cyclone source/09_ad7606/prj/ip/mult.v|
+Z19 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip|H:/FPGA/cyclone source/09_ad7606/prj/ip/mult.v|
+!i113 1
+R4
+R13
+R5
 vmult_altfp_mult_trn
-R1
+R6
 !i10b 1
 !s100 5K]>K6lKoEZom^3n5A:U10
 Iami77l3oMA1jK2fj3`1YX3
 R2
 R0
-R10
-R11
-R12
+R15
+R16
+R17
 L0 46
 R3
 r1
 !s85 0
 31
+R7
+R18
+R19
+!i113 1
 R4
 R13
-R14
-!i113 1
 R5
-R9
-R7
 vshort_to_float
-R1
+R6
 !i10b 1
 !s100 PP?CYdCATIQF;:l2jm]QQ0
 Ig8O^o@8;=FlSGgfWl^[eL2
 R2
 R0
-Z15 w1692089305
-Z16 8H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v
-Z17 FH:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v
+Z20 w1692089305
+Z21 8H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v
+Z22 FH:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v
 L0 617
 R3
 r1
 !s85 0
 31
-R4
-Z18 !s107 H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v|
-Z19 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip|H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v|
-!i113 1
-R5
-R9
 R7
+Z23 !s107 H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v|
+Z24 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/FPGA/cyclone source/09_ad7606/prj/ip|H:/FPGA/cyclone source/09_ad7606/prj/ip/short_to_float.v|
+!i113 1
+R4
+R13
+R5
 vshort_to_float_altbarrel_shift_uvf
-R1
+R6
 !i10b 1
 !s100 3OiC1fD5]MOE]W3OIUXz[3
 I`>[;kjH]<7d_]m:MTB2mZ1
 R2
 R0
-R15
-R16
-R17
-L0 50
+R20
+R21
+R22
+R14
 R3
 r1
 !s85 0
 31
-R4
-R18
-R19
-!i113 1
-R5
-R9
 R7
+R23
+R24
+!i113 1
+R4
+R13
+R5
 vshort_to_float_altfp_convert_p1n
-R1
+R6
 !i10b 1
 !s100 hA<`TW5Mk71kLP7VRB`Zn1
 IkMVIdDjH79ml[H3=^bNcY3
 R2
 R0
-R15
-R16
-R17
+R20
+R21
+R22
 L0 348
 R3
 r1
 !s85 0
 31
-R4
-R18
-R19
-!i113 1
-R5
-R9
 R7
+R23
+R24
+!i113 1
+R4
+R13
+R5
 vshort_to_float_altpriority_encoder_3e8
-R1
+R6
 !i10b 1
 !s100 mmR>KElB>kSCfZ1S8cLeD0
 Iz]VlA5=8oW>AQL]<b:Zj:0
 R2
 R0
-R15
-R16
-R17
+R20
+R21
+R22
 L0 171
 R3
 r1
 !s85 0
 31
-R4
-R18
-R19
-!i113 1
-R5
-R9
 R7
+R23
+R24
+!i113 1
+R4
+R13
+R5
 vshort_to_float_altpriority_encoder_3v7
-R1
+R6
 !i10b 1
 !s100 JOBH=DEB]h7jQdb[nP;:]0
 IW>XNcTlfUWMDSbQnQ@kM83
 R2
 R0
-R15
-R16
-R17
+R20
+R21
+R22
 L0 151
 R3
 r1
 !s85 0
 31
-R4
-R18
-R19
-!i113 1
-R5
-R9
 R7
+R23
+R24
+!i113 1
+R4
+R13
+R5
 vshort_to_float_altpriority_encoder_6e8
-R1
+R6
 !i10b 1
 !s100 fbH[MfX@CX=MnGhAD0fR^2
 I=3@HKjX76ic;dogg8=Ica2
 R2
 R0
-R15
-R16
-R17
+R20
+R21
+R22
 L0 222
 R3
 r1
 !s85 0
 31
-R4
-R18
-R19
-!i113 1
-R5
-R9
 R7
+R23
+R24
+!i113 1
+R4
+R13
+R5
 vshort_to_float_altpriority_encoder_6v7
-R1
+R6
 !i10b 1
 !s100 K9mKgeK3<3VFRz;2SShSN3
 IJHldmJfX?okhke5l<5OiO0
 R2
 R0
-R15
-R16
-R17
+R20
+R21
+R22
 L0 190
 R3
 r1
 !s85 0
 31
-R4
-R18
-R19
-!i113 1
-R5
-R9
 R7
+R23
+R24
+!i113 1
+R4
+R13
+R5
 vshort_to_float_altpriority_encoder_be8
-R1
+R6
 !i10b 1
 !s100 zJ;J29o`CS3?k6BLTc8_00
 ID=h1oCZ8_Bja]EX`98K`:3
 R2
 R0
-R15
-R16
-R17
+R20
+R21
+R22
 L0 287
 R3
 r1
 !s85 0
 31
-R4
-R18
-R19
-!i113 1
-R5
-R9
 R7
+R23
+R24
+!i113 1
+R4
+R13
+R5
 vshort_to_float_altpriority_encoder_bv7
-R1
+R6
 !i10b 1
 !s100 5]hkS9g@b>:1ZdBaNZK2b3
 IWDUIBgmflDlXWEV8do_]83
 R2
 R0
-R15
-R16
-R17
+R20
+R21
+R22
 L0 255
 R3
 r1
 !s85 0
 31
-R4
-R18
-R19
-!i113 1
-R5
-R9
 R7
+R23
+R24
+!i113 1
+R4
+R13
+R5
 vshort_to_float_altpriority_encoder_rb6
-R1
+R6
 !i10b 1
 !s100 U6PZAmX7PMl>kdW@<2d1@2
 IiNd:edJzW8nlGYJVcmM;02
 R2
 R0
-R15
-R16
-R17
+R20
+R21
+R22
 L0 320
 R3
 r1
 !s85 0
 31
-R4
-R18
-R19
-!i113 1
-R5
-R9
 R7
+R23
+R24
+!i113 1
+R4
+R13
+R5

@@ -1,58 +1,44 @@
 	module mb_rtu(
-		clk,
-		rst_n,
+		input             clk,
+		input             rst_n,
 		
-		mb_reg,
-		mb_num,
+		output reg [15:0] mb_reg;  //读写的寄存器地址和数量
+		output reg [15:0] mb_num;   
 		
-		wr_en,
-		wr_data,
+		output reg        wr_en;
+		output reg [7:0 ] wr_data;
 		
-		rd_en,
-		crc_err,
-		uart_rx_wire
+		output reg        rd_en;
+		output reg        crc_err;
+		input             uart_rx_wire;
 	);
-
-	input             clk;
-	input             rst_n;
-
-	output reg [15:0] mb_reg;  //读写的寄存器地址和数量
-	output reg [15:0] mb_num;   
 	
-	output reg        wr_en;
-	output reg [7:0 ] wr_data;
-	output reg        rd_en;
-	output reg        crc_err;
-	input             uart_rx_wire;
+	wire        [7:0] rx_data;      //uart接收数据
+	wire              rx_done;      //串口接收完成
 	
-	wire        [7:0] rx_data;
-	
-	reg         [6:0] curr_state;
+	reg         [6:0] curr_state;   //当前状态和下一个状态
 	reg         [6:0] next_state;
 	
-	reg               fifo_clr;
+	reg               fifo_clr;     //fifo
 	reg               fifo_rd;
 	wire        [7:0] q;
 	wire        [9:0] fifo_cnt;
 	
-	wire              rx_done;
-	reg               rx_uart_done;
-	
-	reg         [31:0]div_cnt;
-	
-	reg               fifo_valid;
+	reg         [31:0]div_cnt;      //串口接收结束计数定时器
+	reg               rx_uart_done; //串口数据超代表接收完成
+
+	reg               fifo_valid;   //判断FIFO里面得数据是否达到MB长度(有效)才进行处理
 	reg         [7:0] fifo_data;
-	
-	//3个功能计数
-	reg         [2:0] cnt_read;
+
+	reg         [2:0] cnt_read;	//3个功能计数
 	reg         [7:0] cnt_write;
 	reg         [1:0] cnt_crc;
 
 	//10写入
-	reg         [7:0] write_num;
+	reg         [7:0] write_num;  //记录10功能码写入个数
+	reg        [15:0] crc;        //记录接收的CRC
 	
-	reg        [15:0] crc;
-	
+	//crc处理
 	reg              crc_init;
 	reg              crc_en;	
 	wire       [15:0]crc_result;

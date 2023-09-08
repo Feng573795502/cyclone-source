@@ -1,0 +1,135 @@
+
+	module ad_control_top(
+	input clk,
+	input rst_n,
+	
+	//ADC 接口
+	input  busy_i,
+	output ad_clk_o,
+	output ad_conv_o,
+	input [15:0]data_i,
+	
+	//后续不需要
+	output reg ad_reset_o,
+	output ad_rd_o,
+	output [2:0]ad_os_o,
+	
+	input [31:0]cail_sub_i,
+	input [31:0]cail_mult_i,
+	output [31:0]result,
+	output reg cail_en
+	);
+	
+
+	localparam DATA_LEN = 15'd8;
+
+	//连接AD模块
+	reg         ad_rd;
+	wire  [15:0]ad_data;
+	wire  [4:0] data_cnt;
+
+	reg    [3:0]rd_cnt;
+
+	wire  [31:0]cail_data;
+	wire        valid;
+	
+	wire   [8:0]val_cnt;
+	reg         read_data;
+	
+	reg         read_state;   //读取状态0:IDLE 1:READ
+	
+	//后期合并起来使用
+	assign ad_rd_o = ad_clk_o;
+	assign ad_os = 3'b000;
+	
+	//上电复位一下
+	always @(posedge clk or negedge rst_n)begin
+		if(!rst_n)
+			ad_reset_o <= 1'b1;
+		else 
+			ad_reset_o <= 1'b0;
+	end
+	
+	//数据达到就从FIFO中读取数据进行处理
+	always @(posedge clk or negedge rst_n)begin
+		if(!rst_n)
+			read_state <= 1'b0;
+		else if(data_cnt >= DATA_LEN)
+			read_state <= 1'b1;
+		else if(rd_cnt == 7)
+			read_state <= 1'b0;
+		else
+			read_state <= read_state;
+	end
+	
+	//读取个数记录
+	always @(posedge clk or negedge rst_n)begin
+		if(!rst_n)
+			rd_cnt <= 4'd0;
+		else if(read_state)
+			rd_cnt <= rd_cnt + 1'b1;
+		else
+			rd_cnt <= 'd0;
+	end
+	
+	//读取FIFO请求
+	always @(posedge clk or negedge rst_n)begin
+		if(!rst_n)
+			ad_rd <= 1'b0;
+		else if(read_state)
+			ad_rd <= 1'b1;
+		else
+			ad_rd <= 1'b0;
+	end
+	
+	//计算模块使能
+	always @(posedge clk or negedge rst_n)begin
+		if(!rst_n)
+			cail_en <= 1'b0;
+		else if(read_state)
+			cail_en <= 1'b1;
+		else
+			cail_en <= 1'b0;
+	end
+
+//ad例化
+ad7606 ad7606(
+	.clk(clk),
+	.rst_n(rst_n),
+
+	.data_i(data_i),
+	
+	.ad_clk_o(ad_clk_o),
+	.ad_conv_o(ad_conv_o),
+	
+	.ad_rd(ad_rd),
+	.ad_data(ad_data),
+	.data_cnt(data_cnt)
+);
+
+//计算模块
+data_cail data_cail(
+	.clk(clk),
+	.rst_n(rst_n),
+		
+	.cail_en(cail_en),
+	.short_data(ad_data),
+	.data_len(16'd8),
+	
+	.valid(valid),
+	.cail_sub_i(cail_sub_i),
+	.cail_mult_i(cail_mult_i),
+	.cail_val_o(cail_data)
+);
+
+data_fifo data_fifo (
+	.clock(clk),
+	.data(cail_data),
+	.rdreq(read_data),
+	.wrreq(valid),
+	.q(result),
+	.usedw(val_cnt)
+	);
+
+
+endmodule

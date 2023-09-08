@@ -57,8 +57,8 @@ module iic_ctrl(
 	
 	wire [15:0]addr;
 	
-	reg [5:0]  r_cnt;
-	reg [5:0]  w_cnt;
+	reg [7:0]  r_cnt;
+	reg [7:0]  w_cnt;
 	
 	//8bit的时候需要做高低位互换保证输出是低位
 	assign addr = addr_mode ? reg_addr : {reg_addr[7:0],reg_addr[15:8]};
@@ -88,8 +88,8 @@ module iic_ctrl(
 			go      <= 1'b0;
 			rd_data <= 8'b0;
 			state   <= IDLE;
-			r_cnt   <= 6'b0;
-			w_cnt   <= 6'b0;
+			r_cnt   <= 8'b0;
+			w_cnt   <= 8'b0;
 			r_valid <= 1'b0;
 			w_valid <= 1'b0;
 		end
@@ -117,7 +117,7 @@ module iic_ctrl(
 						1:write_byte(WR, addr[15:8]);
 						2:begin 
 							write_byte(WR, addr[7:0]);
-							w_cnt <= 6'b0;
+							w_cnt <= 8'b0;
 						end
 						
 						default: begin
@@ -189,7 +189,7 @@ module iic_ctrl(
 						2:write_byte(WR, addr[7:0]);
 						3:begin 
 							write_byte(STA | WR, device_id | 8'd1); 
-							r_cnt <= 6'b0;
+							r_cnt <= 8'b0;
 						end
 						
 						default: begin

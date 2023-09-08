@@ -27,7 +27,7 @@ update_req => ram_r_addr.OUTPUTSELECT
 update_req => ram_r_addr.OUTPUTSELECT
 update_req => ram_r_addr.OUTPUTSELECT
 update_req => ram_r_addr.OUTPUTSELECT
-init_done << init_done~reg0.DB_MAX_OUTPUT_PORT_TYPE
+init_done <= init_done~reg0.DB_MAX_OUTPUT_PORT_TYPE
 wr_addr[0] => wr_addr_dly[0].DATAIN
 wr_addr[1] => wr_addr_dly[1].DATAIN
 wr_addr[2] => wr_addr_dly[2].DATAIN
@@ -56,15 +56,15 @@ wr_data[4] => wr_data_dly[4].DATAIN
 wr_data[5] => wr_data_dly[5].DATAIN
 wr_data[6] => wr_data_dly[6].DATAIN
 wr_data[7] => wr_data_dly[7].DATAIN
-rd_data[0] << rd_data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rd_data[1] << rd_data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rd_data[2] << rd_data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rd_data[3] << rd_data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rd_data[4] << rd_data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rd_data[5] << rd_data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rd_data[6] << rd_data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rd_data[7] << rd_data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-iic_clk << iic_ctrl:iic_ctrl.iic_clk
+rd_data[0] <= rd_data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rd_data[1] <= rd_data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rd_data[2] <= rd_data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rd_data[3] <= rd_data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rd_data[4] <= rd_data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rd_data[5] <= rd_data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rd_data[6] <= rd_data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rd_data[7] <= rd_data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+iic_clk <= iic_ctrl:iic_ctrl.iic_clk
 iic_sda <> iic_ctrl:iic_ctrl.iic_sda
 
 

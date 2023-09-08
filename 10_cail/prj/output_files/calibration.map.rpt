@@ -1,5 +1,5 @@
 Analysis & Synthesis report for calibration
-Fri Aug 25 17:12:57 2023
+Wed Sep 06 19:50:03 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -57,15 +57,15 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Aug 25 17:12:57 2023           ;
+; Analysis & Synthesis Status        ; Successful - Wed Sep 06 19:50:03 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; calibration                                     ;
 ; Top-level Entity Name              ; cail_param_control                              ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 358                                             ;
-;     Total combinational functions  ; 309                                             ;
-;     Dedicated logic registers      ; 196                                             ;
-; Total registers                    ; 196                                             ;
+; Total logic elements               ; 361                                             ;
+;     Total combinational functions  ; 312                                             ;
+;     Dedicated logic registers      ; 200                                             ;
+; Total registers                    ; 200                                             ;
 ; Total pins                         ; 44                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 8,192                                           ;
@@ -204,20 +204,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 358       ;
+; Estimated Total logic elements              ; 361       ;
 ;                                             ;           ;
-; Total combinational functions               ; 309       ;
+; Total combinational functions               ; 312       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 158       ;
-;     -- 3 input functions                    ; 37        ;
-;     -- <=2 input functions                  ; 114       ;
+;     -- 4 input functions                    ; 152       ;
+;     -- 3 input functions                    ; 43        ;
+;     -- <=2 input functions                  ; 117       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 227       ;
-;     -- arithmetic mode                      ; 82        ;
+;     -- normal mode                          ; 226       ;
+;     -- arithmetic mode                      ; 86        ;
 ;                                             ;           ;
-; Total registers                             ; 196       ;
-;     -- Dedicated logic registers            ; 196       ;
+; Total registers                             ; 200       ;
+;     -- Dedicated logic registers            ; 200       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 44        ;
@@ -226,8 +226,8 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 204       ;
-; Total fan-out                               ; 1923      ;
+; Maximum fan-out                             ; 208       ;
+; Total fan-out                               ; 1943      ;
 ; Average fan-out                             ; 3.19      ;
 +---------------------------------------------+-----------+
 
@@ -237,12 +237,12 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                      ; Entity Name        ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; |cail_param_control                       ; 309 (110)           ; 196 (117)                 ; 8192        ; 0            ; 0       ; 0         ; 44   ; 0            ; |cail_param_control                                                                                      ; cail_param_control ; work         ;
+; |cail_param_control                       ; 312 (108)           ; 200 (117)                 ; 8192        ; 0            ; 0       ; 0         ; 44   ; 0            ; |cail_param_control                                                                                      ; cail_param_control ; work         ;
 ;    |cail_param:cail_param|                ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|cail_param:cail_param                                                                ; cail_param         ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|cail_param:cail_param|altsyncram:altsyncram_component                                ; altsyncram         ; work         ;
 ;          |altsyncram_4ln1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|cail_param:cail_param|altsyncram:altsyncram_component|altsyncram_4ln1:auto_generated ; altsyncram_4ln1    ; work         ;
-;    |iic_ctrl:iic_ctrl|                    ; 199 (102)           ; 79 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|iic_ctrl:iic_ctrl                                                                    ; iic_ctrl           ; work         ;
-;       |iic_bit_shift:iic_bit_shift|       ; 97 (97)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift                                        ; iic_bit_shift      ; work         ;
+;    |iic_ctrl:iic_ctrl|                    ; 204 (108)           ; 83 (46)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|iic_ctrl:iic_ctrl                                                                    ; iic_ctrl           ; work         ;
+;       |iic_bit_shift:iic_bit_shift|       ; 96 (96)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift                                        ; iic_bit_shift      ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -328,12 +328,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 196   ;
-; Number of registers using Synchronous Clear  ; 47    ;
+; Total registers                              ; 200   ;
+; Number of registers using Synchronous Clear  ; 51    ;
 ; Number of registers using Synchronous Load   ; 27    ;
-; Number of registers using Asynchronous Clear ; 153   ;
+; Number of registers using Asynchronous Clear ; 157   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 84    ;
+; Number of registers using Clock Enable       ; 88    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -354,18 +354,18 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|div_cnt[1] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|tx_data[3]                             ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |cail_param_control|ram_w_addr_dly[3]                                        ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|w_cnt[4]                               ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|r_cnt[3]                               ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |cail_param_control|ram_w_data[6]                                            ;
-; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |cail_param_control|ram_w_addr[9]                                            ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 5 LEs                ; 20 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|cnt[5]                                 ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |cail_param_control|ram_r_addr[2]                                            ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|div_cnt[9] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|tx_data[2]                             ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |cail_param_control|ram_w_addr_dly[4]                                        ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|w_cnt[1]                               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|r_cnt[2]                               ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |cail_param_control|ram_w_data[5]                                            ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |cail_param_control|ram_w_addr[1]                                            ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 5 LEs                ; 20 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|cnt[3]                                 ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |cail_param_control|ram_r_addr[1]                                            ;
 ; 7:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|cnt[4]     ;
-; 513:1              ; 2 bits    ; 684 LEs       ; 10 LEs               ; 674 LEs                ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|tx_data[7]                             ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|Selector10 ;
+; 513:1              ; 2 bits    ; 684 LEs       ; 10 LEs               ; 674 LEs                ; Yes        ; |cail_param_control|iic_ctrl:iic_ctrl|tx_data[5]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |cail_param_control|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|Selector11 ;
 ; 11:1               ; 5 bits    ; 35 LEs        ; 20 LEs               ; 15 LEs                 ; No         ; |cail_param_control|Selector6                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
 
@@ -384,7 +384,7 @@ Encoding Type:  One-Hot
 +----------------+--------------------+----------------------------------------------+
 ; Parameter Name ; Value              ; Type                                         ;
 +----------------+--------------------+----------------------------------------------+
-; RST_TIME       ; 111101000010001111 ; Unsigned Binary                              ;
+; RST_TIME       ; 111000011100000000 ; Unsigned Binary                              ;
 +----------------+--------------------+----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -504,31 +504,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 44                          ;
-; cycloneiii_ff         ; 196                         ;
+; cycloneiii_ff         ; 200                         ;
 ;     CLR               ; 71                          ;
 ;     CLR SCLR          ; 20                          ;
 ;     CLR SLD           ; 20                          ;
 ;     ENA               ; 32                          ;
 ;     ENA CLR           ; 18                          ;
-;     ENA CLR SCLR      ; 17                          ;
+;     ENA CLR SCLR      ; 21                          ;
 ;     ENA CLR SLD       ; 7                           ;
 ;     ENA SCLR          ; 10                          ;
 ;     plain             ; 1                           ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 310                         ;
-;     arith             ; 82                          ;
-;         2 data inputs ; 80                          ;
+; cycloneiii_lcell_comb ; 313                         ;
+;     arith             ; 86                          ;
+;         2 data inputs ; 84                          ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 228                         ;
+;     normal            ; 227                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 10                          ;
-;         2 data inputs ; 24                          ;
-;         3 data inputs ; 35                          ;
-;         4 data inputs ; 158                         ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 152                         ;
 ; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.05                        ;
+; Average LUT depth     ; 3.04                        ;
 +-----------------------+-----------------------------+
 
 
@@ -547,7 +547,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Fri Aug 25 17:12:49 2023
+    Info: Processing started: Wed Sep 06 19:49:54 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calibration -c calibration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -555,22 +555,19 @@ Info (12021): Found 1 design units, including 1 entities, in source file /fpga/c
     Info (12023): Found entity 1: iic_bit_shift File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/10_cail/rtl/iic_ctrl.v
     Info (12023): Found entity 1: iic_ctrl File: H:/FPGA/cyclone source/10_cail/rtl/iic_ctrl.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/10_cail/testbench/iic_ctrl_tb.v
-    Info (12023): Found entity 1: iic_ctrl_tb File: H:/FPGA/cyclone source/10_cail/testbench/iic_ctrl_tb.v Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/10_cail/testbench/m24lc04b.v
     Info (12023): Found entity 1: M24LC04B File: H:/FPGA/cyclone source/10_cail/testbench/M24LC04B.v Line: 85
 Info (12021): Found 1 design units, including 1 entities, in source file ip/cail_param.v
     Info (12023): Found entity 1: cail_param File: H:/FPGA/cyclone source/10_cail/prj/ip/cail_param.v Line: 39
-Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/10_cail/testbench/cail_param_tb.v
-    Info (12023): Found entity 1: cail_param_tb File: H:/FPGA/cyclone source/10_cail/testbench/cail_param_tb.v Line: 4
+Warning (10229): Verilog HDL Expression warning at cail_param_control.v(63): truncated literal to match 18 bits File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 63
 Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/10_cail/rtl/cail_param_control.v
     Info (12023): Found entity 1: cail_param_control File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /fpga/cyclone source/10_cail/testbench/cail_param_control_tb.v
     Info (12023): Found entity 1: cail_param_control_tb File: H:/FPGA/cyclone source/10_cail/testbench/cail_param_control_tb.v Line: 2
 Info (12127): Elaborating entity "cail_param_control" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at cail_param_control.v(53): object "ee_r_data_dly" assigned a value but never read File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 53
-Warning (10230): Verilog HDL assignment warning at cail_param_control.v(186): truncated value with size 32 to match size of target (8) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 186
-Info (12128): Elaborating entity "iic_ctrl" for hierarchy "iic_ctrl:iic_ctrl" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 256
+Warning (10036): Verilog HDL or VHDL warning at cail_param_control.v(35): object "ee_r_data_dly" assigned a value but never read File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 35
+Warning (10230): Verilog HDL assignment warning at cail_param_control.v(168): truncated value with size 32 to match size of target (8) File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 168
+Info (12128): Elaborating entity "iic_ctrl" for hierarchy "iic_ctrl:iic_ctrl" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 238
 Info (12128): Elaborating entity "iic_bit_shift" for hierarchy "iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift" File: H:/FPGA/cyclone source/10_cail/rtl/iic_ctrl.v Line: 297
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(96): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 96
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(125): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 125
@@ -580,7 +577,7 @@ Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(170): truncat
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(195): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 195
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(213): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 213
 Warning (10230): Verilog HDL assignment warning at iic_bit_shift.v(243): truncated value with size 6 to match size of target (5) File: H:/FPGA/cyclone source/10_cail/rtl/iic_bit_shift.v Line: 243
-Info (12128): Elaborating entity "cail_param" for hierarchy "cail_param:cail_param" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 269
+Info (12128): Elaborating entity "cail_param" for hierarchy "cail_param:cail_param" File: H:/FPGA/cyclone source/10_cail/rtl/cail_param_control.v Line: 250
 Info (12128): Elaborating entity "altsyncram" for hierarchy "cail_param:cail_param|altsyncram:altsyncram_component" File: H:/FPGA/cyclone source/10_cail/prj/ip/cail_param.v Line: 88
 Info (12130): Elaborated megafunction instantiation "cail_param:cail_param|altsyncram:altsyncram_component" File: H:/FPGA/cyclone source/10_cail/prj/ip/cail_param.v Line: 88
 Info (12133): Instantiated megafunction "cail_param:cail_param|altsyncram:altsyncram_component" with the following parameter: File: H:/FPGA/cyclone source/10_cail/prj/ip/cail_param.v Line: 88
@@ -613,17 +610,17 @@ Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file H:/FPGA/cyclone source/10_cail/prj/output_files/calibration.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 411 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 414 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 33 input pins
     Info (21059): Implemented 10 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 359 logic cells
+    Info (21061): Implemented 362 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4844 megabytes
-    Info: Processing ended: Fri Aug 25 17:12:57 2023
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:17
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4846 megabytes
+    Info: Processing ended: Wed Sep 06 19:50:03 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:18
 
 
 +------------------------------------------+

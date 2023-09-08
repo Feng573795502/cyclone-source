@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Sep 08 19:29:19 2023
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : ad7606
+Top-level Entity Name : analyzer
+Family : Cyclone IV E
+Total logic elements : 1,497
+    Total combinational functions : 1,309
+    Dedicated logic registers : 810
+Total registers : 810
+Total pins : 60
+Total virtual pins : 0
+Total memory bits : 681
+Embedded Multiplier 9-bit elements : 7
+Total PLLs : 0

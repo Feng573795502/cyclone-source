@@ -1,0 +1,154 @@
+Flow report for ad7606
+Fri Sep 08 19:29:19 2023
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Fri Sep 08 19:29:19 2023           ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                      ; ad7606                                          ;
+; Top-level Entity Name              ; analyzer                                        ;
+; Family                             ; Cyclone IV E                                    ;
+; Device                             ; EP4CE10F17C8                                    ;
+; Timing Models                      ; Final                                           ;
+; Total logic elements               ; 1,497                                           ;
+;     Total combinational functions  ; 1,309                                           ;
+;     Dedicated logic registers      ; 810                                             ;
+; Total registers                    ; 810                                             ;
+; Total pins                         ; 60                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 681                                             ;
+; Embedded Multiplier 9-bit elements ; 7                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 09/08/2023 19:29:04 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; ad7606              ;
++-------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                ;
++--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
+; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id        ;
++--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
+; COMPILER_SIGNATURE_ID                ; 198112243479721.169417254420712        ; --            ; --          ; --                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; analyzer_tb       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; ad7606_tb         ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; ad_control_top_tb ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; ad_data_proc_tb   ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; analyzer_tb                            ; --            ; --          ; eda_simulation    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation    ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation    ;
+; EDA_TEST_BENCH_FILE                  ; ../testbench/analyzer_tb.v             ; --            ; --          ; analyzer_tb       ;
+; EDA_TEST_BENCH_FILE                  ; ../testbench/ad7606_tb.v               ; --            ; --          ; ad7606_tb         ;
+; EDA_TEST_BENCH_FILE                  ; ../testbench/ad_control_top_tb.v       ; --            ; --          ; ad_control_top_tb ;
+; EDA_TEST_BENCH_FILE                  ; ../testbench/ad_data_proc_tb.v         ; --            ; --          ; ad_data_proc_tb   ;
+; EDA_TEST_BENCH_MODULE_NAME           ; analyzer_tb                            ; --            ; --          ; analyzer_tb       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; ad7606_tb                              ; --            ; --          ; ad7606_tb         ;
+; EDA_TEST_BENCH_MODULE_NAME           ; ad_control_top_tb                      ; --            ; --          ; ad_control_top_tb ;
+; EDA_TEST_BENCH_MODULE_NAME           ; ad_data_proc_tb                        ; --            ; --          ; ad_data_proc_tb   ;
+; EDA_TEST_BENCH_NAME                  ; ad7606_tb                              ; --            ; --          ; eda_simulation    ;
+; EDA_TEST_BENCH_NAME                  ; ad_data_proc_tb                        ; --            ; --          ; eda_simulation    ;
+; EDA_TEST_BENCH_NAME                  ; ad_control_top_tb                      ; --            ; --          ; eda_simulation    ;
+; EDA_TEST_BENCH_NAME                  ; analyzer_tb                            ; --            ; --          ; eda_simulation    ;
+; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation    ;
+; ENABLE_SIGNALTAP                     ; Off                                    ; --            ; --          ; --                ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                ;
+; MISC_FILE                            ; ip/ad_fifo_bb.v                        ; --            ; --          ; --                ;
+; MISC_FILE                            ; ip/short_to_float.bsf                  ; --            ; --          ; --                ;
+; MISC_FILE                            ; ip/short_to_float_inst.v               ; --            ; --          ; --                ;
+; MISC_FILE                            ; ip/short_to_float_bb.v                 ; --            ; --          ; --                ;
+; MISC_FILE                            ; ip/short_to_float.inc                  ; --            ; --          ; --                ;
+; MISC_FILE                            ; ip/short_to_float.cmp                  ; --            ; --          ; --                ;
+; MISC_FILE                            ; ip/mult.bsf                            ; --            ; --          ; --                ;
+; MISC_FILE                            ; ip/mult_inst.v                         ; --            ; --          ; --                ;
+; MISC_FILE                            ; ip/mult_bb.v                           ; --            ; --          ; --                ;
+; MISC_FILE                            ; ip/mult.inc                            ; --            ; --          ; --                ;
+; MISC_FILE                            ; ip/mult.cmp                            ; --            ; --          ; --                ;
+; MISC_FILE                            ; ip/data_fifo_bb.v                      ; --            ; --          ; --                ;
+; MISC_FILE                            ; ip/float_sub_bb.v                      ; --            ; --          ; --                ;
+; MISC_FILE                            ; cail_param_bb.v                        ; --            ; --          ; --                ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                   ; --            ; --          ; --                ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; analyzer    ; Top               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; analyzer    ; Top               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; analyzer    ; Top               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --                ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --                ;
+; TOP_LEVEL_ENTITY                     ; analyzer                               ; ad7606        ; --          ; --                ;
+; USE_SIGNALTAP_FILE                   ; ../stp2.stp                            ; --            ; --          ; --                ;
++--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4887 MB             ; 00:00:23                           ;
+; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:23                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; Snail            ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off ad7606 -c ad7606
+
+
+

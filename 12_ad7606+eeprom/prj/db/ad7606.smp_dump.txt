@@ -1,0 +1,34 @@
+
+State Machine - |analyzer|main_state
+Name main_state.UPDATE_EE main_state.UPDATE_REG main_state.RD main_state.WR main_state.IDLE 
+main_state.IDLE 0 0 0 0 0 
+main_state.WR 0 0 0 1 1 
+main_state.RD 0 0 1 0 1 
+main_state.UPDATE_REG 0 1 0 0 1 
+main_state.UPDATE_EE 1 0 0 0 1 
+
+State Machine - |analyzer|eeprom_ctrl:eeprom_ctrl|state
+Name state.SAVE state.RD_RAM state.WR_RAM state.INIT state.IDLE 
+state.IDLE 0 0 0 0 0 
+state.INIT 0 0 0 1 1 
+state.WR_RAM 0 0 1 0 1 
+state.RD_RAM 0 1 0 0 1 
+state.SAVE 1 0 0 0 1 
+
+State Machine - |analyzer|eeprom_ctrl:eeprom_ctrl|iic_ctrl:iic_ctrl|state
+Name state.WAIT_RD_DONE state.RD_REG state.WAIT_WR_DONE state.WR_REG state.IDLE 
+state.IDLE 0 0 0 0 0 
+state.WR_REG 0 0 0 1 1 
+state.WAIT_WR_DONE 0 0 1 0 1 
+state.RD_REG 0 1 0 0 1 
+state.WAIT_RD_DONE 1 0 0 0 1 
+
+State Machine - |analyzer|eeprom_ctrl:eeprom_ctrl|iic_ctrl:iic_ctrl|iic_bit_shift:iic_bit_shift|state
+Name state.GEN_STOP state.GEN_ACK state.CHECK_ACK state.RD_DATA state.WR_DATA state.GEN_STA state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 
+state.GEN_STA 0 0 0 0 0 1 1 
+state.WR_DATA 0 0 0 0 1 0 1 
+state.RD_DATA 0 0 0 1 0 0 1 
+state.CHECK_ACK 0 0 1 0 0 0 1 
+state.GEN_ACK 0 1 0 0 0 0 1 
+state.GEN_STOP 1 0 0 0 0 0 1 

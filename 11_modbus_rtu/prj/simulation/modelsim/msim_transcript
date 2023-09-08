@@ -13,39 +13,39 @@
 # 
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/11_modbus_rtu/rtl {H:/FPGA/cyclone source/11_modbus_rtu/rtl/crc16_d8.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 10:57:46 on Sep 04,2023
+# Start time: 15:48:45 on Sep 06,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/11_modbus_rtu/rtl" H:/FPGA/cyclone source/11_modbus_rtu/rtl/crc16_d8.v 
 # -- Compiling module crc16_d8
 # 
 # Top level modules:
 # 	crc16_d8
-# End time: 10:57:46 on Sep 04,2023, Elapsed time: 0:00:00
+# End time: 15:48:45 on Sep 06,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/11_modbus_rtu/rtl {H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 10:57:46 on Sep 04,2023
+# Start time: 15:48:45 on Sep 06,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/11_modbus_rtu/rtl" H:/FPGA/cyclone source/11_modbus_rtu/rtl/mb_rtu_tx.v 
 # -- Compiling module mb_rtu_tx
 # 
 # Top level modules:
 # 	mb_rtu_tx
-# End time: 10:57:46 on Sep 04,2023, Elapsed time: 0:00:00
+# End time: 15:48:45 on Sep 06,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+H:/FPGA/cyclone\ source/11_modbus_rtu/prj {H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 10:57:46 on Sep 04,2023
+# Start time: 15:48:45 on Sep 06,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+H:/FPGA/cyclone source/11_modbus_rtu/prj" H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v 
 # -- Compiling module mb_rtu_tx_tb
 # 
 # Top level modules:
 # 	mb_rtu_tx_tb
-# End time: 10:57:46 on Sep 04,2023, Elapsed time: 0:00:00
+# End time: 15:48:45 on Sep 06,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  mb_rtu_tx_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" mb_rtu_tx_tb 
-# Start time: 10:57:46 on Sep 04,2023
+# Start time: 15:48:45 on Sep 06,2023
 # Loading work.mb_rtu_tx_tb
 # Loading work.mb_rtu_tx
 # Loading work.crc16_d8
@@ -59,47 +59,5 @@
 # ** Note: $stop    : H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v(93)
 #    Time: 2660 ns  Iteration: 0  Instance: /mb_rtu_tx_tb
 # Break in Module mb_rtu_tx_tb at H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v line 93
-add wave -position insertpoint  \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/clk \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/rst_n \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/tx_en_pulse \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/mb_addr \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/mb_num \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/mb_fun \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/payload_req_o \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/reg_data \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/tx_done \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/mb_tx_en \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/mb_txd \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/curr_state \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/next_state \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/tx_en_renewcrc \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/tx_data_renewcrc \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/cnt_head \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/cnt_data \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/cnt_crc \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/cnt_crc_dly1 \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/cnt_crc_dly2 \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/mb_addr_reg \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/mb_num_reg \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/mb_fun_reg \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/data_len_reg \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/crc_in \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/crc_init \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/crc_en \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/crc_en_temp \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/crc_result \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/tx_en \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/tx_en_dly1 \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/tx_data \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/tx_data_dly1 \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/crc_state \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/crc_state_dly1 \
-sim:/mb_rtu_tx_tb/mb_rtu_tx/crc_state_dly2
-restart
-run -all
-# ** Note: $stop    : H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v(93)
-#    Time: 2660 ns  Iteration: 0  Instance: /mb_rtu_tx_tb
-# Break in Module mb_rtu_tx_tb at H:/FPGA/cyclone source/11_modbus_rtu/prj/mb_rtu_tx_tb.v line 93
-# End time: 14:09:47 on Sep 04,2023, Elapsed time: 3:12:01
+# End time: 15:49:13 on Sep 06,2023, Elapsed time: 0:00:28
 # Errors: 0, Warnings: 0
